@@ -17,7 +17,6 @@ export default function PrivacyPolicyPage() {
         {/* Header Section */}
         <section className={styles.hero}>
           <div className={styles.container}>
-            <span className={styles.pill_label}>Legal & Trust</span>
             <h1 className={styles.hero_title}>Privacy Policy</h1>
             <p className={styles.effective_date}>
               <strong>SyncNexa Limited</strong> &bull; Effective Date: January 1, 2026

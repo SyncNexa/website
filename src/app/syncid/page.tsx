@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function SyncIdPage() {
@@ -184,7 +185,6 @@ export default function SyncIdPage() {
           <div className={styles.container}>
             <div className={styles.hero_split}>
               <div className={styles.hero_content}>
-                <span className={styles.pill_label}>SyncID for Students</span>
                 <h1 className={styles.hero_title}>
                   Your student identity. <span className={styles.gradient_text}>One tap away.</span>
                 </h1>
@@ -192,18 +192,16 @@ export default function SyncIdPage() {
                   SyncID is a digital student identity that proves your enrollment status instantly—without sharing more than you need to.
                 </p>
                 <div className={styles.hero_cta_group}>
-                  <ButtonLink
-                    color="green"
-                    label="Get SyncID Free"
-                    path="#download"
-                    variant="solid"
-                  />
-                  <ButtonLink
-                    color="green"
-                    label="See How It Works"
-                    path="#how-it-works"
-                    variant="outline"
-                  />
+                  <Link href="#download">
+                    <SnButton variant="primary" size="lg">
+                      Get SyncID Free
+                    </SnButton>
+                  </Link>
+                  <Link href="#how-it-works">
+                    <SnButton variant="stroke" size="lg">
+                      See How It Works
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
               <div className={styles.hero_image_side}>
@@ -224,7 +222,6 @@ export default function SyncIdPage() {
         <section className={styles.what_is_section}>
           <div className={styles.container}>
             <div className={styles.what_is_box}>
-              <span className={styles.pill_label}>Introduction</span>
               <h2 className={styles.section_title}>What is SyncID?</h2>
               <p className={styles.what_is_lead}>
                 SyncID is a free mobile app that verifies your student status once and lets you use that verification anywhere student benefits exist.
@@ -254,7 +251,6 @@ export default function SyncIdPage() {
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Simple Process</span>
               <h2 className={styles.section_title}>Set up once. Use it everywhere.</h2>
             </div>
 
@@ -277,7 +273,6 @@ export default function SyncIdPage() {
         <section className={styles.features_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Built For You</span>
               <h2 className={styles.section_title}>Built with students in mind</h2>
             </div>
 
@@ -300,7 +295,6 @@ export default function SyncIdPage() {
           <div className={styles.container}>
             <div className={styles.unlock_split}>
               <div className={styles.unlock_text}>
-                <span className={styles.pill_label}>Perks & Access</span>
                 <h2 className={styles.section_title}>What SyncID unlocks</h2>
                 <p className={styles.unlock_lead}>
                   Verified students get real benefits. Here&apos;s what your SyncID can do:
@@ -349,7 +343,6 @@ export default function SyncIdPage() {
           <div className={styles.container}>
             <div className={styles.security_grid}>
               <div className={styles.security_text}>
-                <span className={styles.pill_label}>Data Protection</span>
                 <h2 className={styles.section_title}>Your data stays yours.</h2>
                 <p className={styles.security_lead}>
                   SyncID never stores your academic records. Your school remains the source of truth. We simply confirm your status when you choose to share it.
@@ -386,7 +379,6 @@ export default function SyncIdPage() {
         <section className={styles.testimonials_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Student Feedback</span>
               <h2 className={styles.section_title}>Students love it.</h2>
             </div>
 
@@ -409,7 +401,6 @@ export default function SyncIdPage() {
         <section className={styles.faq_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Frequently Asked</span>
               <h2 className={styles.section_title}>Common questions</h2>
             </div>
 
@@ -449,12 +440,11 @@ export default function SyncIdPage() {
               Join students already using SyncID.
             </p>
             <div className={styles.cta_buttons}>
-              <ButtonLink
-                color="white"
-                label="Get SyncID Free"
-                path="#download"
-                variant="solid"
-              />
+              <Link href="#download">
+                <SnButton variant="primary" size="lg">
+                  Get SyncID Free
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>

@@ -2,16 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const standouts = [
-    "Consent-based",
-    "Secure",
-    "Backed by accredited institutions",
-  ].join(" • ");
-
   return (
     <div className={styles.page_wrapper}>
       <TopBar />
@@ -20,11 +14,6 @@ export default function Home() {
         {/* 1. Hero Section */}
         <section className={styles.hero}>
           <div className={styles.hero_container}>
-            <div className={styles.hero_badge}>
-              <span className={styles.badge_dot}></span>
-              <span>Decentralized Trust Infrastructure</span>
-            </div>
-
             <h1 className={styles.hero_title}>
               Your Identity, <span className={styles.gradient_text}>Simplified.</span>
             </h1>
@@ -34,22 +23,16 @@ export default function Home() {
             </p>
 
             <div className={styles.hero_cta_group}>
-              <ButtonLink
-                color="green"
-                label="Get Started"
-                path="/for-organizations"
-                variant="solid"
-              />
-              <ButtonLink
-                color="green"
-                label="Learn More"
-                path="#how-it-works"
-                variant="outline"
-              />
-            </div>
-
-            <div className={styles.hero_standouts}>
-              <small>{standouts}</small>
+              <Link href="/for-organizations">
+                <SnButton variant="primary" size="lg">
+                  Get Started
+                </SnButton>
+              </Link>
+              <Link href="#how-it-works">
+                <SnButton variant="stroke" size="lg">
+                  Learn More
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>
@@ -84,7 +67,6 @@ export default function Home() {
         <section className={styles.problem_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label_alert}>The Current Problem</span>
               <h2 className={styles.section_title}>Identity verification is broken.</h2>
               <p className={styles.section_subtitle}>
                 Students upload the same documents over and over again. Schools risk exposing sensitive records. Businesses lose customers because verification takes too long and feels invasive.
@@ -139,7 +121,6 @@ export default function Home() {
         <section className={styles.solution_section} id="solution">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>The Solution</span>
               <h2 className={styles.section_title}>SyncNexa changes the game.</h2>
               <p className={styles.section_subtitle}>
                 We built a platform where everyone wins. Students stay in control of their identity. Schools remain the single source of truth. Organizations get instant, reliable verification.
@@ -191,7 +172,6 @@ export default function Home() {
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Architecture & Workflow</span>
               <h2 className={styles.section_title}>Three layers. One trust layer.</h2>
             </div>
 
@@ -247,7 +227,6 @@ export default function Home() {
           <div className={styles.container}>
             <div className={styles.product_split}>
               <div className={styles.product_text_side}>
-                <span className={styles.pill_label}>Product Highlight</span>
                 <h2 className={styles.product_title}>SyncID — Built for Students. Trusted by Everyone.</h2>
                 <p className={styles.product_description}>
                   SyncID is our first product. It&apos;s a digital student identity that puts students in control and gives organizations the confidence to offer real benefits.
@@ -277,12 +256,11 @@ export default function Home() {
                 </ul>
 
                 <div className={styles.product_cta}>
-                  <ButtonLink
-                    color="green"
-                    label="Explore SyncID"
-                    path="/syncid"
-                    variant="solid"
-                  />
+                  <Link href="/syncid">
+                    <SnButton variant="primary" size="md">
+                      Explore SyncID
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
 
@@ -315,12 +293,11 @@ export default function Home() {
                   Partner with SyncNexa and give your students a seamless way to prove their enrollment—while keeping their data where it belongs: with you.
                 </p>
                 <div className={styles.card_cta}>
-                  <ButtonLink
-                    color="green"
-                    label="Partner With Us"
-                    path="/for-schools"
-                    variant="solid"
-                  />
+                  <Link href="/for-schools">
+                    <SnButton variant="primary" size="md">
+                      Partner With Us
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
 
@@ -336,12 +313,11 @@ export default function Home() {
                   Stop losing customers to slow verification. Integrate SyncID and start verifying students instantly.
                 </p>
                 <div className={styles.card_cta}>
-                  <ButtonLink
-                    color="green"
-                    label="Get Started"
-                    path="/for-organizations"
-                    variant="solid"
-                  />
+                  <Link href="/for-organizations">
+                    <SnButton variant="primary" size="md">
+                      Get Started
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -352,7 +328,6 @@ export default function Home() {
         <section className={styles.why_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Core Strengths</span>
               <h2 className={styles.section_title}>Why SyncNexa?</h2>
             </div>
 
@@ -416,7 +391,6 @@ export default function Home() {
         <section className={styles.testimonial_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Community & Partners</span>
               <h2 className={styles.section_title}>What People Are Saying</h2>
             </div>
 
@@ -465,18 +439,16 @@ export default function Home() {
               Whether you&apos;re a student, a school, or an organization—SyncNexa has a place for you.
             </p>
             <div className={styles.cta_buttons}>
-              <ButtonLink
-                color="white"
-                label="Get Started"
-                path="/for-organizations"
-                variant="solid"
-              />
-              <ButtonLink
-                color="white"
-                label="Contact Us"
-                path="/contact"
-                variant="outline"
-              />
+              <Link href="/for-organizations">
+                <SnButton variant="primary" size="lg">
+                  Get Started
+                </SnButton>
+              </Link>
+              <Link href="/contact">
+                <SnButton variant="secondary" size="lg">
+                  Contact Us
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>

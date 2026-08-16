@@ -16,7 +16,6 @@ export default function DpaPage() {
       <main className={styles.main_content}>
         <section className={styles.hero}>
           <div className={styles.container}>
-            <span className={styles.pill_label}>Enterprise Compliance</span>
             <h1 className={styles.hero_title}>Data Processing Agreement</h1>
             <p className={styles.effective_date}>
               <strong>SyncNexa Limited</strong> &bull; Effective Date: January 1, 2026

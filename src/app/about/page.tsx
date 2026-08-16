@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -99,7 +100,6 @@ export default function AboutPage() {
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.hero_content}>
-              <span className={styles.pill_label}>About SyncNexa</span>
               <h1 className={styles.hero_title}>
                 We&apos;re building trust for the <span className={styles.gradient_text}>digital world.</span>
               </h1>
@@ -115,7 +115,6 @@ export default function AboutPage() {
           <div className={styles.container}>
             <div className={styles.story_grid}>
               <div className={styles.story_header}>
-                <span className={styles.pill_label}>Our Story</span>
                 <h2 className={styles.section_title}>How SyncNexa started</h2>
               </div>
               <div className={styles.story_content}>
@@ -190,7 +189,6 @@ export default function AboutPage() {
         <section className={styles.values_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Guiding Principles</span>
               <h2 className={styles.section_title}>What we stand for</h2>
             </div>
 
@@ -212,7 +210,6 @@ export default function AboutPage() {
         <section className={styles.leadership_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Leadership</span>
               <h2 className={styles.section_title}>Who&apos;s building SyncNexa</h2>
             </div>
 
@@ -235,7 +232,6 @@ export default function AboutPage() {
         <section className={styles.journey_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Milestones</span>
               <h2 className={styles.section_title}>The road so far</h2>
             </div>
 
@@ -260,7 +256,6 @@ export default function AboutPage() {
         <section className={styles.matters_section}>
           <div className={styles.container}>
             <div className={styles.matters_box}>
-              <span className={styles.pill_label}>Purpose</span>
               <h2 className={styles.matters_title}>Why this work matters</h2>
               <div className={styles.matters_text}>
                 <p>
@@ -288,18 +283,16 @@ export default function AboutPage() {
               Whether you&apos;re a student, a school, or an organization—we&apos;d love to have you with us.
             </p>
             <div className={styles.cta_buttons}>
-              <ButtonLink
-                color="white"
-                label="Get Started"
-                path="/for-organizations"
-                variant="solid"
-              />
-              <ButtonLink
-                color="white"
-                label="Contact Us"
-                path="/contact"
-                variant="outline"
-              />
+              <Link href="/for-organizations">
+                <SnButton variant="primary" size="lg">
+                  Get Started
+                </SnButton>
+              </Link>
+              <Link href="/contact">
+                <SnButton variant="secondary" size="lg">
+                  Contact Us
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>

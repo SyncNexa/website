@@ -17,7 +17,6 @@ export default function TermsOfServicePage() {
         {/* Header Section */}
         <section className={styles.hero}>
           <div className={styles.container}>
-            <span className={styles.pill_label}>Legal & Terms</span>
             <h1 className={styles.hero_title}>Terms of Service</h1>
             <p className={styles.effective_date}>
               <strong>SyncNexa Limited</strong> &bull; Effective Date: January 1, 2026

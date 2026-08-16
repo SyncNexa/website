@@ -12,17 +12,6 @@
   width: 100%;
 }
 
-.pill_label {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
 .gradient_text {
   background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
   background-clip: text;
@@ -33,7 +22,7 @@
 /* 1. Hero Section */
 .hero {
   padding: 6rem 2rem 5rem;
-  background: url(/hero_bg.svg) center/cover no-repeat, radial-gradient(circle at 50% 20%, rgba(4, 214, 157, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  background: url(/hero_bg.svg) center/cover no-repeat;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -82,13 +71,6 @@
   padding: 2.25rem 1.75rem;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease;
-}
-
-.channel_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 10px 24px rgba(4, 214, 157, 0.1);
 }
 
 .channel_icon_wrap {
@@ -128,12 +110,6 @@
   text-decoration: none;
   text-align: center;
   word-break: break-all;
-  transition: all 0.2s ease;
-}
-
-.channel_email:hover {
-  background: var(--primary, #04d69d);
-  color: #05241d;
 }
 
 /* 3. Form & Sidebar Layout */
@@ -154,7 +130,6 @@
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 24px;
   padding: 3.5rem 3rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .form_title {
@@ -193,7 +168,6 @@
   font-size: 1rem;
   color: var(--text-main, #111827);
   background: var(--bg-alt, #f9fbfb);
-  transition: all 0.2s ease;
   font-family: inherit;
 }
 
@@ -203,31 +177,6 @@
   outline: none;
   border-color: var(--primary, #04d69d);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(4, 214, 157, 0.15);
-}
-
-.submit_button {
-  padding: 14px 28px;
-  border-radius: 10px;
-  background: var(--primary, #04d69d);
-  color: #05241d;
-  font-size: 1.05rem;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 0.5rem;
-}
-
-.submit_button:hover {
-  background: var(--primary-hover, #03be8b);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(4, 214, 157, 0.3);
-}
-
-.submit_button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .success_box {
@@ -263,18 +212,6 @@
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
   max-width: 440px;
-}
-
-.reset_button {
-  margin-top: 1rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  border: 1px solid var(--primary, #04d69d);
 }
 
 /* Sidebar Components */
@@ -338,12 +275,6 @@
   border-radius: 12px;
   border: 1px solid var(--stroke, #e5e7eb);
   text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.social_item:hover {
-  border-color: var(--primary, #04d69d);
-  transform: translateX(4px);
 }
 
 .social_badge {

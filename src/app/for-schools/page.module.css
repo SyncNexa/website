@@ -12,28 +12,6 @@
   width: 100%;
 }
 
-.pill_label {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.pill_label_alert {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: #fef2f2;
-  color: #b91c1c;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
 .section_header {
   text-align: center;
   max-width: 760px;
@@ -64,8 +42,8 @@
 
 /* 1. Hero Section */
 .hero {
-  padding: 6rem 2rem 5rem;
-  background: url(/hero_bg.svg) center/cover no-repeat, radial-gradient(circle at 50% 20%, rgba(4, 214, 157, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  padding: 7rem 2rem 5rem;
+  background: url(/hero_bg.svg) center/cover no-repeat;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -166,13 +144,6 @@
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.5rem 2rem;
-  transition: all 0.2s ease;
-}
-
-.help_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 12px 28px rgba(4, 214, 157, 0.1);
 }
 
 .card_icon_wrap {
@@ -217,14 +188,6 @@
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.5rem 2rem;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.step_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 12px 24px rgba(4, 214, 157, 0.08);
 }
 
 .step_badge {
@@ -472,12 +435,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease;
-}
-
-.testimonial_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
 }
 
 .quote_icon {
@@ -533,12 +490,10 @@
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 14px;
   overflow: hidden;
-  transition: all 0.2s ease;
 }
 
 .faq_item.faq_open {
   border-color: var(--primary, #04d69d);
-  box-shadow: 0 4px 16px rgba(4, 214, 157, 0.08);
 }
 
 .faq_question {
@@ -597,7 +552,7 @@
 
 .cta_body {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin-bottom: 2.5rem;
 }

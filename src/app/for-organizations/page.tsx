@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function ForOrganizationsPage() {
@@ -104,7 +105,7 @@ export default function ForOrganizationsPage() {
         "Community support",
       ],
       ctaLabel: "Get Started",
-      ctaVariant: "outline" as const,
+      ctaVariant: "stroke" as const,
     },
     {
       name: "Growth Plan",
@@ -119,7 +120,7 @@ export default function ForOrganizationsPage() {
         "Custom OAuth branding",
       ],
       ctaLabel: "Start Growth",
-      ctaVariant: "solid" as const,
+      ctaVariant: "primary" as const,
     },
     {
       name: "Business Plan",
@@ -134,7 +135,7 @@ export default function ForOrganizationsPage() {
         "Multi-app management",
       ],
       ctaLabel: "Start Business",
-      ctaVariant: "outline" as const,
+      ctaVariant: "stroke" as const,
     },
     {
       name: "Enterprise Plan",
@@ -149,7 +150,7 @@ export default function ForOrganizationsPage() {
         "Custom security reviews & BAA",
       ],
       ctaLabel: "Contact Sales",
-      ctaVariant: "outline" as const,
+      ctaVariant: "stroke" as const,
     },
   ];
 
@@ -223,7 +224,6 @@ export default function ForOrganizationsPage() {
           <div className={styles.container}>
             <div className={styles.hero_split}>
               <div className={styles.hero_content}>
-                <span className={styles.pill_label}>For Businesses & Platforms</span>
                 <h1 className={styles.hero_title}>
                   Stop losing customers to <span className={styles.gradient_text}>slow verification.</span>
                 </h1>
@@ -231,18 +231,16 @@ export default function ForOrganizationsPage() {
                   Integrate SyncID and start verifying students in minutes—without storing documents or risking compliance issues.
                 </p>
                 <div className={styles.hero_cta_group}>
-                  <ButtonLink
-                    color="green"
-                    label="Get Started Free"
-                    path="/contact"
-                    variant="solid"
-                  />
-                  <ButtonLink
-                    color="green"
-                    label="View API Docs"
-                    path="#developers"
-                    variant="outline"
-                  />
+                  <Link href="/contact">
+                    <SnButton variant="primary" size="lg">
+                      Get Started Free
+                    </SnButton>
+                  </Link>
+                  <Link href="#developers">
+                    <SnButton variant="stroke" size="lg">
+                      View API Docs
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
 
@@ -264,7 +262,6 @@ export default function ForOrganizationsPage() {
         <section className={styles.problem_section}>
           <div className={styles.container}>
             <div className={styles.problem_box}>
-              <span className={styles.pill_label_alert}>Conversion Bottleneck</span>
               <h2 className={styles.section_title}>Student verification shouldn&apos;t kill conversions.</h2>
               <div className={styles.problem_text}>
                 <p>
@@ -282,7 +279,6 @@ export default function ForOrganizationsPage() {
         <section className={styles.helps_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Enterprise Benefits</span>
               <h2 className={styles.section_title}>Instant verification. Zero friction.</h2>
               <p className={styles.section_subtitle}>
                 SyncID lets students prove their enrollment with a single tap. No uploads. No manual review. No delay.
@@ -310,7 +306,6 @@ export default function ForOrganizationsPage() {
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Fast Deployment</span>
               <h2 className={styles.section_title}>Go live in minutes.</h2>
             </div>
 
@@ -332,7 +327,6 @@ export default function ForOrganizationsPage() {
           <div className={styles.container}>
             <div className={styles.dev_split}>
               <div className={styles.dev_text}>
-                <span className={styles.pill_label}>Developer First</span>
                 <h2 className={styles.section_title}>Built for developers.</h2>
                 <p className={styles.dev_subtitle}>
                   Our API is clean, modern, and fully documented. Whether you&apos;re a two-person startup or a global enterprise, integration is straightforward.
@@ -348,12 +342,11 @@ export default function ForOrganizationsPage() {
                 </div>
 
                 <div className={styles.dev_cta}>
-                  <ButtonLink
-                    color="green"
-                    label="Explore API Documentation"
-                    path="/contact"
-                    variant="solid"
-                  />
+                  <Link href="/contact">
+                    <SnButton variant="primary" size="md">
+                      Explore API Documentation
+                    </SnButton>
+                  </Link>
                 </div>
               </div>
 
@@ -392,7 +385,6 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
         <section className={styles.pricing_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Transparent Plans</span>
               <h2 className={styles.section_title}>Simple pricing. No surprises.</h2>
             </div>
 
@@ -422,12 +414,15 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
                   </ul>
 
                   <div className={styles.plan_cta}>
-                    <ButtonLink
-                      color="green"
-                      label={plan.ctaLabel}
-                      path="/contact"
-                      variant={plan.ctaVariant}
-                    />
+                    <Link href="/contact">
+                      <SnButton
+                        variant={plan.ctaVariant}
+                        size="md"
+                        style={{ width: "100%" }}
+                      >
+                        {plan.ctaLabel}
+                      </SnButton>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -439,7 +434,6 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
         <section className={styles.trust_section}>
           <div className={styles.container}>
             <div className={styles.trust_box}>
-              <span className={styles.pill_label}>Enterprise Security</span>
               <h2 className={styles.section_title}>Why organizations trust SyncNexa</h2>
 
               <div className={styles.trust_grid}>
@@ -462,7 +456,6 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
         <section className={styles.use_cases_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Applications</span>
               <h2 className={styles.section_title}>Who uses SyncID?</h2>
             </div>
 
@@ -482,7 +475,6 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
         <section className={styles.faq_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Organization FAQ</span>
               <h2 className={styles.section_title}>Common questions from organizations</h2>
             </div>
 
@@ -522,18 +514,16 @@ console.log(\`Student status: \${verified ? "ACTIVE" : "INACTIVE"}\`);`}
               Join organizations already using SyncID to boost conversions and reduce fraud.
             </p>
             <div className={styles.cta_buttons}>
-              <ButtonLink
-                color="white"
-                label="Get Started Free"
-                path="/contact"
-                variant="solid"
-              />
-              <ButtonLink
-                color="white"
-                label="Contact Sales"
-                path="/contact"
-                variant="outline"
-              />
+              <Link href="/contact">
+                <SnButton variant="primary" size="lg">
+                  Get Started Free
+                </SnButton>
+              </Link>
+              <Link href="/contact">
+                <SnButton variant="secondary" size="lg">
+                  Contact Sales
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>

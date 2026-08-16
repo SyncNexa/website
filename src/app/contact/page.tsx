@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { TopBar, Footer } from "@/layouts";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
@@ -120,7 +121,6 @@ export default function ContactPage() {
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.hero_content}>
-              <span className={styles.pill_label}>Get in Touch</span>
               <h1 className={styles.hero_title}>
                 Let&apos;s <span className={styles.gradient_text}>talk.</span>
               </h1>
@@ -160,7 +160,6 @@ export default function ContactPage() {
             <div className={styles.form_layout_grid}>
               {/* Form Side */}
               <div className={styles.form_card}>
-                <span className={styles.pill_label}>Direct Message</span>
                 <h2 className={styles.form_title}>Send us a message</h2>
 
                 {isSubmitted ? (
@@ -170,8 +169,9 @@ export default function ContactPage() {
                     <p>
                       Thank you for reaching out. We&apos;ve received your message and our team will get back to you within 1–2 business days.
                     </p>
-                    <button
-                      className={styles.reset_button}
+                    <SnButton
+                      variant="secondary"
+                      size="md"
                       onClick={() => {
                         setIsSubmitted(false);
                         setFormData({
@@ -184,7 +184,7 @@ export default function ContactPage() {
                       }}
                     >
                       Send Another Message
-                    </button>
+                    </SnButton>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className={styles.contact_form}>
@@ -260,13 +260,14 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button
+                    <SnButton
                       type="submit"
-                      disabled={isSubmitting}
-                      className={styles.submit_button}
+                      variant="primary"
+                      size="lg"
+                      loading={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
+                      Send Message
+                    </SnButton>
                   </form>
                 )}
               </div>
@@ -275,7 +276,6 @@ export default function ContactPage() {
               <div className={styles.sidebar_side}>
                 {/* 4. Office Section */}
                 <div className={styles.info_card}>
-                  <span className={styles.pill_label}>Headquarters</span>
                   <h3 className={styles.info_title}>Our Office</h3>
                   <div className={styles.office_details}>
                     <p className={styles.company_name}>SyncNexa Limited</p>
@@ -293,7 +293,6 @@ export default function ContactPage() {
 
                 {/* 5. Connect Section */}
                 <div className={styles.info_card}>
-                  <span className={styles.pill_label}>Community</span>
                   <h3 className={styles.info_title}>Connect with us</h3>
                   <div className={styles.social_list}>
                     {socialLinks.map((social, idx) => (

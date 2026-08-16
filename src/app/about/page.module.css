@@ -12,10 +12,31 @@
   width: 100%;
 }
 
+.section_header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.section_title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.gradient_text {
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* 1. Hero Section */
 .hero {
-  padding: 6rem 2rem 5rem;
-  background: url(/hero_bg.svg) center/cover no-repeat, radial-gradient(circle at 50% 10%, rgba(4, 214, 157, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  padding: 7rem 2rem 5rem;
+  background: url(/hero_bg.svg) center/cover no-repeat;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -28,31 +49,13 @@
   align-items: center;
 }
 
-.pill_label {
-  display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
 .hero_title {
   font-size: 3.75rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--dark, #05241d);
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
-}
-
-.gradient_text {
-  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .hero_subtitle {
@@ -71,18 +74,14 @@
 
 .story_grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 4rem;
   align-items: flex-start;
 }
 
-.section_title {
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-top: 0.5rem;
+.story_header {
+  position: sticky;
+  top: 100px;
 }
 
 .story_content {
@@ -90,7 +89,7 @@
   flex-direction: column;
   gap: 1.5rem;
   font-size: 1.1rem;
-  color: var(--text-muted, #4b5563);
+  color: #374151;
   line-height: 1.75;
 }
 
@@ -103,12 +102,12 @@
 
 .highlight_quote {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-dark, #006d50);
   background: var(--primary-light, #e6faf4);
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 12px;
   border-left: 4px solid var(--primary, #04d69d);
-  border-radius: 0 10px 10px 0;
 }
 
 /* 3. Mission & Vision Section */
@@ -133,14 +132,14 @@
   padding: 3.5rem 3rem;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease;
 }
 
-.mission_card:hover,
-.vision_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 14px 32px rgba(4, 214, 157, 0.1);
+.mission_card {
+  border-top: 4px solid var(--primary, #04d69d);
+}
+
+.vision_card {
+  border-top: 4px solid var(--accent, #ffaa01);
 }
 
 .icon_badge_primary {
@@ -152,24 +151,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .icon_badge_accent {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: var(--accent-light, #fffbeb);
-  color: #d97706;
+  background: var(--accent-light, #fff5e0);
+  color: #b45309;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .mission_card h2,
 .vision_card h2 {
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--dark, #05241d);
   margin-bottom: 1rem;
@@ -177,28 +176,22 @@
 
 .card_statement {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--dark, #05241d);
   line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .card_subtext {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* 4. Values Section */
 .values_section {
   padding: 6rem 0;
   background: #ffffff;
-}
-
-.section_header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 4rem;
 }
 
 .values_grid {
@@ -212,13 +205,6 @@
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.25rem 1.75rem;
-  transition: all 0.2s ease;
-}
-
-.value_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 10px 24px rgba(4, 214, 157, 0.08);
 }
 
 .value_icon_wrap {
@@ -237,7 +223,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--dark, #05241d);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .value_card p {
@@ -263,34 +249,27 @@
 .leader_card {
   background: #ffffff;
   border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
-  padding: 3rem 2.25rem;
+  border-radius: 18px;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.2s ease;
-}
-
-.leader_card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary, #04d69d);
-  box-shadow: 0 12px 28px rgba(4, 214, 157, 0.1);
 }
 
 .avatar_circle {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #05241d 0%, #006d50 100%);
-  color: var(--primary, #04d69d);
+  background: linear-gradient(135deg, #04d69d 0%, #006d50 100%);
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  border: 3px solid var(--primary-light, #e6faf4);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.05em;
 }
 
 .leader_card h3 {
@@ -302,26 +281,26 @@
 
 .leader_role {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--primary-dark, #006d50);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .leader_bio {
-  font-size: 0.95rem;
+  font-size: 0.925rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
 }
 
-/* 6. Journey Section */
+/* 6. Timeline Section */
 .journey_section {
   padding: 6rem 0;
   background: #ffffff;
 }
 
 .timeline_wrapper {
-  max-width: 760px;
+  max-width: 680px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -336,17 +315,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 32px;
-  flex-shrink: 0;
 }
 
 .timeline_dot {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--primary, #04d69d);
-  border: 4px solid #ffffff;
-  box-shadow: 0 0 0 2px var(--primary, #04d69d);
+  border: 3px solid #ffffff;
+  outline: 2px solid var(--primary, #04d69d);
+  flex-shrink: 0;
 }
 
 .timeline_line {
@@ -362,18 +340,17 @@
 
 .timeline_year {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 6px;
-  background: var(--primary-light, #e6faf4);
+  font-size: 0.95rem;
+  font-weight: 800;
   color: var(--primary-dark, #006d50);
-  font-size: 0.85rem;
-  font-weight: 700;
+  background: var(--primary-light, #e6faf4);
+  padding: 2px 10px;
+  border-radius: 6px;
   margin-bottom: 0.5rem;
 }
 
 .timeline_desc {
   font-size: 1.05rem;
-  font-weight: 500;
   color: var(--dark, #05241d);
   line-height: 1.6;
 }
@@ -383,6 +360,7 @@
   padding: 6rem 0;
   background: var(--bg-alt, #f9fbfb);
   border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .matters_box {
@@ -393,15 +371,13 @@
   border-radius: 24px;
   padding: 4rem 3.5rem;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
 }
 
 .matters_title {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--dark, #05241d);
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
 
 .matters_text {
@@ -414,10 +390,9 @@
 }
 
 .matters_highlight {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-top: 0.75rem;
+  color: var(--primary-dark, #006d50);
 }
 
 /* 8. CTA Section */
@@ -436,7 +411,7 @@
 }
 
 .cta_title {
-  font-size: 3.25rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
@@ -445,7 +420,7 @@
 
 .cta_body {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin-bottom: 2.5rem;
 }
@@ -461,7 +436,11 @@
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .hero_title {
-    font-size: 3rem;
+    font-size: 3.25rem;
+  }
+
+  .values_grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .story_grid {
@@ -469,12 +448,8 @@
     gap: 2rem;
   }
 
-  .values_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .leadership_grid {
-    grid-template-columns: repeat(2, 1fr);
+  .story_header {
+    position: static;
   }
 }
 
@@ -487,12 +462,9 @@
     font-size: 2.15rem;
   }
 
-  .mission_vision_grid {
-    grid-template-columns: 1fr;
-  }
-
-  .values_grid,
-  .leadership_grid {
+  .mission_vision_grid,
+  .leadership_grid,
+  .values_grid {
     grid-template-columns: 1fr;
   }
 

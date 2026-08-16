@@ -1,26 +1,22 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./styles/Links.module.css";
+import { SnButton } from "@syncnexa-library/ui";
 
 function ButtonLink({
   path,
-  color = "green",
   label = "ButtonLink",
   variant = "solid",
   className = "",
   target,
   rel,
 }: ButtonLinkProps) {
-  const classNames = [
-    styles.link_button,
-    styles[color],
-    styles[variant],
-    className,
-  ].filter(Boolean).join(" ");
+  const btnVariant = variant === "solid" ? "primary" : "stroke";
 
   return (
-    <Link className={classNames} href={path} target={target} rel={rel}>
-      {label}
+    <Link href={path} target={target} rel={rel} className={className}>
+      <SnButton variant={btnVariant} size="lg">
+        {label}
+      </SnButton>
     </Link>
   );
 }

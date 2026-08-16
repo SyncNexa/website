@@ -5,7 +5,8 @@ import "./globals.css";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable} suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body className={poppins.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Logo from "@/components/icons/Logo";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./styles/TopBar.module.css";
@@ -65,12 +65,11 @@ function TopBar() {
         </ul>
 
         <div className={styles.right_cta}>
-          <ButtonLink
-            path="/for-organizations"
-            color="green"
-            label="Get Started"
-            variant="solid"
-          />
+          <Link href="/for-organizations">
+            <SnButton variant="primary" size="md">
+              Get Started
+            </SnButton>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -105,12 +104,11 @@ function TopBar() {
             })}
           </ul>
           <div className={styles.mobile_cta}>
-            <ButtonLink
-              path="/for-organizations"
-              color="green"
-              label="Get Started"
-              variant="solid"
-            />
+            <Link href="/for-organizations" onClick={() => setIsMobileMenuOpen(false)}>
+              <SnButton variant="primary" size="lg" style={{ width: "100%" }}>
+                Get Started
+              </SnButton>
+            </Link>
           </div>
         </div>
       )}

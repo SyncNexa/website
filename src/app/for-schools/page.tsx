@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { ButtonLink } from "@/components/links";
+import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function ForSchoolsPage() {
@@ -159,7 +160,6 @@ export default function ForSchoolsPage() {
         <section className={styles.hero}>
           <div className={styles.container}>
             <div className={styles.hero_content}>
-              <span className={styles.pill_label}>For Universities & Registrars</span>
               <h1 className={styles.hero_title}>
                 Your students are already <span className={styles.gradient_text}>asking for this.</span>
               </h1>
@@ -167,18 +167,16 @@ export default function ForSchoolsPage() {
                 Give them a secure way to prove their enrollment—without exposing their data or your systems.
               </p>
               <div className={styles.hero_cta_group}>
-                <ButtonLink
-                  color="green"
-                  label="Become a Partner School"
-                  path="/contact"
-                  variant="solid"
-                />
-                <ButtonLink
-                  color="green"
-                  label="Learn How It Works"
-                  path="#how-it-works"
-                  variant="outline"
-                />
+                <Link href="/contact">
+                  <SnButton variant="primary" size="lg">
+                    Become a Partner School
+                  </SnButton>
+                </Link>
+                <Link href="#how-it-works">
+                  <SnButton variant="stroke" size="lg">
+                    Learn How It Works
+                  </SnButton>
+                </Link>
               </div>
             </div>
           </div>
@@ -188,7 +186,6 @@ export default function ForSchoolsPage() {
         <section className={styles.problem_section}>
           <div className={styles.container}>
             <div className={styles.problem_box}>
-              <span className={styles.pill_label_alert}>The Challenge</span>
               <h2 className={styles.section_title}>Verification requests never stop.</h2>
               <div className={styles.problem_text}>
                 <p>
@@ -209,7 +206,6 @@ export default function ForSchoolsPage() {
         <section className={styles.helps_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Institutional Control</span>
               <h2 className={styles.section_title}>You stay in control.</h2>
               <p className={styles.section_subtitle}>
                 SyncNexa connects directly to your Student Information System. When an organization needs to verify a student, they ask SyncNexa—and SyncNexa asks you.
@@ -237,7 +233,6 @@ export default function ForSchoolsPage() {
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Integration Roadmap</span>
               <h2 className={styles.section_title}>Simple to set up. Safe to run.</h2>
             </div>
 
@@ -259,7 +254,6 @@ export default function ForSchoolsPage() {
           <div className={styles.container}>
             <div className={styles.security_split}>
               <div className={styles.security_text}>
-                <span className={styles.pill_label}>Zero-Risk Architecture</span>
                 <h2 className={styles.section_title}>Built for institutions like yours.</h2>
                 <div className={styles.security_checklist}>
                   {securityBullets.map((bullet, idx) => (
@@ -292,7 +286,6 @@ export default function ForSchoolsPage() {
         <section className={styles.students_get_section}>
           <div className={styles.container}>
             <div className={styles.students_get_box}>
-              <span className={styles.pill_label}>Student Experience</span>
               <h2 className={styles.section_title}>Happier students. Fewer headaches.</h2>
               <p className={styles.students_get_lead}>
                 When you partner with SyncNexa, your students can:
@@ -325,7 +318,6 @@ export default function ForSchoolsPage() {
                   <line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
-              <span className={styles.pill_label}>Technical Specifications</span>
               <h2 className={styles.section_title}>Your IT team will approve.</h2>
               <p className={styles.it_lead}>
                 The SyncNexa Trust Adapter is:
@@ -351,7 +343,6 @@ export default function ForSchoolsPage() {
         <section className={styles.testimonials_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>Partner Voices</span>
               <h2 className={styles.section_title}>What partner schools say</h2>
             </div>
 
@@ -374,7 +365,6 @@ export default function ForSchoolsPage() {
         <section className={styles.faq_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.pill_label}>University FAQ</span>
               <h2 className={styles.section_title}>Questions from schools</h2>
             </div>
 
@@ -414,18 +404,16 @@ export default function ForSchoolsPage() {
               Partner with SyncNexa and become part of the trust layer.
             </p>
             <div className={styles.cta_buttons}>
-              <ButtonLink
-                color="white"
-                label="Become a Partner School"
-                path="/contact"
-                variant="solid"
-              />
-              <ButtonLink
-                color="white"
-                label="Contact Our Team"
-                path="/contact"
-                variant="outline"
-              />
+              <Link href="/contact">
+                <SnButton variant="primary" size="lg">
+                  Become a Partner School
+                </SnButton>
+              </Link>
+              <Link href="/contact">
+                <SnButton variant="secondary" size="lg">
+                  Contact Our Team
+                </SnButton>
+              </Link>
             </div>
           </div>
         </section>
