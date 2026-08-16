@@ -54,12 +54,12 @@
   border-radius: 0;
 }
 
-/* Pure Tab Format with Bottom-Only Stroke */
+/* Pure Tab Format with Bottom-Only Stroke and No Left/Right Padding */
 .nav_link {
   display: inline-flex;
   align-items: center;
   height: 100%;
-  padding: 0 0.25rem;
+  padding: 0 !important;
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-muted, #6b7280);
@@ -86,7 +86,7 @@
   display: inline-flex;
   align-items: center;
   height: 100%;
-  padding: 0 0.25rem;
+  padding: 0 !important;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--dark, #05241d);
