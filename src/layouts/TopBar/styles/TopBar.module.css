@@ -10,9 +10,9 @@
 
 .top_bar {
   display: flex;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   height: 72px;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +39,7 @@
 .desktop_nav {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 3.25rem;
   list-style: none;
   height: 100%;
   margin: 0;
@@ -54,7 +54,7 @@
   border-radius: 0;
 }
 
-/* Pure Tab Format with Bottom-Only Stroke and No Left/Right Padding */
+/* Pure Tab Format with Bottom-Only Stroke and Generous Inter-Tab Spacing */
 .nav_link {
   display: inline-flex;
   align-items: center;
@@ -165,7 +165,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
   padding: 0;
 }
@@ -214,6 +214,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .desktop_nav {
+    gap: 2rem;
   }
 }
 
