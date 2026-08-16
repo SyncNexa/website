@@ -4,9 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #ffffff;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
@@ -15,7 +13,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 70px;
+  height: 72px;
   justify-content: space-between;
   align-items: center;
 }
@@ -26,6 +24,9 @@
   gap: 0.75rem;
   color: var(--text-main, #111827);
   text-decoration: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .brand h2 {
@@ -38,17 +39,22 @@
 .desktop_nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.25rem;
   list-style: none;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .desktop_nav li {
   height: 100%;
   display: flex;
   align-items: center;
+  background: transparent;
+  border-radius: 0;
 }
 
+/* Pure Tab Format with Bottom-Only Stroke */
 .nav_link {
   display: inline-flex;
   align-items: center;
@@ -57,15 +63,23 @@
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-muted, #6b7280);
-  background: transparent;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  box-shadow: none !important;
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav_link:hover {
   color: var(--dark, #05241d);
-  border-bottom-color: var(--primary, #04d69d);
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid var(--primary, #04d69d) !important;
 }
 
 .active_link {
@@ -76,9 +90,14 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--dark, #05241d);
-  background: transparent;
-  border-bottom: 2px solid var(--primary, #04d69d);
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid var(--primary, #04d69d) !important;
+  box-shadow: none !important;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .right_cta {
@@ -94,6 +113,7 @@
   height: 2rem;
   background: transparent;
   border: none;
+  border-radius: 0;
   cursor: pointer;
   padding: 0;
   z-index: 101;
@@ -147,6 +167,7 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 2rem;
+  padding: 0;
 }
 
 .mobile_nav_link {
@@ -155,14 +176,17 @@
   color: var(--text-muted, #6b7280);
   display: block;
   padding: 0.75rem 0;
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--stroke, #e5e7eb) !important;
   text-decoration: none;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .mobile_nav_link:hover {
   color: var(--dark, #05241d);
-  border-bottom-color: var(--primary, #04d69d);
+  border-bottom-color: var(--primary, #04d69d) !important;
 }
 
 .mobile_active_link {
@@ -171,7 +195,10 @@
   color: var(--dark, #05241d);
   display: block;
   padding: 0.75rem 0;
-  border-bottom: 2px solid var(--primary, #04d69d);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid var(--primary, #04d69d) !important;
   text-decoration: none;
 }
 
