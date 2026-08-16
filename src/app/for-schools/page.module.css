@@ -1,0 +1,654 @@
+.page_wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main, #ffffff);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.pill_label {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pill_label_alert {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section_header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.section_title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section_subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.gradient_text {
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 1. Hero Section */
+.hero {
+  padding: 6rem 2rem 5rem;
+  background: url(/hero_bg.svg) center/cover no-repeat, radial-gradient(circle at 50% 20%, rgba(4, 214, 157, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  text-align: center;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.hero_content {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero_title {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero_subtitle {
+  color: var(--text-muted, #6b7280);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 2.5rem;
+}
+
+.hero_cta_group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 2. The Problem Section */
+.problem_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.problem_box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fffafa;
+  border: 1px solid #fee2e2;
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+  text-align: center;
+}
+
+.problem_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 1.15rem;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+.problem_highlight {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+/* 3. How SyncNexa Helps Schools */
+.helps_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.source_truth_tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+  background: var(--primary-light, #e6faf4);
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+
+.cards_grid_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.help_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all 0.2s ease;
+}
+
+.help_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 12px 28px rgba(4, 214, 157, 0.1);
+}
+
+.card_icon_wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.help_card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.75rem;
+}
+
+.help_card p {
+  font-size: 1rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+}
+
+/* 4. How Integration Works */
+.how_it_works_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.steps_grid_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.step_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 12px 24px rgba(4, 214, 157, 0.08);
+}
+
+.step_badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.step_icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.step_card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.6rem;
+}
+
+.step_card p {
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+}
+
+/* 5. Security Section */
+.security_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.security_split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.security_checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.security_bullet_item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke, #e5e7eb);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--dark, #05241d);
+}
+
+.shield_icon {
+  color: var(--primary, #04d69d);
+  flex-shrink: 0;
+}
+
+.security_graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive_img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+/* 6. What Your Students Get Section */
+.students_get_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.students_get_box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+  text-align: center;
+}
+
+.students_get_lead {
+  font-size: 1.25rem;
+  color: var(--text-main, #111827);
+  font-weight: 500;
+  margin: 1.5rem 0 2rem;
+}
+
+.students_get_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.students_get_list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke, #e5e7eb);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--dark, #05241d);
+}
+
+.check_circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+  color: #05241d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.students_get_closing {
+  font-size: 1.15rem;
+  color: var(--primary-dark, #006d50);
+  background: var(--primary-light, #e6faf4);
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* 7. For Your IT Team Section */
+.it_team_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.it_team_card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+  text-align: center;
+}
+
+.it_team_icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--primary-light, #e6faf4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.it_lead {
+  font-size: 1.2rem;
+  color: var(--text-muted, #6b7280);
+  margin: 1rem 0 2rem;
+}
+
+.it_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.it_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-alt, #f9fbfb);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke, #e5e7eb);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--dark, #05241d);
+}
+
+.it_item_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+  flex-shrink: 0;
+}
+
+.it_summary {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  background: var(--primary-light, #e6faf4);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+
+/* 8. Testimonials Section */
+.testimonials_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.testimonial_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.testimonial_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+}
+
+.quote_icon {
+  font-size: 3rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: var(--primary, #04d69d);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial_text {
+  font-size: 1.05rem;
+  color: var(--dark, #05241d);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.testimonial_author {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding-top: 1rem;
+}
+
+.testimonial_author strong {
+  font-size: 1rem;
+  color: var(--dark, #05241d);
+}
+
+.testimonial_author span {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* 9. FAQ Section */
+.faq_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+}
+
+.faq_list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq_item {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq_item.faq_open {
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 4px 16px rgba(4, 214, 157, 0.08);
+}
+
+.faq_question {
+  width: 100%;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.faq_toggle_icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--primary-dark, #006d50);
+  margin-left: 1rem;
+}
+
+.faq_answer {
+  padding: 0 1.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.65;
+  border-top: 1px solid var(--stroke-subtle, #f3f4f6);
+  padding-top: 1rem;
+}
+
+/* 10. CTA Section */
+.cta_section {
+  padding: 6rem 2rem;
+  background: var(--dark, #05241d);
+  text-align: center;
+}
+
+.cta_container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta_title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.cta_body {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.cta_buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero_title {
+    font-size: 3rem;
+  }
+
+  .cards_grid_3,
+  .steps_grid_3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .security_split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_title {
+    font-size: 2.35rem;
+  }
+
+  .section_title {
+    font-size: 2.15rem;
+  }
+
+  .cards_grid_3,
+  .steps_grid_3,
+  .it_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem_box,
+  .students_get_box,
+  .it_team_card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta_title {
+    font-size: 2.25rem;
+  }
+}
