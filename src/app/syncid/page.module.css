@@ -1,0 +1,641 @@
+.page_wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main, #ffffff);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.pill_label {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section_header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.section_title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.gradient_text {
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 1. Hero Section */
+.hero {
+  padding: 5rem 0 6rem;
+  background: url(/hero_bg.svg) center/cover no-repeat, radial-gradient(circle at 50% 20%, rgba(4, 214, 157, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.hero_split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero_title {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.hero_subtitle {
+  color: var(--text-muted, #6b7280);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+.hero_cta_group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero_image_side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive_img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+/* 2. What Is SyncID Section */
+.what_is_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.what_is_box {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+}
+
+.what_is_lead {
+  font-size: 1.25rem;
+  color: var(--text-main, #111827);
+  line-height: 1.65;
+  margin: 1.5rem 0 2.5rem;
+  font-weight: 500;
+}
+
+.no_more_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.no_more_item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #fee2e2;
+  font-size: 1rem;
+  color: var(--text-main, #111827);
+}
+
+.x_badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.control_highlight {
+  font-size: 1.35rem;
+  color: var(--primary-dark, #006d50);
+  background: var(--primary-light, #e6faf4);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* 3. How SyncID Works Section */
+.how_it_works_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.steps_grid_4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.step_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.step_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 12px 24px rgba(4, 214, 157, 0.1);
+}
+
+.step_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.step_badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.step_icon {
+  color: var(--primary, #04d69d);
+}
+
+.step_card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.6rem;
+}
+
+.step_card p {
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+}
+
+/* 4. Features Section */
+.features_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.features_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all 0.2s ease;
+}
+
+.feature_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 10px 24px rgba(4, 214, 157, 0.08);
+}
+
+.feature_icon_wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.feature_card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.6rem;
+}
+
+.feature_card p {
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+}
+
+/* 5. What You Can Access Section */
+.unlock_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.unlock_split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.unlock_lead {
+  font-size: 1.15rem;
+  color: var(--text-muted, #6b7280);
+  margin: 1rem 0 2rem;
+}
+
+.benefits_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefits_list li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--dark, #05241d);
+}
+
+.check_circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+  color: #05241d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.card_perks_display {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.perk_pill {
+  padding: 1.25rem 1.75rem;
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.perk_pill:hover {
+  border-color: var(--primary, #04d69d);
+  transform: translateX(6px);
+}
+
+/* 6. Tired Section */
+.tired_section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.tired_banner {
+  background: linear-gradient(135deg, #05241d 0%, #0a3d31 100%);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.tired_banner h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.tired_banner p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.tired_tagline {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary, #04d69d);
+}
+
+/* 7. Security Section */
+.security_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.security_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.security_lead {
+  font-size: 1.15rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+
+.security_checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.security_bullet_item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke, #e5e7eb);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark, #05241d);
+}
+
+.shield_icon {
+  color: var(--primary, #04d69d);
+  flex-shrink: 0;
+}
+
+/* 8. Testimonials Section */
+.testimonials_section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.testimonials_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial_card {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.testimonial_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary, #04d69d);
+}
+
+.quote_icon {
+  font-size: 3rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: var(--primary, #04d69d);
+  margin-bottom: 0.5rem;
+}
+
+.testimonial_text {
+  font-size: 1.05rem;
+  color: var(--dark, #05241d);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.testimonial_user {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding-top: 1rem;
+}
+
+.testimonial_user strong {
+  font-size: 1rem;
+  color: var(--dark, #05241d);
+}
+
+.testimonial_user span {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* 9. FAQ Section */
+.faq_section {
+  padding: 6rem 0;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+}
+
+.faq_list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq_item {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq_item.faq_open {
+  border-color: var(--primary, #04d69d);
+  box-shadow: 0 4px 16px rgba(4, 214, 157, 0.08);
+}
+
+.faq_question {
+  width: 100%;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.faq_toggle_icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--primary-dark, #006d50);
+  margin-left: 1rem;
+}
+
+.faq_answer {
+  padding: 0 1.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.65;
+  border-top: 1px solid var(--stroke-subtle, #f3f4f6);
+  padding-top: 1rem;
+}
+
+/* 10. CTA Section */
+.cta_section {
+  padding: 6rem 2rem;
+  background: var(--dark, #05241d);
+  text-align: center;
+}
+
+.cta_container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta_title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.cta_body {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.cta_buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero_split,
+  .unlock_split,
+  .security_grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .steps_grid_4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features_grid,
+  .testimonials_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_title {
+    font-size: 2.5rem;
+  }
+
+  .section_title {
+    font-size: 2.15rem;
+  }
+
+  .steps_grid_4,
+  .features_grid,
+  .testimonials_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .what_is_box {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .tired_banner {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta_title {
+    font-size: 2.25rem;
+  }
+}
