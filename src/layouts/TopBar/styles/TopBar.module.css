@@ -10,9 +10,9 @@
 
 .top_bar {
   display: flex;
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 2rem;
   height: 72px;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +39,7 @@
 .desktop_nav {
   display: flex;
   align-items: center;
-  gap: 3.25rem;
+  gap: 2.25rem;
   list-style: none;
   height: 100%;
   margin: 0;
@@ -54,7 +54,7 @@
   border-radius: 0;
 }
 
-/* Pure Tab Format with Bottom-Only Stroke and Generous Inter-Tab Spacing */
+/* Pure Tab Format with Bottom-Only Stroke */
 .nav_link {
   display: inline-flex;
   align-items: center;
@@ -219,7 +219,7 @@
 
 @media (max-width: 992px) {
   .desktop_nav {
-    gap: 2rem;
+    gap: 1.75rem;
   }
 }
 
