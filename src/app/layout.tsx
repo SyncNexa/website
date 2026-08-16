@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SyncNexa | Linking Minds, Building Futures",
+  title: "SyncNexa | Your Identity, Simplified.",
   description: "SyncNexa - Zero-Knowledge Student Verification & Decentralized Trust Infrastructure.",
   icons: {
     icon: [
@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body>{children}</body>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

@@ -422,7 +422,7 @@ export default function Home() {
 
             <div className={styles.cards_grid_3}>
               <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>“</div>
+                <div className={styles.quote_mark}>&ldquo;</div>
                 <p className={styles.testimonial_quote}>
                   SyncID changed how I claim student discounts. I set it up once and now it&apos;s just one tap. No more uploading documents every time.
                 </p>
@@ -433,7 +433,7 @@ export default function Home() {
               </div>
 
               <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>“</div>
+                <div className={styles.quote_mark}>&ldquo;</div>
                 <p className={styles.testimonial_quote}>
                   Integrating SyncNexa was surprisingly easy. The API is clean, the documentation is solid, and our conversion rate went up immediately.
                 </p>
@@ -444,7 +444,7 @@ export default function Home() {
               </div>
 
               <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>“</div>
+                <div className={styles.quote_mark}>&ldquo;</div>
                 <p className={styles.testimonial_quote}>
                   We wanted to offer student benefits without exposing our students&apos; data. SyncNexa gave us exactly what we needed.
                 </p>
