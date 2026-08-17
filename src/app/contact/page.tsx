@@ -267,7 +267,7 @@ export default function ContactPage() {
                         required
                         value={formData.fullName}
                         onChange={handleChange}
-                        placeholder="e.g. Okolie Anthony"
+                        placeholder="e.g. John Doe"
                       />
 
                       <SnInput
@@ -278,7 +278,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="anthony@university.edu"
+                        placeholder="john@university.edu"
                       />
                     </div>
 
