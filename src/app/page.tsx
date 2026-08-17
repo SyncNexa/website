@@ -336,8 +336,8 @@ export default function Home() {
               {/* Solution 1: Students */}
               <GlassBlobCard
                 className={styles.tech_solution_card}
-                blobColor="rgba(4, 214, 157, 0.22)"
-                secondaryBlobColor="rgba(0, 109, 80, 0.12)"
+                blobColor="#04d69d"
+                secondaryBlobColor="#006d50"
               >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
@@ -370,8 +370,8 @@ export default function Home() {
               {/* Solution 2: Schools */}
               <GlassBlobCard
                 className={styles.tech_solution_card}
-                blobColor="rgba(255, 170, 1, 0.24)"
-                secondaryBlobColor="rgba(4, 214, 157, 0.12)"
+                blobColor="#ffaa01"
+                secondaryBlobColor="#04d69d"
               >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
@@ -402,8 +402,8 @@ compliance: "100%_FERPA_NDPR"`}
               {/* Solution 3: Organizations */}
               <GlassBlobCard
                 className={styles.tech_solution_card}
-                blobColor="rgba(0, 109, 80, 0.22)"
-                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+                blobColor="#006d50"
+                secondaryBlobColor="#04d69d"
               >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
@@ -572,8 +572,8 @@ compliance: "100%_FERPA_NDPR"`}
               <div className={styles.product_ui_side}>
                 <GlassBlobCard
                   className={styles.syncid_blueprint_card}
-                  blobColor="rgba(4, 214, 157, 0.22)"
-                  secondaryBlobColor="rgba(255, 170, 1, 0.12)"
+                  blobColor="#04d69d"
+                  secondaryBlobColor="#ffaa01"
                 >
                   <div className={styles.blueprint_top}>
                     <div className={styles.blueprint_brand}>
@@ -633,8 +633,8 @@ compliance: "100%_FERPA_NDPR"`}
               {/* Schools Card */}
               <GlassBlobCard
                 className={styles.enterprise_card}
-                blobColor="rgba(0, 109, 80, 0.22)"
-                secondaryBlobColor="rgba(4, 214, 157, 0.15)"
+                blobColor="#006d50"
+                secondaryBlobColor="#04d69d"
               >
                 <div className={styles.ent_header}>
                   <span className={styles.section_badge}>
@@ -673,8 +673,8 @@ compliance: "100%_FERPA_NDPR"`}
               {/* Organizations Card */}
               <GlassBlobCard
                 className={styles.enterprise_card}
-                blobColor="rgba(255, 170, 1, 0.24)"
-                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+                blobColor="#ffaa01"
+                secondaryBlobColor="#04d69d"
               >
                 <div className={styles.ent_header}>
                   <span className={styles.section_badge}>
@@ -731,8 +731,8 @@ const result = await client.verify(pairwiseToken);
               {/* Feature 1: Privacy by Design / Zero Document Retention */}
               <GlassBlobCard
                 className={styles.cap_card}
-                blobColor="rgba(4, 214, 157, 0.24)"
-                secondaryBlobColor="rgba(0, 109, 80, 0.12)"
+                blobColor="#04d69d"
+                secondaryBlobColor="#006d50"
               >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
@@ -783,8 +783,8 @@ const result = await client.verify(pairwiseToken);
               {/* Feature 2: ~18ms Latency Edge Verification */}
               <GlassBlobCard
                 className={styles.cap_card}
-                blobColor="rgba(255, 170, 1, 0.25)"
-                secondaryBlobColor="rgba(239, 68, 68, 0.1)"
+                blobColor="#ffaa01"
+                secondaryBlobColor="#ef4444"
               >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
@@ -849,8 +849,8 @@ const result = await client.verify(pairwiseToken);
               {/* Feature 3: Decentralized Keypairs */}
               <GlassBlobCard
                 className={styles.cap_card}
-                blobColor="rgba(0, 109, 80, 0.24)"
-                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+                blobColor="#006d50"
+                secondaryBlobColor="#04d69d"
               >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
@@ -901,8 +901,8 @@ const result = await client.verify(pairwiseToken);
               {/* Feature 4: Universal Interoperability */}
               <GlassBlobCard
                 className={styles.cap_card}
-                blobColor="rgba(4, 214, 157, 0.22)"
-                secondaryBlobColor="rgba(255, 170, 1, 0.18)"
+                blobColor="#04d69d"
+                secondaryBlobColor="#ffaa01"
               >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
@@ -959,7 +959,7 @@ const result = await client.verify(pairwiseToken);
             <div className={styles.cards_grid_3}>
               <GlassBlobCard
                 className={styles.quote_card}
-                blobColor="rgba(4, 214, 157, 0.18)"
+                blobColor="#04d69d"
               >
                 <p className={styles.quote_text}>
                   &ldquo;SyncID completely eliminated document uploads for my
@@ -974,7 +974,7 @@ const result = await client.verify(pairwiseToken);
 
               <GlassBlobCard
                 className={styles.quote_card}
-                blobColor="rgba(255, 170, 1, 0.18)"
+                blobColor="#ffaa01"
               >
                 <p className={styles.quote_text}>
                   &ldquo;Our student discount checkout conversion surged by 38%
@@ -989,7 +989,7 @@ const result = await client.verify(pairwiseToken);
 
               <GlassBlobCard
                 className={styles.quote_card}
-                blobColor="rgba(0, 109, 80, 0.18)"
+                blobColor="#006d50"
               >
                 <p className={styles.quote_text}>
                   &ldquo;SyncNexa solved our biggest compliance concern. We can
