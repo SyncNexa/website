@@ -8,9 +8,20 @@ import { ShieldCheck } from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SyncNexa",
+  title: "Privacy Policy",
   description:
-    "Learn how SyncNexa protects your privacy, uses pairwise decentralized identifiers, and safeguards student verification data.",
+    "Learn how SyncNexa protects your privacy using pairwise decentralized identifiers, on-device cryptographic keypairs, and zero central document storage.",
+  openGraph: {
+    title: "Privacy Policy | SyncNexa",
+    description:
+      "SyncNexa's Privacy Policy — pairwise DIDs, on-device keypairs, zero central document storage, and no third-party tracking.",
+    url: "https://syncnexa.co/privacy",
+  },
+  twitter: {
+    title: "Privacy Policy | SyncNexa",
+    description:
+      "How SyncNexa protects your privacy with cryptographic, privacy-first architecture.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

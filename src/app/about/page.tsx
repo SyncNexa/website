@@ -10,9 +10,20 @@ import { Check } from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "About Us | SyncNexa",
+  title: "About Us",
   description:
-    "Learn about SyncNexa's story, mission, vision, values, and the leadership team building decentralized trust infrastructure.",
+    "Learn about SyncNexa's story, mission, vision, values, and the leadership team building decentralized trust infrastructure for universities and students.",
+  openGraph: {
+    title: "About Us | SyncNexa",
+    description:
+      "Learn about SyncNexa's mission to build privacy-first, cryptographic trust infrastructure for students, universities, and organizations.",
+    url: "https://syncnexa.co/about",
+  },
+  twitter: {
+    title: "About Us | SyncNexa",
+    description:
+      "The team and mission behind SyncNexa's decentralized student identity platform.",
+  },
 };
 
 export default function AboutPage() {

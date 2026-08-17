@@ -7,9 +7,20 @@ import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Data Processing Agreement (DPA) | SyncNexa",
+  title: "Data Processing Agreement (DPA)",
   description:
-    "Data Processing Agreement outlining SyncNexa's cryptographic processing standards and privacy-by-design compliance.",
+    "SyncNexa's Data Processing Agreement — outlining cryptographic processing standards, privacy-by-design compliance, and how student data is handled.",
+  openGraph: {
+    title: "Data Processing Agreement (DPA) | SyncNexa",
+    description:
+      "SyncNexa's DPA outlines our cryptographic processing standards and privacy-by-design compliance for institutional partners.",
+    url: "https://syncnexa.co/dpa",
+  },
+  twitter: {
+    title: "Data Processing Agreement (DPA) | SyncNexa",
+    description:
+      "SyncNexa's DPA — cryptographic processing standards and privacy-by-design compliance.",
+  },
 };
 
 export default function DpaPage() {

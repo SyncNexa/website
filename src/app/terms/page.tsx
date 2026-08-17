@@ -7,9 +7,19 @@ import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | SyncNexa",
+  title: "Terms of Service",
   description:
-    "Read the Terms of Service for SyncNexa Limited and the SyncID digital student identity platform.",
+    "Read SyncNexa's Terms of Service — governing the use of the SyncID digital student identity platform and all related services.",
+  openGraph: {
+    title: "Terms of Service | SyncNexa",
+    description:
+      "SyncNexa's Terms of Service govern the use of the SyncID digital student identity platform and all related services.",
+    url: "https://syncnexa.co/terms",
+  },
+  twitter: {
+    title: "Terms of Service | SyncNexa",
+    description: "SyncNexa's Terms of Service for the SyncID identity platform.",
+  },
 };
 
 export default function TermsOfServicePage() {

@@ -1,8 +1,27 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
+
+export const metadata: Metadata = {
+  title: "SyncNexa — Your Identity, Simplified.",
+  description:
+    "SyncNexa builds zero-knowledge student verification and decentralized trust infrastructure — connecting universities, students, and organizations through cryptographic proof.",
+  openGraph: {
+    title: "SyncNexa — Your Identity, Simplified.",
+    description:
+      "Zero-knowledge student verification and decentralized trust infrastructure for universities, students, and organizations.",
+    url: "https://syncnexa.co",
+  },
+  twitter: {
+    title: "SyncNexa — Your Identity, Simplified.",
+    description:
+      "Zero-knowledge student verification and decentralized trust infrastructure.",
+  },
+};
+
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
