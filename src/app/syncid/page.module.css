@@ -173,7 +173,7 @@
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 5.5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
@@ -346,7 +346,7 @@
 }
 
 .what_graphic_box {
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2rem;
@@ -425,7 +425,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
   border: 2px solid #006d50;
   display: flex;
   align-items: center;

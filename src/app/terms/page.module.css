@@ -89,7 +89,7 @@
   position: relative;
   overflow: hidden;
   padding: 6.5rem 2rem 5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }

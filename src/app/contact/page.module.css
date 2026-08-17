@@ -140,7 +140,7 @@
   position: relative;
   overflow: hidden;
   padding: 6.5rem 2rem 5.5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -283,7 +283,7 @@
 .form_textarea {
   width: 100%;
   padding: 0.85rem 1rem;
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 10px;
   font-size: 0.95rem;
@@ -383,7 +383,7 @@
 
 .social_item:hover {
   border-color: var(--primary, #04d69d);
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
 }
 
 .social_icon {

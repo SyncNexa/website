@@ -173,7 +173,7 @@
   position: relative;
   overflow: hidden;
   padding: 7rem 2rem 5.5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -338,7 +338,7 @@
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  background: #fff8eb;
+  background: var(--accent-light, #fff8eb);
   color: #d97706;
   display: flex;
   align-items: center;
@@ -591,7 +591,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
   border: 2px solid #006d50;
   display: flex;
   align-items: center;
@@ -687,7 +687,7 @@
 .matters_highlight_bar {
   padding: 1.25rem 1.5rem;
   border-left: 3px solid #ffaa01;
-  background: #fffbf0;
+  background: var(--accent-light, #fffbf0);
   border-radius: 0 10px 10px 0;
   font-size: 1.05rem;
   font-weight: 600;
@@ -703,7 +703,7 @@
 }
 
 .metric_box {
-  background: #ffffff;
+  background: var(--bg-card, #ffffff);
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
