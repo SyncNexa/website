@@ -5,6 +5,7 @@ import { SnButton, SnCodeBlock } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
+import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -333,7 +334,11 @@ export default function Home() {
 
             <div className={styles.cards_grid_3}>
               {/* Solution 1: Students */}
-              <div className={styles.tech_solution_card}>
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="rgba(4, 214, 157, 0.22)"
+                secondaryBlobColor="rgba(0, 109, 80, 0.12)"
+              >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
                     CLIENT // SYNCPASS
@@ -360,10 +365,14 @@ export default function Home() {
                   securely on their hardware enclave, unlocking perks everywhere
                   with one-tap consent.
                 </p>
-              </div>
+              </GlassBlobCard>
 
               {/* Solution 2: Schools */}
-              <div className={styles.tech_solution_card}>
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="rgba(255, 170, 1, 0.24)"
+                secondaryBlobColor="rgba(4, 214, 157, 0.12)"
+              >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
                     ADAPTER // FIREWALL
@@ -388,10 +397,14 @@ compliance: "100%_FERPA_NDPR"`}
                   Adapter attests to active enrollment in real-time without
                   releasing any records.
                 </p>
-              </div>
+              </GlassBlobCard>
 
               {/* Solution 3: Organizations */}
-              <div className={styles.tech_solution_card}>
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="rgba(0, 109, 80, 0.22)"
+                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+              >
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>
                     SDK // INTEGRATION
@@ -415,7 +428,7 @@ compliance: "100%_FERPA_NDPR"`}
                   unlocking, zero document review overhead, and 100% elimination
                   of student fraud.
                 </p>
-              </div>
+              </GlassBlobCard>
             </div>
           </div>
         </section>
@@ -557,7 +570,11 @@ compliance: "100%_FERPA_NDPR"`}
 
               {/* SyncID Pass Blueprint Card */}
               <div className={styles.product_ui_side}>
-                <div className={styles.syncid_blueprint_card}>
+                <GlassBlobCard
+                  className={styles.syncid_blueprint_card}
+                  blobColor="rgba(4, 214, 157, 0.22)"
+                  secondaryBlobColor="rgba(255, 170, 1, 0.12)"
+                >
                   <div className={styles.blueprint_top}>
                     <div className={styles.blueprint_brand}>
                       <span className={styles.brand_symbol}>❖</span>
@@ -603,7 +620,7 @@ compliance: "100%_FERPA_NDPR"`}
                     </span>
                     <span className={styles.bp_latency}>18ms verify</span>
                   </div>
-                </div>
+                </GlassBlobCard>
               </div>
             </div>
           </div>
@@ -614,7 +631,11 @@ compliance: "100%_FERPA_NDPR"`}
           <div className={styles.container}>
             <div className={styles.dual_grid}>
               {/* Schools Card */}
-              <div className={styles.enterprise_card}>
+              <GlassBlobCard
+                className={styles.enterprise_card}
+                blobColor="rgba(0, 109, 80, 0.22)"
+                secondaryBlobColor="rgba(4, 214, 157, 0.15)"
+              >
                 <div className={styles.ent_header}>
                   <span className={styles.section_badge}>
                     INSTITUTIONAL GATEWAY
@@ -647,10 +668,14 @@ compliance: "100%_FERPA_NDPR"`}
                     </SnButton>
                   </Link>
                 </div>
-              </div>
+              </GlassBlobCard>
 
               {/* Organizations Card */}
-              <div className={styles.enterprise_card}>
+              <GlassBlobCard
+                className={styles.enterprise_card}
+                blobColor="rgba(255, 170, 1, 0.24)"
+                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+              >
                 <div className={styles.ent_header}>
                   <span className={styles.section_badge}>
                     DEVELOPER PLATFORM
@@ -683,7 +708,7 @@ const result = await client.verify(pairwiseToken);
                     </SnButton>
                   </Link>
                 </div>
-              </div>
+              </GlassBlobCard>
             </div>
           </div>
         </section>
@@ -704,7 +729,11 @@ const result = await client.verify(pairwiseToken);
 
             <div className={styles.cap_matrix_grid}>
               {/* Feature 1: Privacy by Design / Zero Document Retention */}
-              <div className={styles.cap_card}>
+              <GlassBlobCard
+                className={styles.cap_card}
+                blobColor="rgba(4, 214, 157, 0.24)"
+                secondaryBlobColor="rgba(0, 109, 80, 0.12)"
+              >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
                     <span className={styles.cap_code_label}>CAP // 01</span>
@@ -749,10 +778,14 @@ const result = await client.verify(pairwiseToken);
                     </div>
                   </div>
                 </div>
-              </div>
+              </GlassBlobCard>
 
               {/* Feature 2: ~18ms Latency Edge Verification */}
-              <div className={styles.cap_card}>
+              <GlassBlobCard
+                className={styles.cap_card}
+                blobColor="rgba(255, 170, 1, 0.25)"
+                secondaryBlobColor="rgba(239, 68, 68, 0.1)"
+              >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
                     <span className={styles.cap_code_label}>CAP // 02</span>
@@ -811,10 +844,14 @@ const result = await client.verify(pairwiseToken);
                     </div>
                   </div>
                 </div>
-              </div>
+              </GlassBlobCard>
 
               {/* Feature 3: Decentralized Keypairs */}
-              <div className={styles.cap_card}>
+              <GlassBlobCard
+                className={styles.cap_card}
+                blobColor="rgba(0, 109, 80, 0.24)"
+                secondaryBlobColor="rgba(4, 214, 157, 0.14)"
+              >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
                     <span className={styles.cap_code_label}>CAP // 03</span>
@@ -859,10 +896,14 @@ const result = await client.verify(pairwiseToken);
                     </div>
                   </div>
                 </div>
-              </div>
+              </GlassBlobCard>
 
               {/* Feature 4: Universal Interoperability */}
-              <div className={styles.cap_card}>
+              <GlassBlobCard
+                className={styles.cap_card}
+                blobColor="rgba(4, 214, 157, 0.22)"
+                secondaryBlobColor="rgba(255, 170, 1, 0.18)"
+              >
                 <div className={styles.cap_header}>
                   <div className={styles.cap_meta_top}>
                     <span className={styles.cap_code_label}>CAP // 04</span>
@@ -900,7 +941,7 @@ const result = await client.verify(pairwiseToken);
                     </div>
                   </div>
                 </div>
-              </div>
+              </GlassBlobCard>
             </div>
           </div>
         </section>
@@ -916,7 +957,10 @@ const result = await client.verify(pairwiseToken);
             </div>
 
             <div className={styles.cards_grid_3}>
-              <div className={styles.quote_card}>
+              <GlassBlobCard
+                className={styles.quote_card}
+                blobColor="rgba(4, 214, 157, 0.18)"
+              >
                 <p className={styles.quote_text}>
                   &ldquo;SyncID completely eliminated document uploads for my
                   software discounts. I verify once with my school credentials,
@@ -926,9 +970,12 @@ const result = await client.verify(pairwiseToken);
                   <strong>Engineering Student</strong>
                   <span>Federal Univ. of Tech Owerri</span>
                 </div>
-              </div>
+              </GlassBlobCard>
 
-              <div className={styles.quote_card}>
+              <GlassBlobCard
+                className={styles.quote_card}
+                blobColor="rgba(255, 170, 1, 0.18)"
+              >
                 <p className={styles.quote_text}>
                   &ldquo;Our student discount checkout conversion surged by 38%
                   after replacing manual document review with the SyncNexa
@@ -938,9 +985,12 @@ const result = await client.verify(pairwiseToken);
                   <strong>Product Lead</strong>
                   <span>Global EdTech Platform</span>
                 </div>
-              </div>
+              </GlassBlobCard>
 
-              <div className={styles.quote_card}>
+              <GlassBlobCard
+                className={styles.quote_card}
+                blobColor="rgba(0, 109, 80, 0.18)"
+              >
                 <p className={styles.quote_text}>
                   &ldquo;SyncNexa solved our biggest compliance concern. We can
                   attest to student enrollment for discounts without sending our
@@ -950,7 +1000,7 @@ const result = await client.verify(pairwiseToken);
                   <strong>Dean of Student Affairs</strong>
                   <span>Partner University</span>
                 </div>
-              </div>
+              </GlassBlobCard>
             </div>
           </div>
         </section>

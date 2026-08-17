@@ -449,10 +449,7 @@
 }
 
 .tech_solution_card {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2rem;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -675,9 +672,6 @@
 }
 
 .syncid_blueprint_card {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
   padding: 2.25rem;
   width: 100%;
   max-width: 460px;
@@ -813,9 +807,6 @@
 }
 
 .enterprise_card {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -860,9 +851,6 @@
 }
 
 .cap_card {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
   padding: 2.5rem 2.25rem;
   display: flex;
   flex-direction: column;
@@ -1220,9 +1208,6 @@
 }
 
 .quote_card {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;

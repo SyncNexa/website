@@ -1,0 +1,44 @@
+.glass_blob_card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass_blob_card:hover {
+  border-color: rgba(4, 214, 157, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -16px rgba(4, 214, 157, 0.14);
+}
+
+.blob_glow_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--blob-color, rgba(4, 214, 157, 0.2)) 0%,
+    var(--blob-color-2, rgba(255, 170, 1, 0.08)) 45%,
+    transparent 72%
+  );
+}
+
+.card_content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
