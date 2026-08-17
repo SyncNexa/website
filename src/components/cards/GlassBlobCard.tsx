@@ -88,17 +88,27 @@ export default function GlassBlobCard({
         } as React.CSSProperties
       }
     >
-      {/* 10% Opacity Blob Layer Positioned Behind the Card */}
-      <div
-        className={styles.blob_behind_layer}
-        style={{
-          opacity: isHovered ? 0.1 : 0,
-        }}
-        aria-hidden="true"
-      />
-
       {/* Main Glass Surface with Mouse-Position-Aware Skew */}
       <div className={styles.glass_surface}>
+        {/* 10% Opacity Blob Layer Clipped to Container (No Overflow) */}
+        <div
+          className={styles.blob_clipped_layer}
+          style={{
+            opacity: isHovered ? 0.1 : 0,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Spotlight Edge Stroke: Fades around Mouse Position */}
+        <div
+          className={styles.spotlight_border}
+          style={{
+            opacity: isHovered ? 1 : 0,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Card Content */}
         <div className={styles.card_content}>{children}</div>
       </div>
     </div>

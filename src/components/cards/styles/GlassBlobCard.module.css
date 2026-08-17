@@ -5,22 +5,19 @@
   height: 100%;
 }
 
-/* 10% Opacity Blob Layer Behind Card */
-.blob_behind_layer {
+/* 10% Opacity Blob Layer Strictly Clipped to Card Container (No Overflow) */
+.blob_clipped_layer {
   position: absolute;
-  top: -30px;
-  left: -30px;
-  right: -30px;
-  bottom: -30px;
-  border-radius: 28px;
+  inset: 0;
+  border-radius: inherit;
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(36px);
   transition: opacity 0.4s ease;
   background: radial-gradient(
-    480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
     var(--blob-color, #04d69d) 0%,
-    var(--blob-color-2, #ffaa01) 45%,
+    var(--blob-color-2, #ffaa01) 40%,
     transparent 70%
   );
 }
@@ -37,16 +34,37 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(229, 231, 235, 0.85);
   transform: perspective(1000px) skew(var(--skew-x, 0deg), var(--skew-y, 0deg)) rotateZ(var(--skew-z, 0deg));
-  transition: transform 0.15s ease-out, border-color 0.3s ease;
+  transition: transform 0.15s ease-out;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: none;
 }
 
-.glass_card_container:hover .glass_surface {
-  border-color: rgba(4, 214, 157, 0.4);
-  box-shadow: none;
+/* Spotlight Border: Illuminates only surrounding edges near mouse position and fades into others */
+.spotlight_border {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  box-sizing: border-box;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--blob-color, #04d69d) 0%,
+    var(--blob-color-2, rgba(4, 214, 157, 0.5)) 35%,
+    transparent 75%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 4;
+  transition: opacity 0.3s ease;
 }
 
 .card_content {
