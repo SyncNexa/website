@@ -309,11 +309,15 @@ export default function ForOrganizationsPage() {
                 </p>
 
                 <div className={styles.hero_cta_group}>
-                  <Link href="#pricing">
+                  <a
+                    href="https://business.syncnexa.co/signup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <SnButton variant="primary" size="lg">
-                      Start Integration
+                      Get Started Free
                     </SnButton>
-                  </Link>
+                  </a>
                   <Link href="#developer-api">
                     <SnButton variant="stroke" size="lg">
                       View API Specs
@@ -561,11 +565,23 @@ if (verification.isEnrolled) {
                     ))}
                   </div>
 
-                  <Link href="/contact">
-                    <SnButton variant={plan.ctaVariant} size="md">
-                      {plan.ctaText}
-                    </SnButton>
-                  </Link>
+                  {plan.name === "Enterprise" ? (
+                    <Link href="/contact">
+                      <SnButton variant={plan.ctaVariant} size="md">
+                        {plan.ctaText}
+                      </SnButton>
+                    </Link>
+                  ) : (
+                    <a
+                      href="https://business.syncnexa.co/signup"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <SnButton variant={plan.ctaVariant} size="md">
+                        {plan.ctaText}
+                      </SnButton>
+                    </a>
+                  )}
                 </GlassBlobCard>
               ))}
             </div>
@@ -658,11 +674,15 @@ if (verification.isEnrolled) {
               student discounts with sub-20ms latency today.
             </p>
             <div className={styles.cta_buttons}>
-              <Link href="/contact">
+              <a
+                href="https://business.syncnexa.co/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <SnButton variant="primary" size="lg">
-                  Create Organization Account
+                  Get Started Free
                 </SnButton>
-              </Link>
+              </a>
               <Link href="mailto:business@syncnexa.co">
                 <SnButton variant="stroke" size="lg">
                   Contact Solutions Engineer
