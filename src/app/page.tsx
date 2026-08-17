@@ -435,41 +435,55 @@ compliance: "100%_FERPA_NDPR"`}
             </div>
 
             <div className={styles.pipeline_split}>
-              {/* Left Side: Vertically Stacked Steps */}
-              <div className={styles.pipeline_list}>
-                <div className={styles.pipeline_card}>
-                  <div className={styles.pipe_step_num}>01</div>
-                  <div className={styles.pipe_step_body}>
-                    <h3>Student Onboards</h3>
-                    <p>
-                      The student installs SyncID, claims their unique SyncTag,
-                      and signs an enrollment attestation using their on-device
-                      cryptographic keypair.
-                    </p>
-                  </div>
-                </div>
+              {/* Left Side: Vertically Stacked Steps with Continuous Connecting Line */}
+              <div className={styles.pipeline_timeline_wrap}>
+                {/* 2px Continuous Animated Gradient Line */}
+                <div
+                  className={styles.pipeline_vertical_line}
+                  aria-hidden="true"
+                />
 
-                <div className={styles.pipeline_card}>
-                  <div className={styles.pipe_step_num}>02</div>
-                  <div className={styles.pipe_step_body}>
-                    <h3>School Attests</h3>
-                    <p>
-                      The university&apos;s campus connector verifies the student
-                      status against the institutional SIS via an encrypted mTLS
-                      tunnel in real time.
-                    </p>
+                <div className={styles.pipeline_list}>
+                  <div className={styles.pipeline_card}>
+                    <div className={styles.pipe_step_num_box}>
+                      <div className={styles.pipe_step_num}>01</div>
+                    </div>
+                    <div className={styles.pipe_step_body}>
+                      <h3>Student Onboards</h3>
+                      <p>
+                        The student installs SyncID, claims their unique
+                        SyncTag, and signs an enrollment attestation using their
+                        on-device cryptographic keypair.
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div className={styles.pipeline_card}>
-                  <div className={styles.pipe_step_num}>03</div>
-                  <div className={styles.pipe_step_body}>
-                    <h3>Organization Verifies</h3>
-                    <p>
-                      When claiming a benefit, the student presents a single-use
-                      pairwise proof. The business gets an instant &quot;Active
-                      Enrolled&quot; attestation.
-                    </p>
+                  <div className={styles.pipeline_card}>
+                    <div className={styles.pipe_step_num_box}>
+                      <div className={styles.pipe_step_num}>02</div>
+                    </div>
+                    <div className={styles.pipe_step_body}>
+                      <h3>School Attests</h3>
+                      <p>
+                        The university&apos;s campus connector verifies the
+                        student status against the institutional SIS via an
+                        encrypted mTLS tunnel in real time.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className={styles.pipeline_card}>
+                    <div className={styles.pipe_step_num_box}>
+                      <div className={styles.pipe_step_num}>03</div>
+                    </div>
+                    <div className={styles.pipe_step_body}>
+                      <h3>Organization Verifies</h3>
+                      <p>
+                        When claiming a benefit, the student presents a
+                        single-use pairwise proof. The business gets an instant
+                        &quot;Active Enrolled&quot; attestation.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -500,21 +500,68 @@
 
 /* 5. How It Works Pipeline (Split Layout: Vertical Stack Left, Geometric Visual Right) */
 .how_it_works_section {
-  padding: 6.5rem 0;
+  padding: 7rem 0;
   background: transparent;
+  position: relative;
 }
 
 .pipeline_split {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 4.5rem;
+  gap: 5rem;
   align-items: center;
+}
+
+.pipeline_timeline_wrap {
+  position: relative;
+}
+
+.pipeline_vertical_line {
+  position: absolute;
+  top: -2.5rem;
+  bottom: -2.5rem;
+  left: 27px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 214, 157, 0) 0%,
+    #006d50 15%,
+    #04d69d 40%,
+    #ffaa01 65%,
+    #006d50 85%,
+    rgba(4, 214, 157, 0) 100%
+  );
+  background-size: 100% 300%;
+  animation: slowContinuousGradient 14s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes slowContinuousGradient {
+  0% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 8px rgba(4, 214, 157, 0.4), 0 0 3px rgba(255, 170, 1, 0.25);
+  }
+  33% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 10px rgba(255, 170, 1, 0.45), 0 0 3px rgba(0, 109, 80, 0.3);
+  }
+  66% {
+    background-position: 0% 100%;
+    box-shadow: 0 0 9px rgba(0, 109, 80, 0.45), 0 0 3px rgba(4, 214, 157, 0.35);
+  }
+  100% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 8px rgba(4, 214, 157, 0.4), 0 0 3px rgba(255, 170, 1, 0.25);
+  }
 }
 
 .pipeline_list {
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  gap: 4.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .pipeline_card {
@@ -523,8 +570,18 @@
   border-radius: 0;
   padding: 0;
   display: flex;
-  gap: 1.75rem;
+  gap: 2rem;
   align-items: flex-start;
+}
+
+.pipe_step_num_box {
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .pipe_step_num {
@@ -533,26 +590,27 @@
   font-weight: 800;
   line-height: 1;
   color: var(--primary-dark, #006d50);
-  background: transparent;
-  padding: 0;
-  flex-shrink: 0;
+  background: var(--bg-main, #ffffff);
+  padding: 10px 4px;
   letter-spacing: -0.04em;
+  text-align: center;
 }
 
 .pipe_step_body {
   display: flex;
   flex-direction: column;
+  padding-top: 6px;
 }
 
 .pipe_step_body h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--dark, #05241d);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
 }
 
 .pipe_step_body p {
-  font-size: 0.975rem;
+  font-size: 1rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.65;
   margin: 0;
