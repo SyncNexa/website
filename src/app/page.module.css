@@ -82,44 +82,93 @@
   flex-wrap: wrap;
 }
 
-/* 2. Trust Bar */
+/* 2. Trust Bar (Infinite Auto-scrolling Marquee) */
 .trust_bar {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
   background: var(--bg-alt, #f9fbfb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
+  overflow: hidden;
+  position: relative;
 }
 
 .trust_heading {
   text-align: center;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--text-muted, #6b7280);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: 2rem;
 }
 
-.trust_logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+.marquee_container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
 }
 
-.trust_item {
+.marquee_track {
   display: flex;
-  align-items: center;
+  width: max-content;
+  gap: 4rem;
+  animation: scrollInfinite 30s linear infinite;
 }
 
-.institution_badge {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
+.marquee_track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo_card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #374151;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.logo_card:hover {
+  opacity: 1;
   color: var(--dark, #05241d);
+}
+
+.logo_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.logo_name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 /* 3. The Problem Section */

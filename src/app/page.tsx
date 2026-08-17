@@ -5,6 +5,99 @@ import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const logos = [
+    {
+      name: "FUTO",
+      label: "Federal Univ. of Technology Owerri",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+        </svg>
+      ),
+    },
+    {
+      name: "UNILAG",
+      label: "University of Lagos",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
+      ),
+    },
+    {
+      name: "Covenant",
+      label: "Covenant University",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+      ),
+    },
+    {
+      name: "ALU",
+      label: "African Leadership Univ.",
+      icon: (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+    },
+    {
+      name: "Spotify",
+      label: "Spotify",
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.216.353-.674.464-1.027.248-2.813-1.718-6.354-2.107-10.525-1.154-.403.092-.806-.16-.898-.563-.092-.403.16-.806.563-.898 4.568-1.044 8.487-.6 11.64 1.34.352.216.463.674.247 1.027zm1.467-3.262c-.272.443-.852.584-1.295.312-3.22-1.979-8.13-2.553-11.938-1.396-.498.151-1.026-.134-1.177-.632-.151-.498.134-1.026.632-1.177 4.356-1.323 9.774-.683 13.466 1.587.443.272.584.852.312 1.306zm.126-3.41c-3.86-2.292-10.23-2.504-13.914-1.386-.59.179-1.218-.161-1.397-.751-.179-.59.161-1.218.751-1.397 4.234-1.285 11.272-1.037 15.717 1.602.531.315.703 1.006.388 1.537-.315.531-1.006.703-1.545.395z" />
+        </svg>
+      ),
+    },
+    {
+      name: "GitHub",
+      label: "GitHub Education",
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+          <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Notion",
+      label: "Notion",
+      icon: (
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.093-.373L17.76 1.597c-.42-.326-.98-.7-2.054-.607L2.919 2.016c-.466.047-.56.327-.373.514zm-.233 3.638v13.567c0 .746.42 1.026 1.213.98l14.475-.84c.793-.046.98-.56.98-1.166V6.634c0-.607-.233-.886-.793-.84l-15.08.886c-.607.047-.793.373-.793.932zm13.633.98c.093.42 0 .84-.42.887l-.7.14v9.653c-.373.187-.793.28-1.213.28-.7 0-1.12-.28-1.727-1.026l-4.9-7.788v7.927l1.493.327c.047.373-.187.793-.653.84l-3.872.233c-.093-.42 0-.84.42-.887l.933-.233V9.759l-1.306-.14c-.047-.373.187-.793.653-.84l3.966-.233 5.18 8.021V9.572l-1.306-.14c-.047-.373.187-.793.653-.84z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Figma",
+      label: "Figma",
+      icon: (
+        <svg width="20" height="26" viewBox="0 0 38 57" fill="currentColor">
+          <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" />
+          <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" />
+          <path d="M0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5z" />
+          <path d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5z" />
+          <path d="M19 0h9.5a9.5 9.5 0 1 1 0 19H19V0z" />
+        </svg>
+      ),
+    },
+    {
+      name: "Microsoft",
+      label: "Microsoft 365",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4zM11.4 24H0V12.6h11.4V24zm12.6 0H12.6V12.6H24V24z" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <div className={styles.page_wrapper}>
       <TopBar />
@@ -36,28 +129,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 2. Trust Bar (Social Proof Strip) */}
+        {/* 2. Trust Bar (Infinite Auto-scrolling Logos) */}
         <section className={styles.trust_bar}>
           <div className={styles.container}>
             <p className={styles.trust_heading}>
               Trusted by forward-thinking institutions and organizations.
             </p>
-            <div className={styles.trust_logos}>
-              <div className={styles.trust_item}>
-                <span className={styles.institution_badge}>Federal University of Technology Owerri</span>
-              </div>
-              <div className={styles.trust_item}>
-                <span className={styles.institution_badge}>University of Lagos</span>
-              </div>
-              <div className={styles.trust_item}>
-                <span className={styles.institution_badge}>Covenant University</span>
-              </div>
-              <div className={styles.trust_item}>
-                <span className={styles.institution_badge}>African Leadership University</span>
-              </div>
-              <div className={styles.trust_item}>
-                <span className={styles.institution_badge}>SyncNexa Partner Network</span>
-              </div>
+          </div>
+
+          <div className={styles.marquee_container}>
+            <div className={styles.marquee_track}>
+              {/* First loop of logos */}
+              {logos.map((item, idx) => (
+                <div key={`logo-1-${idx}`} className={styles.logo_card}>
+                  <span className={styles.logo_icon}>{item.icon}</span>
+                  <span className={styles.logo_name}>{item.label}</span>
+                </div>
+              ))}
+              {/* Duplicate loop for seamless infinite marquee */}
+              {logos.map((item, idx) => (
+                <div key={`logo-2-${idx}`} className={styles.logo_card}>
+                  <span className={styles.logo_icon}>{item.icon}</span>
+                  <span className={styles.logo_name}>{item.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -167,7 +262,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. How It Works Section (Interactive Flow Diagram replacing old image) */}
+        {/* 5. How It Works Section (Interactive Flow Diagram) */}
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
@@ -281,7 +376,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. Product Highlight Section (Interactive SyncID Mockup replacing old image) */}
+        {/* 6. Product Highlight Section (Interactive SyncID Mockup) */}
         <section className={styles.product_highlight_section}>
           <div className={styles.container}>
             <div className={styles.product_split}>
