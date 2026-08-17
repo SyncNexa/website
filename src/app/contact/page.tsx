@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { SnButton } from "@syncnexa-library/ui";
+import { SnButton, SnInput, SnSelect, SnTextArea } from "@syncnexa-library/ui";
+import type { SnSelectOption } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
@@ -23,15 +24,25 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleSelectChange = (field: string) => (value: string) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const userTypeOptions: SnSelectOption[] = [
+    { value: "Student", label: "Student" },
+    { value: "School / University IT", label: "School / University IT" },
+    { value: "Business / Merchant", label: "Business / Merchant" },
+    { value: "Developer", label: "Developer" },
+    { value: "Press / Investor", label: "Press / Investor" },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -248,87 +259,61 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className={styles.contact_form}>
                     <div className={styles.form_row_dual}>
-                      <div className={styles.form_group}>
-                        <label htmlFor="fullName">Full Name</label>
-                        <input
-                          id="fullName"
-                          name="fullName"
-                          type="text"
-                          required
-                          value={formData.fullName}
-                          onChange={handleChange}
-                          placeholder="e.g. Okolie Anthony"
-                          className={styles.form_input}
-                        />
-                      </div>
+                      <SnInput
+                        id="fullName"
+                        name="fullName"
+                        type="text"
+                        label="Full Name"
+                        required
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        placeholder="e.g. Okolie Anthony"
+                      />
 
-                      <div className={styles.form_group}>
-                        <label htmlFor="email">Email Address</label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="anthony@university.edu"
-                          className={styles.form_input}
-                        />
-                      </div>
+                      <SnInput
+                        id="email"
+                        name="email"
+                        type="email"
+                        label="Email Address"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="anthony@university.edu"
+                      />
                     </div>
 
                     <div className={styles.form_row_dual}>
-                      <div className={styles.form_group}>
-                        <label htmlFor="userType">I Am A...</label>
-                        <select
-                          id="userType"
-                          name="userType"
-                          value={formData.userType}
-                          onChange={handleChange}
-                          className={styles.form_select}
-                        >
-                          <option value="Student">Student</option>
-                          <option value="School / University IT">
-                            School / University IT
-                          </option>
-                          <option value="Business / Merchant">
-                            Business / Merchant
-                          </option>
-                          <option value="Developer">Developer</option>
-                          <option value="Press / Investor">
-                            Press / Investor
-                          </option>
-                        </select>
-                      </div>
+                      <SnSelect
+                        id="userType"
+                        label="I Am A..."
+                        options={userTypeOptions}
+                        value={formData.userType}
+                        onChange={handleSelectChange("userType")}
+                      />
 
-                      <div className={styles.form_group}>
-                        <label htmlFor="subject">Subject</label>
-                        <input
-                          id="subject"
-                          name="subject"
-                          type="text"
-                          required
-                          value={formData.subject}
-                          onChange={handleChange}
-                          placeholder="Integration inquiry, campus pilot..."
-                          className={styles.form_input}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={styles.form_group}>
-                      <label htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
+                      <SnInput
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        label="Subject"
                         required
-                        rows={5}
-                        value={formData.message}
+                        value={formData.subject}
                         onChange={handleChange}
-                        placeholder="Tell us about your campus, platform, or project..."
-                        className={styles.form_textarea}
+                        placeholder="Integration inquiry, campus pilot..."
                       />
                     </div>
+
+                    <SnTextArea
+                      id="message"
+                      name="message"
+                      label="Message"
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your campus, platform, or project..."
+                      autoResize
+                    />
 
                     <SnButton
                       variant="primary"

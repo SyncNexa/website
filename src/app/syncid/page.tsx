@@ -7,6 +7,7 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import SyncIdHeroDevice from "@/components/illustrations/SyncIdHeroDevice";
 import {
   Music,
   Code2,
@@ -263,73 +264,7 @@ export default function SyncIdPage() {
 
               {/* Mobile Phone Mockup */}
               <div className={styles.hero_ui_side}>
-                <GlassBlobCard
-                  className={styles.phone_glass_card}
-                  blobColor="#04d69d"
-                  secondaryBlobColor="#ffaa01"
-                >
-                  <div className={styles.phone_frame}>
-                    <div className={styles.phone_header}>
-                      <span className={styles.phone_time}>9:41</span>
-                      <div className={styles.phone_notch}></div>
-                      <span className={styles.phone_battery}>100%</span>
-                    </div>
-
-                    <div className={styles.phone_screen_content}>
-                      <div className={styles.app_bar}>
-                        <span className={styles.app_logo_text}>SyncID</span>
-                        <span className={styles.app_badge_active}>Verified</span>
-                      </div>
-
-                      <div className={styles.id_card_visual}>
-                        <div className={styles.id_card_top}>
-                          <span className={styles.uni_name}>
-                            Federal Univ. of Tech Owerri
-                          </span>
-                          <span className={styles.session_tag}>2025/2026</span>
-                        </div>
-                        <div className={styles.id_student_name}>
-                          Okolie Anthony
-                        </div>
-                        <div className={styles.id_handle}>
-                          @anthony &middot; Computer Science
-                        </div>
-                        <div className={styles.id_card_bottom}>
-                          <span className={styles.id_chip}>ENROLLED</span>
-                          <span className={styles.id_auth_code}>
-                            #SN-8924-OK
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className={styles.app_quick_actions}>
-                        <div className={styles.quick_action_item}>
-                          <div>
-                            <Zap size={14} />
-                          </div>
-                          <span>Instant Share</span>
-                        </div>
-                        <div className={styles.quick_action_item}>
-                          <div>
-                            <ShieldCheck size={14} />
-                          </div>
-                          <span>Privacy Vault</span>
-                        </div>
-                        <div className={styles.quick_action_item}>
-                          <div>
-                            <Tag size={14} />
-                          </div>
-                          <span>Perks (24)</span>
-                        </div>
-                      </div>
-
-                      <div className={styles.live_attestation_bubble}>
-                        <span className={styles.bubble_dot}></span>
-                        <span>Ready to verify on Spotify, Notion & GitHub</span>
-                      </div>
-                    </div>
-                  </div>
-                </GlassBlobCard>
+                <SyncIdHeroDevice className={styles.hero_device_wrapper} />
               </div>
             </div>
           </div>
