@@ -5,7 +5,7 @@
   height: 100%;
 }
 
-/* 10% Opacity Blob Layer Strictly Clipped to Card Container (No Overflow) */
+/* 5% Opacity Blob Layer Strictly Clipped to Card Container (No Overflow) */
 .blob_clipped_layer {
   position: absolute;
   inset: 0;
@@ -22,7 +22,7 @@
   );
 }
 
-/* Glass Surface with Mouse-Position-Aware Skew & Z-Skew (No box shadow, no translateY translation) */
+/* Glass Surface (Flat, No Skew, No Box Shadow) */
 .glass_surface {
   position: relative;
   z-index: 1;
@@ -33,8 +33,6 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(229, 231, 235, 0.85);
-  transform: perspective(1000px) skew(var(--skew-x, 0deg), var(--skew-y, 0deg)) rotateZ(var(--skew-z, 0deg));
-  transition: transform 0.15s ease-out;
   display: flex;
   flex-direction: column;
   overflow: hidden;
