@@ -91,6 +91,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable} suppressHydrationWarning>
+      <head>
+        <meta name="color-scheme" content="light dark" />
+      </head>
       <body className={poppins.className} suppressHydrationWarning>
         {children}
       </body>

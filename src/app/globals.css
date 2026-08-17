@@ -2,6 +2,8 @@
 @import "@syncnexa-library/ui/ui.css";
 
 :root {
+  color-scheme: light dark;
+
   --primary: #04d69d;
   --primary-hover: #03be8b;
   --primary-dark: #006d50;
@@ -27,12 +29,107 @@
   --text-muted: #6b7280;
   --text-subtle: #9ca3af;
 
+  /* topbar / glass surfaces */
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(229, 231, 235, 0.85);
+  --mobile-drawer-bg: #ffffff;
+
   --sn-font:
     "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-poppins:
     "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* ─── Dark Mode ────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* Site tokens */
+    --primary: #04d69d;
+    --primary-hover: #03be8b;
+    --primary-dark: #2affc0;
+    --primary-light: rgba(4, 214, 157, 0.12);
+    --primary-border: rgba(4, 214, 157, 0.25);
+
+    --dark: #e2f5f0;
+    --dark-surface: #c8ede3;
+    --dark-hover: #d4f0e8;
+
+    --accent: #ffaa01;
+    --accent-light: rgba(255, 170, 1, 0.12);
+
+    --bg-main: #0a1a15;
+    --bg-alt: #0d2019;
+    --bg-card: #0f2318;
+    --stroke: rgba(255, 255, 255, 0.08);
+    --stroke-subtle: rgba(255, 255, 255, 0.04);
+
+    --text-main: #e8f5f1;
+    --text-muted: #8bada3;
+    --text-subtle: #5e8278;
+
+    /* surface tokens */
+    --nav-bg: rgba(10, 26, 21, 0.88);
+    --glass-bg: rgba(13, 32, 25, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.07);
+    --mobile-drawer-bg: #0d2019;
+
+    /* ── Override @syncnexa-library/ui tokens ─────────────────────────── */
+    --sn-bg: #0d2019;
+    --sn-bg-surface: #0f2318;
+    --sn-bg-secondary: #112a1f;
+    --sn-bg-secondary-hover: #163526;
+    --sn-bg-input: #0f2318;
+    --sn-bg-card: #0f2318;
+
+    --sn-text: #d4ede6;
+    --sn-text-dark: #e8f5f1;
+    --sn-text-light: #7aaa9e;
+    --sn-text-muted: #5e8278;
+    --sn-text-placeholder: #4a6e66;
+    --sn-text-white: #ffffff;
+
+    --sn-border: rgba(255, 255, 255, 0.1);
+    --sn-border-input: rgba(255, 255, 255, 0.12);
+    --sn-stroke: rgba(255, 255, 255, 0.08);
+
+    --sn-navy: #0a1a15;
+    --sn-navy-hover: #0d2019;
+    --sn-navy-light: #0d2019;
+
+    --sn-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --sn-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --sn-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --sn-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Fix any hardcoded whites inside component library dropdowns/modals */
+  .sn-phone-dropdown,
+  .sn-select-dropdown-list,
+  .sn-select-dropdown-portal,
+  .sn-drop-filter-list,
+  .sn-drop-filter-portal,
+  .sn-filter-popover,
+  .sn-modal-content,
+  .sn-modal-header,
+  .sn-drawer-content,
+  .sn-drawer-header,
+  .sn-table-top-bar,
+  .sn-table-responsive,
+  .sn-table-footer {
+    background-color: var(--sn-bg-surface) !important;
+    border-color: var(--sn-border) !important;
+  }
+
+  /* Subtle tinted scrollbar for dark mode */
+  * {
+    scrollbar-color: rgba(4, 214, 157, 0.2) transparent;
+  }
+}
+
+/* ─── Base Styles ──────────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
