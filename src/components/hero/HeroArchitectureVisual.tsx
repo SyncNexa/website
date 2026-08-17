@@ -47,19 +47,6 @@ export default function HeroArchitectureVisual() {
               <circle cx="30" cy="0" r="1" fill="#04D69D" fillOpacity="0.15" />
             </pattern>
 
-            {/* Glowing Flow Gradients */}
-            <linearGradient id="streamGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#04D69D" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#04D69D" stopOpacity="1" />
-              <stop offset="100%" stopColor="#006D50" stopOpacity="0.3" />
-            </linearGradient>
-
-            <linearGradient id="streamGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#FFAA01" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#FFAA01" stopOpacity="1" />
-              <stop offset="100%" stopColor="#04D69D" stopOpacity="0.3" />
-            </linearGradient>
-
             <linearGradient id="coreGlow" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#04D69D" stopOpacity="0.15" />
               <stop offset="100%" stopColor="#006D50" stopOpacity="0.02" />
@@ -171,7 +158,7 @@ export default function HeroArchitectureVisual() {
               width="170"
               height="160"
               rx="14"
-              fill="#ffffff"
+              fill="none"
               stroke="#E5E7EB"
               strokeWidth="1.5"
             />
@@ -193,7 +180,7 @@ export default function HeroArchitectureVisual() {
             </text>
 
             {/* Inner Specs */}
-            <rect x="14" y="58" width="142" height="42" rx="6" fill="#F9FBFB" stroke="#E5E7EB" />
+            <rect x="14" y="58" width="142" height="42" rx="6" fill="none" stroke="#E5E7EB" />
             <text x="22" y="73" fill="#6B7280" fontSize="8.5" fontWeight="700" fontFamily="sans-serif">
               PAIRWISE KEY
             </text>
@@ -214,7 +201,7 @@ export default function HeroArchitectureVisual() {
               width="170"
               height="65"
               rx="12"
-              fill="#ffffff"
+              fill="none"
               stroke="#FFAA01"
               strokeWidth="1.5"
             />
@@ -275,7 +262,7 @@ export default function HeroArchitectureVisual() {
               width="180"
               height="60"
               rx="12"
-              fill="#ffffff"
+              fill="none"
               stroke="#E5E7EB"
               strokeWidth="1.5"
             />
@@ -305,7 +292,7 @@ export default function HeroArchitectureVisual() {
               width="180"
               height="60"
               rx="12"
-              fill="#ffffff"
+              fill="none"
               stroke="#E5E7EB"
               strokeWidth="1.5"
             />
@@ -331,7 +318,7 @@ export default function HeroArchitectureVisual() {
               width="180"
               height="60"
               rx="12"
-              fill="#ffffff"
+              fill="none"
               stroke="#E5E7EB"
               strokeWidth="1.5"
             />

@@ -118,7 +118,7 @@
 /* 2. Trust Bar (Infinite Auto-scrolling Marquee) */
 .trust_bar {
   padding: 3.5rem 0;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
   overflow: hidden;
   position: relative;
@@ -204,10 +204,10 @@
   letter-spacing: -0.01em;
 }
 
-/* 3. The Problem Section (Technical Schematics Breakdown) */
+/* 3. The Problem Section (Transparent Cards) */
 .problem_section {
   padding: 6.5rem 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .cards_grid_3 {
@@ -217,7 +217,7 @@
 }
 
 .tech_problem_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2rem;
@@ -250,7 +250,7 @@
 }
 
 .problem_diagram_box {
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 10px;
   padding: 1.25rem;
@@ -379,20 +379,22 @@
   justify-content: space-between;
   padding: 4px 8px;
   border-radius: 4px;
+  border: 1px solid var(--stroke, #e5e7eb);
 }
 
 .funnel_bar_start {
-  background: #f1f5f9;
+  background: transparent;
   color: #475569;
 }
 
 .funnel_bar_drop {
   background: #fee2e2;
   color: #b91c1c;
+  border-color: #fca5a5;
 }
 
 .funnel_bar_end {
-  background: #f1f5f9;
+  background: transparent;
   color: #475569;
 }
 
@@ -414,16 +416,16 @@
   line-height: 1.6;
 }
 
-/* 4. The Solution Section */
+/* 4. The Solution Section (Transparent Cards) */
 .solution_section {
   padding: 6.5rem 0;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-top: 1px solid var(--stroke, #e5e7eb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .tech_solution_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2rem;
@@ -442,8 +444,8 @@
 }
 
 .solution_diagram_box {
-  background: #071713;
-  border: 1px solid rgba(4, 214, 157, 0.2);
+  background: transparent;
+  border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 10px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -467,24 +469,24 @@
 }
 
 .code_key {
-  color: #9ca3af;
+  color: var(--text-muted, #6b7280);
 }
 
 .code_val {
-  color: #e5e7eb;
+  color: var(--dark, #05241d);
 }
 
 .code_val_green {
-  color: #04d69d;
+  color: var(--primary-dark, #006d50);
   font-weight: 700;
 }
 
 .code_kw {
-  color: #ffaa01;
+  color: #b45309;
 }
 
 .code_fn {
-  color: #04d69d;
+  color: var(--primary-dark, #006d50);
 }
 
 .tech_solution_card h3 {
@@ -500,10 +502,10 @@
   line-height: 1.6;
 }
 
-/* 5. How It Works Pipeline */
+/* 5. How It Works Pipeline (Transparent Cards) */
 .how_it_works_section {
   padding: 6.5rem 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .pipeline_grid {
@@ -513,7 +515,7 @@
 }
 
 .pipeline_card {
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.25rem;
@@ -574,10 +576,10 @@
   color: var(--primary-dark, #006d50);
 }
 
-/* 6. Product Highlight (SyncID Blueprint) */
+/* 6. Product Highlight (Transparent Blueprint Card) */
 .product_highlight_section {
   padding: 6.5rem 0;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-top: 1px solid var(--stroke, #e5e7eb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -653,7 +655,7 @@
 }
 
 .syncid_blueprint_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 20px;
   padding: 2.25rem;
@@ -733,7 +735,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 12px;
   padding: 1.25rem;
@@ -777,10 +779,10 @@
   color: var(--primary-dark, #006d50);
 }
 
-/* 7. Dual Audience Enterprise Cards */
+/* 7. Dual Audience Enterprise Cards (Transparent) */
 .dual_audience_section {
   padding: 6.5rem 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .dual_grid {
@@ -790,7 +792,7 @@
 }
 
 .enterprise_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 20px;
   padding: 3rem 2.5rem;
@@ -817,8 +819,8 @@
 }
 
 .ent_code_snippet {
-  background: #071713;
-  border: 1px solid rgba(4, 214, 157, 0.2);
+  background: transparent;
+  border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 12px;
   padding: 1.25rem;
   margin-bottom: 2rem;
@@ -829,8 +831,8 @@
   font-family: monospace;
   font-size: 0.725rem;
   font-weight: 700;
-  color: #9ca3af;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted, #6b7280);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
   padding-bottom: 0.65rem;
   margin-bottom: 0.85rem;
 }
@@ -839,7 +841,7 @@
   margin: 0;
   font-family: monospace;
   font-size: 0.8rem;
-  color: #a7f3d0;
+  color: var(--dark, #05241d);
   line-height: 1.6;
 }
 
@@ -847,10 +849,10 @@
   margin-top: auto;
 }
 
-/* 8. Why SyncNexa Bento Grid */
+/* 8. Why SyncNexa Bento Grid (Transparent) */
 .why_section {
   padding: 6.5rem 0;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-top: 1px solid var(--stroke, #e5e7eb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -862,7 +864,7 @@
 }
 
 .bento_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.25rem 1.75rem;
@@ -904,14 +906,14 @@
   align-self: flex-start;
 }
 
-/* 9. Testimonials Quote Cards */
+/* 9. Testimonials Quote Cards (Transparent) */
 .testimonial_section {
   padding: 6.5rem 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .quote_card {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 16px;
   padding: 2.5rem 2rem;

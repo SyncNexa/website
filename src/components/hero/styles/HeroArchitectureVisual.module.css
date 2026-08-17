@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1040px;
   margin: 3.5rem auto 0;
-  background: #ffffff;
+  background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 20px;
   overflow: hidden;
@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.85rem 1.5rem;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
   font-family: monospace;
   font-size: 0.775rem;
@@ -75,7 +75,7 @@
 .schematic_canvas {
   width: 100%;
   padding: 1.5rem 1rem;
-  background: #ffffff;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +121,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 0.85rem 1.5rem;
-  background: var(--bg-alt, #f9fbfb);
+  background: transparent;
   border-top: 1px solid var(--stroke, #e5e7eb);
   font-size: 0.825rem;
   color: var(--text-muted, #6b7280);
