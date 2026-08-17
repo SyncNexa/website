@@ -12,7 +12,14 @@ export default function Home() {
       name: "FUTO",
       label: "Federal Univ. of Technology Owerri",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
           <path d="M6 12v5c3 3 9 3 12 0v-5" />
         </svg>
@@ -22,7 +29,14 @@ export default function Home() {
       name: "UNILAG",
       label: "University of Lagos",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <circle cx="12" cy="12" r="10" />
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
           <path d="M2 12h20" />
@@ -33,7 +47,14 @@ export default function Home() {
       name: "Covenant",
       label: "Covenant University",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <path d="M12 2L2 7l10 5 10-5-10-5z" />
           <path d="M2 17l10 5 10-5" />
           <path d="M2 12l10 5 10-5" />
@@ -44,7 +65,14 @@ export default function Home() {
       name: "ALU",
       label: "African Leadership Univ.",
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ),
@@ -63,7 +91,11 @@ export default function Home() {
       label: "GitHub Education",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-          <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          />
         </svg>
       ),
     },
@@ -109,13 +141,15 @@ export default function Home() {
         <section className={styles.hero}>
           <HeroGeometry />
           <div className={styles.hero_container}>
-            <div className={styles.section_badge}>DECENTRALIZED TRUST INFRASTRUCTURE</div>
             <h1 className={styles.hero_title}>
-              Your Identity, <span className={styles.gradient_text}>Simplified.</span>
+              Your Identity,{" "}
+              <span className={styles.gradient_text}>Simplified.</span>
             </h1>
 
             <p className={styles.hero_subtitle}>
-              SyncNexa builds cryptographic trust infrastructure for institutions, students, and businesses. Verify once. Prove anywhere. Without ever sharing sensitive records.
+              SyncNexa builds cryptographic trust infrastructure for
+              institutions, students, and businesses. Verify once. Prove
+              anywhere. Without ever sharing sensitive records.
             </p>
 
             <div className={styles.hero_cta_group}>
@@ -168,10 +202,16 @@ export default function Home() {
         <section className={styles.problem_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <span className={styles.section_badge_danger}>THE BOTTLENECK</span>
-              <h2 className={styles.section_title}>Identity verification is broken.</h2>
+              <span className={styles.section_badge_danger}>
+                THE BOTTLENECK
+              </span>
+              <h2 className={styles.section_title}>
+                Identity verification is broken.
+              </h2>
               <p className={styles.section_subtitle}>
-                Legacy verification pipelines create document fatigue for students, security liability for universities, and heavy drop-off rates for businesses.
+                Legacy verification pipelines create document fatigue for
+                students, security liability for universities, and heavy
+                drop-off rates for businesses.
               </p>
             </div>
 
@@ -192,12 +232,16 @@ export default function Home() {
                         <div className={styles.doc_line_2}></div>
                       </div>
                     </div>
-                    <div className={styles.doc_warning_tag}>EXPOSED TO 10+ 3RD PARTIES</div>
+                    <div className={styles.doc_warning_tag}>
+                      EXPOSED TO 10+ 3RD PARTIES
+                    </div>
                   </div>
                 </div>
                 <h3>For Students</h3>
                 <p>
-                  Uploading sensitive transcripts, admission letters, and national IDs to dozens of third parties leaves digital footprints and risks identity theft.
+                  Uploading sensitive transcripts, admission letters, and
+                  national IDs to dozens of third parties leaves digital
+                  footprints and risks identity theft.
                 </p>
               </div>
 
@@ -205,7 +249,9 @@ export default function Home() {
               <div className={styles.tech_problem_card}>
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>FLOW // 02</span>
-                  <span className={styles.card_tag_danger}>COMPLIANCE LIABILITY</span>
+                  <span className={styles.card_tag_danger}>
+                    COMPLIANCE LIABILITY
+                  </span>
                 </div>
                 <div className={styles.problem_diagram_box}>
                   <div className={styles.sis_wireframe}>
@@ -217,12 +263,16 @@ export default function Home() {
                       <span>MANUAL BACKLOG:</span>
                       <strong>3-5 DAYS</strong>
                     </div>
-                    <div className={styles.sis_alert_box}>FERPA / NDPR PRIVACY RISK</div>
+                    <div className={styles.sis_alert_box}>
+                      FERPA / NDPR PRIVACY RISK
+                    </div>
                   </div>
                 </div>
                 <h3>For Schools</h3>
                 <p>
-                  Handling manual verification requests strains institutional registries and exposes sensitive student databases to unvetted external querying.
+                  Handling manual verification requests strains institutional
+                  registries and exposes sensitive student databases to unvetted
+                  external querying.
                 </p>
               </div>
 
@@ -240,7 +290,9 @@ export default function Home() {
                     </div>
                     <div className={styles.funnel_bar_drop}>
                       <span>Manual Verification Gate</span>
-                      <strong className={styles.text_danger}>-42% Abandonment</strong>
+                      <strong className={styles.text_danger}>
+                        -42% Abandonment
+                      </strong>
                     </div>
                     <div className={styles.funnel_bar_end}>
                       <span>Completed Conversions</span>
@@ -250,7 +302,9 @@ export default function Home() {
                 </div>
                 <h3>For Organizations</h3>
                 <p>
-                  Multi-day approval queues and invasive document requirements kill checkout conversion and leave businesses vulnerable to forged ID cards.
+                  Multi-day approval queues and invasive document requirements
+                  kill checkout conversion and leave businesses vulnerable to
+                  forged ID cards.
                 </p>
               </div>
             </div>
@@ -262,9 +316,13 @@ export default function Home() {
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>THE TRUST PROTOCOL</span>
-              <h2 className={styles.section_title}>SyncNexa changes the game.</h2>
+              <h2 className={styles.section_title}>
+                SyncNexa changes the game.
+              </h2>
               <p className={styles.section_subtitle}>
-                We engineered a zero-knowledge trust mesh where students own their keys, universities remain the single source of truth, and businesses verify in &lt;20ms.
+                We engineered a zero-knowledge trust mesh where students own
+                their keys, universities remain the single source of truth, and
+                businesses verify in &lt;20ms.
               </p>
             </div>
 
@@ -272,18 +330,26 @@ export default function Home() {
               {/* Solution 1: Students */}
               <div className={styles.tech_solution_card}>
                 <div className={styles.card_meta_header}>
-                  <span className={styles.card_code_label}>CLIENT // SYNCPASS</span>
-                  <span className={styles.card_tag_success}>ZERO DOC STORAGE</span>
+                  <span className={styles.card_code_label}>
+                    CLIENT // SYNCPASS
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    ZERO DOC STORAGE
+                  </span>
                 </div>
                 <div className={styles.solution_diagram_box}>
                   <div className={styles.sol_code_block}>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>keypair:</span>
-                      <span className={styles.code_val}>&quot;Ed25519_Enclave&quot;</span>
+                      <span className={styles.code_val}>
+                        &quot;Ed25519_Enclave&quot;
+                      </span>
                     </div>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>pairwiseId:</span>
-                      <span className={styles.code_val}>&quot;pw_9f81a7b4&quot;</span>
+                      <span className={styles.code_val}>
+                        &quot;pw_9f81a7b4&quot;
+                      </span>
                     </div>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>sharedDocs:</span>
@@ -293,48 +359,67 @@ export default function Home() {
                 </div>
                 <h3>Decentralized SyncID</h3>
                 <p>
-                  Students verify enrollment once. Their credential lives securely on their hardware enclave, unlocking perks everywhere with one-tap consent.
+                  Students verify enrollment once. Their credential lives
+                  securely on their hardware enclave, unlocking perks everywhere
+                  with one-tap consent.
                 </p>
               </div>
 
               {/* Solution 2: Schools */}
               <div className={styles.tech_solution_card}>
                 <div className={styles.card_meta_header}>
-                  <span className={styles.card_code_label}>ADAPTER // FIREWALL</span>
-                  <span className={styles.card_tag_success}>mTLS 1.3 TUNNEL</span>
+                  <span className={styles.card_code_label}>
+                    ADAPTER // FIREWALL
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    mTLS 1.3 TUNNEL
+                  </span>
                 </div>
                 <div className={styles.solution_diagram_box}>
                   <div className={styles.sol_code_block}>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>connection:</span>
-                      <span className={styles.code_val}>&quot;Behind Firewall&quot;</span>
+                      <span className={styles.code_val}>
+                        &quot;Behind Firewall&quot;
+                      </span>
                     </div>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>dataEgress:</span>
-                      <span className={styles.code_val_green}>&quot;0 bytes (attest-only)&quot;</span>
+                      <span className={styles.code_val_green}>
+                        &quot;0 bytes (attest-only)&quot;
+                      </span>
                     </div>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>compliance:</span>
-                      <span className={styles.code_val_green}>&quot;100% FERPA/NDPR&quot;</span>
+                      <span className={styles.code_val_green}>
+                        &quot;100% FERPA/NDPR&quot;
+                      </span>
                     </div>
                   </div>
                 </div>
                 <h3>Native SIS Connectors</h3>
                 <p>
-                  Institutional systems stay behind campus firewalls. The Trust Adapter attests to active enrollment in real-time without releasing any records.
+                  Institutional systems stay behind campus firewalls. The Trust
+                  Adapter attests to active enrollment in real-time without
+                  releasing any records.
                 </p>
               </div>
 
               {/* Solution 3: Organizations */}
               <div className={styles.tech_solution_card}>
                 <div className={styles.card_meta_header}>
-                  <span className={styles.card_code_label}>SDK // INTEGRATION</span>
-                  <span className={styles.card_tag_success}>&lt; 20MS LATENCY</span>
+                  <span className={styles.card_code_label}>
+                    SDK // INTEGRATION
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    &lt; 20MS LATENCY
+                  </span>
                 </div>
                 <div className={styles.solution_diagram_box}>
                   <div className={styles.sol_code_block}>
                     <div className={styles.sol_code_line}>
-                      <span className={styles.code_kw}>const</span> res = <span className={styles.code_fn}>verify</span>(proof);
+                      <span className={styles.code_kw}>const</span> res ={" "}
+                      <span className={styles.code_fn}>verify</span>(proof);
                     </div>
                     <div className={styles.sol_code_line}>
                       <span className={styles.code_key}>status:</span>
@@ -348,7 +433,9 @@ export default function Home() {
                 </div>
                 <h3>Instant Verification SDK</h3>
                 <p>
-                  One drop-in API or UI component. Instant student benefit unlocking, zero document review overhead, and 100% elimination of student fraud.
+                  One drop-in API or UI component. Instant student benefit
+                  unlocking, zero document review overhead, and 100% elimination
+                  of student fraud.
                 </p>
               </div>
             </div>
@@ -360,9 +447,12 @@ export default function Home() {
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>PROTOCOL PIPELINE</span>
-              <h2 className={styles.section_title}>Three layers. One trust protocol.</h2>
+              <h2 className={styles.section_title}>
+                Three layers. One trust protocol.
+              </h2>
               <p className={styles.section_subtitle}>
-                A synchronized verification loop executed across hardware enclaves, university registries, and edge relays.
+                A synchronized verification loop executed across hardware
+                enclaves, university registries, and edge relays.
               </p>
             </div>
 
@@ -370,11 +460,15 @@ export default function Home() {
               <div className={styles.pipeline_card}>
                 <div className={styles.pipe_step_header}>
                   <span className={styles.pipe_step_num}>01</span>
-                  <span className={styles.pipe_step_tag}>CLIENT ENROLLMENT</span>
+                  <span className={styles.pipe_step_tag}>
+                    CLIENT ENROLLMENT
+                  </span>
                 </div>
                 <h3>Student Onboards</h3>
                 <p>
-                  The student installs SyncID, claims their unique SyncTag, and signs an enrollment attestation using their on-device cryptographic keypair.
+                  The student installs SyncID, claims their unique SyncTag, and
+                  signs an enrollment attestation using their on-device
+                  cryptographic keypair.
                 </p>
                 <div className={styles.pipe_card_footer}>
                   <span>KEY GENERATION: Ed25519</span>
@@ -388,7 +482,9 @@ export default function Home() {
                 </div>
                 <h3>School Attests</h3>
                 <p>
-                  The university&apos;s campus connector verifies the student status against the institutional SIS via an encrypted mTLS tunnel in real time.
+                  The university&apos;s campus connector verifies the student
+                  status against the institutional SIS via an encrypted mTLS
+                  tunnel in real time.
                 </p>
                 <div className={styles.pipe_card_footer}>
                   <span>ATTESTATION: ZERO-KNOWLEDGE</span>
@@ -402,7 +498,9 @@ export default function Home() {
                 </div>
                 <h3>Organization Verifies</h3>
                 <p>
-                  When claiming a benefit, the student presents a single-use pairwise proof. The business gets an instant &quot;Active Enrolled&quot; attestation.
+                  When claiming a benefit, the student presents a single-use
+                  pairwise proof. The business gets an instant &quot;Active
+                  Enrolled&quot; attestation.
                 </p>
                 <div className={styles.pipe_card_footer}>
                   <span>EXECUTION: &lt; 20MS EDGE</span>
@@ -418,9 +516,13 @@ export default function Home() {
             <div className={styles.product_split}>
               <div className={styles.product_text_side}>
                 <span className={styles.section_badge}>FLAGSHIP PRODUCT</span>
-                <h2 className={styles.product_title}>SyncID — Built for Students. Trusted by Everyone.</h2>
+                <h2 className={styles.product_title}>
+                  SyncID — Built for Students. Trusted by Everyone.
+                </h2>
                 <p className={styles.product_description}>
-                  SyncID is the digital passport for higher education. It replaces paper cards and manual uploads with an instant, private cryptographic credential.
+                  SyncID is the digital passport for higher education. It
+                  replaces paper cards and manual uploads with an instant,
+                  private cryptographic credential.
                 </p>
 
                 <div className={styles.tech_spec_list}>
@@ -428,7 +530,10 @@ export default function Home() {
                     <div className={styles.spec_check}>✓</div>
                     <div>
                       <strong>Zero Document Storage</strong>
-                      <p>No transcripts, ID scans, or admission letters stored in central databases.</p>
+                      <p>
+                        No transcripts, ID scans, or admission letters stored in
+                        central databases.
+                      </p>
                     </div>
                   </div>
 
@@ -436,7 +541,10 @@ export default function Home() {
                     <div className={styles.spec_check}>✓</div>
                     <div>
                       <strong>Pairwise Pseudonyms</strong>
-                      <p>Unique identifier per service prevents cross-platform identity correlation.</p>
+                      <p>
+                        Unique identifier per service prevents cross-platform
+                        identity correlation.
+                      </p>
                     </div>
                   </div>
 
@@ -444,7 +552,10 @@ export default function Home() {
                     <div className={styles.spec_check}>✓</div>
                     <div>
                       <strong>Instant 1-Tap Revocation</strong>
-                      <p>Students maintain continuous control and can sever partner access anytime.</p>
+                      <p>
+                        Students maintain continuous control and can sever
+                        partner access anytime.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -466,14 +577,18 @@ export default function Home() {
                       <span className={styles.brand_symbol}>❖</span>
                       <strong>SyncID Pass</strong>
                     </div>
-                    <span className={styles.blueprint_status}>STATUS: ATTESTED</span>
+                    <span className={styles.blueprint_status}>
+                      STATUS: ATTESTED
+                    </span>
                   </div>
 
                   <div className={styles.blueprint_user}>
                     <div className={styles.blueprint_avatar}>OA</div>
                     <div className={styles.blueprint_meta}>
                       <h4>Okolie Anthony</h4>
-                      <span className={styles.blueprint_tag}>@anthony &middot; FUTO</span>
+                      <span className={styles.blueprint_tag}>
+                        @anthony &middot; FUTO
+                      </span>
                     </div>
                   </div>
 
@@ -497,7 +612,9 @@ export default function Home() {
                   </div>
 
                   <div className={styles.blueprint_bottom}>
-                    <span className={styles.bp_guarantee}>🔒 Cryptographically signed by root institution</span>
+                    <span className={styles.bp_guarantee}>
+                      🔒 Cryptographically signed by root institution
+                    </span>
                     <span className={styles.bp_latency}>18ms verify</span>
                   </div>
                 </div>
@@ -513,15 +630,21 @@ export default function Home() {
               {/* Schools Card */}
               <div className={styles.enterprise_card}>
                 <div className={styles.ent_header}>
-                  <span className={styles.section_badge}>INSTITUTIONAL GATEWAY</span>
+                  <span className={styles.section_badge}>
+                    INSTITUTIONAL GATEWAY
+                  </span>
                   <h2>For Schools</h2>
                 </div>
                 <p>
-                  Protect your student data while empowering your students to access global perks. Connect your existing SIS (Oracle Campus, Ellucian Banner, or custom) in minutes.
+                  Protect your student data while empowering your students to
+                  access global perks. Connect your existing SIS (Oracle Campus,
+                  Ellucian Banner, or custom) in minutes.
                 </p>
 
                 <div className={styles.ent_code_snippet}>
-                  <div className={styles.snippet_header}>syncnexa-adapter.yaml</div>
+                  <div className={styles.snippet_header}>
+                    syncnexa-adapter.yaml
+                  </div>
                   <pre>
                     <code>{`adapter:
   sis_engine: "ellucian_banner"
@@ -543,11 +666,15 @@ export default function Home() {
               {/* Organizations Card */}
               <div className={styles.enterprise_card}>
                 <div className={styles.ent_header}>
-                  <span className={styles.section_badge}>DEVELOPER PLATFORM</span>
+                  <span className={styles.section_badge}>
+                    DEVELOPER PLATFORM
+                  </span>
                   <h2>For Organizations</h2>
                 </div>
                 <p>
-                  Eliminate 72-hour verification delays and student ID fraud. Drop in our React UI component or REST API and start verifying student eligibility in real-time.
+                  Eliminate 72-hour verification delays and student ID fraud.
+                  Drop in our React UI component or REST API and start verifying
+                  student eligibility in real-time.
                 </p>
 
                 <div className={styles.ent_code_snippet}>
@@ -578,9 +705,12 @@ const result = await client.verify(pairwiseToken);
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>CAPABILITIES</span>
-              <h2 className={styles.section_title}>Engineered for Trust at Scale</h2>
+              <h2 className={styles.section_title}>
+                Engineered for Trust at Scale
+              </h2>
               <p className={styles.section_subtitle}>
-                Built from the ground up for zero document retention, extreme low latency, and universal interoperability.
+                Built from the ground up for zero document retention, extreme
+                low latency, and universal interoperability.
               </p>
             </div>
 
@@ -588,28 +718,40 @@ const result = await client.verify(pairwiseToken);
               <div className={styles.bento_card}>
                 <div className={styles.bento_num}>01</div>
                 <h3>Privacy by Design</h3>
-                <p>Zero documents or transcripts are stored in our systems. Schools remain the sole source of truth.</p>
+                <p>
+                  Zero documents or transcripts are stored in our systems.
+                  Schools remain the sole source of truth.
+                </p>
                 <div className={styles.bento_tag}>ZERO PII</div>
               </div>
 
               <div className={styles.bento_card}>
                 <div className={styles.bento_num}>02</div>
                 <h3>~18ms Latency</h3>
-                <p>Real-time edge attestation eliminates multi-day queues and manual review friction.</p>
+                <p>
+                  Real-time edge attestation eliminates multi-day queues and
+                  manual review friction.
+                </p>
                 <div className={styles.bento_tag}>SUB-20MS</div>
               </div>
 
               <div className={styles.bento_card}>
                 <div className={styles.bento_num}>03</div>
                 <h3>Decentralized Keypairs</h3>
-                <p>Every student identity is anchored to an Ed25519 hardware keypair with explicit consent.</p>
+                <p>
+                  Every student identity is anchored to an Ed25519 hardware
+                  keypair with explicit consent.
+                </p>
                 <div className={styles.bento_tag}>ED25519</div>
               </div>
 
               <div className={styles.bento_card}>
                 <div className={styles.bento_num}>04</div>
                 <h3>Universal Interoperability</h3>
-                <p>One unified protocol connecting thousands of global universities to millions of services.</p>
+                <p>
+                  One unified protocol connecting thousands of global
+                  universities to millions of services.
+                </p>
                 <div className={styles.bento_tag}>GLOBAL MESH</div>
               </div>
             </div>
@@ -621,13 +763,17 @@ const result = await client.verify(pairwiseToken);
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>NETWORK VOICES</span>
-              <h2 className={styles.section_title}>What Partners & Users Say</h2>
+              <h2 className={styles.section_title}>
+                What Partners & Users Say
+              </h2>
             </div>
 
             <div className={styles.cards_grid_3}>
               <div className={styles.quote_card}>
                 <p className={styles.quote_text}>
-                  &ldquo;SyncID completely eliminated document uploads for my software discounts. I verify once with my school credentials, and everything just works instantly.&rdquo;
+                  &ldquo;SyncID completely eliminated document uploads for my
+                  software discounts. I verify once with my school credentials,
+                  and everything just works instantly.&rdquo;
                 </p>
                 <div className={styles.quote_footer}>
                   <strong>Engineering Student</strong>
@@ -637,7 +783,9 @@ const result = await client.verify(pairwiseToken);
 
               <div className={styles.quote_card}>
                 <p className={styles.quote_text}>
-                  &ldquo;Our student discount checkout conversion surged by 38% after replacing manual document review with the SyncNexa instant verification API.&rdquo;
+                  &ldquo;Our student discount checkout conversion surged by 38%
+                  after replacing manual document review with the SyncNexa
+                  instant verification API.&rdquo;
                 </p>
                 <div className={styles.quote_footer}>
                   <strong>Product Lead</strong>
@@ -647,7 +795,9 @@ const result = await client.verify(pairwiseToken);
 
               <div className={styles.quote_card}>
                 <p className={styles.quote_text}>
-                  &ldquo;SyncNexa solved our biggest compliance concern. We can attest to student enrollment for discounts without sending our database records anywhere.&rdquo;
+                  &ldquo;SyncNexa solved our biggest compliance concern. We can
+                  attest to student enrollment for discounts without sending our
+                  database records anywhere.&rdquo;
                 </p>
                 <div className={styles.quote_footer}>
                   <strong>Dean of Student Affairs</strong>
@@ -664,7 +814,9 @@ const result = await client.verify(pairwiseToken);
             <span className={styles.cta_badge}>READY TO GET STARTED?</span>
             <h2 className={styles.cta_title}>Build on the Trust Mesh.</h2>
             <p className={styles.cta_body}>
-              Whether you are an accredited institution, an ambitious student, or a growing business—SyncNexa provides the infrastructure you need.
+              Whether you are an accredited institution, an ambitious student,
+              or a growing business—SyncNexa provides the infrastructure you
+              need.
             </p>
             <div className={styles.cta_buttons}>
               <Link href="/for-organizations">
