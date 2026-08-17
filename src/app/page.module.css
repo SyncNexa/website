@@ -524,24 +524,8 @@
   left: 26.5px;
   width: 1px;
   background-color: var(--stroke, #e5e7eb);
-  animation: slowGradientShadow 14s ease-in-out infinite;
   z-index: 1;
   pointer-events: none;
-}
-
-@keyframes slowGradientShadow {
-  0% {
-    box-shadow: 0 0 10px rgba(4, 214, 157, 0.5), 0 0 3px rgba(4, 214, 157, 0.3);
-  }
-  33% {
-    box-shadow: 0 0 12px rgba(255, 170, 1, 0.55), 0 0 4px rgba(255, 170, 1, 0.35);
-  }
-  66% {
-    box-shadow: 0 0 11px rgba(0, 109, 80, 0.5), 0 0 4px rgba(0, 109, 80, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(4, 214, 157, 0.5), 0 0 3px rgba(4, 214, 157, 0.3);
-  }
 }
 
 .pipeline_list {
@@ -574,7 +558,6 @@
   flex-shrink: 0;
   position: relative;
   z-index: 2;
-  animation: slowGradientShadow 14s ease-in-out infinite;
 }
 
 .pipe_step_num {
