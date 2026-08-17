@@ -6,6 +6,7 @@ import HeroGeometry from "@/components/hero/HeroGeometry";
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
+import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -140,7 +141,7 @@ export default function Home() {
 
       <main>
         {/* 1. Hero Section */}
-        <section className={styles.hero}>
+        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
           <HeroGeometry />
           <div className={styles.hero_container}>
             <h1 className={styles.hero_title}>
@@ -170,10 +171,10 @@ export default function Home() {
             {/* Architectural Trust Mesh Visual (Vercel/GitHub Style) */}
             <HeroArchitectureVisual />
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 2. Trust Bar (Infinite Auto-scrolling Logos) */}
-        <section className={styles.trust_bar}>
+        <FadeInSection className={styles.trust_bar} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <p className={styles.trust_heading}>
               Trusted by forward-thinking institutions and organizations.
@@ -198,10 +199,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 3. The Problem Section (Vercel / GitHub-grade Engineering Breakdown) */}
-        <section className={styles.problem_section}>
+        <FadeInSection className={styles.problem_section} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge_danger}>
@@ -253,30 +254,28 @@ export default function Home() {
               <div className={styles.tech_problem_card}>
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>FLOW // 02</span>
-                  <span className={styles.card_tag_danger}>
-                    COMPLIANCE LIABILITY
-                  </span>
+                  <span className={styles.card_tag_danger}>FERPA RISKS</span>
                 </div>
                 <div className={styles.problem_diagram_box}>
                   <div className={styles.sis_wireframe}>
                     <div className={styles.sis_status_bar}>
                       <span className={styles.sis_dot_red}></span>
-                      <span>INCOMING UNVETTED QUERIES</span>
+                      <span>INSECURE EXPORT QUEUE</span>
                     </div>
                     <div className={styles.sis_metric_row}>
-                      <span>MANUAL BACKLOG:</span>
-                      <strong>3-5 DAYS</strong>
+                      <span>Unencrypted CSVs</span>
+                      <span className={styles.text_danger}>Active</span>
                     </div>
                     <div className={styles.sis_alert_box}>
-                      FERPA / NDPR PRIVACY RISK
+                      ⚠️ MANUAL AUDIT BOTTLENECK
                     </div>
                   </div>
                 </div>
                 <h3>For Schools</h3>
                 <p>
-                  Handling manual verification requests strains institutional
-                  registries and exposes sensitive student databases to unvetted
-                  external querying.
+                  Manual registry exports and unencrypted portals create massive
+                  FERPA/NDPR liability and drain campus IT and registrar
+                  resources.
                 </p>
               </div>
 
@@ -286,19 +285,17 @@ export default function Home() {
               <div className={styles.tech_problem_card}>
                 <div className={styles.card_meta_header}>
                   <span className={styles.card_code_label}>FLOW // 03</span>
-                  <span className={styles.card_tag_danger}>42% DROP-OFF</span>
+                  <span className={styles.card_tag_danger}>CONV. DROP-OFF</span>
                 </div>
                 <div className={styles.problem_diagram_box}>
                   <div className={styles.funnel_wireframe}>
                     <div className={styles.funnel_bar_start}>
-                      <span>Checkout Intent</span>
-                      <strong>100%</strong>
+                      <span>Start Checkout</span>
+                      <span>100%</span>
                     </div>
                     <div className={styles.funnel_bar_drop}>
-                      <span>Manual Verification Gate</span>
-                      <strong className={styles.text_danger}>
-                        -42% Abandonment
-                      </strong>
+                      <span>Doc Upload Friction</span>
+                      <span className={styles.text_danger}>-42% DROP</span>
                     </div>
                     <div className={styles.funnel_bar_end}>
                       <span>Completed Conversions</span>
@@ -315,10 +312,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 4. The Solution Section (Vercel / GitHub-grade Cryptographic Trust) */}
-        <section className={styles.solution_section} id="solution">
+        <FadeInSection className={styles.solution_section} id="solution" activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>THE TRUST PROTOCOL</span>
@@ -801,10 +798,10 @@ export default function Home() {
               </GlassBlobCard>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 5. How It Works Section (Connected Workflow Architecture) */}
-        <section className={styles.how_it_works_section} id="how-it-works">
+        <FadeInSection className={styles.how_it_works_section} id="how-it-works" activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>PROTOCOL PIPELINE</span>
@@ -877,10 +874,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 6. Product Highlight Section (SyncID Blueprint) */}
-        <section className={styles.product_highlight_section}>
+        <FadeInSection className={styles.product_highlight_section} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.product_split}>
               <div className={styles.product_text_side}>
@@ -994,10 +991,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 7. For Schools and Organizations (Enterprise Architecture Cards) */}
-        <section className={styles.dual_audience_section}>
+        <FadeInSection className={styles.dual_audience_section} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.dual_grid}>
               {/* Schools Card */}
@@ -1333,10 +1330,10 @@ export default function Home() {
               </GlassBlobCard>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 8. Why SyncNexa (High-Tech Capabilities Matrix) */}
-        <section className={styles.why_section}>
+        <FadeInSection className={styles.why_section} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>CAPABILITIES</span>
@@ -1566,10 +1563,10 @@ export default function Home() {
               </GlassBlobCard>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 9. Testimonials Section (Clean Quote Cards) */}
-        <section className={styles.testimonial_section}>
+        <FadeInSection className={styles.testimonial_section} activeClassName={styles.is_visible}>
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>NETWORK VOICES</span>
@@ -1625,10 +1622,10 @@ export default function Home() {
               </GlassBlobCard>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* 10. Call to Action Section (Vercel-style Technical Launchpad) */}
-        <section className={styles.cta_section}>
+        <FadeInSection className={styles.cta_section} activeClassName={styles.is_visible}>
           <div className={styles.cta_container}>
             <span className={styles.cta_badge}>READY TO GET STARTED?</span>
             <h2 className={styles.cta_title}>Build on the Trust Mesh.</h2>
@@ -1650,7 +1647,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        </FadeInSection>
       </main>
 
       <Footer />
