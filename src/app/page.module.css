@@ -498,81 +498,70 @@
   margin: 0;
 }
 
-/* 5. How It Works Pipeline (Transparent Cards, Equal Heights) */
+/* 5. How It Works Pipeline (Split Layout: Vertical Stack Left, Geometric Visual Right) */
 .how_it_works_section {
   padding: 6.5rem 0;
   background: transparent;
 }
 
-.pipeline_grid {
+.pipeline_split {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: stretch;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.pipeline_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
 }
 
 .pipeline_card {
   background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.25rem;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.pipe_step_header {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
+  gap: 1.75rem;
+  align-items: flex-start;
 }
 
 .pipe_step_num {
   font-family: monospace;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
+  line-height: 1;
   color: var(--primary-dark, #006d50);
-  background: var(--primary-light, #e6faf4);
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+  flex-shrink: 0;
+  letter-spacing: -0.04em;
+}
+
+.pipe_step_body {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.pipe_step_tag {
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-muted, #6b7280);
-  letter-spacing: 0.05em;
-}
-
-.pipeline_card h3 {
-  font-size: 1.3rem;
+.pipe_step_body h3 {
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--dark, #05241d);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.pipeline_card p {
-  font-size: 0.95rem;
+.pipe_step_body p {
+  font-size: 0.975rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.65;
-  flex-grow: 1;
   margin: 0;
 }
 
-.pipe_card_footer {
-  margin-top: auto;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--stroke, #e5e7eb);
-  font-family: monospace;
-  font-size: 0.725rem;
-  font-weight: 700;
-  color: var(--primary-dark, #006d50);
+.pipeline_visual_side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 6. Product Highlight (Transparent Blueprint Card) */
@@ -1002,15 +991,15 @@
   }
 
   .cards_grid_3,
-  .pipeline_grid,
   .bento_grid_4,
   .dual_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .product_split {
+  .product_split,
+  .pipeline_split {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
   }
 }
 

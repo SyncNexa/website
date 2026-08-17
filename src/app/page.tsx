@@ -4,6 +4,7 @@ import { TopBar, Footer } from "@/layouts";
 import { SnButton, SnCodeBlock } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
+import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -433,55 +434,49 @@ compliance: "100%_FERPA_NDPR"`}
               </p>
             </div>
 
-            <div className={styles.pipeline_grid}>
-              <div className={styles.pipeline_card}>
-                <div className={styles.pipe_step_header}>
-                  <span className={styles.pipe_step_num}>01</span>
-                  <span className={styles.pipe_step_tag}>
-                    CLIENT ENROLLMENT
-                  </span>
+            <div className={styles.pipeline_split}>
+              {/* Left Side: Vertically Stacked Steps */}
+              <div className={styles.pipeline_list}>
+                <div className={styles.pipeline_card}>
+                  <div className={styles.pipe_step_num}>01</div>
+                  <div className={styles.pipe_step_body}>
+                    <h3>Student Onboards</h3>
+                    <p>
+                      The student installs SyncID, claims their unique SyncTag,
+                      and signs an enrollment attestation using their on-device
+                      cryptographic keypair.
+                    </p>
+                  </div>
                 </div>
-                <h3>Student Onboards</h3>
-                <p>
-                  The student installs SyncID, claims their unique SyncTag, and
-                  signs an enrollment attestation using their on-device
-                  cryptographic keypair.
-                </p>
-                <div className={styles.pipe_card_footer}>
-                  <span>KEY GENERATION: Ed25519</span>
+
+                <div className={styles.pipeline_card}>
+                  <div className={styles.pipe_step_num}>02</div>
+                  <div className={styles.pipe_step_body}>
+                    <h3>School Attests</h3>
+                    <p>
+                      The university&apos;s campus connector verifies the student
+                      status against the institutional SIS via an encrypted mTLS
+                      tunnel in real time.
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.pipeline_card}>
+                  <div className={styles.pipe_step_num}>03</div>
+                  <div className={styles.pipe_step_body}>
+                    <h3>Organization Verifies</h3>
+                    <p>
+                      When claiming a benefit, the student presents a single-use
+                      pairwise proof. The business gets an instant &quot;Active
+                      Enrolled&quot; attestation.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className={styles.pipeline_card}>
-                <div className={styles.pipe_step_header}>
-                  <span className={styles.pipe_step_num}>02</span>
-                  <span className={styles.pipe_step_tag}>ROOT ATTESTATION</span>
-                </div>
-                <h3>School Attests</h3>
-                <p>
-                  The university&apos;s campus connector verifies the student
-                  status against the institutional SIS via an encrypted mTLS
-                  tunnel in real time.
-                </p>
-                <div className={styles.pipe_card_footer}>
-                  <span>ATTESTATION: ZERO-KNOWLEDGE</span>
-                </div>
-              </div>
-
-              <div className={styles.pipeline_card}>
-                <div className={styles.pipe_step_header}>
-                  <span className={styles.pipe_step_num}>03</span>
-                  <span className={styles.pipe_step_tag}>PAIRWISE PROOF</span>
-                </div>
-                <h3>Organization Verifies</h3>
-                <p>
-                  When claiming a benefit, the student presents a single-use
-                  pairwise proof. The business gets an instant &quot;Active
-                  Enrolled&quot; attestation.
-                </p>
-                <div className={styles.pipe_card_footer}>
-                  <span>EXECUTION: &lt; 20MS EDGE</span>
-                </div>
+              {/* Right Side: Geometric Protocol Visual */}
+              <div className={styles.pipeline_visual_side}>
+                <PipelineGeometricVisual />
               </div>
             </div>
           </div>
