@@ -440,12 +440,19 @@
   margin: 0;
 }
 
-/* 4. The Solution Section (Transparent Cards, Equal Heights, No Shadow on Codeblocks) */
+/* 4. The Solution Section (Transparent Cards, Equal Heights) */
 .solution_section {
   padding: 6.5rem 0;
   background: transparent;
   border-top: 1px solid var(--stroke, #e5e7eb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.cards_grid_3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  align-items: stretch;
 }
 
 .tech_solution_card {

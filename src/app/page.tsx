@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { SnButton, SnCodeBlock } from "@syncnexa-library/ui";
+import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
@@ -1018,17 +1018,144 @@ export default function Home() {
                   Ellucian Banner, or custom) in minutes.
                 </p>
 
-                <div className={styles.code_wrap_disabled}>
-                  <SnCodeBlock
-                    language="yaml"
-                    filename="syncnexa-adapter.yaml"
-                    copyable={false}
-                    code={`adapter:
-  sis_engine: "ellucian_banner"
-  auth_mode: "mTLS_v1.3"
-  storage_policy: "ZERO_PERSISTENCE"
-  attestation_mode: "ZKP_BOOLEAN"`}
-                  />
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 320 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Campus SIS Database Stack */}
+                    <g transform="translate(16, 22)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="76"
+                        height="56"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <rect
+                        x="8"
+                        y="10"
+                        width="60"
+                        height="7"
+                        rx="3.5"
+                        fill="#e6faf4"
+                        stroke="#006d50"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="8"
+                        y="23"
+                        width="60"
+                        height="7"
+                        rx="3.5"
+                        fill="#e6faf4"
+                        stroke="#006d50"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="8"
+                        y="36"
+                        width="60"
+                        height="7"
+                        rx="3.5"
+                        fill="#e6faf4"
+                        stroke="#006d50"
+                        strokeWidth="1"
+                      />
+                    </g>
+
+                    {/* Encrypted Tunnel Conduits */}
+                    <line
+                      x1="92"
+                      y1="50"
+                      x2="128"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+
+                    {/* Center Zero-Persistence Adapter Gateway */}
+                    <g transform="translate(160, 50)">
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="26"
+                        fill="#e6faf4"
+                        stroke="#006d50"
+                        strokeWidth="1.5"
+                      />
+                      <polygon
+                        points="0,-16 14,-6 14,10 0,16 -14,10 -14,-6"
+                        fill="#006d50"
+                      />
+                      {/* Key / lock emblem */}
+                      <circle cx="0" cy="0" r="3" fill="#ffffff" />
+                      <path d="M-1 2 L1 2 L2 7 L-2 7 Z" fill="#ffffff" />
+                    </g>
+
+                    {/* Output Attestation Path */}
+                    <line
+                      x1="192"
+                      y1="50"
+                      x2="228"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+
+                    {/* Right Verified Trust Root Node */}
+                    <g transform="translate(228, 22)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="76"
+                        height="56"
+                        rx="8"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <text
+                        x="38"
+                        y="23"
+                        textAnchor="middle"
+                        fontSize="8.5"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        0-PERSIST
+                      </text>
+                      <rect
+                        x="10"
+                        y="30"
+                        width="56"
+                        height="15"
+                        rx="4"
+                        fill="#e6faf4"
+                      />
+                      <text
+                        x="38"
+                        y="41"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#006d50"
+                      >
+                        ZKP BOOLEAN
+                      </text>
+                    </g>
+                  </svg>
                 </div>
 
                 <div className={styles.card_cta}>
@@ -1058,17 +1185,142 @@ export default function Home() {
                   student eligibility in real-time.
                 </p>
 
-                <div className={styles.code_wrap_disabled}>
-                  <SnCodeBlock
-                    language="typescript"
-                    filename="verify-student.ts"
-                    copyable={false}
-                    code={`import { SyncNexaClient } from "@syncnexa/sdk";
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 320 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left Checkout Portal / API Client */}
+                    <g transform="translate(16, 22)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="76"
+                        height="56"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <rect
+                        x="10"
+                        y="12"
+                        width="56"
+                        height="12"
+                        rx="3"
+                        fill="#fef3c7"
+                      />
+                      <text
+                        x="38"
+                        y="21"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#b45309"
+                      >
+                        SYNCID PROOF
+                      </text>
+                      <text
+                        x="38"
+                        y="42"
+                        textAnchor="middle"
+                        fontSize="7"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        CLIENT API
+                      </text>
+                    </g>
 
-const client = new SyncNexaClient({ apiKey: ENV.KEY });
-const result = await client.verify(pairwiseToken);
-// { valid: true, institution: "FUTO", latency: "18ms" }`}
-                  />
+                    {/* High-speed Relay Vector */}
+                    <line
+                      x1="92"
+                      y1="50"
+                      x2="128"
+                      y2="50"
+                      stroke="#ffaa01"
+                      strokeWidth="1.5"
+                      strokeDasharray="2 2"
+                    />
+
+                    {/* Center High-Speed Verifier Ring */}
+                    <g transform="translate(160, 50)">
+                      <polygon
+                        points="0,-26 24,-13 24,13 0,26 -24,13 -24,-13"
+                        fill="#fffbeb"
+                        stroke="#ffaa01"
+                        strokeWidth="1.5"
+                      />
+                      <circle cx="0" cy="0" r="11" fill="#ffaa01" />
+                      <path
+                        d="M-5 0 L-1 4 L5 -3"
+                        stroke="#ffffff"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+
+                    {/* Instant Telemetry Vector */}
+                    <line
+                      x1="192"
+                      y1="50"
+                      x2="228"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                    />
+
+                    {/* Right Verified Benefit Unlock Node */}
+                    <g transform="translate(228, 22)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="76"
+                        height="56"
+                        rx="8"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <text
+                        x="38"
+                        y="22"
+                        textAnchor="middle"
+                        fontSize="11"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        18ms
+                      </text>
+                      <rect
+                        x="10"
+                        y="29"
+                        width="56"
+                        height="17"
+                        rx="4"
+                        fill="#e6faf4"
+                      />
+                      <text
+                        x="38"
+                        y="41"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        VERIFIED PASS
+                      </text>
+                    </g>
+                  </svg>
                 </div>
 
                 <div className={styles.card_cta}>
