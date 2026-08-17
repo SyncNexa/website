@@ -1,11 +1,15 @@
 import React from "react";
 import type { Metadata } from "next";
 import { TopBar, Footer } from "@/layouts";
+import HeroGeometry from "@/components/hero/HeroGeometry";
+import GlassBlobCard from "@/components/cards/GlassBlobCard";
+import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Data Processing Agreement (DPA) | SyncNexa",
-  description: "Data Processing Agreement outlining SyncNexa's cryptographic processing standards and privacy-by-design compliance.",
+  description:
+    "Data Processing Agreement outlining SyncNexa's cryptographic processing standards and privacy-by-design compliance.",
 };
 
 export default function DpaPage() {
@@ -13,57 +17,100 @@ export default function DpaPage() {
     <div className={styles.page_wrapper}>
       <TopBar />
 
-      <main className={styles.main_content}>
-        <section className={styles.hero}>
-          <div className={styles.container}>
+      <main>
+        {/* Header Section */}
+        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
+          <HeroGeometry />
+          <div className={styles.hero_content}>
+            <span className={styles.section_badge}>LEGAL & COMPLIANCE</span>
             <h1 className={styles.hero_title}>Data Processing Agreement</h1>
             <p className={styles.effective_date}>
-              <strong>SyncNexa Limited</strong> &bull; Effective Date: January 1, 2026
+              <strong>SyncNexa Limited</strong> &bull; Effective Date: January 1,
+              2026
             </p>
           </div>
-        </section>
+        </FadeInSection>
 
-        <section className={styles.document_section}>
+        {/* Content Document */}
+        <FadeInSection
+          className={styles.document_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
-            <div className={styles.document_body}>
+            <GlassBlobCard
+              className={styles.document_glass_card}
+              blobColor="#006d50"
+              secondaryBlobColor="#04d69d"
+            >
               <div className={styles.section_block}>
                 <h2>1. Purpose & Scope</h2>
                 <p>
-                  This Data Processing Agreement (&ldquo;DPA&rdquo;) governs the processing of personal data by SyncNexa Limited in connection with the verification and trust services provided to educational institutions and verifying organizations under our Terms of Service.
+                  This Data Processing Agreement (&ldquo;DPA&rdquo;) governs the
+                  cryptographic processing of personal data by SyncNexa Limited
+                  in connection with the decentralized verification and trust
+                  services provided to educational institutions and verifying
+                  organizations under our Terms of Service.
                 </p>
               </div>
 
               <div className={styles.section_block}>
                 <h2>2. Cryptographic Privacy-by-Design</h2>
                 <p>
-                  SyncNexa operates on a zero-knowledge, decentralized attestation model. Academic documents, transcripts, student ID card images, grades, and unhashed identifiers are neither requested nor stored on SyncNexa servers.
+                  SyncNexa operates on a strict zero-knowledge, zero-persistence
+                  decentralized attestation model. Academic documents,
+                  transcripts, student ID card images, GPA records, and unhashed
+                  identifiers are neither requested nor stored on SyncNexa
+                  servers.
                 </p>
                 <ul>
-                  <li><strong>Pairwise Identifiers:</strong> Verifying organizations receive distinct pairwise identifiers that cannot be correlated across third-party platforms.</li>
-                  <li><strong>Zero PII Retention:</strong> Verification queries confirm boolean status (&ldquo;active&rdquo; / &ldquo;inactive&rdquo;) directly from the accredited institution.</li>
-                  <li><strong>Mutual TLS (mTLS):</strong> All communications between the SyncNexa Trust Adapter and institutional SIS networks are encrypted with mutual TLS.</li>
+                  <li>
+                    <strong>Pairwise Pseudonymity:</strong> Verifying
+                    organizations receive distinct pairwise identifiers that
+                    cannot be correlated across third-party commercial platforms.
+                  </li>
+                  <li>
+                    <strong>Zero PII Retention:</strong> Verification queries
+                    confirm boolean status (&ldquo;active&rdquo; /
+                    &ldquo;inactive&rdquo;) directly from the accredited
+                    institution without database replication.
+                  </li>
+                  <li>
+                    <strong>Mutual TLS (mTLS 1.3):</strong> All communications
+                    between the SyncNexa Trust Adapter and institutional SIS
+                    networks are encrypted with hardware-anchored mutual TLS.
+                  </li>
                 </ul>
               </div>
 
               <div className={styles.section_block}>
                 <h2>3. Rights of Data Subjects</h2>
                 <p>
-                  Data subjects maintain complete sovereignty over their credential disclosures. Consent is required for each verification event and may be revoked immediately via the SyncID mobile application.
+                  Data subjects maintain complete sovereignty over their
+                  credential disclosures. Explicit cryptographic consent is
+                  required for each verification event and may be revoked
+                  immediately at any time via the SyncID mobile application.
                 </p>
               </div>
 
               <div className={styles.section_block}>
                 <h2>4. Compliance & Contact</h2>
                 <p>
-                  For institutional DPA execution or compliance inquiries, contact our Data Protection Officer at{" "}
+                  For institutional DPA countersigning, compliance audits, or
+                  legal inquiries, contact our Data Protection Officer at:
+                </p>
+                <p>
+                  <strong>Email:</strong>{" "}
                   <a href="mailto:privacy@syncnexa.co" className={styles.doc_link}>
                     privacy@syncnexa.co
-                  </a>.
+                  </a>
+                  <br />
+                  <strong>Entity:</strong> SyncNexa Limited &bull; Legal &
+                  Compliance Division
                 </p>
               </div>
-            </div>
+            </GlassBlobCard>
           </div>
-        </section>
+        </FadeInSection>
       </main>
 
       <Footer />

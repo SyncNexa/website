@@ -1,8 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
+import HeroGeometry from "@/components/hero/HeroGeometry";
+import GlassBlobCard from "@/components/cards/GlassBlobCard";
+import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
@@ -18,7 +22,9 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     setFormData({
       ...formData,
@@ -40,48 +46,80 @@ export default function ContactPage() {
   const contactChannels = [
     {
       role: "For Students",
-      desc: "Need help with SyncID? Have a question about your account?",
+      desc: "Need assistance with your SyncID app, claiming a SyncTag, or checking verification status?",
       email: "support@syncnexa.co",
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </svg>
       ),
+      blobColor: "#04d69d",
     },
     {
-      role: "For Schools",
-      desc: "Interested in becoming a partner school?",
+      role: "For Universities",
+      desc: "Interested in deploying the Trust Adapter or piloting SyncID on your campus?",
       email: "partnerships@syncnexa.co",
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
           <path d="M6 12v5c3 3 9 3 12 0v-5" />
         </svg>
       ),
+      blobColor: "#006d50",
     },
     {
       role: "For Organizations",
-      desc: "Want to integrate SyncID into your platform?",
+      desc: "Want to integrate our verification API or launch student discounts across your platforms?",
       email: "business@syncnexa.co",
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
         </svg>
       ),
+      blobColor: "#ffaa01",
     },
     {
-      role: "General Inquiries",
-      desc: "Anything else?",
+      role: "General & Press",
+      desc: "Have a press inquiry, partnership idea, or questions about our cryptographic trust framework?",
       email: "hello@syncnexa.co",
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <circle cx="12" cy="12" r="10" />
           <path d="M12 16v-4" />
           <path d="M12 8h.01" />
         </svg>
       ),
+      blobColor: "#04d69d",
     },
   ];
 
@@ -99,16 +137,10 @@ export default function ContactPage() {
       icon: "in",
     },
     {
-      name: "Instagram",
-      handle: "@syncnexa",
-      url: "https://instagram.com/syncnexa",
-      icon: "📷",
-    },
-    {
       name: "GitHub",
-      handle: "SyncNexa",
+      handle: "github.com/SyncNexa",
       url: "https://github.com/SyncNexa",
-      icon: "🐙",
+      icon: "⌥",
     },
   ];
 
@@ -118,132 +150,154 @@ export default function ContactPage() {
 
       <main>
         {/* 1. Hero Section */}
-        <section className={styles.hero}>
+        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
+          <HeroGeometry />
+          <div className={styles.hero_content}>
+            <span className={styles.section_badge}>GET IN TOUCH</span>
+            <h1 className={styles.hero_title}>
+              Let&apos;s talk about <br />
+              <span className={styles.gradient_text}>the future of trust.</span>
+            </h1>
+            <p className={styles.hero_subtitle}>
+              Whether you are an accredited university registrar, an ambitious
+              student, or a high-growth platform—our team is here to help.
+            </p>
+          </div>
+        </FadeInSection>
+
+        {/* 2. Direct Channels Grid */}
+        <FadeInSection
+          className={styles.channels_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
-            <div className={styles.hero_content}>
-              <h1 className={styles.hero_title}>
-                Let&apos;s <span className={styles.gradient_text}>talk.</span>
-              </h1>
-              <p className={styles.hero_subtitle}>
-                Whether you&apos;re a student, a school, or an organization—we&apos;d love to hear from you.
+            <div className={styles.section_header}>
+              <span className={styles.section_badge}>DIRECT CHANNELS</span>
+              <h2 className={styles.section_title}>Reach the Right Team</h2>
+              <p className={styles.section_subtitle}>
+                Direct lines of communication tailored to your specific needs.
               </p>
             </div>
-          </div>
-        </section>
 
-        {/* 2. Contact Options Section */}
-        <section className={styles.channels_section}>
-          <div className={styles.container}>
             <div className={styles.channels_grid}>
               {contactChannels.map((channel, idx) => (
-                <div key={idx} className={styles.channel_card}>
-                  <div className={styles.channel_icon_wrap}>
-                    {channel.icon}
-                  </div>
+                <GlassBlobCard
+                  key={idx}
+                  className={styles.channel_card}
+                  blobColor={channel.blobColor}
+                >
+                  <div className={styles.channel_icon_wrap}>{channel.icon}</div>
                   <h3>{channel.role}</h3>
                   <p className={styles.channel_desc}>{channel.desc}</p>
                   <a
                     href={`mailto:${channel.email}`}
                     className={styles.channel_email}
                   >
-                    {channel.email}
+                    {channel.email} ➔
                   </a>
-                </div>
+                </GlassBlobCard>
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 3. Contact Form & Office Section */}
-        <section className={styles.form_section}>
+        {/* 3. Form & Company Info Section */}
+        <FadeInSection
+          className={styles.form_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
-            <div className={styles.form_layout_grid}>
+            <div className={styles.form_layout_split}>
               {/* Form Side */}
-              <div className={styles.form_card}>
-                <h2 className={styles.form_title}>Send us a message</h2>
+              <GlassBlobCard
+                className={styles.form_glass_card}
+                blobColor="#04d69d"
+                secondaryBlobColor="#006d50"
+              >
+                <h2 className={styles.form_title}>Send Us a Message</h2>
+                <p className={styles.form_desc}>
+                  Fill out the form below and a representative will reply within
+                  24 hours.
+                </p>
 
                 {isSubmitted ? (
-                  <div className={styles.success_box}>
-                    <div className={styles.success_check}>✓</div>
-                    <h3>Message Sent!</h3>
+                  <div className={styles.success_state_box}>
+                    <div className={styles.success_icon}>✓</div>
+                    <h3>Message Dispatched!</h3>
                     <p>
-                      Thank you for reaching out. We&apos;ve received your message and our team will get back to you within 1–2 business days.
+                      Thank you for reaching out to SyncNexa. A team member has
+                      received your transmission and will be in touch shortly.
                     </p>
-                    <SnButton
-                      variant="secondary"
-                      size="md"
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setFormData({
-                          fullName: "",
-                          email: "",
-                          userType: "Student",
-                          subject: "",
-                          message: "",
-                        });
-                      }}
-                    >
-                      Send Another Message
-                    </SnButton>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className={styles.contact_form}>
-                    <div className={styles.form_group}>
-                      <label htmlFor="fullName">Full Name</label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        required
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        className={styles.form_input}
-                      />
+                    <div className={styles.form_row_dual}>
+                      <div className={styles.form_group}>
+                        <label htmlFor="fullName">Full Name</label>
+                        <input
+                          id="fullName"
+                          name="fullName"
+                          type="text"
+                          required
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder="e.g. Okolie Anthony"
+                          className={styles.form_input}
+                        />
+                      </div>
+
+                      <div className={styles.form_group}>
+                        <label htmlFor="email">Email Address</label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="anthony@university.edu"
+                          className={styles.form_input}
+                        />
+                      </div>
                     </div>
 
-                    <div className={styles.form_group}>
-                      <label htmlFor="email">Email Address</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
-                        className={styles.form_input}
-                      />
-                    </div>
+                    <div className={styles.form_row_dual}>
+                      <div className={styles.form_group}>
+                        <label htmlFor="userType">I Am A...</label>
+                        <select
+                          id="userType"
+                          name="userType"
+                          value={formData.userType}
+                          onChange={handleChange}
+                          className={styles.form_select}
+                        >
+                          <option value="Student">Student</option>
+                          <option value="School / University IT">
+                            School / University IT
+                          </option>
+                          <option value="Business / Merchant">
+                            Business / Merchant
+                          </option>
+                          <option value="Developer">Developer</option>
+                          <option value="Press / Investor">
+                            Press / Investor
+                          </option>
+                        </select>
+                      </div>
 
-                    <div className={styles.form_group}>
-                      <label htmlFor="userType">I am a...</label>
-                      <select
-                        id="userType"
-                        name="userType"
-                        value={formData.userType}
-                        onChange={handleChange}
-                        className={styles.form_select}
-                      >
-                        <option value="Student">Student</option>
-                        <option value="School Representative">School Representative</option>
-                        <option value="Organization Representative">Organization Representative</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <div className={styles.form_group}>
-                      <label htmlFor="subject">Subject</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="How can we help?"
-                        className={styles.form_input}
-                      />
+                      <div className={styles.form_group}>
+                        <label htmlFor="subject">Subject</label>
+                        <input
+                          id="subject"
+                          name="subject"
+                          type="text"
+                          required
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="Integration inquiry, campus pilot..."
+                          className={styles.form_input}
+                        />
+                      </div>
                     </div>
 
                     <div className={styles.form_group}>
@@ -255,89 +309,69 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Type your message here..."
+                        placeholder="Tell us about your campus, platform, or project..."
                         className={styles.form_textarea}
                       />
                     </div>
 
                     <SnButton
-                      type="submit"
                       variant="primary"
                       size="lg"
-                      loading={isSubmitting}
+                      type="submit"
+                      disabled={isSubmitting}
                     >
-                      Send Message
+                      {isSubmitting ? "Dispatching..." : "Send Message"}
                     </SnButton>
                   </form>
                 )}
-              </div>
+              </GlassBlobCard>
 
-              {/* Sidebar: Office & Connect */}
-              <div className={styles.sidebar_side}>
-                {/* 4. Office Section */}
-                <div className={styles.info_card}>
-                  <h3 className={styles.info_title}>Our Office</h3>
-                  <div className={styles.office_details}>
-                    <p className={styles.company_name}>SyncNexa Limited</p>
-                    <p className={styles.address_line}>
-                      14 Innovate Way, Yaba Tech District,<br />
-                      Lagos, Nigeria
-                    </p>
-                    <div className={styles.hours_box}>
-                      <strong>Hours:</strong>
-                      <p>Monday – Friday</p>
-                      <p>9:00 AM – 5:00 PM WAT</p>
-                    </div>
-                  </div>
+              {/* Info Side */}
+              <GlassBlobCard
+                className={styles.info_side_card}
+                blobColor="#ffaa01"
+                secondaryBlobColor="#04d69d"
+              >
+                <div className={styles.info_block}>
+                  <h4>Corporate Office</h4>
+                  <p>
+                    <strong>SyncNexa Limited</strong>
+                    <br />
+                    Registered in the Federal Republic of Nigeria
+                    <br />
+                    RC: 7924810 &bull; Owerri & Lagos, Nigeria
+                  </p>
                 </div>
 
-                {/* 5. Connect Section */}
-                <div className={styles.info_card}>
-                  <h3 className={styles.info_title}>Connect with us</h3>
-                  <div className={styles.social_list}>
-                    {socialLinks.map((social, idx) => (
+                <div className={styles.info_block}>
+                  <h4>Connect on Social</h4>
+                  <div className={styles.social_links_grid}>
+                    {socialLinks.map((s, idx) => (
                       <a
                         key={idx}
-                        href={social.url}
+                        href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.social_item}
                       >
-                        <span className={styles.social_badge}>{social.icon}</span>
-                        <div className={styles.social_text}>
-                          <strong>{social.name}</strong>
-                          <span>{social.handle}</span>
-                        </div>
-                        <span className={styles.arrow_icon}>→</span>
+                        <span className={styles.social_icon}>{s.icon}</span>
+                        <span>{s.name}</span>
                       </a>
                     ))}
                   </div>
                 </div>
 
-                {/* 6. What Happens Next Section */}
-                <div className={styles.info_card_highlight}>
-                  <h3 className={styles.info_title_green}>What to expect</h3>
-                  <p className={styles.expect_body}>
-                    We read every message. You&apos;ll hear back from us within 1–2 business days. Students receive priority support.
+                <div className={styles.sla_badge_box}>
+                  <strong>⚡ Rapid Response Guarantee</strong>
+                  <p>
+                    Institutional and developer inquiries are prioritized with a
+                    target response window of under 4 business hours.
                   </p>
                 </div>
-              </div>
+              </GlassBlobCard>
             </div>
           </div>
-        </section>
-
-        {/* 7. Call to Action Section */}
-        <section className={styles.cta_section}>
-          <div className={styles.cta_container}>
-            <h2 className={styles.cta_title}>Prefer email?</h2>
-            <p className={styles.cta_body}>
-              Reach us directly at{" "}
-              <a href="mailto:hello@syncnexa.co" className={styles.cta_email_link}>
-                hello@syncnexa.co
-              </a>
-            </p>
-          </div>
-        </section>
+        </FadeInSection>
       </main>
 
       <Footer />

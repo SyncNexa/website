@@ -9,6 +9,7 @@ interface GlassBlobCardProps {
   blobColor?: string;
   secondaryBlobColor?: string;
   style?: React.CSSProperties;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export default function GlassBlobCard({
@@ -17,6 +18,7 @@ export default function GlassBlobCard({
   blobColor = "#04d69d",
   secondaryBlobColor,
   style,
+  onClick,
 }: GlassBlobCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -42,6 +44,7 @@ export default function GlassBlobCard({
   return (
     <div
       ref={cardRef}
+      onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

@@ -15,22 +15,148 @@
 .section_header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3.5rem;
 }
 
+/* ==========================================================================
+   BADGES (Pill-less Monospace Gradient Text)
+   ========================================================================== */
+.section_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.is_visible .section_badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MAIN TITLES (One-time Gradient-to-Solid Transition)
+   ========================================================================== */
 .section_title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.2;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
 }
 
-.section_subtitle {
+.is_visible .section_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.hero_title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+.is_visible .hero_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.cta_title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, #04d69d 0%, #ffaa01 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.is_visible .cta_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SUBTITLES (Smooth Translation & Fade-In)
+   ========================================================================== */
+.section_subtitle,
+.hero_subtitle,
+.cta_body {
   font-size: 1.15rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-  margin-top: 0.75rem;
+  line-height: 1.65;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.hero_subtitle {
+  font-size: 1.25rem;
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+
+.cta_body {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.is_visible .section_subtitle,
+.is_visible .hero_subtitle,
+.is_visible .cta_body {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gradient_text {
@@ -40,17 +166,23 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* 1. Hero Section */
+/* ==========================================================================
+   1. HERO SECTION (Split Hero + Live Mobile Enclave Frame)
+   ========================================================================== */
 .hero {
-  padding: 6rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 6.5rem 0 5.5rem;
   background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .hero_split {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
+  gap: 4.5rem;
   align-items: center;
 }
 
@@ -60,29 +192,20 @@
   align-items: flex-start;
 }
 
-.hero_title {
-  font-size: 3.75rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-.hero_subtitle {
-  color: var(--text-muted, #6b7280);
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 540px;
-}
-
 .hero_cta_group {
   display: flex;
   align-items: center;
   gap: 1.25rem;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+}
+
+.is_visible .hero_cta_group {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero_ui_side {
@@ -91,41 +214,50 @@
   align-items: center;
 }
 
-/* Phone Frame Mockup */
+/* Phone Frame Mockup inside GlassBlobCard */
+.phone_glass_card {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 36px;
+}
+
 .phone_frame {
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
   background: #ffffff;
-  border: 10px solid #05241d;
-  border-radius: 36px;
+  border: 4px solid var(--dark, #05241d);
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 20px 40px -15px rgba(5, 36, 29, 0.15);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 36px rgba(5, 36, 29, 0.08);
 }
 
 .phone_header {
-  background: #05241d;
-  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 18px;
+  padding: 10px 18px 6px;
+  background: #ffffff;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--dark, #05241d);
 }
 
 .phone_notch {
   width: 90px;
-  height: 12px;
-  background: #000000;
+  height: 18px;
+  background: var(--dark, #05241d);
   border-radius: 0 0 10px 10px;
 }
 
 .phone_screen_content {
-  padding: 1.5rem;
+  padding: 14px 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  background: var(--bg-alt, #f9fbfb);
+  gap: 14px;
 }
 
 .app_bar {
@@ -135,170 +267,168 @@
 }
 
 .app_logo_text {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--dark, #05241d);
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--primary-dark, #006d50);
+  letter-spacing: -0.02em;
 }
 
 .app_badge_active {
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
   background: var(--primary-light, #e6faf4);
   color: var(--primary-dark, #006d50);
-  font-size: 0.75rem;
-  font-weight: 700;
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: 6px;
 }
 
 .id_card_visual {
-  background: #05241d;
-  color: #ffffff;
+  background: linear-gradient(135deg, #006d50 0%, #05241d 100%);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 18px;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 8px;
 }
 
 .id_card_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.uni_name {
-  font-size: 0.75rem;
-  color: #a7f3d0;
-  font-weight: 600;
+  font-size: 0.7rem;
+  opacity: 0.85;
 }
 
 .session_tag {
-  font-size: 0.7rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
+  font-family: monospace;
+  font-weight: 700;
+  color: #04d69d;
 }
 
 .id_student_name {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
 }
 
 .id_handle {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .id_card_bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 8px;
 }
 
 .id_chip {
-  background: var(--primary, #04d69d);
-  color: #05241d;
-  font-size: 0.7rem;
+  font-family: monospace;
+  font-size: 0.65rem;
   font-weight: 800;
+  background: #04d69d;
+  color: #05241d;
   padding: 2px 6px;
   border-radius: 4px;
 }
 
 .id_auth_code {
-  font-size: 0.75rem;
   font-family: monospace;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  opacity: 0.75;
 }
 
 .app_quick_actions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .quick_action_item {
-  background: #ffffff;
+  background: var(--bg-alt, #f9fbfb);
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 10px;
-  padding: 0.75rem 0.5rem;
+  padding: 8px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: var(--dark, #05241d);
   text-align: center;
-}
-
-.quick_icon {
-  font-size: 1.1rem;
 }
 
 .live_attestation_bubble {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 10px;
-  padding: 0.65rem 0.85rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-muted, #6b7280);
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--primary-light, #e6faf4);
+  border-radius: 8px;
+  font-size: 0.725rem;
+  color: var(--primary-dark, #006d50);
+  font-weight: 600;
 }
 
 .bubble_dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--primary, #04d69d);
-  flex-shrink: 0;
 }
 
-/* 2. What Is SyncID Section */
+/* ==========================================================================
+   2. WHAT IS SYNCID SECTION (Feature Split Card)
+   ========================================================================== */
 .what_section {
-  padding: 6rem 0;
-  background: #ffffff;
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.what_box {
-  max-width: 860px;
-  margin: 0 auto;
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 24px;
-  padding: 4rem 3.5rem;
-  text-align: center;
+.what_glass_card {
+  padding: 3.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
 }
 
-.what_content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-size: 1.15rem;
+.what_text_col h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 1.25rem;
+}
+
+.what_text_col p {
+  font-size: 1.1rem;
   color: var(--text-muted, #4b5563);
   line-height: 1.7;
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.what_bullets {
+.what_bullets_stack {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  text-align: left;
-  max-width: 520px;
-  margin: 0 auto;
+  gap: 1rem;
 }
 
-.what_bullet {
+.what_bullet_row {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.05rem;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.975rem;
+  font-weight: 600;
   color: var(--dark, #05241d);
-  font-weight: 500;
 }
 
 .cross_icon {
@@ -306,88 +436,153 @@
   height: 22px;
   border-radius: 50%;
   background: #fee2e2;
-  color: #dc2626;
+  color: #ef4444;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.what_graphic_box {
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.graphic_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--bg-alt, #f9fbfb);
+}
+
+.graphic_item strong {
+  font-size: 0.95rem;
+  color: var(--dark, #05241d);
+}
+
+.graphic_item span {
+  font-family: monospace;
   font-size: 0.8rem;
   font-weight: 800;
+  color: var(--primary-dark, #006d50);
+}
+
+/* ==========================================================================
+   3. HOW SYNCID WORKS SECTION (Continuous Connecting Line)
+   ========================================================================== */
+.how_section {
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.how_timeline_wrap {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.how_vertical_line {
+  position: absolute;
+  left: 27px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #006d50 0%,
+    #04d69d 40%,
+    #ffaa01 80%,
+    #04d69d 100%
+  );
+  z-index: 1;
+}
+
+.how_steps_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.how_step_item {
+  display: flex;
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+.how_step_circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #006d50;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  z-index: 3;
 }
 
-.what_conclusion {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--primary-dark, #006d50);
+.how_step_num {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #006d50;
 }
 
-/* 3. How SyncID Works Section */
-.how_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
-}
-
-.steps_grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.step_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.25rem 1.75rem;
+.how_body_card {
+  flex-grow: 1;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
 }
 
-.step_number {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--primary, #04d69d);
-  color: #05241d;
-  font-size: 1.25rem;
+.how_body_card h3 {
+  font-size: 1.35rem;
   font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.step_card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
   color: var(--dark, #05241d);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
-.step_card p {
-  font-size: 0.95rem;
+.how_body_card p {
+  font-size: 1rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
+  line-height: 1.65;
+  margin: 0;
 }
 
-/* 4. Features Section */
+/* ==========================================================================
+   4. FEATURES SECTION (6-Card Grid)
+   ========================================================================== */
 .features_section {
-  padding: 6rem 0;
-  background: #ffffff;
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .features_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.25rem;
+  align-items: stretch;
 }
 
 .feature_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
   padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .feature_icon_wrap {
@@ -403,454 +598,122 @@
 }
 
 .feature_card h3 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--dark, #05241d);
   margin-bottom: 0.75rem;
 }
 
 .feature_card p {
-  font-size: 1rem;
+  font-size: 0.975rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
+  line-height: 1.65;
+  margin: 0;
 }
 
-/* 5. What SyncID Unlocks Section */
-.unlocks_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+/* ==========================================================================
+   5. BENEFITS / PARTNERS SECTION (6-Card Glass Grid)
+   ========================================================================== */
+.benefits_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .benefits_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.25rem;
+  align-items: stretch;
 }
 
 .benefit_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
   padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.benefit_emoji {
-  font-size: 2.5rem;
+.benefit_icon {
+  font-size: 2.25rem;
   margin-bottom: 1.25rem;
+  display: block;
 }
 
 .benefit_card h3 {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--dark, #05241d);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .benefit_card p {
   font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-}
-
-/* 6. Comparison Section */
-.comparison_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.comparison_box {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.comparison_lead {
-  font-size: 1.15rem;
-  color: var(--text-muted, #6b7280);
   line-height: 1.65;
-  max-width: 720px;
-  margin: 1rem auto 3rem;
+  margin: 0;
 }
 
-.contrast_split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  text-align: left;
-}
-
-.old_way_card {
-  background: #fffafa;
-  border: 1px solid #fee2e2;
-  border-radius: 18px;
-  padding: 2.5rem 2rem;
-}
-
-.old_way_card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #dc2626;
-  margin-bottom: 1.25rem;
-}
-
-.old_way_card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.old_way_card li {
-  font-size: 0.95rem;
-  color: #4b5563;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.old_way_card li::before {
-  content: "✕";
-  color: #dc2626;
-  font-weight: 800;
-  position: absolute;
-  left: 0;
-}
-
-.new_way_card {
-  background: var(--primary-light, #e6faf4);
-  border: 1.5px solid var(--primary, #04d69d);
-  border-radius: 18px;
-  padding: 2.5rem 2rem;
-}
-
-.new_way_card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--primary-dark, #006d50);
-  margin-bottom: 1.25rem;
-}
-
-.new_way_card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.new_way_card li {
-  font-size: 0.95rem;
-  color: #05241d;
-  font-weight: 500;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.new_way_card li::before {
-  content: "✓";
-  color: var(--primary-dark, #006d50);
-  font-weight: 800;
-  position: absolute;
-  left: 0;
-}
-
-/* 7. Security Section & Privacy Vault */
-.security_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+/* ==========================================================================
+   6. FAQ ACCORDION SECTION
+   ========================================================================== */
+.faq_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.security_split {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.security_text {
-  display: flex;
-  flex-direction: column;
-}
-
-.security_body p {
-  font-size: 1.1rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.65;
-  margin: 1.25rem 0 1.75rem;
-}
-
-.security_checklist {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 2rem;
-}
-
-.security_checklist li {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--dark, #05241d);
-}
-
-.sec_check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--primary, #04d69d);
-  color: #05241d;
-  font-size: 0.85rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.security_subtext {
-  font-size: 1rem;
-  color: var(--text-muted, #6b7280);
-  font-style: italic;
-  border-left: 3px solid var(--primary, #04d69d);
-  padding-left: 1rem;
-}
-
-.security_visual_side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vault_box {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
-  padding: 2.25rem;
-  width: 100%;
-  max-width: 480px;
-}
-
-.vault_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--stroke-subtle, #f3f4f6);
-}
-
-.vault_badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  color: var(--dark, #05241d);
-  font-size: 1rem;
-}
-
-.lock_symbol {
-  font-size: 1.2rem;
-}
-
-.vault_encryption {
-  font-size: 0.75rem;
-  font-family: monospace;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-weight: 700;
-}
-
-.vault_records {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 1.5rem;
-}
-
-.vault_row_green {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: var(--primary-light, #e6faf4);
-  border: 1px solid rgba(4, 214, 157, 0.3);
-  border-radius: 12px;
-  padding: 0.85rem 1rem;
-}
-
-.vault_indicator_green {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--primary, #04d69d);
-  color: #05241d;
-  font-size: 0.75rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.vault_row_red {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: #fff5f5;
-  border: 1px solid #fee2e2;
-  border-radius: 12px;
-  padding: 0.85rem 1rem;
-}
-
-.vault_indicator_red {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #ef4444;
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.vault_row_text {
-  display: flex;
-  flex-direction: column;
-}
-
-.vault_row_text strong {
-  font-size: 0.9rem;
-  color: var(--dark, #05241d);
-}
-
-.vault_row_text span {
-  font-size: 0.75rem;
-  color: var(--text-muted, #6b7280);
-}
-
-.vault_footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--primary-dark, #006d50);
-  font-weight: 600;
-}
-
-/* 8. Testimonials Section */
-.testimonials_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.testimonials_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.testimonial_card {
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonial_text {
-  font-size: 1.05rem;
-  color: var(--dark, #05241d);
-  line-height: 1.65;
-  font-style: italic;
-  margin-bottom: 1.75rem;
-}
-
-.testimonial_author {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--stroke, #e5e7eb);
-  padding-top: 1rem;
-}
-
-.testimonial_author strong {
-  font-size: 1rem;
-  color: var(--dark, #05241d);
-}
-
-.testimonial_author span {
-  font-size: 0.85rem;
-  color: var(--text-muted, #6b7280);
-}
-
-/* 9. FAQ Section */
-.faq_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
-}
-
-.faq_list {
-  max-width: 800px;
+.faq_container {
+  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.faq_item {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 14px;
-  overflow: hidden;
+.faq_card {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 16px;
 }
 
-.faq_item.faq_open {
-  border-color: var(--primary, #04d69d);
-}
-
-.faq_question {
-  width: 100%;
-  padding: 1.5rem 1.75rem;
+.faq_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: left;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--dark, #05241d);
-  cursor: pointer;
-  background: none;
-  border: none;
+  gap: 1rem;
 }
 
-.faq_toggle_icon {
-  font-size: 1.5rem;
-  font-weight: 400;
+.faq_header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin: 0;
+}
+
+.faq_toggle {
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--primary-dark, #006d50);
-  margin-left: 1rem;
+  line-height: 1;
 }
 
 .faq_answer {
-  padding: 0 1.75rem 1.5rem;
   font-size: 1rem;
-  color: var(--text-muted, #4b5563);
+  color: var(--text-muted, #6b7280);
   line-height: 1.65;
-  border-top: 1px solid var(--stroke-subtle, #f3f4f6);
+  margin-top: 1rem;
   padding-top: 1rem;
+  border-top: 1px solid var(--stroke, #e5e7eb);
 }
 
-/* 10. Call to Action Section */
+/* ==========================================================================
+   7. CALL TO ACTION LAUNCHPAD
+   ========================================================================== */
 .cta_section {
-  padding: 6rem 2rem;
+  padding: 7rem 2rem;
   background: var(--dark, #05241d);
   text-align: center;
 }
@@ -863,19 +726,28 @@
   align-items: center;
 }
 
-.cta_title {
-  font-size: 3rem;
+.cta_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
   margin-bottom: 1.25rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
-.cta_body {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+.is_visible .cta_badge {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cta_buttons {
@@ -884,27 +756,95 @@
   gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
-/* Responsive Media Queries */
+.is_visible .cta_buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   CARDS OPACITY-ALONE FADE-IN SYSTEM (Zero Translation)
+   ========================================================================== */
+.features_grid > *,
+.benefits_grid > *,
+.faq_container > *,
+.phone_glass_card,
+.what_glass_card,
+.how_body_card,
+.hero_content {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+/* Staggered Card Appearance */
+.features_grid > *:nth-child(1),
+.benefits_grid > *:nth-child(1),
+.faq_container > *:nth-child(1),
+.how_steps_list > *:nth-child(1) .how_body_card {
+  transition-delay: 0.2s;
+}
+
+.features_grid > *:nth-child(2),
+.benefits_grid > *:nth-child(2),
+.faq_container > *:nth-child(2),
+.how_steps_list > *:nth-child(2) .how_body_card {
+  transition-delay: 0.35s;
+}
+
+.features_grid > *:nth-child(3),
+.benefits_grid > *:nth-child(3),
+.faq_container > *:nth-child(3),
+.how_steps_list > *:nth-child(3) .how_body_card {
+  transition-delay: 0.5s;
+}
+
+.features_grid > *:nth-child(4),
+.benefits_grid > *:nth-child(4),
+.faq_container > *:nth-child(4),
+.how_steps_list > *:nth-child(4) .how_body_card {
+  transition-delay: 0.65s;
+}
+
+.is_visible .features_grid > *,
+.is_visible .benefits_grid > *,
+.is_visible .faq_container > *,
+.is_visible .phone_glass_card,
+.is_visible .what_glass_card,
+.is_visible .how_body_card,
+.is_visible .hero_content {
+  opacity: 1;
+}
+
+.how_vertical_line {
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+
+.is_visible .how_vertical_line {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero_title {
     font-size: 3.25rem;
   }
 
   .hero_split,
-  .security_split {
+  .what_glass_card {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .steps_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .features_grid,
-  .benefits_grid,
-  .testimonials_grid {
+  .benefits_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -922,16 +862,32 @@
     font-size: 2.15rem;
   }
 
-  .steps_grid,
   .features_grid,
-  .benefits_grid,
-  .contrast_split,
-  .testimonials_grid {
+  .benefits_grid {
     grid-template-columns: 1fr;
   }
 
-  .what_box {
-    padding: 2.5rem 1.5rem;
+  .what_glass_card,
+  .feature_card,
+  .benefit_card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .how_step_item {
+    gap: 1.25rem;
+  }
+
+  .how_step_circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .how_step_num {
+    font-size: 0.95rem;
+  }
+
+  .how_vertical_line {
+    left: 21px;
   }
 
   .cta_title {

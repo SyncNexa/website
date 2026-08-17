@@ -15,22 +15,148 @@
 .section_header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3.5rem;
 }
 
+/* ==========================================================================
+   BADGES (Pill-less Monospace Gradient Text)
+   ========================================================================== */
+.section_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.is_visible .section_badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MAIN TITLES (One-time Gradient-to-Solid Transition)
+   ========================================================================== */
 .section_title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.2;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
 }
 
-.section_subtitle {
+.is_visible .section_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.hero_title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+.is_visible .hero_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.cta_title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, #04d69d 0%, #ffaa01 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.is_visible .cta_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SUBTITLES (Smooth Translation & Fade-In)
+   ========================================================================== */
+.section_subtitle,
+.hero_subtitle,
+.cta_body {
   font-size: 1.15rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-  margin-top: 0.75rem;
+  line-height: 1.65;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.hero_subtitle {
+  font-size: 1.25rem;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+
+.cta_body {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.is_visible .section_subtitle,
+.is_visible .hero_subtitle,
+.is_visible .cta_body {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gradient_text {
@@ -40,17 +166,23 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* 1. Hero Section */
+/* ==========================================================================
+   1. HERO SECTION (Split + SIS Integration Preview)
+   ========================================================================== */
 .hero {
-  padding: 6rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 6.5rem 0 5.5rem;
   background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .hero_split {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
+  gap: 4.5rem;
   align-items: center;
 }
 
@@ -60,29 +192,20 @@
   align-items: flex-start;
 }
 
-.hero_title {
-  font-size: 3.75rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-.hero_subtitle {
-  color: var(--text-muted, #6b7280);
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 540px;
-}
-
 .hero_cta_group {
   display: flex;
   align-items: center;
   gap: 1.25rem;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+}
+
+.is_visible .hero_cta_group {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero_ui_side {
@@ -91,555 +214,371 @@
   align-items: center;
 }
 
-/* School Dashboard Preview */
-.school_dashboard_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 480px;
-}
-
-.dash_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--stroke-subtle, #f3f4f6);
-}
-
-.dash_brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  color: var(--dark, #05241d);
-}
-
-.dash_icon {
-  font-size: 1.25rem;
-}
-
-.dash_status_badge {
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.dash_metrics_row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.metric_tile {
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 12px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.metric_tile small {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--text-muted, #6b7280);
-  margin-bottom: 2px;
-}
-
-.metric_tile strong {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--dark, #05241d);
-}
-
-.metric_sub {
-  font-size: 0.75rem;
-  color: var(--primary-dark, #006d50);
-  margin-top: 2px;
-}
-
-.dash_log_feed {
-  background: #071713;
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.feed_title {
-  font-size: 0.75rem;
-  font-family: monospace;
-  color: #9ca3af;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.5rem;
-}
-
-.feed_item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.8rem;
-  color: #a7f3d0;
-}
-
-.feed_check {
-  color: var(--primary, #04d69d);
-  font-weight: 800;
-}
-
-.feed_item small {
-  margin-left: auto;
-  color: #9ca3af;
-  font-size: 0.7rem;
-}
-
-.dash_footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-muted, #6b7280);
-}
-
-/* 2. The Problem Section */
-.problem_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.problem_box {
-  max-width: 860px;
-  margin: 0 auto;
-  background: #fffafa;
-  border: 1px solid #fee2e2;
-  border-radius: 24px;
-  padding: 4rem 3.5rem;
-  text-align: center;
-}
-
-.problem_text {
+/* SIS Gateway Card Preview */
+.sis_preview_card {
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  font-size: 1.15rem;
-  color: var(--text-muted, #4b5563);
-  line-height: 1.7;
-  margin-top: 1.5rem;
+  width: 100%;
 }
 
-.problem_highlight {
-  font-size: 1.3rem;
+.sis_card_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+  padding-bottom: 1rem;
+}
+
+.sis_status_indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-dark, #006d50);
+}
+
+.pulse_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+}
+
+.sis_latency_tag {
+  font-family: monospace;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #dc2626;
+  color: var(--text-muted, #6b7280);
 }
 
-/* 3. Helps Section */
-.solution_section {
-  padding: 6rem 0;
+.sis_metrics_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.sis_metric_box {
   background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sis_metric_box span {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.sis_metric_box strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  font-family: monospace;
+}
+
+.sis_log_box {
+  background: #05241d;
+  color: #04d69d;
+  font-family: monospace;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   2. HOW IT WORKS SECTION (Continuous Connecting Line)
+   ========================================================================== */
+.how_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.cards_grid_3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.how_timeline_wrap {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.benefit_card {
+.how_vertical_line {
+  position: absolute;
+  left: 27px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #006d50 0%,
+    #04d69d 40%,
+    #ffaa01 80%,
+    #04d69d 100%
+  );
+  z-index: 1;
+}
+
+.how_steps_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.how_step_item {
+  display: flex;
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+.how_step_circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
+  border: 2px solid #006d50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 3;
 }
 
-.card_icon_wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+.how_step_num {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #006d50;
+}
+
+.how_body_card {
+  flex-grow: 1;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.how_body_card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.65rem;
+}
+
+.how_body_card p {
+  font-size: 1rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. SECURITY & COMPLIANCE (8-Card Grid)
+   ========================================================================== */
+.security_section {
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.security_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.security_card {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.security_icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
   background: var(--primary-light, #e6faf4);
   color: var(--primary-dark, #006d50);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.security_card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.security_card p {
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. STUDENT BENEFITS FOR SCHOOLS (4-Card Grid)
+   ========================================================================== */
+.benefits_section {
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.benefits_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.benefit_card {
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.benefit_icon {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  display: block;
 }
 
 .benefit_card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--dark, #05241d);
   margin-bottom: 0.75rem;
 }
 
 .benefit_card p {
-  font-size: 1rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-}
-
-/* 4. How It Works Section */
-.how_it_works_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.steps_grid_3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.step_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-}
-
-.step_badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: var(--primary-light, #e6faf4);
-  color: var(--primary-dark, #006d50);
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-}
-
-.step_card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-bottom: 0.6rem;
-}
-
-.step_card p {
   font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
+  margin: 0;
 }
 
-/* 5. Security & Privacy Section */
-.security_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+/* ==========================================================================
+   5. IT & INTEGRATION SPECS TABLE
+   ========================================================================== */
+.specs_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.security_box {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.security_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-
-.security_item {
+.specs_card {
+  padding: 3rem 2.5rem;
   display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--dark, #05241d);
-}
-
-.shield_check {
-  color: var(--primary, #04d69d);
-  font-weight: 800;
-  font-size: 1.1rem;
-}
-
-/* 6. Student Benefits Section */
-.student_benefits_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.cards_grid_4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.student_benefit_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.25rem 1.75rem;
-}
-
-.student_benefit_card .benefit_emoji {
-  font-size: 2.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.student_benefit_card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-bottom: 0.6rem;
-}
-
-.student_benefit_card p {
-  font-size: 0.95rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-}
-
-/* 7. IT Specs & Architecture Section */
-.it_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
-}
-
-.it_split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.it_lead {
-  font-size: 1.15rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-  margin: 1rem 0 2rem;
+  flex-direction: column;
 }
 
 .specs_table {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .spec_row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
   border-radius: 10px;
-  padding: 1rem 1.25rem;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
 }
 
 .spec_label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--primary-dark, #006d50);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
 }
 
 .spec_value {
   font-size: 0.95rem;
-  color: var(--dark, #05241d);
-  font-weight: 500;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.5;
 }
 
-.it_diagram_side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.diagram_box {
-  background: #071713;
-  border: 1px solid rgba(4, 214, 157, 0.25);
-  border-radius: 20px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 480px;
-}
-
-.diagram_title_bar {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.diagram_nodes {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.diag_node_school,
-.diag_node_adapter,
-.diag_node_cloud {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #0d2620;
-  border: 1px solid rgba(4, 214, 157, 0.2);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-}
-
-.diag_node_adapter {
-  border-color: #04d69d;
-  background: #11332b;
-}
-
-.diag_icon {
-  font-size: 1.5rem;
-}
-
-.diag_node_school strong,
-.diag_node_adapter strong,
-.diag_node_cloud strong {
-  font-size: 0.95rem;
-  color: #ffffff;
-  display: block;
-}
-
-.diag_node_school small,
-.diag_node_adapter small,
-.diag_node_cloud small {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  display: block;
-}
-
-.diag_arrow_down {
-  text-align: center;
-  font-size: 0.75rem;
-  color: #04d69d;
-  font-family: monospace;
-  padding: 2px 0;
-}
-
-/* 8. Testimonials Section */
-.testimonials_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.testimonials_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.testimonial_card {
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonial_text {
-  font-size: 1.05rem;
-  color: var(--dark, #05241d);
-  line-height: 1.65;
-  font-style: italic;
-  margin-bottom: 1.75rem;
-}
-
-.testimonial_author {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--stroke, #e5e7eb);
-  padding-top: 1rem;
-}
-
-.testimonial_author strong {
-  font-size: 1rem;
-  color: var(--dark, #05241d);
-}
-
-.testimonial_author span {
-  font-size: 0.85rem;
-  color: var(--text-muted, #6b7280);
-}
-
-/* 9. FAQ Section */
+/* ==========================================================================
+   6. FAQ ACCORDION SECTION
+   ========================================================================== */
 .faq_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.faq_list {
-  max-width: 800px;
+.faq_container {
+  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.faq_item {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 14px;
-  overflow: hidden;
+.faq_card {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 16px;
 }
 
-.faq_item.faq_open {
-  border-color: var(--primary, #04d69d);
-}
-
-.faq_question {
-  width: 100%;
-  padding: 1.5rem 1.75rem;
+.faq_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: left;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--dark, #05241d);
-  cursor: pointer;
-  background: none;
-  border: none;
+  gap: 1rem;
 }
 
-.faq_toggle_icon {
-  font-size: 1.5rem;
-  font-weight: 400;
+.faq_header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  margin: 0;
+}
+
+.faq_toggle {
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--primary-dark, #006d50);
-  margin-left: 1rem;
+  line-height: 1;
 }
 
 .faq_answer {
-  padding: 0 1.75rem 1.5rem;
   font-size: 1rem;
-  color: var(--text-muted, #4b5563);
+  color: var(--text-muted, #6b7280);
   line-height: 1.65;
-  border-top: 1px solid var(--stroke-subtle, #f3f4f6);
+  margin-top: 1rem;
   padding-top: 1rem;
+  border-top: 1px solid var(--stroke, #e5e7eb);
 }
 
-/* 10. Call to Action Section */
+/* ==========================================================================
+   7. CALL TO ACTION LAUNCHPAD
+   ========================================================================== */
 .cta_section {
-  padding: 6rem 2rem;
+  padding: 7rem 2rem;
   background: var(--dark, #05241d);
   text-align: center;
 }
@@ -652,19 +591,28 @@
   align-items: center;
 }
 
-.cta_title {
-  font-size: 3rem;
+.cta_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
   margin-bottom: 1.25rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
-.cta_body {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+.is_visible .cta_badge {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cta_buttons {
@@ -673,26 +621,99 @@
   gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
-/* Responsive Media Queries */
+.is_visible .cta_buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   CARDS OPACITY-ALONE FADE-IN SYSTEM (Zero Translation)
+   ========================================================================== */
+.security_grid > *,
+.benefits_grid > *,
+.faq_container > *,
+.sis_preview_card,
+.specs_card,
+.how_body_card,
+.hero_content {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+/* Staggered Card Appearance */
+.security_grid > *:nth-child(1),
+.benefits_grid > *:nth-child(1),
+.faq_container > *:nth-child(1),
+.how_steps_list > *:nth-child(1) .how_body_card {
+  transition-delay: 0.2s;
+}
+
+.security_grid > *:nth-child(2),
+.benefits_grid > *:nth-child(2),
+.faq_container > *:nth-child(2),
+.how_steps_list > *:nth-child(2) .how_body_card {
+  transition-delay: 0.35s;
+}
+
+.security_grid > *:nth-child(3),
+.benefits_grid > *:nth-child(3),
+.faq_container > *:nth-child(3),
+.how_steps_list > *:nth-child(3) .how_body_card {
+  transition-delay: 0.5s;
+}
+
+.security_grid > *:nth-child(4),
+.benefits_grid > *:nth-child(4),
+.faq_container > *:nth-child(4) {
+  transition-delay: 0.65s;
+}
+
+.is_visible .security_grid > *,
+.is_visible .benefits_grid > *,
+.is_visible .faq_container > *,
+.is_visible .sis_preview_card,
+.is_visible .specs_card,
+.is_visible .how_body_card,
+.is_visible .hero_content {
+  opacity: 1;
+}
+
+.how_vertical_line {
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+
+.is_visible .how_vertical_line {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero_title {
     font-size: 3.25rem;
   }
 
-  .hero_split,
-  .it_split {
+  .hero_split {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .cards_grid_3,
-  .steps_grid_3,
-  .cards_grid_4,
-  .testimonials_grid,
-  .security_grid {
+  .security_grid,
+  .benefits_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spec_row {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 
@@ -709,8 +730,33 @@
     font-size: 2.15rem;
   }
 
-  .problem_box {
-    padding: 2.5rem 1.5rem;
+  .security_grid,
+  .benefits_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sis_preview_card,
+  .specs_card,
+  .benefit_card,
+  .security_card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .how_step_item {
+    gap: 1.25rem;
+  }
+
+  .how_step_circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .how_step_num {
+    font-size: 0.95rem;
+  }
+
+  .how_vertical_line {
+    left: 21px;
   }
 
   .cta_title {

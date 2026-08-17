@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
+import HeroGeometry from "@/components/hero/HeroGeometry";
+import GlassBlobCard from "@/components/cards/GlassBlobCard";
+import FadeInSection from "@/components/animation/FadeInSection";
 import styles from "./page.module.css";
 
 export default function ForOrganizationsPage() {
@@ -16,81 +19,129 @@ export default function ForOrganizationsPage() {
   const benefits = [
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
       ),
-      title: "Real-Time Verification",
-      desc: "Get instant confirmation of student status directly from partner institutions. No manual review, no delay.",
+      title: "Real-Time Verification (<18ms)",
+      desc: "Get instant confirmation of student status directly from partner institutions. Zero manual review queues and zero drop-off.",
+      blobColor: "#04d69d",
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
           <polyline points="17 6 23 6 23 12" />
         </svg>
       ),
-      title: "Higher Conversion Rates",
-      desc: "Reduce checkout friction. Students verify in one tap instead of filling out long forms and uploading documents.",
+      title: "+38% Higher Conversion",
+      desc: "Replace lengthy document upload forms with a 1-tap instant check. Convert students on the spot during checkout.",
+      blobColor: "#ffaa01",
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
-      title: "Zero Compliance Headaches",
-      desc: "You never handle or store student ID cards, transcripts, or personal documents. Reduce your GDPR, NDPR, and data liability.",
+      title: "Zero Compliance Liability",
+      desc: "You never ingest or store student ID scans, transcripts, or personal PII. Eliminate GDPR and NDPR data breach risk.",
+      blobColor: "#006d50",
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
           <line x1="8" y1="21" x2="16" y2="21" />
           <line x1="12" y1="17" x2="12" y2="21" />
         </svg>
       ),
-      title: "Developer-Friendly API",
-      desc: "RESTful API and webhooks designed for quick integration. Comprehensive documentation, SDKs, and sandbox environment.",
+      title: "Developer-Friendly REST API",
+      desc: "Clean JSON endpoints, webhooks, and pre-built React/Vue components designed to go live in under an afternoon.",
+      blobColor: "#04d69d",
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       ),
-      title: "Fraud Prevention",
-      desc: "Prevent discount abuse with cryptographically verifiable proofs tied directly to active institutional enrollment records.",
+      title: "Cryptographic Fraud Prevention",
+      desc: "Stop fake student IDs and forged transcripts. Proofs are mathematically signed by root university keypairs.",
+      blobColor: "#006d50",
     },
     {
       icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <circle cx="12" cy="12" r="10" />
           <path d="M2 12h20" />
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
       ),
-      title: "Growing Student Network",
-      desc: "Tap into a rapidly expanding network of verified students across partner universities, polytechnics, and colleges.",
+      title: "Expanding Student Network",
+      desc: "Instantly tap into hundreds of thousands of verified students across accredited universities and colleges.",
+      blobColor: "#ffaa01",
     },
   ];
 
   const integrationSteps = [
     {
       step: "01",
-      title: "Sign Up & Get API Keys",
-      desc: "Create your organization account and get instant access to your API keys and sandbox environment.",
+      title: "Get API Keys & Sandbox Access",
+      desc: "Register your organization, generate test credentials, and experiment in our full-fidelity staging sandbox.",
     },
     {
       step: "02",
-      title: "Integrate with a Few Lines of Code",
-      desc: "Add SyncID verification to your checkout, onboarding, or sign-up flow using our REST API or pre-built UI components.",
+      title: "Integrate with 3 Lines of Code",
+      desc: "Embed our lightweight SDK or make a direct REST call during your checkout or onboarding verification flow.",
     },
     {
       step: "03",
-      title: "Go Live & Start Verifying",
-      desc: "Switch to production and start offering verified student discounts instantly with real-time verification.",
+      title: "Go Live with Instant Attestations",
+      desc: "Switch to production. Real-time verification runs in under 18ms with 99.9% uptime SLA.",
     },
   ];
 
@@ -99,133 +150,134 @@ export default function ForOrganizationsPage() {
       name: "Starter",
       price: "Free",
       period: "forever",
-      desc: "Perfect for testing and small apps",
+      desc: "For testing, indie developers, and early pilot apps",
       features: [
-        "Up to 100 verifications/month",
-        "Standard API access",
-        "Community support",
-        "Sandbox environment",
-        "Basic analytics",
+        "Up to 100 verifications / mo",
+        "Standard REST API access",
+        "Full Sandbox environment",
+        "Community & Discord support",
+        "Basic analytics dashboard",
       ],
       popular: false,
       ctaText: "Get Started Free",
       ctaVariant: "stroke" as const,
+      blobColor: "#04d69d",
     },
     {
       name: "Growth",
       price: "$99",
       period: "/month",
-      desc: "For growing businesses and startups",
+      desc: "For high-growth startups & scale-ups",
       features: [
-        "Up to 2,500 verifications/month",
-        "Full API & Webhook access",
-        "Email & chat support",
-        "Sandbox environment",
-        "Detailed analytics dashboard",
-        "Custom branding options",
+        "Up to 2,500 verifications / mo",
+        "REST API & Webhooks access",
+        "Full Sandbox & Test Suites",
+        "Email & Chat support (SLA 4h)",
+        "Detailed conversion analytics",
+        "Custom checkout branding",
       ],
       popular: true,
       ctaText: "Start Free Trial",
       ctaVariant: "primary" as const,
+      blobColor: "#006d50",
     },
     {
       name: "Scale",
       price: "$299",
       period: "/month",
-      desc: "For high-volume platforms and brands",
+      desc: "For high-volume media & consumer brands",
       features: [
-        "Up to 10,000 verifications/month",
-        "Priority API throughput",
-        "Dedicated support manager",
-        "99.9% SLA guarantee",
-        "Advanced fraud detection",
-        "Custom webhook integrations",
+        "Up to 10,000 verifications / mo",
+        "Priority API throughput (<15ms)",
+        "Dedicated account manager",
+        "99.9% Uptime SLA guarantee",
+        "Advanced fraud anomaly detection",
+        "Custom webhook endpoints",
       ],
       popular: false,
-      ctaText: "Contact Sales",
+      ctaText: "Upgrade to Scale",
       ctaVariant: "stroke" as const,
+      blobColor: "#ffaa01",
     },
     {
       name: "Enterprise",
       price: "Custom",
       period: "",
-      desc: "For large enterprises with custom needs",
+      desc: "For global enterprises with bespoke compliance",
       features: [
-        "Unlimited verifications",
-        "Dedicated infrastructure",
-        "24/7 phone & Slack support",
-        "99.99% SLA guarantee",
-        "Custom data processing agreements",
-        "On-premise / hybrid options",
+        "Unlimited verifications volume",
+        "Dedicated cloud infrastructure",
+        "24/7 Phone & Slack channel support",
+        "99.99% Enterprise SLA guarantee",
+        "Custom Data Processing Agreement",
+        "Custom SIS on-prem connectors",
       ],
       popular: false,
-      ctaText: "Talk to Us",
+      ctaText: "Talk to Sales",
       ctaVariant: "stroke" as const,
+      blobColor: "#04d69d",
     },
-  ];
-
-  const trustHighlights = [
-    "No student documents stored on your servers",
-    "Real-time institutional verification",
-    "GDPR & NDPR compliance built in",
-    "Pairwise IDs protect student privacy",
-    "Instant revocation upon student departure",
-    "99.9% API uptime guarantee",
   ];
 
   const useCases = [
     {
       icon: "🎵",
       title: "Streaming & Media",
-      desc: "Offer student pricing on music, video, and content subscriptions without manual document review.",
+      desc: "Offer verified student rates on subscriptions without document fraud or manual backlogs.",
+      blobColor: "#04d69d",
     },
     {
       icon: "💻",
       title: "SaaS & Developer Tools",
-      desc: "Give students free or discounted access to developer tools, design software, and productivity apps.",
+      desc: "Grant students free software packs and pro licenses with instant verification.",
+      blobColor: "#006d50",
     },
     {
       icon: "🛍️",
       title: "E-Commerce & Retail",
-      desc: "Boost sales by offering instant student discounts at checkout with one-click verification.",
+      desc: "Boost checkout conversion by auto-applying student discounts in under 18ms.",
+      blobColor: "#ffaa01",
     },
     {
       icon: "🍔",
-      title: "Food & Delivery",
-      desc: "Attract student customers with exclusive meal deals and delivery discounts verified on the spot.",
+      title: "Food & Campus Delivery",
+      desc: "Drive daily orders with instant campus verification on food ordering apps.",
+      blobColor: "#04d69d",
     },
     {
       icon: "🏦",
       title: "Fintech & Banking",
-      desc: "Onboard student users for student accounts, debit cards, and financial products with confidence.",
+      desc: "Onboard students to specialized digital bank accounts and credit products with confidence.",
+      blobColor: "#006d50",
     },
     {
       icon: "✈️",
       title: "Travel & Hospitality",
-      desc: "Provide student travel fares, hotel discounts, and event tickets with instant proof of enrollment.",
+      desc: "Offer student transit tickets, train passes, and hotel discounts with zero paperwork.",
+      blobColor: "#ffaa01",
     },
   ];
 
   const faqs = [
     {
-      q: "How does verification work?",
-      a: "When a user wants to prove their student status on your platform, they initiate a verification request through SyncID. The user approves the request in their app, and your system receives a cryptographically signed confirmation in real time.",
+      q: "How does the verification roundtrip work technically?",
+      a: "When a user initiates verification on your checkout, they scan or approve a SyncID prompt. SyncNexa returns a signed JSON attestation in <18ms confirming active enrollment status. Zero documents are shared.",
     },
     {
-      q: "What data do we receive about the student?",
-      a: "You receive only what's necessary: a unique pairwise identifier, confirmation of active enrollment, and (optionally) the institution name. You do not receive personal documents, grades, or sensitive personal data.",
+      q: "What user data does our business receive?",
+      a: "You receive a pairwise pseudonymous student ID, the enrollment status boolean (e.g. ACTIVE_ENROLLED), and the verified institution name. No transcripts, personal IDs, or contact lists.",
     },
     {
-      q: "How long does it take to integrate?",
-      a: "Most developers complete basic integration in under an hour using our REST API. We provide comprehensive documentation, code samples, and SDKs.",
+      q: "How quickly can our engineering team integrate the API?",
+      a: "Most developers go from reading the documentation to testing successful verifications in our sandbox in under an hour using our Node.js, Python, or Go SDKs.",
     },
     {
-      q: "What happens if a student is no longer enrolled?",
-      a: "Verification status is queried in real time. If a student has graduated, withdrawn, or is no longer enrolled, the verification will fail. You'll always have current status.",
+      q: "What happens if a student drops out or graduates?",
+      a: "Status queries are verified against live institutional SIS registries. As soon as a student is no longer active, subsequent verifications will accurately return inactive.",
     },
     {
-      q: "Can we try it before committing?",
-      a: "Yes. Our Starter plan is completely free and includes up to 100 verifications per month with full sandbox access. No credit card required.",
+      q: "Can we test the platform for free?",
+      a: "Yes. Our Starter plan is completely free and includes 100 live verifications per month with full sandbox access. No credit card required.",
     },
   ];
 
@@ -235,186 +287,200 @@ export default function ForOrganizationsPage() {
 
       <main>
         {/* 1. Hero Section */}
-        <section className={styles.hero}>
+        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
+          <HeroGeometry />
           <div className={styles.container}>
             <div className={styles.hero_split}>
               <div className={styles.hero_content}>
+                <span className={styles.section_badge}>
+                  DEVELOPER & BUSINESS API
+                </span>
                 <h1 className={styles.hero_title}>
-                  Stop losing customers to <br />
-                  <span className={styles.gradient_text}>slow verification.</span>
+                  Stop losing revenue to <br />
+                  <span className={styles.gradient_text}>
+                    slow verification.
+                  </span>
                 </h1>
 
                 <p className={styles.hero_subtitle}>
-                  Integrate SyncID and start verifying students in minutes—without storing documents or risking compliance issues.
+                  Verify students in &lt;18ms with a single API call. Boost
+                  checkout conversion by 38% while eliminating document storage
+                  and regulatory compliance headaches.
                 </p>
 
                 <div className={styles.hero_cta_group}>
-                  <Link href="/contact">
-                    <SnButton variant="primary" size="lg">
-                      Get Started Free
-                    </SnButton>
-                  </Link>
                   <Link href="#pricing">
+                    <SnButton variant="primary" size="lg">
+                      Start Integration
+                    </SnButton>
+                  </Link>
+                  <Link href="#developer-api">
                     <SnButton variant="stroke" size="lg">
-                      View Pricing
+                      View API Specs
                     </SnButton>
                   </Link>
                 </div>
               </div>
 
-              {/* Live Verification Console Preview (Replacing old image) */}
-              <div className={styles.hero_image_side}>
-                <div className={styles.org_dashboard_card}>
-                  <div className={styles.dash_header}>
-                    <div className={styles.dash_brand}>
-                      <span className={styles.dash_api_badge}>LIVE API</span>
-                      <strong>SyncNexa Business Console</strong>
+              {/* API Live Console Preview */}
+              <div className={styles.hero_ui_side}>
+                <GlassBlobCard
+                  className={styles.api_console_card}
+                  blobColor="#04d69d"
+                  secondaryBlobColor="#ffaa01"
+                >
+                  <div className={styles.console_card_top}>
+                    <div className={styles.console_status}>
+                      <span className={styles.pulse_dot}></span>
+                      <span>SYNCNEXA EDGE RELAY LIVE</span>
                     </div>
-                    <span className={styles.dash_status_ok}>200 OK</span>
+                    <span className={styles.console_latency}>18.2ms AVG</span>
                   </div>
 
-                  <div className={styles.dash_stats_grid}>
-                    <div className={styles.dash_stat_card}>
-                      <small>VERIFIED THIS MONTH</small>
-                      <strong>14,892</strong>
-                      <span className={styles.dash_stat_growth}>+28.4% vs last month</span>
+                  <div className={styles.console_metrics_grid}>
+                    <div className={styles.console_metric_box}>
+                      <span>BENCHMARK LATENCY</span>
+                      <strong>18.2ms</strong>
                     </div>
-                    <div className={styles.dash_stat_card}>
-                      <small>PASS RATE</small>
-                      <strong>99.8%</strong>
-                      <span className={styles.dash_stat_instant}>Instant &middot; 0 docs</span>
+                    <div className={styles.console_metric_box}>
+                      <span>CONVERSION SURGE</span>
+                      <strong>+38.4%</strong>
+                    </div>
+                    <div className={styles.console_metric_box}>
+                      <span>PII STORED</span>
+                      <strong>0 Bytes</strong>
+                    </div>
+                    <div className={styles.console_metric_box}>
+                      <span>UPTIME SLA</span>
+                      <strong>99.99%</strong>
                     </div>
                   </div>
 
-                  <div className={styles.dash_live_feed}>
-                    <div className={styles.feed_header}>
-                      <span>Live Verification Stream</span>
-                      <small className={styles.live_pulse_dot}>&bull; Connected</small>
-                    </div>
-                    <div className={styles.feed_row}>
-                      <span className={styles.feed_icon}>⚡</span>
-                      <div className={styles.feed_info}>
-                        <strong>@anthony &middot; FUTO</strong>
-                        <small>Spotify Student Plan &middot; Verified</small>
-                      </div>
-                      <span className={styles.feed_time}>2s ago</span>
-                    </div>
-                    <div className={styles.feed_row}>
-                      <span className={styles.feed_icon}>⚡</span>
-                      <div className={styles.feed_info}>
-                        <strong>@sarah &middot; UNILAG</strong>
-                        <small>GitHub Dev Pack &middot; Verified</small>
-                      </div>
-                      <span className={styles.feed_time}>14s ago</span>
-                    </div>
+                  <div className={styles.console_terminal_box}>
+                    <span>POST /v1/verify HTTP/1.1</span>
+                    <span>Host: api.syncnexa.co &bull; Status: 200 OK</span>
+                    <span>{`{ "status": "ACTIVE_ENROLLED", "latency_ms": 17.8 }`}</span>
                   </div>
-                </div>
+                </GlassBlobCard>
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 2. The Problem Section */}
-        <section className={styles.problem_section}>
-          <div className={styles.container}>
-            <div className={styles.problem_box}>
-              <h2 className={styles.section_title}>Student verification shouldn&apos;t kill conversions.</h2>
-              <div className={styles.problem_text}>
-                <p>
-                  Every time a student signs up for your discount, your platform asks them to prove they&apos;re enrolled. They upload a document. You wait. They wait. And while they wait, they leave.
-                </p>
-                <p>
-                  That&apos;s a broken experience. And it&apos;s costing you customers.
-                </p>
-                <p className={styles.problem_highlight}>
-                  Manual review is slow. Third-party aggregators store too much data. There has to be a better way.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. How SyncID Helps Organizations Section */}
-        <section className={styles.helps_section}>
+        {/* 2. Benefits Matrix */}
+        <FadeInSection
+          className={styles.benefits_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Instant verification. Zero friction.</h2>
+              <span className={styles.section_badge}>BUSINESS VALUE</span>
+              <h2 className={styles.section_title}>
+                Engineered for High-Growth Platforms
+              </h2>
               <p className={styles.section_subtitle}>
-                SyncID lets students prove their enrollment in one tap. Your system gets a cryptographically verified confirmation in real time.
+                Unlock verified student volume with zero friction, zero document
+                liability, and mathematical certainty.
               </p>
-              <div className={styles.one_call_highlight}>
-                One API call. Verified student status. Zero documents stored.
-              </div>
             </div>
 
             <div className={styles.cards_grid_3}>
               {benefits.map((benefit, idx) => (
-                <div key={idx} className={styles.benefit_card}>
+                <GlassBlobCard
+                  key={idx}
+                  className={styles.benefit_card}
+                  blobColor={benefit.blobColor}
+                >
                   <div className={styles.card_icon_wrap}>{benefit.icon}</div>
                   <h3>{benefit.title}</h3>
                   <p>{benefit.desc}</p>
-                </div>
+                </GlassBlobCard>
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 4. How It Works (3 Steps) */}
-        <section className={styles.how_it_works_section}>
+        {/* 3. Integration in 3 Steps */}
+        <FadeInSection
+          className={styles.how_it_works_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Three steps to instant verification</h2>
+              <span className={styles.section_badge}>FAST INTEGRATION</span>
+              <h2 className={styles.section_title}>
+                Three Steps to Instant Verification
+              </h2>
+              <p className={styles.section_subtitle}>
+                From sandbox setup to production verification in under an
+                afternoon.
+              </p>
             </div>
 
-            <div className={styles.steps_grid_3}>
-              {integrationSteps.map((item, idx) => (
-                <div key={idx} className={styles.step_card}>
-                  <div className={styles.step_badge}>{item.step}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              ))}
+            <div className={styles.how_timeline_wrap}>
+              <div className={styles.how_vertical_line} aria-hidden="true" />
+
+              <div className={styles.how_steps_list}>
+                {integrationSteps.map((item, idx) => (
+                  <div key={idx} className={styles.how_step_item}>
+                    <div className={styles.how_step_circle}>
+                      <span className={styles.how_step_num}>{item.step}</span>
+                    </div>
+
+                    <GlassBlobCard
+                      className={styles.how_body_card}
+                      blobColor="#04d69d"
+                    >
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                    </GlassBlobCard>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 5. For Developers Section */}
-        <section className={styles.developers_section}>
+        {/* 4. For Developers Section (with Terminal Code Snippet) */}
+        <FadeInSection
+          className={styles.developers_section}
+          id="developer-api"
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.dev_split}>
               <div className={styles.dev_content}>
-                <h2 className={styles.section_title}>Built for developers</h2>
+                <span className={styles.section_badge}>DEVELOPER EXPERIENCE</span>
+                <h2 className={styles.section_title}>Built for Developers</h2>
                 <p className={styles.dev_subtitle}>
-                  We care about developer experience. Our API is simple, well-documented, and easy to test.
+                  We care deeply about clean API design. Our REST endpoints are
+                  declarative, fully typed, and backed by robust webhooks and
+                  SDKs.
                 </p>
 
                 <div className={styles.dev_checklist}>
                   <div className={styles.dev_bullet_item}>
                     <span className={styles.code_check_icon}>✓</span>
-                    <span>RESTful API with JSON payloads</span>
+                    <span>RESTful API with predictable JSON payloads</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
                     <span className={styles.code_check_icon}>✓</span>
-                    <span>Webhooks for real-time status updates</span>
+                    <span>Webhook dispatching for asynchronous attestation events</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
                     <span className={styles.code_check_icon}>✓</span>
-                    <span>SDKs for Node.js, Python, PHP, and Go</span>
+                    <span>Official SDKs for Node.js, TypeScript, Python, and Go</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
                     <span className={styles.code_check_icon}>✓</span>
-                    <span>Sandbox environment with test credentials</span>
-                  </div>
-                  <div className={styles.dev_bullet_item}>
-                    <span className={styles.code_check_icon}>✓</span>
-                    <span>Pre-built UI components for React, Vue, and vanilla JS</span>
+                    <span>Pre-built UI verification components for React and Vue</span>
                   </div>
                 </div>
 
-                <div className={styles.dev_cta}>
+                <div>
                   <Link href="/contact">
                     <SnButton variant="primary" size="md">
-                      Request API Documentation
+                      Request Full API Reference
                     </SnButton>
                   </Link>
                 </div>
@@ -449,165 +515,162 @@ if (verification.isEnrolled) {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 6. Pricing Section */}
-        <section className={styles.pricing_section} id="pricing">
+        {/* 5. Pricing & Tiers Section */}
+        <FadeInSection
+          className={styles.pricing_section}
+          id="pricing"
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Simple, transparent pricing</h2>
+              <span className={styles.section_badge}>TRANSPARENT PLANS</span>
+              <h2 className={styles.section_title}>Simple, Scalable Pricing</h2>
               <p className={styles.section_subtitle}>
-                Start free and scale as you grow. No hidden fees, no long-term contracts.
+                Start for free in sandbox, then scale seamlessly with predictable
+                volume tiers.
               </p>
             </div>
 
-            <div className={styles.pricing_grid}>
+            <div className={styles.pricing_grid_4}>
               {pricingPlans.map((plan, idx) => (
-                <div
+                <GlassBlobCard
                   key={idx}
                   className={`${styles.pricing_card} ${
                     plan.popular ? styles.popular_card : ""
                   }`}
+                  blobColor={plan.blobColor}
                 >
                   {plan.popular && (
-                    <span className={styles.popular_badge}>Most Popular</span>
+                    <span className={styles.popular_badge}>MOST POPULAR</span>
                   )}
                   <h3>{plan.name}</h3>
-                  <div className={styles.price_tag}>
+                  <div className={styles.price_row}>
                     <span className={styles.price_amount}>{plan.price}</span>
                     <span className={styles.price_period}>{plan.period}</span>
                   </div>
-                  <p className={styles.plan_desc}>{plan.desc}</p>
-                  <ul className={styles.plan_features}>
-                    {plan.features.map((feat, fIdx) => (
-                      <li key={fIdx}>
-                        <span className={styles.feat_check}>✓</span>
-                        <span>{feat}</span>
-                      </li>
+                  <p className={styles.price_desc}>{plan.desc}</p>
+
+                  <div className={styles.features_list}>
+                    {plan.features.map((f, fi) => (
+                      <div key={fi} className={styles.feature_item}>
+                        <span className={styles.feature_check}>✓</span>
+                        <span>{f}</span>
+                      </div>
                     ))}
-                  </ul>
-                  <div className={styles.plan_cta}>
-                    <Link href="/contact">
-                      <SnButton variant={plan.ctaVariant} size="md">
-                        {plan.ctaText}
-                      </SnButton>
-                    </Link>
                   </div>
-                </div>
+
+                  <Link href="/contact">
+                    <SnButton variant={plan.ctaVariant} size="md">
+                      {plan.ctaText}
+                    </SnButton>
+                  </Link>
+                </GlassBlobCard>
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 7. Enterprise & Security Trust Section */}
-        <section className={styles.trust_section}>
-          <div className={styles.container}>
-            <div className={styles.trust_box}>
-              <h2 className={styles.section_title}>Enterprise-grade trust</h2>
-              <p className={styles.section_subtitle}>
-                Built for companies that take privacy, security, and compliance seriously.
-              </p>
-
-              <div className={styles.trust_grid}>
-                {trustHighlights.map((item, idx) => (
-                  <div key={idx} className={styles.trust_item}>
-                    <svg
-                      className={styles.shield_icon}
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Use Cases Section */}
-        <section className={styles.use_cases_section}>
+        {/* 6. Use Cases Section */}
+        <FadeInSection
+          className={styles.use_cases_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Who uses SyncNexa?</h2>
+              <span className={styles.section_badge}>INDUSTRY VERTICALS</span>
+              <h2 className={styles.section_title}>Tailored for Every Sector</h2>
               <p className={styles.section_subtitle}>
-                From startups to global brands, companies across industries use SyncID.
+                Powering student discounts across media, developer tooling,
+                retail, and fintech.
               </p>
             </div>
 
             <div className={styles.use_cases_grid}>
-              {useCases.map((useCase, idx) => (
-                <div key={idx} className={styles.use_case_card}>
-                  <div className={styles.use_case_emoji}>{useCase.icon}</div>
-                  <h3>{useCase.title}</h3>
-                  <p>{useCase.desc}</p>
-                </div>
+              {useCases.map((uc, idx) => (
+                <GlassBlobCard
+                  key={idx}
+                  className={styles.use_case_card}
+                  blobColor={uc.blobColor}
+                >
+                  <span className={styles.use_case_icon}>{uc.icon}</span>
+                  <h3>{uc.title}</h3>
+                  <p>{uc.desc}</p>
+                </GlassBlobCard>
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 9. FAQ Section */}
-        <section className={styles.faq_section}>
+        {/* 7. FAQ Accordion Section */}
+        <FadeInSection
+          className={styles.faq_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Frequently Asked Questions</h2>
+              <span className={styles.section_badge}>QUESTIONS & ANSWERS</span>
+              <h2 className={styles.section_title}>
+                Frequently Asked Questions
+              </h2>
+              <p className={styles.section_subtitle}>
+                Everything you need to know about integrating and scaling with
+                SyncNexa.
+              </p>
             </div>
 
-            <div className={styles.faq_list}>
+            <div className={styles.faq_container}>
               {faqs.map((faq, idx) => (
-                <div
+                <GlassBlobCard
                   key={idx}
-                  className={`${styles.faq_item} ${
-                    openFaq === idx ? styles.faq_open : ""
-                  }`}
+                  className={styles.faq_card}
+                  blobColor="#04d69d"
+                  onClick={() => toggleFaq(idx)}
                 >
-                  <button
-                    className={styles.faq_question}
-                    onClick={() => toggleFaq(idx)}
-                  >
-                    <span>{faq.q}</span>
-                    <span className={styles.faq_toggle_icon}>
+                  <div className={styles.faq_header}>
+                    <h3>{faq.q}</h3>
+                    <span className={styles.faq_toggle}>
                       {openFaq === idx ? "−" : "+"}
                     </span>
-                  </button>
+                  </div>
                   {openFaq === idx && (
                     <div className={styles.faq_answer}>
                       <p>{faq.a}</p>
                     </div>
                   )}
-                </div>
+                </GlassBlobCard>
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
-        {/* 10. Call to Action Section */}
-        <section className={styles.cta_section}>
+        {/* 8. Call to Action Launchpad */}
+        <FadeInSection
+          className={styles.cta_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.cta_container}>
-            <h2 className={styles.cta_title}>Ready to streamline verification?</h2>
+            <span className={styles.cta_badge}>READY TO INTEGRATE?</span>
+            <h2 className={styles.cta_title}>Start Verifying in Minutes</h2>
             <p className={styles.cta_body}>
-              Start verifying students in minutes. No credit card required.
+              Get your API keys, test in our staging sandbox, and launch verified
+              student discounts with sub-20ms latency today.
             </p>
             <div className={styles.cta_buttons}>
               <Link href="/contact">
                 <SnButton variant="primary" size="lg">
-                  Get Started Free
+                  Create Organization Account
                 </SnButton>
               </Link>
-              <Link href="/contact">
-                <SnButton variant="secondary" size="lg">
-                  Talk to Sales
+              <Link href="mailto:business@syncnexa.co">
+                <SnButton variant="stroke" size="lg">
+                  Contact Solutions Engineer
                 </SnButton>
               </Link>
             </div>
           </div>
-        </section>
+        </FadeInSection>
       </main>
 
       <Footer />
