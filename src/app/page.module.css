@@ -503,6 +503,7 @@
   padding: 7rem 0;
   background: transparent;
   position: relative;
+  overflow: hidden;
 }
 
 .pipeline_split {
@@ -518,48 +519,35 @@
 
 .pipeline_vertical_line {
   position: absolute;
-  top: -2.5rem;
-  bottom: -2.5rem;
-  left: 27px;
+  top: -24rem;
+  bottom: -12rem;
+  left: 26px;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    rgba(4, 214, 157, 0) 0%,
-    #006d50 15%,
-    #04d69d 40%,
-    #ffaa01 65%,
-    #006d50 85%,
-    rgba(4, 214, 157, 0) 100%
-  );
-  background-size: 100% 300%;
-  animation: slowContinuousGradient 14s ease-in-out infinite;
+  background-color: var(--stroke, #e5e7eb);
+  animation: slowGradientShadow 14s ease-in-out infinite;
   z-index: 1;
   pointer-events: none;
 }
 
-@keyframes slowContinuousGradient {
+@keyframes slowGradientShadow {
   0% {
-    background-position: 0% 0%;
-    box-shadow: 0 0 8px rgba(4, 214, 157, 0.4), 0 0 3px rgba(255, 170, 1, 0.25);
+    box-shadow: 0 0 10px rgba(4, 214, 157, 0.5), 0 0 3px rgba(4, 214, 157, 0.3);
   }
   33% {
-    background-position: 0% 50%;
-    box-shadow: 0 0 10px rgba(255, 170, 1, 0.45), 0 0 3px rgba(0, 109, 80, 0.3);
+    box-shadow: 0 0 12px rgba(255, 170, 1, 0.55), 0 0 4px rgba(255, 170, 1, 0.35);
   }
   66% {
-    background-position: 0% 100%;
-    box-shadow: 0 0 9px rgba(0, 109, 80, 0.45), 0 0 3px rgba(4, 214, 157, 0.35);
+    box-shadow: 0 0 11px rgba(0, 109, 80, 0.5), 0 0 4px rgba(0, 109, 80, 0.3);
   }
   100% {
-    background-position: 0% 0%;
-    box-shadow: 0 0 8px rgba(4, 214, 157, 0.4), 0 0 3px rgba(255, 170, 1, 0.25);
+    box-shadow: 0 0 10px rgba(4, 214, 157, 0.5), 0 0 3px rgba(4, 214, 157, 0.3);
   }
 }
 
 .pipeline_list {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 5.5rem;
   position: relative;
   z-index: 2;
 }
@@ -574,25 +562,28 @@
   align-items: flex-start;
 }
 
-.pipe_step_num_box {
-  width: 56px;
+.pipe_step_circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--stroke, #e5e7eb);
+  background: var(--bg-main, #ffffff);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
+  animation: slowGradientShadow 14s ease-in-out infinite;
 }
 
 .pipe_step_num {
   font-family: monospace;
-  font-size: 2.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--primary-dark, #006d50);
-  background: var(--bg-main, #ffffff);
-  padding: 10px 4px;
-  letter-spacing: -0.04em;
+  color: var(--dark, #05241d);
+  letter-spacing: -0.02em;
   text-align: center;
 }
 

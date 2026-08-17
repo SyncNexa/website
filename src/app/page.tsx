@@ -445,8 +445,8 @@ compliance: "100%_FERPA_NDPR"`}
 
                 <div className={styles.pipeline_list}>
                   <div className={styles.pipeline_card}>
-                    <div className={styles.pipe_step_num_box}>
-                      <div className={styles.pipe_step_num}>01</div>
+                    <div className={styles.pipe_step_circle}>
+                      <span className={styles.pipe_step_num}>01</span>
                     </div>
                     <div className={styles.pipe_step_body}>
                       <h3>Student Onboards</h3>
@@ -459,8 +459,8 @@ compliance: "100%_FERPA_NDPR"`}
                   </div>
 
                   <div className={styles.pipeline_card}>
-                    <div className={styles.pipe_step_num_box}>
-                      <div className={styles.pipe_step_num}>02</div>
+                    <div className={styles.pipe_step_circle}>
+                      <span className={styles.pipe_step_num}>02</span>
                     </div>
                     <div className={styles.pipe_step_body}>
                       <h3>School Attests</h3>
@@ -473,8 +473,8 @@ compliance: "100%_FERPA_NDPR"`}
                   </div>
 
                   <div className={styles.pipeline_card}>
-                    <div className={styles.pipe_step_num_box}>
-                      <div className={styles.pipe_step_num}>03</div>
+                    <div className={styles.pipe_step_circle}>
+                      <span className={styles.pipe_step_num}>03</span>
                     </div>
                     <div className={styles.pipe_step_body}>
                       <h3>Organization Verifies</h3>
