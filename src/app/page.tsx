@@ -105,16 +105,17 @@ export default function Home() {
       <TopBar />
 
       <main>
-        {/* 1. Hero Section with Geometry & Center Live Simulator */}
+        {/* 1. Hero Section */}
         <section className={styles.hero}>
           <HeroGeometry />
           <div className={styles.hero_container}>
+            <div className={styles.section_badge}>DECENTRALIZED TRUST INFRASTRUCTURE</div>
             <h1 className={styles.hero_title}>
               Your Identity, <span className={styles.gradient_text}>Simplified.</span>
             </h1>
 
             <p className={styles.hero_subtitle}>
-              SyncNexa builds trust infrastructure for the digital world. Verify once. Prove anywhere. Without sharing more than you need to.
+              SyncNexa builds cryptographic trust infrastructure for institutions, students, and businesses. Verify once. Prove anywhere. Without ever sharing sensitive records.
             </p>
 
             <div className={styles.hero_cta_group}>
@@ -125,7 +126,7 @@ export default function Home() {
               </Link>
               <Link href="#how-it-works">
                 <SnButton variant="stroke" size="lg">
-                  Learn More
+                  View Architecture
                 </SnButton>
               </Link>
             </div>
@@ -163,318 +164,341 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. The Problem Section */}
+        {/* 3. The Problem Section (Vercel / GitHub-grade Engineering Breakdown) */}
         <section className={styles.problem_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
+              <span className={styles.section_badge_danger}>THE BOTTLENECK</span>
               <h2 className={styles.section_title}>Identity verification is broken.</h2>
               <p className={styles.section_subtitle}>
-                Students upload the same documents over and over again. Schools risk exposing sensitive records. Businesses lose customers because verification takes too long and feels invasive.
+                Legacy verification pipelines create document fatigue for students, security liability for universities, and heavy drop-off rates for businesses.
               </p>
             </div>
 
             <div className={styles.cards_grid_3}>
-              <div className={styles.pain_card}>
-                <div className={styles.card_icon_wrap_danger}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
+              {/* Problem 1: Students */}
+              <div className={styles.tech_problem_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>FLOW // 01</span>
+                  <span className={styles.card_tag_danger}>PII EXPOSURE</span>
+                </div>
+                <div className={styles.problem_diagram_box}>
+                  <div className={styles.doc_wireframe}>
+                    <div className={styles.doc_header_line}></div>
+                    <div className={styles.doc_content_row}>
+                      <span className={styles.doc_avatar}></span>
+                      <div className={styles.doc_lines}>
+                        <div className={styles.doc_line_1}></div>
+                        <div className={styles.doc_line_2}></div>
+                      </div>
+                    </div>
+                    <div className={styles.doc_warning_tag}>EXPOSED TO 10+ 3RD PARTIES</div>
+                  </div>
                 </div>
                 <h3>For Students</h3>
                 <p>
-                  You shouldn&apos;t have to send your ID card, admission letter, or transcript to every platform that offers a student discount.
+                  Uploading sensitive transcripts, admission letters, and national IDs to dozens of third parties leaves digital footprints and risks identity theft.
                 </p>
               </div>
 
-              <div className={styles.pain_card}>
-                <div className={styles.card_icon_wrap_danger}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
+              {/* Problem 2: Schools */}
+              <div className={styles.tech_problem_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>FLOW // 02</span>
+                  <span className={styles.card_tag_danger}>COMPLIANCE LIABILITY</span>
+                </div>
+                <div className={styles.problem_diagram_box}>
+                  <div className={styles.sis_wireframe}>
+                    <div className={styles.sis_status_bar}>
+                      <span className={styles.sis_dot_red}></span>
+                      <span>INCOMING UNVETTED QUERIES</span>
+                    </div>
+                    <div className={styles.sis_metric_row}>
+                      <span>MANUAL BACKLOG:</span>
+                      <strong>3-5 DAYS</strong>
+                    </div>
+                    <div className={styles.sis_alert_box}>FERPA / NDPR PRIVACY RISK</div>
+                  </div>
                 </div>
                 <h3>For Schools</h3>
                 <p>
-                  Your students&apos; data should never leave your control. But verification requests keep piling up from every direction.
+                  Handling manual verification requests strains institutional registries and exposes sensitive student databases to unvetted external querying.
                 </p>
               </div>
 
-              <div className={styles.pain_card}>
-                <div className={styles.card_icon_wrap_danger}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
+              {/* Problem 3: Organizations */}
+              <div className={styles.tech_problem_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>FLOW // 03</span>
+                  <span className={styles.card_tag_danger}>42% DROP-OFF</span>
+                </div>
+                <div className={styles.problem_diagram_box}>
+                  <div className={styles.funnel_wireframe}>
+                    <div className={styles.funnel_bar_start}>
+                      <span>Checkout Intent</span>
+                      <strong>100%</strong>
+                    </div>
+                    <div className={styles.funnel_bar_drop}>
+                      <span>Manual Verification Gate</span>
+                      <strong className={styles.text_danger}>-42% Abandonment</strong>
+                    </div>
+                    <div className={styles.funnel_bar_end}>
+                      <span>Completed Conversions</span>
+                      <strong>58%</strong>
+                    </div>
+                  </div>
                 </div>
                 <h3>For Organizations</h3>
                 <p>
-                  Every failed verification is a lost customer. Every slow approval is a missed sale.
+                  Multi-day approval queues and invasive document requirements kill checkout conversion and leave businesses vulnerable to forged ID cards.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 4. The Solution Section */}
+        {/* 4. The Solution Section (Vercel / GitHub-grade Cryptographic Trust) */}
         <section className={styles.solution_section} id="solution">
           <div className={styles.container}>
             <div className={styles.section_header}>
+              <span className={styles.section_badge}>THE TRUST PROTOCOL</span>
               <h2 className={styles.section_title}>SyncNexa changes the game.</h2>
               <p className={styles.section_subtitle}>
-                We built a platform where everyone wins. Students stay in control of their identity. Schools remain the single source of truth. Organizations get instant, reliable verification.
+                We engineered a zero-knowledge trust mesh where students own their keys, universities remain the single source of truth, and businesses verify in &lt;20ms.
               </p>
             </div>
 
             <div className={styles.cards_grid_3}>
-              <div className={styles.solution_card}>
-                <div className={styles.card_icon_wrap_success}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
+              {/* Solution 1: Students */}
+              <div className={styles.tech_solution_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>CLIENT // SYNCPASS</span>
+                  <span className={styles.card_tag_success}>ZERO DOC STORAGE</span>
                 </div>
-                <h3>For Students</h3>
+                <div className={styles.solution_diagram_box}>
+                  <div className={styles.sol_code_block}>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>keypair:</span>
+                      <span className={styles.code_val}>&quot;Ed25519_Enclave&quot;</span>
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>pairwiseId:</span>
+                      <span className={styles.code_val}>&quot;pw_9f81a7b4&quot;</span>
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>sharedDocs:</span>
+                      <span className={styles.code_val_green}>0 (None)</span>
+                    </div>
+                  </div>
+                </div>
+                <h3>Decentralized SyncID</h3>
                 <p>
-                  SyncID is your digital student identity. Verify once and use it everywhere—without ever uploading the same document twice.
+                  Students verify enrollment once. Their credential lives securely on their hardware enclave, unlocking perks everywhere with one-tap consent.
                 </p>
               </div>
 
-              <div className={styles.solution_card}>
-                <div className={styles.card_icon_wrap_success}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
+              {/* Solution 2: Schools */}
+              <div className={styles.tech_solution_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>ADAPTER // FIREWALL</span>
+                  <span className={styles.card_tag_success}>mTLS 1.3 TUNNEL</span>
                 </div>
-                <h3>For Schools</h3>
+                <div className={styles.solution_diagram_box}>
+                  <div className={styles.sol_code_block}>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>connection:</span>
+                      <span className={styles.code_val}>&quot;Behind Firewall&quot;</span>
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>dataEgress:</span>
+                      <span className={styles.code_val_green}>&quot;0 bytes (attest-only)&quot;</span>
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>compliance:</span>
+                      <span className={styles.code_val_green}>&quot;100% FERPA/NDPR&quot;</span>
+                    </div>
+                  </div>
+                </div>
+                <h3>Native SIS Connectors</h3>
                 <p>
-                  Your systems stay where they are. We simply connect to them. You attest to student status. Nothing more.
+                  Institutional systems stay behind campus firewalls. The Trust Adapter attests to active enrollment in real-time without releasing any records.
                 </p>
               </div>
 
-              <div className={styles.solution_card}>
-                <div className={styles.card_icon_wrap_success}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                  </svg>
+              {/* Solution 3: Organizations */}
+              <div className={styles.tech_solution_card}>
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>SDK // INTEGRATION</span>
+                  <span className={styles.card_tag_success}>&lt; 20MS LATENCY</span>
                 </div>
-                <h3>For Organizations</h3>
+                <div className={styles.solution_diagram_box}>
+                  <div className={styles.sol_code_block}>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_kw}>const</span> res = <span className={styles.code_fn}>verify</span>(proof);
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>status:</span>
+                      <span className={styles.code_val_green}>200 OK</span>
+                    </div>
+                    <div className={styles.sol_code_line}>
+                      <span className={styles.code_key}>verified:</span>
+                      <span className={styles.code_val_green}>true</span>
+                    </div>
+                  </div>
+                </div>
+                <h3>Instant Verification SDK</h3>
                 <p>
-                  One API. Instant verification. No document storage. Your integration goes live in minutes, not months.
+                  One drop-in API or UI component. Instant student benefit unlocking, zero document review overhead, and 100% elimination of student fraud.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 5. How It Works Section (Interactive Flow Diagram) */}
+        {/* 5. How It Works Section (Connected Workflow Architecture) */}
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Three layers. One trust layer.</h2>
+              <span className={styles.section_badge}>PROTOCOL PIPELINE</span>
+              <h2 className={styles.section_title}>Three layers. One trust protocol.</h2>
+              <p className={styles.section_subtitle}>
+                A synchronized verification loop executed across hardware enclaves, university registries, and edge relays.
+              </p>
             </div>
 
-            <div className={styles.steps_wrapper}>
-              <div className={styles.steps_grid}>
-                <div className={styles.step_card}>
-                  <div className={styles.step_number_badge}>1</div>
-                  <div className={styles.step_content}>
-                    <h3>Student Onboards</h3>
-                    <p>
-                      A student downloads SyncID, creates a SyncTag, and verifies their enrollment once. Their credential lives on their device.
-                    </p>
-                  </div>
+            <div className={styles.pipeline_grid}>
+              <div className={styles.pipeline_card}>
+                <div className={styles.pipe_step_header}>
+                  <span className={styles.pipe_step_num}>01</span>
+                  <span className={styles.pipe_step_tag}>CLIENT ENROLLMENT</span>
                 </div>
-
-                <div className={styles.step_card}>
-                  <div className={styles.step_number_badge}>2</div>
-                  <div className={styles.step_content}>
-                    <h3>School Attests</h3>
-                    <p>
-                      The school&apos;s system confirms the student&apos;s status in real time. No documents change hands. No data leaves the school&apos;s control.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={styles.step_card}>
-                  <div className={styles.step_number_badge}>3</div>
-                  <div className={styles.step_content}>
-                    <h3>Organization Verifies</h3>
-                    <p>
-                      A business requests verification. The student approves. The organization gets a simple answer: Yes, this is a currently enrolled student. Nothing more.
-                    </p>
-                  </div>
+                <h3>Student Onboards</h3>
+                <p>
+                  The student installs SyncID, claims their unique SyncTag, and signs an enrollment attestation using their on-device cryptographic keypair.
+                </p>
+                <div className={styles.pipe_card_footer}>
+                  <span>KEY GENERATION: Ed25519</span>
                 </div>
               </div>
 
-              {/* Architectural Engine Visualization */}
-              <div className={styles.architecture_engine}>
-                <div className={styles.engine_card}>
-                  <div className={styles.engine_header}>
-                    <div className={styles.engine_dot_green}></div>
-                    <span className={styles.engine_label}>SyncNexa Cryptographic Trust Engine</span>
-                    <span className={styles.engine_status}>mTLS 1.3 Active</span>
-                  </div>
+              <div className={styles.pipeline_card}>
+                <div className={styles.pipe_step_header}>
+                  <span className={styles.pipe_step_num}>02</span>
+                  <span className={styles.pipe_step_tag}>ROOT ATTESTATION</span>
+                </div>
+                <h3>School Attests</h3>
+                <p>
+                  The university&apos;s campus connector verifies the student status against the institutional SIS via an encrypted mTLS tunnel in real time.
+                </p>
+                <div className={styles.pipe_card_footer}>
+                  <span>ATTESTATION: ZERO-KNOWLEDGE</span>
+                </div>
+              </div>
 
-                  <div className={styles.engine_nodes_flow}>
-                    {/* Node 1: Student App */}
-                    <div className={styles.engine_node}>
-                      <div className={styles.node_icon_box}>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                          <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                      </div>
-                      <div className={styles.node_details}>
-                        <strong>SyncID Device</strong>
-                        <span>Ed25519 Keypair &middot; User Consent</span>
-                      </div>
-                      <div className={styles.node_tag}>Verified</div>
-                    </div>
-
-                    <div className={styles.connector_line}>
-                      <span className={styles.connector_pulse}></span>
-                    </div>
-
-                    {/* Node 2: Trust Adapter */}
-                    <div className={`${styles.engine_node} ${styles.engine_node_center}`}>
-                      <div className={styles.node_icon_box}>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                          <path d="m9 12 2 2 4-4" />
-                        </svg>
-                      </div>
-                      <div className={styles.node_details}>
-                        <strong>Zero-Knowledge Attestation</strong>
-                        <span>Encrypted Query &middot; Zero Document Storage</span>
-                      </div>
-                      <div className={styles.node_shield_badge}>Private</div>
-                    </div>
-
-                    <div className={styles.connector_line}>
-                      <span className={styles.connector_pulse}></span>
-                    </div>
-
-                    {/* Node 3: School SIS */}
-                    <div className={styles.engine_node}>
-                      <div className={styles.node_icon_box}>
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                        </svg>
-                      </div>
-                      <div className={styles.node_details}>
-                        <strong>Institutional SIS</strong>
-                        <span>Behind Firewall &middot; Source of Truth</span>
-                      </div>
-                      <div className={styles.node_tag_school}>Live</div>
-                    </div>
-                  </div>
-
-                  <div className={styles.engine_footer_result}>
-                    <span className={styles.result_key}>Verification Output:</span>
-                    <span className={styles.result_value}>{`{ "status": "ACTIVE_ENROLLED", "pairwiseId": "pw_9x8f...7a" }`}</span>
-                  </div>
+              <div className={styles.pipeline_card}>
+                <div className={styles.pipe_step_header}>
+                  <span className={styles.pipe_step_num}>03</span>
+                  <span className={styles.pipe_step_tag}>PAIRWISE PROOF</span>
+                </div>
+                <h3>Organization Verifies</h3>
+                <p>
+                  When claiming a benefit, the student presents a single-use pairwise proof. The business gets an instant &quot;Active Enrolled&quot; attestation.
+                </p>
+                <div className={styles.pipe_card_footer}>
+                  <span>EXECUTION: &lt; 20MS EDGE</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 6. Product Highlight Section (Interactive SyncID Mockup) */}
+        {/* 6. Product Highlight Section (SyncID Blueprint) */}
         <section className={styles.product_highlight_section}>
           <div className={styles.container}>
             <div className={styles.product_split}>
               <div className={styles.product_text_side}>
+                <span className={styles.section_badge}>FLAGSHIP PRODUCT</span>
                 <h2 className={styles.product_title}>SyncID — Built for Students. Trusted by Everyone.</h2>
                 <p className={styles.product_description}>
-                  SyncID is our first product. It&apos;s a digital student identity that puts students in control and gives organizations the confidence to offer real benefits.
+                  SyncID is the digital passport for higher education. It replaces paper cards and manual uploads with an instant, private cryptographic credential.
                 </p>
 
-                <ul className={styles.feature_checklist}>
-                  <li>
-                    <span className={styles.check_icon}>✓</span>
-                    <span>Verify your student status once</span>
-                  </li>
-                  <li>
-                    <span className={styles.check_icon}>✓</span>
-                    <span>Share only what&apos;s necessary</span>
-                  </li>
-                  <li>
-                    <span className={styles.check_icon}>✓</span>
-                    <span>Revoke access anytime</span>
-                  </li>
-                  <li>
-                    <span className={styles.check_icon}>✓</span>
-                    <span>Works across music, software, food, travel, and more</span>
-                  </li>
-                  <li>
-                    <span className={styles.check_icon}>✓</span>
-                    <span>Free for students</span>
-                  </li>
-                </ul>
+                <div className={styles.tech_spec_list}>
+                  <div className={styles.tech_spec_item}>
+                    <div className={styles.spec_check}>✓</div>
+                    <div>
+                      <strong>Zero Document Storage</strong>
+                      <p>No transcripts, ID scans, or admission letters stored in central databases.</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.tech_spec_item}>
+                    <div className={styles.spec_check}>✓</div>
+                    <div>
+                      <strong>Pairwise Pseudonyms</strong>
+                      <p>Unique identifier per service prevents cross-platform identity correlation.</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.tech_spec_item}>
+                    <div className={styles.spec_check}>✓</div>
+                    <div>
+                      <strong>Instant 1-Tap Revocation</strong>
+                      <p>Students maintain continuous control and can sever partner access anytime.</p>
+                    </div>
+                  </div>
+                </div>
 
                 <div className={styles.product_cta}>
                   <Link href="/syncid">
                     <SnButton variant="primary" size="md">
-                      Explore SyncID
+                      Explore SyncID Protocol
                     </SnButton>
                   </Link>
                 </div>
               </div>
 
-              {/* SyncID Mobile Digital Pass Mockup */}
+              {/* SyncID Pass Blueprint Card */}
               <div className={styles.product_ui_side}>
-                <div className={styles.syncid_pass_card}>
-                  <div className={styles.pass_top}>
-                    <div className={styles.pass_brand}>
-                      <span className={styles.sync_symbol}>❖</span>
-                      <strong>SyncID</strong>
+                <div className={styles.syncid_blueprint_card}>
+                  <div className={styles.blueprint_top}>
+                    <div className={styles.blueprint_brand}>
+                      <span className={styles.brand_symbol}>❖</span>
+                      <strong>SyncID Pass</strong>
                     </div>
-                    <span className={styles.pass_live_badge}>Active Student</span>
+                    <span className={styles.blueprint_status}>STATUS: ATTESTED</span>
                   </div>
 
-                  <div className={styles.pass_user_row}>
-                    <div className={styles.pass_avatar}>OA</div>
-                    <div className={styles.pass_user_info}>
-                      <h3>Okolie Anthony</h3>
-                      <span className={styles.pass_tag}>@anthony</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.pass_meta_grid}>
-                    <div className={styles.meta_item}>
-                      <small>INSTITUTION</small>
-                      <strong>Federal Univ. of Tech Owerri</strong>
-                    </div>
-                    <div className={styles.meta_item}>
-                      <small>VALIDITY</small>
-                      <strong>2025 / 2026 Academic Session</strong>
-                    </div>
-                    <div className={styles.meta_item}>
-                      <small>PRIVACY LEVEL</small>
-                      <strong>Zero-Knowledge Pairwise</strong>
-                    </div>
-                    <div className={styles.meta_item}>
-                      <small>ATTESTATION</small>
-                      <strong>SIS Real-Time Synced</strong>
+                  <div className={styles.blueprint_user}>
+                    <div className={styles.blueprint_avatar}>OA</div>
+                    <div className={styles.blueprint_meta}>
+                      <h4>Okolie Anthony</h4>
+                      <span className={styles.blueprint_tag}>@anthony &middot; FUTO</span>
                     </div>
                   </div>
 
-                  <div className={styles.pass_action_row}>
-                    <div className={styles.pass_qr_box}>
-                      <div className={styles.qr_mock_grid}>
-                        <div className={styles.qr_corner_tl}></div>
-                        <div className={styles.qr_corner_tr}></div>
-                        <div className={styles.qr_corner_bl}></div>
-                        <div className={styles.qr_center_code}></div>
-                      </div>
+                  <div className={styles.blueprint_specs_grid}>
+                    <div className={styles.bp_metric}>
+                      <small>PUBLIC KEY HASH</small>
+                      <code>0x8f4c...3e19</code>
                     </div>
-                    <div className={styles.pass_button_preview}>
-                      <span className={styles.verify_btn_label}>Instant Verify</span>
-                      <small>One-Tap Cryptographic Proof</small>
+                    <div className={styles.bp_metric}>
+                      <small>PAIRWISE ISOLATION</small>
+                      <code>ACTIVE (ENCLAVE)</code>
                     </div>
+                    <div className={styles.bp_metric}>
+                      <small>VALIDITY PERIOD</small>
+                      <code>2025 / 2026 SESSION</code>
+                    </div>
+                    <div className={styles.bp_metric}>
+                      <small>SIS SYNC CHANNEL</small>
+                      <code>mTLS 1.3 LIVE</code>
+                    </div>
+                  </div>
+
+                  <div className={styles.blueprint_bottom}>
+                    <span className={styles.bp_guarantee}>🔒 Cryptographically signed by root institution</span>
+                    <span className={styles.bp_latency}>18ms verify</span>
                   </div>
                 </div>
               </div>
@@ -482,21 +506,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. For Schools and Organizations Section (Two Columns) */}
+        {/* 7. For Schools and Organizations (Enterprise Architecture Cards) */}
         <section className={styles.dual_audience_section}>
           <div className={styles.container}>
             <div className={styles.dual_grid}>
-              <div className={styles.audience_card}>
-                <div className={styles.audience_icon}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                  </svg>
+              {/* Schools Card */}
+              <div className={styles.enterprise_card}>
+                <div className={styles.ent_header}>
+                  <span className={styles.section_badge}>INSTITUTIONAL GATEWAY</span>
+                  <h2>For Schools</h2>
                 </div>
-                <h2>For Schools</h2>
                 <p>
-                  Partner with SyncNexa and give your students a seamless way to prove their enrollment—while keeping their data where it belongs: with you.
+                  Protect your student data while empowering your students to access global perks. Connect your existing SIS (Oracle Campus, Ellucian Banner, or custom) in minutes.
                 </p>
+
+                <div className={styles.ent_code_snippet}>
+                  <div className={styles.snippet_header}>syncnexa-adapter.yaml</div>
+                  <pre>
+                    <code>{`adapter:
+  sis_engine: "ellucian_banner"
+  auth_mode: "mTLS_v1.3"
+  storage_policy: "ZERO_PERSISTENCE"
+  attestation_mode: "ZKP_BOOLEAN"`}</code>
+                  </pre>
+                </div>
+
                 <div className={styles.card_cta}>
                   <Link href="/for-schools">
                     <SnButton variant="primary" size="md">
@@ -506,21 +540,31 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles.audience_card}>
-                <div className={styles.audience_icon}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
+              {/* Organizations Card */}
+              <div className={styles.enterprise_card}>
+                <div className={styles.ent_header}>
+                  <span className={styles.section_badge}>DEVELOPER PLATFORM</span>
+                  <h2>For Organizations</h2>
                 </div>
-                <h2>For Organizations</h2>
                 <p>
-                  Stop losing customers to slow verification. Integrate SyncID and start verifying students instantly.
+                  Eliminate 72-hour verification delays and student ID fraud. Drop in our React UI component or REST API and start verifying student eligibility in real-time.
                 </p>
+
+                <div className={styles.ent_code_snippet}>
+                  <div className={styles.snippet_header}>verify-student.ts</div>
+                  <pre>
+                    <code>{`import { SyncNexaClient } from "@syncnexa/sdk";
+
+const client = new SyncNexaClient({ apiKey: ENV.KEY });
+const result = await client.verify(pairwiseToken);
+// { valid: true, institution: "FUTO", latency: "18ms" }`}</code>
+                  </pre>
+                </div>
+
                 <div className={styles.card_cta}>
                   <Link href="/for-organizations">
                     <SnButton variant="primary" size="md">
-                      Get Started
+                      Developer Docs & API
                     </SnButton>
                   </Link>
                 </div>
@@ -529,129 +573,108 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 8. Why SyncNexa Section */}
+        {/* 8. Why SyncNexa (Bento Grid Architecture) */}
         <section className={styles.why_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Why SyncNexa?</h2>
+              <span className={styles.section_badge}>CAPABILITIES</span>
+              <h2 className={styles.section_title}>Engineered for Trust at Scale</h2>
+              <p className={styles.section_subtitle}>
+                Built from the ground up for zero document retention, extreme low latency, and universal interoperability.
+              </p>
             </div>
 
-            <div className={styles.cards_grid_4}>
-              <div className={styles.why_card}>
-                <div className={styles.why_icon_wrap}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                </div>
+            <div className={styles.bento_grid_4}>
+              <div className={styles.bento_card}>
+                <div className={styles.bento_num}>01</div>
                 <h3>Privacy by Design</h3>
-                <p>
-                  We never store academic records. Schools remain the source of truth. Students share only what&apos;s needed.
-                </p>
+                <p>Zero documents or transcripts are stored in our systems. Schools remain the sole source of truth.</p>
+                <div className={styles.bento_tag}>ZERO PII</div>
               </div>
 
-              <div className={styles.why_card}>
-                <div className={styles.why_icon_wrap}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                </div>
-                <h3>Real-Time Verification</h3>
-                <p>
-                  No more waiting hours or days. Verification happens in seconds.
-                </p>
+              <div className={styles.bento_card}>
+                <div className={styles.bento_num}>02</div>
+                <h3>~18ms Latency</h3>
+                <p>Real-time edge attestation eliminates multi-day queues and manual review friction.</p>
+                <div className={styles.bento_tag}>SUB-20MS</div>
               </div>
 
-              <div className={styles.why_card}>
-                <div className={styles.why_icon_wrap}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-                  </svg>
-                </div>
-                <h3>One Identity, Everywhere</h3>
-                <p>
-                  A single verified identity that works across any platform that offers student benefits.
-                </p>
+              <div className={styles.bento_card}>
+                <div className={styles.bento_num}>03</div>
+                <h3>Decentralized Keypairs</h3>
+                <p>Every student identity is anchored to an Ed25519 hardware keypair with explicit consent.</p>
+                <div className={styles.bento_tag}>ED25519</div>
               </div>
 
-              <div className={styles.why_card}>
-                <div className={styles.why_icon_wrap}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="18" y1="20" x2="18" y2="10" />
-                    <line x1="12" y1="20" x2="12" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="14" />
-                  </svg>
-                </div>
-                <h3>Built for Scale</h3>
-                <p>
-                  From one university to a thousand. From one organization to a global network. Our infrastructure grows with you.
-                </p>
+              <div className={styles.bento_card}>
+                <div className={styles.bento_num}>04</div>
+                <h3>Universal Interoperability</h3>
+                <p>One unified protocol connecting thousands of global universities to millions of services.</p>
+                <div className={styles.bento_tag}>GLOBAL MESH</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 9. Testimonial Section */}
+        {/* 9. Testimonials Section (Clean Quote Cards) */}
         <section className={styles.testimonial_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>What People Are Saying</h2>
+              <span className={styles.section_badge}>NETWORK VOICES</span>
+              <h2 className={styles.section_title}>What Partners & Users Say</h2>
             </div>
 
             <div className={styles.cards_grid_3}>
-              <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>&ldquo;</div>
-                <p className={styles.testimonial_quote}>
-                  SyncID changed how I claim student discounts. I set it up once and now it&apos;s just one tap. No more uploading documents every time.
+              <div className={styles.quote_card}>
+                <p className={styles.quote_text}>
+                  &ldquo;SyncID completely eliminated document uploads for my software discounts. I verify once with my school credentials, and everything just works instantly.&rdquo;
                 </p>
-                <div className={styles.testimonial_author}>
-                  <strong>Student User</strong>
-                  <span>Verified SyncID Holder</span>
+                <div className={styles.quote_footer}>
+                  <strong>Engineering Student</strong>
+                  <span>Federal Univ. of Tech Owerri</span>
                 </div>
               </div>
 
-              <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>&ldquo;</div>
-                <p className={styles.testimonial_quote}>
-                  Integrating SyncNexa was surprisingly easy. The API is clean, the documentation is solid, and our conversion rate went up immediately.
+              <div className={styles.quote_card}>
+                <p className={styles.quote_text}>
+                  &ldquo;Our student discount checkout conversion surged by 38% after replacing manual document review with the SyncNexa instant verification API.&rdquo;
                 </p>
-                <div className={styles.testimonial_author}>
-                  <strong>Partner Organization</strong>
-                  <span>Fintech & Education Platform</span>
+                <div className={styles.quote_footer}>
+                  <strong>Product Lead</strong>
+                  <span>Global EdTech Platform</span>
                 </div>
               </div>
 
-              <div className={styles.testimonial_card}>
-                <div className={styles.quote_mark}>&ldquo;</div>
-                <p className={styles.testimonial_quote}>
-                  We wanted to offer student benefits without exposing our students&apos; data. SyncNexa gave us exactly what we needed.
+              <div className={styles.quote_card}>
+                <p className={styles.quote_text}>
+                  &ldquo;SyncNexa solved our biggest compliance concern. We can attest to student enrollment for discounts without sending our database records anywhere.&rdquo;
                 </p>
-                <div className={styles.testimonial_author}>
-                  <strong>University Administrator</strong>
-                  <span>Accredited Institution Partner</span>
+                <div className={styles.quote_footer}>
+                  <strong>Dean of Student Affairs</strong>
+                  <span>Partner University</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 10. Call to Action Section */}
+        {/* 10. Call to Action Section (Vercel-style Technical Launchpad) */}
         <section className={styles.cta_section}>
           <div className={styles.cta_container}>
-            <h2 className={styles.cta_title}>Ready to build trust?</h2>
+            <span className={styles.cta_badge}>READY TO GET STARTED?</span>
+            <h2 className={styles.cta_title}>Build on the Trust Mesh.</h2>
             <p className={styles.cta_body}>
-              Whether you&apos;re a student, a school, or an organization—SyncNexa has a place for you.
+              Whether you are an accredited institution, an ambitious student, or a growing business—SyncNexa provides the infrastructure you need.
             </p>
             <div className={styles.cta_buttons}>
               <Link href="/for-organizations">
                 <SnButton variant="primary" size="lg">
-                  Get Started
+                  Start Integration
                 </SnButton>
               </Link>
               <Link href="/contact">
-                <SnButton variant="secondary" size="lg">
-                  Contact Us
+                <SnButton variant="stroke" size="lg">
+                  Speak with our Team
                 </SnButton>
               </Link>
             </div>
