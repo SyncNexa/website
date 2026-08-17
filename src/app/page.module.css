@@ -521,8 +521,8 @@
   position: absolute;
   top: -24rem;
   bottom: -12rem;
-  left: 26px;
-  width: 2px;
+  left: 26.5px;
+  width: 1px;
   background-color: var(--stroke, #e5e7eb);
   animation: slowGradientShadow 14s ease-in-out infinite;
   z-index: 1;
@@ -566,7 +566,7 @@
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  border: 2px solid var(--stroke, #e5e7eb);
+  border: 1px solid var(--stroke, #e5e7eb);
   background: var(--bg-main, #ffffff);
   display: flex;
   align-items: center;
