@@ -7,6 +7,15 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import {
+  Music,
+  Code2,
+  ShoppingBag,
+  Utensils,
+  Landmark,
+  Plane,
+  Check,
+} from "lucide-react";
 import styles from "./page.module.css";
 
 export default function ForOrganizationsPage() {
@@ -221,37 +230,37 @@ export default function ForOrganizationsPage() {
 
   const useCases = [
     {
-      icon: "🎵",
+      icon: <Music size={24} />,
       title: "Streaming & Media",
       desc: "Offer verified student rates on subscriptions without document fraud or manual backlogs.",
       blobColor: "#04d69d",
     },
     {
-      icon: "💻",
+      icon: <Code2 size={24} />,
       title: "SaaS & Developer Tools",
       desc: "Grant students free software packs and pro licenses with instant verification.",
       blobColor: "#006d50",
     },
     {
-      icon: "🛍️",
+      icon: <ShoppingBag size={24} />,
       title: "E-Commerce & Retail",
       desc: "Boost checkout conversion by auto-applying student discounts in under 18ms.",
       blobColor: "#ffaa01",
     },
     {
-      icon: "🍔",
+      icon: <Utensils size={24} />,
       title: "Food & Campus Delivery",
       desc: "Drive daily orders with instant campus verification on food ordering apps.",
       blobColor: "#04d69d",
     },
     {
-      icon: "🏦",
+      icon: <Landmark size={24} />,
       title: "Fintech & Banking",
       desc: "Onboard students to specialized digital bank accounts and credit products with confidence.",
       blobColor: "#006d50",
     },
     {
-      icon: "✈️",
+      icon: <Plane size={24} />,
       title: "Travel & Hospitality",
       desc: "Offer student transit tickets, train passes, and hotel discounts with zero paperwork.",
       blobColor: "#ffaa01",
@@ -464,19 +473,19 @@ export default function ForOrganizationsPage() {
 
                 <div className={styles.dev_checklist}>
                   <div className={styles.dev_bullet_item}>
-                    <span className={styles.code_check_icon}>✓</span>
+                    <Check size={16} className={styles.code_check_icon} />
                     <span>RESTful API with predictable JSON payloads</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
-                    <span className={styles.code_check_icon}>✓</span>
+                    <Check size={16} className={styles.code_check_icon} />
                     <span>Webhook dispatching for asynchronous attestation events</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
-                    <span className={styles.code_check_icon}>✓</span>
+                    <Check size={16} className={styles.code_check_icon} />
                     <span>Official SDKs for Node.js, TypeScript, Python, and Go</span>
                   </div>
                   <div className={styles.dev_bullet_item}>
-                    <span className={styles.code_check_icon}>✓</span>
+                    <Check size={16} className={styles.code_check_icon} />
                     <span>Pre-built UI verification components for React and Vue</span>
                   </div>
                 </div>
@@ -559,7 +568,7 @@ if (verification.isEnrolled) {
                   <div className={styles.features_list}>
                     {plan.features.map((f, fi) => (
                       <div key={fi} className={styles.feature_item}>
-                        <span className={styles.feature_check}>✓</span>
+                        <Check size={16} className={styles.feature_check} />
                         <span>{f}</span>
                       </div>
                     ))}

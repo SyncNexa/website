@@ -7,6 +7,18 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import {
+  Music,
+  Code2,
+  Utensils,
+  Plane,
+  ShoppingBag,
+  Landmark,
+  Zap,
+  ShieldCheck,
+  Tag,
+  X,
+} from "lucide-react";
 import styles from "./page.module.css";
 
 export default function SyncIdPage() {
@@ -152,37 +164,37 @@ export default function SyncIdPage() {
 
   const benefits = [
     {
-      icon: "🎵",
+      icon: <Music size={22} />,
       title: "Streaming & Entertainment",
       desc: "Spotify, Apple Music, YouTube Premium, and more—at verified student discount rates.",
       blobColor: "#04d69d",
     },
     {
-      icon: "💻",
+      icon: <Code2 size={22} />,
       title: "Software & Developer Tools",
       desc: "GitHub Student Developer Pack, Notion, Figma, JetBrains, Microsoft 365, and Adobe Creative Cloud.",
       blobColor: "#006d50",
     },
     {
-      icon: "🍔",
+      icon: <Utensils size={22} />,
       title: "Food & Campus Dining",
       desc: "Exclusive student perks on meal subscriptions, on-campus food delivery, and local restaurants.",
       blobColor: "#ffaa01",
     },
     {
-      icon: "✈️",
+      icon: <Plane size={22} />,
       title: "Transit & Travel",
       desc: "Discounted urban transit passes, inter-city bus systems, and international flight concessions.",
       blobColor: "#04d69d",
     },
     {
-      icon: "🛍️",
+      icon: <ShoppingBag size={22} />,
       title: "Hardware & Retail",
       desc: "Apple Education Pricing, Samsung Student Concessions, Nike, and global electronics stores.",
       blobColor: "#006d50",
     },
     {
-      icon: "🏦",
+      icon: <Landmark size={22} />,
       title: "Banking & EdTech Services",
       desc: "Zero-fee student banking accounts, international payment cards, and research publication access.",
       blobColor: "#ffaa01",
@@ -292,15 +304,21 @@ export default function SyncIdPage() {
 
                       <div className={styles.app_quick_actions}>
                         <div className={styles.quick_action_item}>
-                          <div>⚡</div>
+                          <div>
+                            <Zap size={14} />
+                          </div>
                           <span>Instant Share</span>
                         </div>
                         <div className={styles.quick_action_item}>
-                          <div>🔒</div>
+                          <div>
+                            <ShieldCheck size={14} />
+                          </div>
                           <span>Privacy Vault</span>
                         </div>
                         <div className={styles.quick_action_item}>
-                          <div>🏷️</div>
+                          <div>
+                            <Tag size={14} />
+                          </div>
                           <span>Perks (24)</span>
                         </div>
                       </div>
@@ -339,15 +357,15 @@ export default function SyncIdPage() {
 
                 <div className={styles.what_bullets_stack}>
                   <div className={styles.what_bullet_row}>
-                    <span className={styles.cross_icon}>✕</span>
+                    <X size={16} className={styles.cross_icon} />
                     <span>No more uploading photos of your physical student ID card</span>
                   </div>
                   <div className={styles.what_bullet_row}>
-                    <span className={styles.cross_icon}>✕</span>
+                    <X size={16} className={styles.cross_icon} />
                     <span>No more waiting 3–5 days in manual email verification queues</span>
                   </div>
                   <div className={styles.what_bullet_row}>
-                    <span className={styles.cross_icon}>✕</span>
+                    <X size={16} className={styles.cross_icon} />
                     <span>No more leaving sensitive academic documents on 3rd-party servers</span>
                   </div>
                 </div>

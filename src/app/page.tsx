@@ -7,6 +7,7 @@ import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import PipelineGeometricVisual from "@/components/illustrations/PipelineGeometricVisual";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import { Check, Lock, FileText, ArrowRight, Zap } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -267,7 +268,7 @@ export default function Home() {
                       <span className={styles.text_danger}>Active</span>
                     </div>
                     <div className={styles.sis_alert_box}>
-                      ⚠️ MANUAL AUDIT BOTTLENECK
+                      MANUAL AUDIT BOTTLENECK
                     </div>
                   </div>
                 </div>
@@ -893,7 +894,9 @@ export default function Home() {
 
                 <div className={styles.tech_spec_list}>
                   <div className={styles.tech_spec_item}>
-                    <div className={styles.spec_check}>✓</div>
+                    <div className={styles.spec_check}>
+                      <Check size={16} strokeWidth={2.5} />
+                    </div>
                     <div>
                       <strong>Zero Document Storage</strong>
                       <p>
@@ -904,7 +907,9 @@ export default function Home() {
                   </div>
 
                   <div className={styles.tech_spec_item}>
-                    <div className={styles.spec_check}>✓</div>
+                    <div className={styles.spec_check}>
+                      <Check size={16} strokeWidth={2.5} />
+                    </div>
                     <div>
                       <strong>Pairwise Pseudonyms</strong>
                       <p>
@@ -915,7 +920,9 @@ export default function Home() {
                   </div>
 
                   <div className={styles.tech_spec_item}>
-                    <div className={styles.spec_check}>✓</div>
+                    <div className={styles.spec_check}>
+                      <Check size={16} strokeWidth={2.5} />
+                    </div>
                     <div>
                       <strong>Instant 1-Tap Revocation</strong>
                       <p>
@@ -983,7 +990,8 @@ export default function Home() {
 
                   <div className={styles.blueprint_bottom}>
                     <span className={styles.bp_guarantee}>
-                      🔒 Cryptographically signed by root institution
+                      <Lock size={13} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} />
+                      Cryptographically signed by root institution
                     </span>
                     <span className={styles.bp_latency}>18ms verify</span>
                   </div>
@@ -1374,14 +1382,18 @@ export default function Home() {
                       <div className={styles.zk_data_source}>
                         <span className={styles.zk_label}>RAW INGESTION</span>
                         <div className={styles.zk_doc_pill}>
-                          <span className={styles.zk_doc_icon}>📄</span>
+                          <span className={styles.zk_doc_icon}>
+                            <FileText size={16} />
+                          </span>
                           <span>Transcript.pdf</span>
                         </div>
                         <span className={styles.zk_status_red}>
-                          🚫 ZERO PERSISTENCE
+                          ZERO PERSISTENCE
                         </span>
                       </div>
-                      <div className={styles.zk_arrow}>➔</div>
+                      <div className={styles.zk_arrow}>
+                        <ArrowRight size={16} />
+                      </div>
                       <div className={styles.zk_data_proof}>
                         <span className={styles.zk_label}>
                           CRYPTOGRAPHIC PROOF
@@ -1391,7 +1403,7 @@ export default function Home() {
                           <code>{`pii_egress: 0_bytes`}</code>
                         </div>
                         <span className={styles.zk_status_green}>
-                          ✓ 100% FERPA/NDPR
+                          100% FERPA/NDPR
                         </span>
                       </div>
                     </div>
@@ -1489,7 +1501,9 @@ export default function Home() {
                 <div className={styles.cap_visual_box}>
                   <div className={styles.keypair_visual_layout}>
                     <div className={styles.key_chip_header}>
-                      <div className={styles.chip_icon_badge}>⚡</div>
+                      <div className={styles.chip_icon_badge}>
+                        <Zap size={16} />
+                      </div>
                       <div>
                         <strong>Secure Enclave (Curve25519)</strong>
                         <small>Hardware-Backed Root of Trust</small>

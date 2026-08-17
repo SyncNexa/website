@@ -6,6 +6,7 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import { Check } from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -343,7 +344,7 @@ export default function AboutPage() {
                           3rd-Party DB
                         </text>
                         <text x="8" y="30" fill="#6b7280" fontSize="7.5">
-                          PII Stored ⚠️
+                          PII Insecure
                         </text>
                       </g>
 
@@ -457,7 +458,7 @@ export default function AboutPage() {
                           fontSize="7.5"
                           fontWeight="800"
                         >
-                          🔒 Zero PII
+                          Zero PII
                         </text>
                       </g>
 
@@ -488,10 +489,10 @@ export default function AboutPage() {
                           fontSize="9"
                           fontWeight="800"
                         >
-                          ZK Proof Core
+                          ZK Engine
                         </text>
                         <text x="8" y="32" fill="#6b7280" fontSize="8">
-                          mTLS 1.3 Ring
+                          Boolean Attest
                         </text>
                         <rect
                           x="8"
@@ -509,7 +510,7 @@ export default function AboutPage() {
                           fontSize="7.5"
                           fontWeight="800"
                         >
-                          ✓ Math Proof
+                          Math Proof
                         </text>
                       </g>
 
@@ -549,10 +550,10 @@ export default function AboutPage() {
                           x="8"
                           y="53"
                           fill="#04d69d"
-                          fontSize="12"
+                          fontSize="11"
                           fontWeight="800"
                         >
-                          PASS ✓
+                          PASS
                         </text>
                       </g>
                     </g>
@@ -619,15 +620,15 @@ export default function AboutPage() {
 
                 <div className={styles.mv_bullet_list}>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>Zero documents stored or retained on central servers</span>
                   </div>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>Sub-20ms edge verification for global applications</span>
                   </div>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>Complete sovereign cryptographic custody for users</span>
                   </div>
                 </div>
@@ -668,15 +669,15 @@ export default function AboutPage() {
 
                 <div className={styles.mv_bullet_list}>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>Universal federation across global universities and SIS</span>
                   </div>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>Pairwise pseudonymity preventing cross-site correlation</span>
                   </div>
                   <div className={styles.mv_bullet_item}>
-                    <span className={styles.bullet_check}>✓</span>
+                    <Check size={16} className={styles.bullet_check} />
                     <span>One-tap instantaneous proof of academic and professional status</span>
                   </div>
                 </div>

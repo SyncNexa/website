@@ -7,6 +7,7 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import { Zap, ShieldCheck, Globe, Smartphone, Shield } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function ForSchoolsPage() {
@@ -79,25 +80,25 @@ export default function ForSchoolsPage() {
 
   const studentBenefits = [
     {
-      icon: "⚡",
+      icon: <Zap size={22} />,
       title: "Instant Verification",
       desc: "Eliminates weeks of registrar paperwork. Students verify status in seconds across global platforms.",
       blobColor: "#04d69d",
     },
     {
-      icon: "🔒",
+      icon: <ShieldCheck size={22} />,
       title: "Document Protection",
       desc: "Students never have to upload scanned ID cards or transcripts to unvetted third-party commercial portals.",
       blobColor: "#006d50",
     },
     {
-      icon: "🌐",
+      icon: <Globe size={22} />,
       title: "Global Partner Access",
       desc: "One institutional SyncID unlocks thousands of verified student discounts, software grants, and transit passes.",
       blobColor: "#ffaa01",
     },
     {
-      icon: "📱",
+      icon: <Smartphone size={22} />,
       title: "Modern Mobile Identity",
       desc: "A state-of-the-art mobile credential that elevates your institution's digital campus reputation.",
       blobColor: "#04d69d",
@@ -309,7 +310,9 @@ export default function ForSchoolsPage() {
                   className={styles.security_card}
                   blobColor={sec.blobColor}
                 >
-                  <div className={styles.security_icon}>🛡️</div>
+                  <div className={styles.security_icon}>
+                    <Shield size={20} />
+                  </div>
                   <h3>{sec.title}</h3>
                   <p>{sec.desc}</p>
                 </GlassBlobCard>

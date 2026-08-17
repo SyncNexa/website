@@ -4,6 +4,7 @@ import { TopBar, Footer } from "@/layouts";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
+import { ShieldCheck } from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -124,7 +125,15 @@ export default function PrivacyPolicyPage() {
 
                 <div className={styles.highlight_box}>
                   <p>
-                    🔒 We do not monetize student data. We will never sell, rent,
+                    <ShieldCheck
+                      size={16}
+                      style={{
+                        display: "inline",
+                        verticalAlign: "middle",
+                        marginRight: 6,
+                      }}
+                    />
+                    We do not monetize student data. We will never sell, rent,
                     or broker your personal information or verification records to
                     advertisers or third parties.
                   </p>

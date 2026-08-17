@@ -191,7 +191,7 @@ export default function HeroArchitectureVisual() {
             {/* Tag Badge */}
             <rect x="14" y="112" width="142" height="24" rx="6" fill="#E6FAF4" />
             <text x="85" y="128" fill="#006D50" fontSize="9" fontWeight="700" textAnchor="middle" fontFamily="sans-serif">
-              🔒 100% On-Device Consent
+              100% ON-DEVICE CONSENT
             </text>
           </g>
 
@@ -217,7 +217,7 @@ export default function HeroArchitectureVisual() {
               mTLS 1.3 &middot; Live Attestation
             </text>
             <text x="42" y="54" fill="#04D69D" fontSize="8.5" fontWeight="700" fontFamily="sans-serif">
-              ✓ SOURCE OF TRUTH
+              SOURCE OF TRUTH
             </text>
           </g>
 
@@ -278,7 +278,7 @@ export default function HeroArchitectureVisual() {
               Spotify Student
             </text>
             <text x="44" y="42" fill="#16A34A" fontSize="9.5" fontWeight="700" fontFamily="sans-serif">
-              ✓ 50% Discount Applied
+              50% Discount Applied
             </text>
             <rect x="135" y="14" width="36" height="18" rx="4" fill="#DCFCE7" />
             <text x="153" y="26" fill="#15803D" fontSize="8" fontWeight="800" textAnchor="middle" fontFamily="monospace">
@@ -304,7 +304,7 @@ export default function HeroArchitectureVisual() {
               Figma Education
             </text>
             <text x="44" y="42" fill="#16A34A" fontSize="9.5" fontWeight="700" fontFamily="sans-serif">
-              ✓ Pro License Unlocked
+              Pro License Unlocked
             </text>
             <rect x="135" y="14" width="36" height="18" rx="4" fill="#DCFCE7" />
             <text x="153" y="26" fill="#15803D" fontSize="8" fontWeight="800" textAnchor="middle" fontFamily="monospace">
@@ -328,7 +328,7 @@ export default function HeroArchitectureVisual() {
               GitHub Education
             </text>
             <text x="44" y="42" fill="#16A34A" fontSize="9.5" fontWeight="700" fontFamily="sans-serif">
-              ✓ Student Pack Active
+              Student Pack Active
             </text>
             <rect x="135" y="14" width="36" height="18" rx="4" fill="#DCFCE7" />
             <text x="153" y="26" fill="#15803D" fontSize="8" fontWeight="800" textAnchor="middle" fontFamily="monospace">
