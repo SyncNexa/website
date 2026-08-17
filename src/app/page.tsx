@@ -215,7 +215,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className={styles.cards_grid_3}>
+            <div className={styles.problem_cards_grid}>
               {/* Problem 1: Students */}
               <div className={styles.tech_problem_card}>
                 <div className={styles.card_meta_header}>
@@ -244,6 +244,8 @@ export default function Home() {
                   footprints and risks identity theft.
                 </p>
               </div>
+
+              <div className={styles.problem_divider} aria-hidden="true" />
 
               {/* Problem 2: Schools */}
               <div className={styles.tech_problem_card}>
@@ -275,6 +277,8 @@ export default function Home() {
                   external querying.
                 </p>
               </div>
+
+              <div className={styles.problem_divider} aria-hidden="true" />
 
               {/* Problem 3: Organizations */}
               <div className={styles.tech_problem_card}>
