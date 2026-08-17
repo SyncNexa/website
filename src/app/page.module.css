@@ -844,7 +844,7 @@
   margin-top: auto;
 }
 
-/* 8. Why SyncNexa Bento Grid (Transparent, Equal Heights) */
+/* 8. Why SyncNexa (High-Tech Capabilities Matrix) */
 .why_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -852,56 +852,365 @@
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.bento_grid_4 {
+.cap_matrix_grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
   align-items: stretch;
 }
 
-.bento_card {
+.cap_card {
   background: transparent;
   border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 2.25rem 1.75rem;
+  border-radius: 20px;
+  padding: 2.5rem 2.25rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 
-.bento_num {
-  font-family: monospace;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--primary-dark, #006d50);
+.cap_header {
+  margin-bottom: 1.5rem;
+}
+
+.cap_meta_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.bento_card h3 {
-  font-size: 1.2rem;
+.cap_code_label {
+  font-family: monospace;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-bottom: 0.75rem;
-}
-
-.bento_card p {
-  font-size: 0.925rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-  flex-grow: 1;
-  margin: 0;
 }
 
-.bento_tag {
-  margin-top: auto;
+.cap_tag_green {
   font-family: monospace;
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--primary-dark, #006d50);
   background: var(--primary-light, #e6faf4);
-  padding: 3px 8px;
+  padding: 2px 8px;
   border-radius: 4px;
-  align-self: flex-start;
+}
+
+.cap_header h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.65rem;
+}
+
+.cap_header p {
+  font-size: 0.975rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cap_visual_box {
+  background: transparent;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: auto;
+}
+
+/* ZK Visual */
+.zk_data_row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.zk_data_source,
+.zk_data_proof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.zk_label {
+  font-family: monospace;
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+}
+
+.zk_doc_pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #475569;
+  border: 1px dashed var(--stroke, #e5e7eb);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.zk_status_red {
+  font-family: monospace;
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.zk_arrow {
+  color: var(--primary-dark, #006d50);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.zk_proof_code {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: transparent;
+  border: 1px solid var(--stroke, #e5e7eb);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.725rem;
+  color: var(--primary-dark, #006d50);
+  font-weight: 600;
+}
+
+.zk_status_green {
+  font-family: monospace;
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+}
+
+/* Latency Visual */
+.latency_visual_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.latency_header_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+  font-weight: 700;
+}
+
+.latency_total {
+  font-size: 1.1rem;
+  color: var(--primary-dark, #006d50);
+  font-weight: 800;
+}
+
+.latency_bars_stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.lat_bar_row {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.lat_step_name {
+  color: var(--dark, #05241d);
+  font-weight: 600;
+}
+
+.lat_progress_track {
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.lat_bar_fill_1 {
+  width: 15%;
+  height: 100%;
+  background: var(--primary, #04d69d);
+}
+
+.lat_bar_fill_2 {
+  width: 70%;
+  height: 100%;
+  background: #ffaa01;
+}
+
+.lat_bar_fill_3 {
+  width: 25%;
+  height: 100%;
+  background: var(--primary-dark, #006d50);
+}
+
+.lat_time {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+  text-align: right;
+}
+
+.lat_footer_tag {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted, #6b7280);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding-top: 0.5rem;
+}
+
+.lat_multiplier {
+  color: var(--primary-dark, #006d50);
+  font-weight: 700;
+}
+
+/* Keypair Visual */
+.keypair_visual_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.key_chip_header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chip_icon_badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.key_chip_header strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--dark, #05241d);
+}
+
+.key_chip_header small {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.key_specs_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.key_metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.key_metric span {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+}
+
+.key_metric code {
+  font-family: monospace;
+  font-size: 0.775rem;
+  color: var(--dark, #05241d);
+  font-weight: 600;
+}
+
+/* Mesh Visual */
+.mesh_visual_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.mesh_nodes_row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.mesh_node_box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 10px;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 8px;
+}
+
+.mesh_node_box span {
+  font-family: monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+}
+
+.mesh_node_box strong {
+  font-size: 0.725rem;
+  color: var(--dark, #05241d);
+}
+
+.mesh_hub_badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  background: var(--primary-light, #e6faf4);
+  border-radius: 8px;
+}
+
+.mesh_hub_badge span {
+  font-family: monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+}
+
+.mesh_hub_badge strong {
+  font-size: 0.75rem;
+  color: var(--primary-dark, #006d50);
+  font-weight: 800;
+}
+
+.mesh_footer_line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding-top: 0.5rem;
+}
+
+.mesh_dot_live {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
 }
 
 /* 9. Testimonials Quote Cards (Transparent, Equal Heights) */
@@ -1023,15 +1332,15 @@
   }
 
   .cards_grid_3,
-  .bento_grid_4,
   .dual_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .product_split,
-  .pipeline_split {
+  .pipeline_split,
+  .cap_matrix_grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 3rem;
   }
 }
 
@@ -1049,9 +1358,8 @@
   }
 
   .cards_grid_3,
-  .pipeline_grid,
-  .bento_grid_4,
-  .dual_grid {
+  .dual_grid,
+  .cap_matrix_grid {
     grid-template-columns: 1fr;
   }
 
