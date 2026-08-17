@@ -3,7 +3,7 @@ import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
-import HeroSimulator from "@/components/hero/HeroSimulator";
+import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -130,8 +130,8 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Continuous Identity Verification Simulator */}
-            <HeroSimulator />
+            {/* Architectural Trust Mesh Visual (Vercel/GitHub Style) */}
+            <HeroArchitectureVisual />
           </div>
         </section>
 

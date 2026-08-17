@@ -1,0 +1,155 @@
+.visual_wrapper {
+  width: 100%;
+  max-width: 1040px;
+  margin: 3.5rem auto 0;
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Technical Header Bar */
+.tech_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  background: var(--bg-alt, #f9fbfb);
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+  font-family: monospace;
+  font-size: 0.775rem;
+}
+
+.tech_tag_group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+  box-shadow: 0 0 6px rgba(4, 214, 157, 0.6);
+}
+
+.tech_title {
+  font-weight: 700;
+  color: var(--dark, #05241d);
+  letter-spacing: 0.05em;
+}
+
+.tech_metrics {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.metric_item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metric_label {
+  color: var(--text-muted, #6b7280);
+}
+
+.metric_val {
+  font-weight: 700;
+  color: var(--dark, #05241d);
+}
+
+.metric_val_green {
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+  background: var(--primary-light, #e6faf4);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Schematic Canvas */
+.schematic_canvas {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schematic_svg {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  display: block;
+}
+
+/* Flowing Dashed Lines */
+.flowing_line_fast {
+  animation: dashFlow 1.2s linear infinite;
+}
+
+.flowing_line_reverse {
+  animation: dashFlowReverse 1.2s linear infinite;
+}
+
+@keyframes dashFlow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dashFlowReverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 20;
+  }
+}
+
+/* Technical Footer Annotations */
+.tech_footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  background: var(--bg-alt, #f9fbfb);
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  font-size: 0.825rem;
+  color: var(--text-muted, #6b7280);
+  font-weight: 500;
+}
+
+.footer_spec_item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spec_node_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary, #04d69d);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech_metrics {
+    display: none;
+  }
+
+  .tech_footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
