@@ -58,11 +58,11 @@ export default function GlassBlobCard({
     >
       {/* Main Glass Surface */}
       <div className={styles.glass_surface}>
-        {/* 5% Opacity Blob Layer Clipped to Container (No Overflow) */}
+        {/* 3% Opacity Blob Layer Clipped to Container (No Overflow) */}
         <div
           className={styles.blob_clipped_layer}
           style={{
-            opacity: isHovered ? 0.05 : 0,
+            opacity: isHovered ? 0.03 : 0,
           }}
           aria-hidden="true"
         />

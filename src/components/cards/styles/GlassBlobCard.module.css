@@ -5,7 +5,7 @@
   height: 100%;
 }
 
-/* 5% Opacity Blob Layer Strictly Clipped to Card Container (No Overflow) */
+/* 3% Opacity Blob Layer Strictly Clipped to Card Container (No Overflow) */
 .blob_clipped_layer {
   position: absolute;
   inset: 0;
