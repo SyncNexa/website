@@ -1,153 +1,99 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function ForSchoolsPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const helpCards = [
+  const steps = [
     {
-      title: "No Academic Data Leaves Your Systems",
-      desc: "We never ask for transcripts, grades, or personal records. Just one simple question: Is this student currently enrolled?",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <path d="m9 12 2 2 4-4" />
-        </svg>
-      ),
+      step: "01",
+      title: "Deploy Trust Adapter",
+      desc: "Deploy the SyncNexa Trust Adapter in your existing IT environment in minutes. It runs securely within your infrastructure, connecting directly to your Student Information System (SIS).",
     },
     {
-      title: "Instant Revocation",
-      desc: "When a student graduates or withdraws, their verified status disappears immediately. No waiting. No manual removal across dozens of platforms.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="15" y1="9" x2="9" y2="15" />
-          <line x1="9" y1="9" x2="15" y2="15" />
-        </svg>
-      ),
+      step: "02",
+      title: "Attest Student Status",
+      desc: "When a student requests verification, the Trust Adapter queries your SIS in real time. It confirms only their enrollment status (active or inactive). No other data is accessed or transferred.",
     },
     {
-      title: "Full Visibility",
-      desc: "Our partner dashboard shows you how many of your students are using SyncID and which kinds of benefits they're accessing.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      ),
+      step: "03",
+      title: "Students Prove Everywhere",
+      desc: "Students use their SyncID to access verified discounts and services worldwide. When their status changes (graduation, withdrawal), revocation is instant and automatic.",
     },
   ];
 
-  const integrationSteps = [
-    {
-      number: "1",
-      title: "Partner With Us",
-      desc: "Sign the partnership agreement. We onboard your institution within a week.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-      ),
-    },
-    {
-      number: "2",
-      title: "Deploy the Trust Adapter",
-      desc: "A lightweight piece of software runs on your infrastructure. It connects your SIS to SyncNexa securely.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-          <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-          <line x1="6" y1="6" x2="6.01" y2="6" />
-          <line x1="6" y1="18" x2="6.01" y2="18" />
-        </svg>
-      ),
-    },
-    {
-      number: "3",
-      title: "Start Verifying",
-      desc: "Students can now verify their enrollment through SyncID. You see every verification in your dashboard.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-          <polyline points="22 4 12 14.01 9 11.01" />
-        </svg>
-      ),
-    },
-  ];
-
-  const securityBullets = [
-    "End-to-end encryption with mutual TLS",
-    "No storage of academic documents",
-    "Your SIS stays behind your firewall",
-    "Full audit trail of every verification",
-    "Immediate revocation when enrollment status changes",
+  const securityFeatures = [
+    "No student data stored on SyncNexa servers",
+    "Mutual TLS (mTLS) encrypted communication",
+    "Full institutional control over verification queries",
+    "Real-time revocation upon student departure",
+    "Zero-knowledge proof architecture",
+    "Comprehensive audit logging",
+    "FERPA & NDPR compliant design",
+    "Air-gapped deployment option available",
   ];
 
   const studentBenefits = [
-    "Verify their status once and use it everywhere",
-    "Claim discounts and benefits instantly",
-    "Stop uploading your official documents to random platforms",
-    "Keep their academic data private",
+    {
+      icon: "⚡",
+      title: "Instant Verification",
+      desc: "No more waiting days for manual approval. Students verify their status in seconds.",
+    },
+    {
+      icon: "🔒",
+      title: "Privacy Protected",
+      desc: "Students never have to upload photos of their student ID cards to third-party platforms.",
+    },
+    {
+      icon: "🌐",
+      title: "Global Access",
+      desc: "One SyncID works with every participating organization, service, and discount program.",
+    },
+    {
+      icon: "📱",
+      title: "Digital-First",
+      desc: "A modern, mobile-first experience that meets students where they already are.",
+    },
   ];
 
-  const itBenefits = [
-    "Lightweight and containerized",
-    "Deployed inside your own network",
-    "Connected over encrypted channels only",
-    "Built to run with minimal maintenance",
-    "Fully documented with a dedicated support team",
-  ];
-
-  const testimonials = [
-    {
-      quote: "SyncNexa gave our students what they've been asking for—an easy way to prove they're enrolled. And we never had to expose our systems.",
-      author: "University Registrar",
-      role: "Accredited Higher Education Institution",
-    },
-    {
-      quote: "The Trust Adapter was surprisingly easy to set up. Our IT team had it running in a day.",
-      author: "Institution IT Director",
-      role: "Campus Systems & Infrastructure",
-    },
-    {
-      quote: "We love the revocation feature. When a student withdraws, their status updates instantly across all platforms.",
-      author: "Student Affairs Administrator",
-      role: "Student Services & Governance",
-    },
+  const itSpecs = [
+    { label: "Deployment Options", value: "Docker container, Kubernetes Helm chart, or lightweight binary" },
+    { label: "Supported SIS Platforms", value: "Custom databases, Banner, PowerSchool, Canvas, Ellucian, and REST/SQL APIs" },
+    { label: "Network Requirements", value: "Outbound HTTPS (port 443) only. No incoming ports required." },
+    { label: "Resource Requirements", value: "< 512MB RAM, < 1 vCPU for typical campus loads" },
+    { label: "Data Access", value: "Read-only access to enrollment status fields only" },
+    { label: "Compliance", value: "Designed for NDPR, GDPR, and FERPA compliance" },
   ];
 
   const faqs = [
     {
-      q: "How long does onboarding take?",
-      a: "Most schools complete setup within one week. The technical integration typically takes a day or two.",
+      q: "Does SyncNexa access our full student database?",
+      a: "No. The Trust Adapter only queries enrollment status (active/inactive) for the specific student requesting verification. We never ingest, replicate, or store your student database.",
     },
     {
-      q: "Do we need to replace our current SIS?",
-      a: "No. The Trust Adapter connects to your existing system. Nothing changes on your end.",
+      q: "How long does integration take?",
+      a: "Most institutions complete integration in under two hours. Our team provides full deployment support and documentation.",
     },
     {
-      q: "What data does SyncNexa store?",
-      a: "None of your academic data. We only store a hashed identifier to match students across services. Your SIS remains the source of truth.",
+      q: "What does it cost for schools?",
+      a: "SyncNexa is free for educational institutions. We believe schools shouldn't pay to protect their own students' data.",
     },
     {
-      q: "Is there a cost for schools?",
-      a: "Partnering with SyncNexa is free. We make money from organizations that pay for verification services.",
+      q: "What happens when a student graduates or drops out?",
+      a: "Revocation is automatic and real-time. The moment their status changes in your SIS, their SyncID credential reflects the change. No manual action needed.",
     },
     {
-      q: "Can we revoke a student's status instantly?",
-      a: "Yes. From your dashboard, you can revoke any student's verified status immediately. It takes effect across all platforms at once.",
+      q: "Can we audit what the Trust Adapter is doing?",
+      a: "Yes. Every verification query is logged locally in your environment. You have full visibility into every request.",
     },
   ];
 
@@ -159,24 +105,73 @@ export default function ForSchoolsPage() {
         {/* 1. Hero Section */}
         <section className={styles.hero}>
           <div className={styles.container}>
-            <div className={styles.hero_content}>
-              <h1 className={styles.hero_title}>
-                Your students are already <span className={styles.gradient_text}>asking for this.</span>
-              </h1>
-              <p className={styles.hero_subtitle}>
-                Give them a secure way to prove their enrollment—without exposing their data or your systems.
-              </p>
-              <div className={styles.hero_cta_group}>
-                <Link href="/contact">
-                  <SnButton variant="primary" size="lg">
-                    Become a Partner School
-                  </SnButton>
-                </Link>
-                <Link href="#how-it-works">
-                  <SnButton variant="stroke" size="lg">
-                    Learn How It Works
-                  </SnButton>
-                </Link>
+            <div className={styles.hero_split}>
+              <div className={styles.hero_content}>
+                <h1 className={styles.hero_title}>
+                  Your students are already <br />
+                  <span className={styles.gradient_text}>asking for this.</span>
+                </h1>
+
+                <p className={styles.hero_subtitle}>
+                  Give them a secure way to prove their enrollment—without exposing their data or your systems.
+                </p>
+
+                <div className={styles.hero_cta_group}>
+                  <Link href="/contact">
+                    <SnButton variant="primary" size="lg">
+                      Become a Partner School
+                    </SnButton>
+                  </Link>
+                  <Link href="#how-it-works">
+                    <SnButton variant="stroke" size="lg">
+                      Learn How It Works
+                    </SnButton>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Institution Portal Preview (Replacing old image) */}
+              <div className={styles.hero_ui_side}>
+                <div className={styles.school_dashboard_card}>
+                  <div className={styles.dash_header}>
+                    <div className={styles.dash_brand}>
+                      <span className={styles.dash_icon}>🏛️</span>
+                      <strong>SyncNexa Trust Adapter</strong>
+                    </div>
+                    <span className={styles.dash_status_badge}>SIS Connected</span>
+                  </div>
+
+                  <div className={styles.dash_metrics_row}>
+                    <div className={styles.metric_tile}>
+                      <small>STUDENT QUERIES</small>
+                      <strong>18,420</strong>
+                      <span className={styles.metric_sub}>This semester</span>
+                    </div>
+                    <div className={styles.metric_tile}>
+                      <small>LATENCY</small>
+                      <strong>42ms</strong>
+                      <span className={styles.metric_sub}>Real-time attestation</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.dash_log_feed}>
+                    <div className={styles.feed_title}>Live Attestation Feed (Zero PII)</div>
+                    <div className={styles.feed_item}>
+                      <span className={styles.feed_check}>✓</span>
+                      <span>Enrolled query &middot; FUTO-CSC-2022 &middot; Approved</span>
+                      <small>2s ago</small>
+                    </div>
+                    <div className={styles.feed_item}>
+                      <span className={styles.feed_check}>✓</span>
+                      <span>Enrolled query &middot; UNILAG-ENG-2023 &middot; Approved</span>
+                      <small>18s ago</small>
+                    </div>
+                  </div>
+
+                  <div className={styles.dash_footer}>
+                    <span>🔒 Running safely behind institutional firewall</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,137 +198,182 @@ export default function ForSchoolsPage() {
         </section>
 
         {/* 3. How SyncNexa Helps Schools Section */}
-        <section className={styles.helps_section}>
+        <section className={styles.solution_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>You stay in control.</h2>
+              <h2 className={styles.section_title}>Protect your students. Protect your data.</h2>
               <p className={styles.section_subtitle}>
-                SyncNexa connects directly to your Student Information System. When an organization needs to verify a student, they ask SyncNexa—and SyncNexa asks you.
-              </p>
-              <p className={styles.source_truth_tag}>
-                You are the source of truth. Always.
+                SyncNexa lets institutions verify student status in real time without sharing documents, transcripts, or personal records.
               </p>
             </div>
 
             <div className={styles.cards_grid_3}>
-              {helpCards.map((card, idx) => (
-                <div key={idx} className={styles.help_card}>
-                  <div className={styles.card_icon_wrap}>
-                    {card.icon}
-                  </div>
-                  <h3>{card.title}</h3>
-                  <p>{card.desc}</p>
+              <div className={styles.benefit_card}>
+                <div className={styles.card_icon_wrap}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
                 </div>
-              ))}
+                <h3>Zero Data Exposure</h3>
+                <p>
+                  SyncNexa never stores your students&apos; personal data or academic records. Your Student Information System (SIS) remains the single source of truth.
+                </p>
+              </div>
+
+              <div className={styles.benefit_card}>
+                <div className={styles.card_icon_wrap}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="23 4 23 10 17 10" />
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                  </svg>
+                </div>
+                <h3>Real-Time Control</h3>
+                <p>
+                  When a student departs your institution, their verification is revoked instantly. No delay. No stale access.
+                </p>
+              </div>
+
+              <div className={styles.benefit_card}>
+                <div className={styles.card_icon_wrap}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 14 14" />
+                  </svg>
+                </div>
+                <h3>Zero Administrative Burden</h3>
+                <p>
+                  No manual verifications, no letter-writing, no phone calls from businesses. The Trust Adapter handles everything automatically.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 4. How the Integration Works Section */}
+        {/* 4. How It Works Section (3-Step Integration) */}
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Simple to set up. Safe to run.</h2>
+              <h2 className={styles.section_title}>How It Works for Institutions</h2>
             </div>
 
             <div className={styles.steps_grid_3}>
-              {integrationSteps.map((step, idx) => (
+              {steps.map((item, idx) => (
                 <div key={idx} className={styles.step_card}>
-                  <div className={styles.step_badge}>Step {step.number}</div>
-                  <div className={styles.step_icon}>{step.icon}</div>
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
+                  <div className={styles.step_badge}>{item.step}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 5. Security Section */}
+        {/* 5. Security & Privacy Section */}
         <section className={styles.security_section}>
           <div className={styles.container}>
-            <div className={styles.security_split}>
-              <div className={styles.security_text}>
-                <h2 className={styles.section_title}>Built for institutions like yours.</h2>
-                <div className={styles.security_checklist}>
-                  {securityBullets.map((bullet, idx) => (
-                    <div key={idx} className={styles.security_bullet_item}>
-                      <div className={styles.shield_icon}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                      </div>
-                      <span>{bullet}</span>
+            <div className={styles.security_box}>
+              <div className={styles.section_header}>
+                <h2 className={styles.section_title}>Security & Privacy by Design</h2>
+                <p className={styles.section_subtitle}>
+                  We take data protection as seriously as you do.
+                </p>
+              </div>
+
+              <div className={styles.security_grid}>
+                {securityFeatures.map((feat, idx) => (
+                  <div key={idx} className={styles.security_item}>
+                    <span className={styles.shield_check}>✓</span>
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Benefits for Students Section */}
+        <section className={styles.student_benefits_section}>
+          <div className={styles.container}>
+            <div className={styles.section_header}>
+              <h2 className={styles.section_title}>What Your Students Get</h2>
+              <p className={styles.section_subtitle}>
+                A modern digital identity that unlocks hundreds of perks effortlessly.
+              </p>
+            </div>
+
+            <div className={styles.cards_grid_4}>
+              {studentBenefits.map((benefit, idx) => (
+                <div key={idx} className={styles.student_benefit_card}>
+                  <div className={styles.benefit_emoji}>{benefit.icon}</div>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 7. For IT & Engineering Teams (Architecture Visual replacing old image) */}
+        <section className={styles.it_section}>
+          <div className={styles.container}>
+            <div className={styles.it_split}>
+              <div className={styles.it_content}>
+                <h2 className={styles.section_title}>Built for IT & Engineering Teams</h2>
+                <p className={styles.it_lead}>
+                  We designed the SyncNexa Trust Adapter to be lightweight, secure, and easy to maintain.
+                </p>
+
+                <div className={styles.specs_table}>
+                  {itSpecs.map((spec, idx) => (
+                    <div key={idx} className={styles.spec_row}>
+                      <span className={styles.spec_label}>{spec.label}</span>
+                      <span className={styles.spec_value}>{spec.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className={styles.security_graphic}>
-                <Image
-                  src="/verification_image.svg"
-                  alt="SyncNexa Trust Adapter Architecture"
-                  width={520}
-                  height={400}
-                  className={styles.responsive_img}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. What Your Students Get Section */}
-        <section className={styles.students_get_section}>
-          <div className={styles.container}>
-            <div className={styles.students_get_box}>
-              <h2 className={styles.section_title}>Happier students. Fewer headaches.</h2>
-              <p className={styles.students_get_lead}>
-                When you partner with SyncNexa, your students can:
-              </p>
-
-              <ul className={styles.students_get_list}>
-                {studentBenefits.map((item, idx) => (
-                  <li key={idx}>
-                    <span className={styles.check_circle}>✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className={styles.students_get_closing}>
-                That means fewer help requests from students asking for verification letters. And fewer complaints about slow approvals.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 7. For Your IT Team Section */}
-        <section className={styles.it_team_section}>
-          <div className={styles.container}>
-            <div className={styles.it_team_card}>
-              <div className={styles.it_team_icon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                </svg>
-              </div>
-              <h2 className={styles.section_title}>Your IT team will approve.</h2>
-              <p className={styles.it_lead}>
-                The SyncNexa Trust Adapter is:
-              </p>
-
-              <div className={styles.it_grid}>
-                {itBenefits.map((item, idx) => (
-                  <div key={idx} className={styles.it_item}>
-                    <div className={styles.it_item_dot}></div>
-                    <span>{item}</span>
+              {/* Trust Adapter SIS Network Diagram */}
+              <div className={styles.it_diagram_side}>
+                <div className={styles.diagram_box}>
+                  <div className={styles.diagram_title_bar}>
+                    <span>Institutional SIS Network Architecture</span>
                   </div>
-                ))}
-              </div>
 
-              <div className={styles.it_summary}>
-                No cloud dependencies you don&apos;t control. No risky data sharing. No complex setup.
+                  <div className={styles.diagram_nodes}>
+                    <div className={styles.diag_node_school}>
+                      <div className={styles.diag_icon}>🗄️</div>
+                      <div>
+                        <strong>University SIS / DB</strong>
+                        <small>Banner, Ellucian, SQL (Inside Campus)</small>
+                      </div>
+                    </div>
+
+                    <div className={styles.diag_arrow_down}>
+                      <span>SQL / REST Read-Only</span>
+                    </div>
+
+                    <div className={styles.diag_node_adapter}>
+                      <div className={styles.diag_icon}>🛡️</div>
+                      <div>
+                        <strong>SyncNexa Trust Adapter</strong>
+                        <small>Containerized In-VPC Worker</small>
+                      </div>
+                    </div>
+
+                    <div className={styles.diag_arrow_down}>
+                      <span>Outbound mTLS 1.3 (Port 443)</span>
+                    </div>
+
+                    <div className={styles.diag_node_cloud}>
+                      <div className={styles.diag_icon}>⚡</div>
+                      <div>
+                        <strong>Zero-Knowledge Attestation</strong>
+                        <small>Instant cryptographic yes/no response</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -343,20 +383,29 @@ export default function ForSchoolsPage() {
         <section className={styles.testimonials_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>What partner schools say</h2>
+              <h2 className={styles.section_title}>What Educators Are Saying</h2>
             </div>
 
-            <div className={styles.cards_grid_3}>
-              {testimonials.map((t, idx) => (
-                <div key={idx} className={styles.testimonial_card}>
-                  <div className={styles.quote_icon}>&ldquo;</div>
-                  <p className={styles.testimonial_text}>{t.quote}</p>
-                  <div className={styles.testimonial_author}>
-                    <strong>{t.author}</strong>
-                    <span>{t.role}</span>
-                  </div>
+            <div className={styles.testimonials_grid}>
+              <div className={styles.testimonial_card}>
+                <p className={styles.testimonial_text}>
+                  &ldquo;SyncNexa eliminated the manual verification requests our registrar office handled daily. Integration was smooth and our students love it.&rdquo;
+                </p>
+                <div className={styles.testimonial_author}>
+                  <strong>Dean of Student Affairs</strong>
+                  <span>Federal University of Technology Owerri</span>
                 </div>
-              ))}
+              </div>
+
+              <div className={styles.testimonial_card}>
+                <p className={styles.testimonial_text}>
+                  &ldquo;The privacy model is exactly what we needed. We maintain complete control of our data, and our students get seamless access to benefits.&rdquo;
+                </p>
+                <div className={styles.testimonial_author}>
+                  <strong>Director of Information Technology</strong>
+                  <span>Partner Higher Education Institution</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -365,33 +414,33 @@ export default function ForSchoolsPage() {
         <section className={styles.faq_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Questions from schools</h2>
+              <h2 className={styles.section_title}>Frequently Asked Questions</h2>
             </div>
 
             <div className={styles.faq_list}>
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className={`${styles.faq_item} ${isOpen ? styles.faq_open : ""}`}
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={`${styles.faq_item} ${
+                    openFaq === idx ? styles.faq_open : ""
+                  }`}
+                >
+                  <button
+                    className={styles.faq_question}
+                    onClick={() => toggleFaq(idx)}
                   >
-                    <button
-                      className={styles.faq_question}
-                      onClick={() => toggleFaq(idx)}
-                      aria-expanded={isOpen}
-                    >
-                      <span>{faq.q}</span>
-                      <span className={styles.faq_toggle_icon}>{isOpen ? "−" : "+"}</span>
-                    </button>
-                    {isOpen && (
-                      <div className={styles.faq_answer}>
-                        <p>{faq.a}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+                    <span>{faq.q}</span>
+                    <span className={styles.faq_toggle_icon}>
+                      {openFaq === idx ? "−" : "+"}
+                    </span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className={styles.faq_answer}>
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -399,19 +448,19 @@ export default function ForSchoolsPage() {
         {/* 10. Call to Action Section */}
         <section className={styles.cta_section}>
           <div className={styles.cta_container}>
-            <h2 className={styles.cta_title}>Give your students the identity tool they deserve.</h2>
+            <h2 className={styles.cta_title}>Bring SyncNexa to your campus.</h2>
             <p className={styles.cta_body}>
-              Partner with SyncNexa and become part of the trust layer.
+              Join a growing network of institutions that trust SyncNexa to protect their students&apos; data.
             </p>
             <div className={styles.cta_buttons}>
               <Link href="/contact">
                 <SnButton variant="primary" size="lg">
-                  Become a Partner School
+                  Request a Demo
                 </SnButton>
               </Link>
-              <Link href="/contact">
+              <Link href="mailto:partnerships@syncnexa.co">
                 <SnButton variant="secondary" size="lg">
-                  Contact Our Team
+                  Talk to Partnerships
                 </SnButton>
               </Link>
             </div>

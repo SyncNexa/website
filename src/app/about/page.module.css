@@ -36,7 +36,7 @@
 /* 1. Hero Section */
 .hero {
   padding: 7rem 2rem 5rem;
-  background: url(/hero_bg.svg) center/cover no-repeat;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -72,42 +72,30 @@
   background: #ffffff;
 }
 
-.story_grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 4rem;
-  align-items: flex-start;
-}
-
-.story_header {
-  position: sticky;
-  top: 100px;
+.story_box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
 }
 
 .story_content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  font-size: 1.1rem;
-  color: #374151;
+  gap: 1.25rem;
+  font-size: 1.15rem;
+  color: var(--text-muted, #4b5563);
   line-height: 1.75;
 }
 
-.lead_paragraph {
+.story_tagline {
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--dark, #05241d);
   line-height: 1.5;
-}
-
-.highlight_quote {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--primary-dark, #006d50);
-  background: var(--primary-light, #e6faf4);
-  padding: 1.25rem 1.75rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--primary, #04d69d);
+  margin-top: 1rem;
 }
 
 /* 3. Mission & Vision Section */
@@ -124,25 +112,14 @@
   gap: 2.5rem;
 }
 
-.mission_card,
-.vision_card {
+.mv_card {
   background: #ffffff;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 20px;
   padding: 3.5rem 3rem;
-  display: flex;
-  flex-direction: column;
 }
 
-.mission_card {
-  border-top: 4px solid var(--primary, #04d69d);
-}
-
-.vision_card {
-  border-top: 4px solid var(--accent, #ffaa01);
-}
-
-.icon_badge_primary {
+.mv_icon_wrap {
   width: 56px;
   height: 56px;
   border-radius: 14px;
@@ -154,38 +131,17 @@
   margin-bottom: 1.5rem;
 }
 
-.icon_badge_accent {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--accent-light, #fff5e0);
-  color: #b45309;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.mission_card h2,
-.vision_card h2 {
+.mv_card h2 {
   font-size: 1.85rem;
   font-weight: 800;
   color: var(--dark, #05241d);
   margin-bottom: 1rem;
 }
 
-.card_statement {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--dark, #05241d);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.card_subtext {
-  font-size: 1rem;
+.mv_card p {
+  font-size: 1.1rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* 4. Values Section */
@@ -216,7 +172,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .value_card h3 {
@@ -232,32 +188,30 @@
   line-height: 1.6;
 }
 
-/* 5. Leadership Section */
-.leadership_section {
+/* 5. Leadership / Team Section */
+.team_section {
   padding: 6rem 0;
   background: var(--bg-alt, #f9fbfb);
   border-top: 1px solid var(--stroke, #e5e7eb);
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.leadership_grid {
+.team_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.leader_card {
+.team_card {
   background: #ffffff;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 18px;
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
-.avatar_circle {
+.member_avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -269,133 +223,127 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  letter-spacing: 0.05em;
 }
 
-.leader_card h3 {
-  font-size: 1.25rem;
+.team_card h3 {
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--dark, #05241d);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
-.leader_role {
-  display: inline-block;
-  font-size: 0.85rem;
+.member_role {
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--primary-dark, #006d50);
   margin-bottom: 1rem;
 }
 
-.leader_bio {
-  font-size: 0.925rem;
+.member_bio {
+  font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
 }
 
 /* 6. Timeline Section */
-.journey_section {
+.timeline_section {
   padding: 6rem 0;
   background: #ffffff;
 }
 
-.timeline_wrapper {
-  max-width: 680px;
+.timeline_list {
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline_list::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--stroke, #e5e7eb);
 }
 
 .timeline_item {
   display: flex;
+  align-items: flex-start;
   gap: 2rem;
+  position: relative;
 }
 
 .timeline_marker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline_dot {
-  width: 16px;
-  height: 16px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: var(--primary, #04d69d);
-  border: 3px solid #ffffff;
-  outline: 2px solid var(--primary, #04d69d);
+  background: var(--primary-light, #e6faf4);
+  border: 2px solid var(--primary, #04d69d);
+  color: var(--primary-dark, #006d50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-}
-
-.timeline_line {
-  width: 2px;
-  flex-grow: 1;
-  background: var(--stroke, #e5e7eb);
-  margin: 8px 0;
+  z-index: 1;
 }
 
 .timeline_content {
-  padding-bottom: 3rem;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
 }
 
-.timeline_year {
-  display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--primary-dark, #006d50);
-  background: var(--primary-light, #e6faf4);
-  padding: 2px 10px;
-  border-radius: 6px;
+.timeline_content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
   margin-bottom: 0.5rem;
 }
 
-.timeline_desc {
-  font-size: 1.05rem;
-  color: var(--dark, #05241d);
+.timeline_content p {
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
   line-height: 1.6;
 }
 
-/* 7. Why It Matters Section */
-.matters_section {
+/* 7. Purpose Section */
+.purpose_section {
   padding: 6rem 0;
   background: var(--bg-alt, #f9fbfb);
   border-top: 1px solid var(--stroke, #e5e7eb);
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.matters_box {
+.purpose_box {
   max-width: 860px;
   margin: 0 auto;
+  text-align: center;
   background: #ffffff;
   border: 1px solid var(--stroke, #e5e7eb);
   border-radius: 24px;
-  padding: 4rem 3.5rem;
-  text-align: center;
+  padding: 4rem 3rem;
 }
 
-.matters_title {
-  font-size: 2.5rem;
-  font-weight: 800;
+.purpose_lead {
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--dark, #05241d);
+  line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.matters_text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  font-size: 1.15rem;
-  color: var(--text-muted, #4b5563);
+.purpose_body {
+  font-size: 1.1rem;
+  color: var(--text-muted, #6b7280);
   line-height: 1.7;
 }
 
-.matters_highlight {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-dark, #006d50);
-}
-
-/* 8. CTA Section */
+/* 8. Call to Action Section */
 .cta_section {
   padding: 6rem 2rem;
   background: var(--dark, #05241d);
@@ -443,17 +391,20 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .story_grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .team_grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .story_header {
-    position: static;
+  .mission_vision_grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem 4rem;
+  }
+
   .hero_title {
     font-size: 2.35rem;
   }
@@ -462,14 +413,18 @@
     font-size: 2.15rem;
   }
 
-  .mission_vision_grid,
-  .leadership_grid,
-  .values_grid {
+  .values_grid,
+  .team_grid {
     grid-template-columns: 1fr;
   }
 
-  .matters_box {
+  .story_box,
+  .purpose_box {
     padding: 2.5rem 1.5rem;
+  }
+
+  .timeline_item {
+    gap: 1rem;
   }
 
   .cta_title {

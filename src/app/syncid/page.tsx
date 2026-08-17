@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
 import styles from "./page.module.css";
 
 export default function SyncIdPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -18,160 +17,141 @@ export default function SyncIdPage() {
     {
       number: "1",
       title: "Download the App",
-      desc: "Get SyncID from the Google Play Store.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-          <line x1="12" y1="18" x2="12.01" y2="18" />
-        </svg>
-      ),
+      desc: "Get SyncID from the App Store or Google Play. Create your account in under a minute.",
     },
     {
       number: "2",
-      title: "Create Your SyncTag",
-      desc: "Choose a public handle like @yourname. This is how organizations and friends can find you.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" />
-        </svg>
-      ),
+      title: "Verify Your School",
+      desc: "Connect to your institution through our secure verification process. Your school confirms your enrollment—no documents needed.",
     },
     {
       number: "3",
-      title: "Verify Your Enrollment",
-      desc: "Log in through your school's system once. SyncID confirms you're a currently enrolled student.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-          <path d="M6 12v5c3 3 9 3 12 0v-5" />
-        </svg>
-      ),
+      title: "Get Your SyncTag",
+      desc: "Receive your unique digital student identifier. It lives in your app and stays with you as long as you're enrolled.",
     },
     {
       number: "4",
       title: "Use It Everywhere",
-      desc: 'Whenever a platform offers student benefits, tap "Verify with SyncID" and approve. That\'s it.',
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      ),
+      desc: "When a platform asks for student verification, use SyncID. One tap, verified instantly.",
     },
   ];
 
   const features = [
     {
-      title: "One-Time Verification",
-      desc: "Verify once. Done. Use it on any platform without repeating the process.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="9 11 12 14 22 4" />
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-        </svg>
-      ),
-    },
-    {
-      title: "Privacy Control",
-      desc: "You see exactly what's being shared before you approve. Nothing is shared without your consent.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Revoke Access Anytime",
-      desc: "Changed your mind? Remove an organization's access with a single tap.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="10" />
-          <line x1="15" y1="9" x2="9" y2="15" />
-          <line x1="9" y1="9" x2="15" y2="15" />
+          <path d="m9 12 2 2 4-4" />
         </svg>
       ),
+      title: "One-Tap Verification",
+      desc: "No more filling out forms, uploading ID cards, or waiting for approval emails. Verify in seconds.",
     },
     {
-      title: "Free Forever",
-      desc: "SyncID is free for students. No hidden fees. No premium required for core verification.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
-          <path d="M12 18V6" />
-        </svg>
-      ),
-    },
-    {
-      title: "Secure Recovery",
-      desc: "Lost your device? No worries. Your trusted contacts can help you regain access safely.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       ),
+      title: "Privacy First",
+      desc: "SyncID only shares your verified status—never your grades, transcripts, or personal documents. You control who sees what.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      ),
+      title: "Your Data Stays Yours",
+      desc: "We don't store your academic records. Your school confirms your status, and you decide where to share it.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+        </svg>
+      ),
+      title: "Revoke Anytime",
+      desc: "Changed your mind? Revoke access from any platform with a single tap from your SyncID dashboard.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
+        </svg>
+      ),
+      title: "Works Across Platforms",
+      desc: "Use SyncID for music streaming, software discounts, food delivery, transit passes, and more.",
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="8" r="7" />
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+        </svg>
+      ),
+      title: "Always Free for Students",
+      desc: "SyncID is completely free to download and use. No hidden fees, no subscriptions, ever.",
     },
   ];
 
   const benefits = [
-    "Student discounts on music and streaming platforms",
-    "Free or discounted software and developer tools",
-    "Food deals and meal perks",
-    "Exclusive event access",
-    "Scholarships and educational resources",
-    "And more as we add partners",
-  ];
-
-  const securityBullets = [
-    "Your documents are never stored on our servers",
-    "You approve every verification request",
-    "Organizations only see what you allow",
-    "Revoke access anytime, instantly",
-  ];
-
-  const testimonials = [
     {
-      quote: "I claimed my student discount in less than a minute. No uploads, no waiting. I wish every app worked like this.",
-      author: "Student User",
-      role: "Engineering Major",
+      icon: "🎵",
+      title: "Streaming & Entertainment",
+      desc: "Spotify, Apple Music, YouTube Premium, and more—at student rates.",
     },
     {
-      quote: "The privacy part sold me. I can see exactly what each app gets. Nothing more.",
-      author: "Student User",
-      role: "Computer Science Student",
+      icon: "💻",
+      title: "Software & Tools",
+      desc: "GitHub Student Developer Pack, Notion, Figma, JetBrains, Microsoft 365, and Adobe Creative Cloud.",
     },
     {
-      quote: "Setup took two minutes. Now I use it every day for food deals near campus.",
-      author: "Student User",
-      role: "Undergraduate Student",
+      icon: "🍔",
+      title: "Food & Delivery",
+      desc: "Student discounts on food delivery, campus dining, and meal plans.",
+    },
+    {
+      icon: "✈️",
+      title: "Travel & Transit",
+      desc: "Discounted bus, train, and flight fares for students.",
+    },
+    {
+      icon: "🛍️",
+      title: "Retail & Hardware",
+      desc: "Apple Education Pricing, Samsung student discounts, Nike, and more.",
+    },
+    {
+      icon: "🏦",
+      title: "Banking & Finance",
+      desc: "Student accounts, zero-fee debit cards, and financial tools built for students.",
     },
   ];
 
   const faqs = [
     {
       q: "Is SyncID really free?",
-      a: "Yes. SyncID is completely free for students. Core verification and credential storage cost nothing.",
+      a: "Yes, 100% free for students. We will never charge you to create an account, verify your status, or use SyncID.",
     },
     {
-      q: "What data does SyncID collect?",
-      a: "We collect only what's needed: your SyncTag, your public key, and your enrollment status. No academic records. No browsing history. No personal documents.",
+      q: "What if my school isn't listed?",
+      a: "You can request your school from within the app. We're adding new institutions every week.",
     },
     {
-      q: "Can I revoke an organization's access?",
-      a: "Yes. Go to your Authorized Organizations list and remove any organization. Their access ends immediately.",
+      q: "What data does SyncID store?",
+      a: "Only your basic account information: your SyncTag, your public key, and your verified status (active or inactive). We do not store your grades, transcripts, ID card photos, or any academic records.",
     },
     {
       q: "What happens when I graduate?",
-      a: "Your student credential automatically expires when your school confirms you're no longer enrolled. You'll always keep your SyncTag for future use.",
+      a: "When you graduate, your student status will reflect that you're an alumnus. You can still keep your SyncID account for alumni perks.",
     },
     {
-      q: "Do I need to re-verify every semester?",
-      a: "It depends on your school. Some credentials last the full academic year. Others may need a quick refresh each semester.",
-    },
-    {
-      q: "What if I lose my phone?",
-      a: "Your identity isn't lost. Use your trusted contacts or backup phrase to recover your account securely.",
+      q: "Can I use SyncID if I'm not in university?",
+      a: "SyncID supports students in universities, polytechnics, colleges of education, and accredited online programs.",
     },
   ];
 
@@ -186,13 +166,16 @@ export default function SyncIdPage() {
             <div className={styles.hero_split}>
               <div className={styles.hero_content}>
                 <h1 className={styles.hero_title}>
-                  Your student identity. <span className={styles.gradient_text}>One tap away.</span>
+                  Your student identity. <br />
+                  <span className={styles.gradient_text}>One tap away.</span>
                 </h1>
+
                 <p className={styles.hero_subtitle}>
                   SyncID is a digital student identity that proves your enrollment status instantly—without sharing more than you need to.
                 </p>
+
                 <div className={styles.hero_cta_group}>
-                  <Link href="#download">
+                  <Link href="/for-organizations">
                     <SnButton variant="primary" size="lg">
                       Get SyncID Free
                     </SnButton>
@@ -204,63 +187,103 @@ export default function SyncIdPage() {
                   </Link>
                 </div>
               </div>
-              <div className={styles.hero_image_side}>
-                <Image
-                  src="/student_image.svg"
-                  alt="SyncID Student Mobile App Preview"
-                  width={520}
-                  height={480}
-                  priority
-                  className={styles.responsive_img}
-                />
+
+              {/* SyncID Mobile App Preview (Replacing old image) */}
+              <div className={styles.hero_ui_side}>
+                <div className={styles.phone_frame}>
+                  <div className={styles.phone_header}>
+                    <span className={styles.phone_time}>9:41</span>
+                    <div className={styles.phone_notch}></div>
+                    <span className={styles.phone_battery}>100%</span>
+                  </div>
+
+                  <div className={styles.phone_screen_content}>
+                    <div className={styles.app_bar}>
+                      <span className={styles.app_logo_text}>SyncID</span>
+                      <span className={styles.app_badge_active}>Verified</span>
+                    </div>
+
+                    <div className={styles.id_card_visual}>
+                      <div className={styles.id_card_top}>
+                        <span className={styles.uni_name}>Federal Univ. of Tech Owerri</span>
+                        <span className={styles.session_tag}>2025/2026</span>
+                      </div>
+                      <div className={styles.id_student_name}>Okolie Anthony</div>
+                      <div className={styles.id_handle}>@anthony &middot; Computer Science</div>
+                      <div className={styles.id_card_bottom}>
+                        <span className={styles.id_chip}>ENROLLED</span>
+                        <span className={styles.id_auth_code}>#SN-8924-OK</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.app_quick_actions}>
+                      <div className={styles.quick_action_item}>
+                        <div className={styles.quick_icon}>⚡</div>
+                        <span>Instant Share</span>
+                      </div>
+                      <div className={styles.quick_action_item}>
+                        <div className={styles.quick_icon}>🔒</div>
+                        <span>Privacy Vault</span>
+                      </div>
+                      <div className={styles.quick_action_item}>
+                        <div className={styles.quick_icon}>🏷️</div>
+                        <span>Perks (24)</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.live_attestation_bubble}>
+                      <span className={styles.bubble_dot}></span>
+                      <span>Ready to verify on Spotify, Notion & GitHub</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* 2. What Is SyncID Section */}
-        <section className={styles.what_is_section}>
+        <section className={styles.what_section}>
           <div className={styles.container}>
-            <div className={styles.what_is_box}>
+            <div className={styles.what_box}>
               <h2 className={styles.section_title}>What is SyncID?</h2>
-              <p className={styles.what_is_lead}>
-                SyncID is a free mobile app that verifies your student status once and lets you use that verification anywhere student benefits exist.
-              </p>
-              <div className={styles.no_more_grid}>
-                <div className={styles.no_more_item}>
-                  <div className={styles.x_badge}>✕</div>
-                  <span>No more uploading your ID card to every platform.</span>
+              <div className={styles.what_content}>
+                <p>
+                  SyncID is a free mobile app that verifies your student status once and lets you use that verification anywhere student benefits exist.
+                </p>
+                <div className={styles.what_bullets}>
+                  <div className={styles.what_bullet}>
+                    <span className={styles.cross_icon}>✕</span>
+                    <span>No more uploading your ID card to every platform.</span>
+                  </div>
+                  <div className={styles.what_bullet}>
+                    <span className={styles.cross_icon}>✕</span>
+                    <span>No more waiting days for approval.</span>
+                  </div>
+                  <div className={styles.what_bullet}>
+                    <span className={styles.cross_icon}>✕</span>
+                    <span>No more sharing documents that should stay private.</span>
+                  </div>
                 </div>
-                <div className={styles.no_more_item}>
-                  <div className={styles.x_badge}>✕</div>
-                  <span>No more waiting days for approval.</span>
-                </div>
-                <div className={styles.no_more_item}>
-                  <div className={styles.x_badge}>✕</div>
-                  <span>No more sharing documents that should stay private.</span>
-                </div>
-              </div>
-              <div className={styles.control_highlight}>
-                <strong>SyncID puts you in control.</strong>
+                <p className={styles.what_conclusion}>
+                  SyncID puts you in control.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* 3. How SyncID Works Section */}
-        <section className={styles.how_it_works_section} id="how-it-works">
+        <section className={styles.how_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
               <h2 className={styles.section_title}>Set up once. Use it everywhere.</h2>
             </div>
 
-            <div className={styles.steps_grid_4}>
+            <div className={styles.steps_grid}>
               {steps.map((step, idx) => (
                 <div key={idx} className={styles.step_card}>
-                  <div className={styles.step_header}>
-                    <div className={styles.step_badge}>Step {step.number}</div>
-                    <div className={styles.step_icon}>{step.icon}</div>
-                  </div>
+                  <div className={styles.step_number}>{step.number}</div>
                   <h3>{step.title}</h3>
                   <p>{step.desc}</p>
                 </div>
@@ -269,19 +292,17 @@ export default function SyncIdPage() {
           </div>
         </section>
 
-        {/* 4. Features Section */}
+        {/* 4. Features / Benefits Section */}
         <section className={styles.features_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Built with students in mind</h2>
+              <h2 className={styles.section_title}>Built for your student life</h2>
             </div>
 
             <div className={styles.features_grid}>
               {features.map((feat, idx) => (
                 <div key={idx} className={styles.feature_card}>
-                  <div className={styles.feature_icon_wrap}>
-                    {feat.icon}
-                  </div>
+                  <div className={styles.feature_icon_wrap}>{feat.icon}</div>
                   <h3>{feat.title}</h3>
                   <p>{feat.desc}</p>
                 </div>
@@ -290,86 +311,149 @@ export default function SyncIdPage() {
           </div>
         </section>
 
-        {/* 5. What You Can Access Section */}
-        <section className={styles.unlock_section}>
+        {/* 5. What SyncID Unlocks Section */}
+        <section className={styles.unlocks_section}>
           <div className={styles.container}>
-            <div className={styles.unlock_split}>
-              <div className={styles.unlock_text}>
-                <h2 className={styles.section_title}>What SyncID unlocks</h2>
-                <p className={styles.unlock_lead}>
-                  Verified students get real benefits. Here&apos;s what your SyncID can do:
-                </p>
+            <div className={styles.section_header}>
+              <h2 className={styles.section_title}>What SyncID Unlocks</h2>
+              <p className={styles.section_subtitle}>
+                One app. Hundreds of discounts, tools, and perks.
+              </p>
+            </div>
 
-                <ul className={styles.benefits_list}>
-                  {benefits.map((b, idx) => (
-                    <li key={idx}>
-                      <span className={styles.check_circle}>✓</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className={styles.benefits_grid}>
+              {benefits.map((benefit, idx) => (
+                <div key={idx} className={styles.benefit_card}>
+                  <div className={styles.benefit_emoji}>{benefit.icon}</div>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className={styles.unlock_graphic}>
-                <div className={styles.card_perks_display}>
-                  <div className={styles.perk_pill}>🎵 Music Streaming Discounts</div>
-                  <div className={styles.perk_pill}>💻 Developer & Cloud Credits</div>
-                  <div className={styles.perk_pill}>🍔 Campus Meal Deals</div>
-                  <div className={styles.perk_pill}>🎟️ Student Event Passes</div>
-                  <div className={styles.perk_pill}>📚 Academic Grant Access</div>
+        {/* 6. Comparison Section */}
+        <section className={styles.comparison_section}>
+          <div className={styles.container}>
+            <div className={styles.comparison_box}>
+              <h2 className={styles.section_title}>Tired of re-verifying?</h2>
+              <p className={styles.comparison_lead}>
+                Every time you want a student discount, you&apos;re asked to prove you&apos;re a student. That means finding your ID card, taking a photo, uploading it, and waiting.
+              </p>
+              <div className={styles.contrast_split}>
+                <div className={styles.old_way_card}>
+                  <h3>The Old Way</h3>
+                  <ul>
+                    <li>Take photo of ID card</li>
+                    <li>Upload to unverified third-party websites</li>
+                    <li>Wait 24–72 hours for review</li>
+                    <li>Repeat on every platform</li>
+                    <li>Personal data stored across multiple servers</li>
+                  </ul>
+                </div>
+                <div className={styles.new_way_card}>
+                  <h3>The SyncID Way</h3>
+                  <ul>
+                    <li>Verify once with your institution</li>
+                    <li>Share proof with one tap</li>
+                    <li>Instant approval in seconds</li>
+                    <li>Works everywhere automatically</li>
+                    <li>Zero document storage—complete privacy</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 6. For Students Already Tired of Re-Verifying */}
-        <section className={styles.tired_section}>
-          <div className={styles.container}>
-            <div className={styles.tired_banner}>
-              <h2>Tired of proving you&apos;re a student?</h2>
-              <p>
-                We get it. You&apos;ve uploaded your ID card enough times. SyncID ends that.
-              </p>
-              <div className={styles.tired_tagline}>
-                One verification. One tap. Everywhere.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 7. Security Section */}
+        {/* 7. Security Section (Replacing old verification image with Privacy Vault UI) */}
         <section className={styles.security_section}>
           <div className={styles.container}>
-            <div className={styles.security_grid}>
+            <div className={styles.security_split}>
               <div className={styles.security_text}>
-                <h2 className={styles.section_title}>Your data stays yours.</h2>
-                <p className={styles.security_lead}>
-                  SyncID never stores your academic records. Your school remains the source of truth. We simply confirm your status when you choose to share it.
-                </p>
-
-                <div className={styles.security_checklist}>
-                  {securityBullets.map((bullet, idx) => (
-                    <div key={idx} className={styles.security_bullet_item}>
-                      <div className={styles.shield_icon}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                      </div>
-                      <span>{bullet}</span>
-                    </div>
-                  ))}
+                <h2 className={styles.section_title}>Your Privacy Is Our Priority</h2>
+                <div className={styles.security_body}>
+                  <p>
+                    We built SyncID with a simple principle: <strong>your data belongs to you.</strong>
+                  </p>
+                  <ul className={styles.security_checklist}>
+                    <li>
+                      <span className={styles.sec_check}>✓</span>
+                      <span>We never sell your data</span>
+                    </li>
+                    <li>
+                      <span className={styles.sec_check}>✓</span>
+                      <span>We never store your academic records</span>
+                    </li>
+                    <li>
+                      <span className={styles.sec_check}>✓</span>
+                      <span>We only share what you explicitly approve</span>
+                    </li>
+                    <li>
+                      <span className={styles.sec_check}>✓</span>
+                      <span>You can revoke access at any time</span>
+                    </li>
+                    <li>
+                      <span className={styles.sec_check}>✓</span>
+                      <span>All data is encrypted end-to-end</span>
+                    </li>
+                  </ul>
+                  <p className={styles.security_subtext}>
+                    Your school confirms your enrollment. SyncID creates a secure proof. You choose who gets to see it. That&apos;s it.
+                  </p>
                 </div>
               </div>
 
-              <div className={styles.security_image_wrap}>
-                <Image
-                  src="/verification_image.svg"
-                  alt="Cryptographic Zero-Knowledge Verification"
-                  width={500}
-                  height={380}
-                  className={styles.responsive_img}
-                />
+              {/* Zero Knowledge Privacy Vault UI Mockup */}
+              <div className={styles.security_visual_side}>
+                <div className={styles.vault_box}>
+                  <div className={styles.vault_header}>
+                    <div className={styles.vault_badge}>
+                      <span className={styles.lock_symbol}>🔒</span>
+                      <span>Zero-Knowledge Vault</span>
+                    </div>
+                    <span className={styles.vault_encryption}>AES-256-GCM</span>
+                  </div>
+
+                  <div className={styles.vault_records}>
+                    <div className={styles.vault_row_green}>
+                      <div className={styles.vault_indicator_green}>✓</div>
+                      <div className={styles.vault_row_text}>
+                        <strong>Device Keypair Attestation</strong>
+                        <span>Cryptographically signed on hardware enclave</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.vault_row_green}>
+                      <div className={styles.vault_indicator_green}>✓</div>
+                      <div className={styles.vault_row_text}>
+                        <strong>Pairwise Merchant Identifiers</strong>
+                        <span>Cross-platform tracking mathematically impossible</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.vault_row_red}>
+                      <div className={styles.vault_indicator_red}>✕</div>
+                      <div className={styles.vault_row_text}>
+                        <strong>Student ID Card Images / Scans</strong>
+                        <span>NEVER collected &middot; NEVER stored</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.vault_row_red}>
+                      <div className={styles.vault_indicator_red}>✕</div>
+                      <div className={styles.vault_row_text}>
+                        <strong>Academic Transcripts & Grades</strong>
+                        <span>NEVER collected &middot; NEVER stored</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.vault_footer}>
+                    <span>Privacy Guarantee: Complete user sovereignty</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -379,20 +463,39 @@ export default function SyncIdPage() {
         <section className={styles.testimonials_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Students love it.</h2>
+              <h2 className={styles.section_title}>What Students Are Saying</h2>
             </div>
 
             <div className={styles.testimonials_grid}>
-              {testimonials.map((t, idx) => (
-                <div key={idx} className={styles.testimonial_card}>
-                  <div className={styles.quote_icon}>&ldquo;</div>
-                  <p className={styles.testimonial_text}>{t.quote}</p>
-                  <div className={styles.testimonial_user}>
-                    <strong>{t.author}</strong>
-                    <span>{t.role}</span>
-                  </div>
+              <div className={styles.testimonial_card}>
+                <p className={styles.testimonial_text}>
+                  &ldquo;I used to hate signing up for student discounts because of the document upload process. SyncID made it effortless.&rdquo;
+                </p>
+                <div className={styles.testimonial_author}>
+                  <strong>Chidi O.</strong>
+                  <span>University of Lagos &middot; Computer Science</span>
                 </div>
-              ))}
+              </div>
+
+              <div className={styles.testimonial_card}>
+                <p className={styles.testimonial_text}>
+                  &ldquo;One app, all my discounts. I got Spotify, GitHub, and Apple Music sorted in five minutes.&rdquo;
+                </p>
+                <div className={styles.testimonial_author}>
+                  <strong>Amina B.</strong>
+                  <span>Ahmadu Bello University &middot; Architecture</span>
+                </div>
+              </div>
+
+              <div className={styles.testimonial_card}>
+                <p className={styles.testimonial_text}>
+                  &ldquo;The fact that my grades and personal documents aren&apos;t being shared gives me peace of mind. Highly recommend.&rdquo;
+                </p>
+                <div className={styles.testimonial_author}>
+                  <strong>Emeka N.</strong>
+                  <span>Federal University of Technology Owerri &middot; Mechanical Eng.</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -401,48 +504,53 @@ export default function SyncIdPage() {
         <section className={styles.faq_section}>
           <div className={styles.container}>
             <div className={styles.section_header}>
-              <h2 className={styles.section_title}>Common questions</h2>
+              <h2 className={styles.section_title}>Frequently Asked Questions</h2>
             </div>
 
             <div className={styles.faq_list}>
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className={`${styles.faq_item} ${isOpen ? styles.faq_open : ""}`}
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={`${styles.faq_item} ${
+                    openFaq === idx ? styles.faq_open : ""
+                  }`}
+                >
+                  <button
+                    className={styles.faq_question}
+                    onClick={() => toggleFaq(idx)}
                   >
-                    <button
-                      className={styles.faq_question}
-                      onClick={() => toggleFaq(idx)}
-                      aria-expanded={isOpen}
-                    >
-                      <span>{faq.q}</span>
-                      <span className={styles.faq_toggle_icon}>{isOpen ? "−" : "+"}</span>
-                    </button>
-                    {isOpen && (
-                      <div className={styles.faq_answer}>
-                        <p>{faq.a}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+                    <span>{faq.q}</span>
+                    <span className={styles.faq_toggle_icon}>
+                      {openFaq === idx ? "−" : "+"}
+                    </span>
+                  </button>
+                  {openFaq === idx && (
+                    <div className={styles.faq_answer}>
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* 10. Call to Action Section */}
-        <section className={styles.cta_section} id="download">
+        <section className={styles.cta_section}>
           <div className={styles.cta_container}>
-            <h2 className={styles.cta_title}>Ready to verify once and use it everywhere?</h2>
+            <h2 className={styles.cta_title}>Get SyncID today. It&apos;s free.</h2>
             <p className={styles.cta_body}>
-              Join students already using SyncID.
+              Join thousands of students who prove their enrollment in one tap.
             </p>
             <div className={styles.cta_buttons}>
-              <Link href="#download">
+              <Link href="/for-organizations">
                 <SnButton variant="primary" size="lg">
-                  Get SyncID Free
+                  Download for iOS
+                </SnButton>
+              </Link>
+              <Link href="/for-organizations">
+                <SnButton variant="secondary" size="lg">
+                  Download for Android
                 </SnButton>
               </Link>
             </div>

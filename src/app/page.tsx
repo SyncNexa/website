@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
@@ -168,7 +167,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. How It Works Section */}
+        {/* 5. How It Works Section (Interactive Flow Diagram replacing old image) */}
         <section className={styles.how_it_works_section} id="how-it-works">
           <div className={styles.container}>
             <div className={styles.section_header}>
@@ -208,21 +207,81 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles.verification_image_container}>
-                <Image
-                  src="/verification_image.svg"
-                  alt="SyncNexa 3-Step Verification Flow"
-                  width={600}
-                  height={400}
-                  className={styles.responsive_flow_img}
-                  priority
-                />
+              {/* Architectural Engine Visualization */}
+              <div className={styles.architecture_engine}>
+                <div className={styles.engine_card}>
+                  <div className={styles.engine_header}>
+                    <div className={styles.engine_dot_green}></div>
+                    <span className={styles.engine_label}>SyncNexa Cryptographic Trust Engine</span>
+                    <span className={styles.engine_status}>mTLS 1.3 Active</span>
+                  </div>
+
+                  <div className={styles.engine_nodes_flow}>
+                    {/* Node 1: Student App */}
+                    <div className={styles.engine_node}>
+                      <div className={styles.node_icon_box}>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
+                          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                          <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                      </div>
+                      <div className={styles.node_details}>
+                        <strong>SyncID Device</strong>
+                        <span>Ed25519 Keypair &middot; User Consent</span>
+                      </div>
+                      <div className={styles.node_tag}>Verified</div>
+                    </div>
+
+                    <div className={styles.connector_line}>
+                      <span className={styles.connector_pulse}></span>
+                    </div>
+
+                    {/* Node 2: Trust Adapter */}
+                    <div className={`${styles.engine_node} ${styles.engine_node_center}`}>
+                      <div className={styles.node_icon_box}>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          <path d="m9 12 2 2 4-4" />
+                        </svg>
+                      </div>
+                      <div className={styles.node_details}>
+                        <strong>Zero-Knowledge Attestation</strong>
+                        <span>Encrypted Query &middot; Zero Document Storage</span>
+                      </div>
+                      <div className={styles.node_shield_badge}>Private</div>
+                    </div>
+
+                    <div className={styles.connector_line}>
+                      <span className={styles.connector_pulse}></span>
+                    </div>
+
+                    {/* Node 3: School SIS */}
+                    <div className={styles.engine_node}>
+                      <div className={styles.node_icon_box}>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#04d69d" strokeWidth="2">
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                      </div>
+                      <div className={styles.node_details}>
+                        <strong>Institutional SIS</strong>
+                        <span>Behind Firewall &middot; Source of Truth</span>
+                      </div>
+                      <div className={styles.node_tag_school}>Live</div>
+                    </div>
+                  </div>
+
+                  <div className={styles.engine_footer_result}>
+                    <span className={styles.result_key}>Verification Output:</span>
+                    <span className={styles.result_value}>{`{ "status": "ACTIVE_ENROLLED", "pairwiseId": "pw_9x8f...7a" }`}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 6. Product Highlight Section */}
+        {/* 6. Product Highlight Section (Interactive SyncID Mockup replacing old image) */}
         <section className={styles.product_highlight_section}>
           <div className={styles.container}>
             <div className={styles.product_split}>
@@ -264,14 +323,59 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles.product_image_side}>
-                <Image
-                  src="/student_image.svg"
-                  alt="SyncID Mobile Application"
-                  width={520}
-                  height={480}
-                  className={styles.responsive_img}
-                />
+              {/* SyncID Mobile Digital Pass Mockup */}
+              <div className={styles.product_ui_side}>
+                <div className={styles.syncid_pass_card}>
+                  <div className={styles.pass_top}>
+                    <div className={styles.pass_brand}>
+                      <span className={styles.sync_symbol}>❖</span>
+                      <strong>SyncID</strong>
+                    </div>
+                    <span className={styles.pass_live_badge}>Active Student</span>
+                  </div>
+
+                  <div className={styles.pass_user_row}>
+                    <div className={styles.pass_avatar}>OA</div>
+                    <div className={styles.pass_user_info}>
+                      <h3>Okolie Anthony</h3>
+                      <span className={styles.pass_tag}>@anthony</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.pass_meta_grid}>
+                    <div className={styles.meta_item}>
+                      <small>INSTITUTION</small>
+                      <strong>Federal Univ. of Tech Owerri</strong>
+                    </div>
+                    <div className={styles.meta_item}>
+                      <small>VALIDITY</small>
+                      <strong>2025 / 2026 Academic Session</strong>
+                    </div>
+                    <div className={styles.meta_item}>
+                      <small>PRIVACY LEVEL</small>
+                      <strong>Zero-Knowledge Pairwise</strong>
+                    </div>
+                    <div className={styles.meta_item}>
+                      <small>ATTESTATION</small>
+                      <strong>SIS Real-Time Synced</strong>
+                    </div>
+                  </div>
+
+                  <div className={styles.pass_action_row}>
+                    <div className={styles.pass_qr_box}>
+                      <div className={styles.qr_mock_grid}>
+                        <div className={styles.qr_corner_tl}></div>
+                        <div className={styles.qr_corner_tr}></div>
+                        <div className={styles.qr_corner_bl}></div>
+                        <div className={styles.qr_center_code}></div>
+                      </div>
+                    </div>
+                    <div className={styles.pass_button_preview}>
+                      <span className={styles.verify_btn_label}>Instant Verify</span>
+                      <small>One-Tap Cryptographic Proof</small>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@
 /* 1. Hero Section */
 .hero {
   padding: 7rem 2rem 6rem;
-  background: url(/hero_bg.svg) center/cover no-repeat;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -208,7 +208,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* 5. How It Works Section */
+/* 5. How It Works Section & Architecture Engine */
 .how_it_works_section {
   padding: 6rem 0;
   background: #ffffff;
@@ -264,19 +264,157 @@
   line-height: 1.6;
 }
 
-.verification_image_container {
+.architecture_engine {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.responsive_flow_img {
+.engine_card {
+  background: #071713;
+  border: 1px solid rgba(4, 214, 157, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
   width: 100%;
-  height: auto;
-  max-width: 550px;
+  max-width: 540px;
 }
 
-/* 6. Product Highlight Section */
+.engine_header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.engine_dot_green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #04d69d;
+}
+
+.engine_label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.engine_status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #04d69d;
+  background: rgba(4, 214, 157, 0.15);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.engine_nodes_flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.engine_node {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0d2620;
+  border: 1px solid rgba(4, 214, 157, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.engine_node_center {
+  border-color: #04d69d;
+  background: #11332b;
+}
+
+.node_icon_box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(4, 214, 157, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.node_details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.node_details strong {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.node_details span {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.node_tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #04d69d;
+  background: rgba(4, 214, 157, 0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.node_tag_school {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffaa01;
+  background: rgba(255, 170, 1, 0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.node_shield_badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #05241d;
+  background: #04d69d;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.connector_line {
+  height: 12px;
+  width: 2px;
+  background: rgba(4, 214, 157, 0.3);
+  margin: 0 auto;
+}
+
+.engine_footer_result {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.result_key {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-family: monospace;
+}
+
+.result_value {
+  font-size: 0.825rem;
+  color: #a7f3d0;
+  font-family: monospace;
+}
+
+/* 6. Product Highlight Section & Pass Mockup */
 .product_highlight_section {
   padding: 6rem 0;
   background: var(--bg-alt, #f9fbfb);
@@ -337,16 +475,170 @@
   flex-shrink: 0;
 }
 
-.product_image_side {
+.product_ui_side {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.responsive_img {
+.syncid_pass_card {
+  background: #ffffff;
+  border: 1.5px solid var(--stroke, #e5e7eb);
+  border-radius: 24px;
+  padding: 2.5rem;
   width: 100%;
-  height: auto;
-  max-width: 480px;
+  max-width: 460px;
+}
+
+.pass_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--stroke-subtle, #f3f4f6);
+}
+
+.pass_brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sync_symbol {
+  color: var(--primary, #04d69d);
+  font-size: 1.25rem;
+}
+
+.pass_brand strong {
+  font-size: 1.2rem;
+  color: var(--dark, #05241d);
+}
+
+.pass_live_badge {
+  background: var(--primary-light, #e6faf4);
+  color: var(--primary-dark, #006d50);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.pass_user_row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.pass_avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #04d69d 0%, #006d50 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pass_user_info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+}
+
+.pass_tag {
+  font-size: 0.9rem;
+  color: var(--primary-dark, #006d50);
+  font-weight: 600;
+}
+
+.pass_meta_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: var(--bg-alt, #f9fbfb);
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.meta_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta_item small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.meta_item strong {
+  font-size: 0.85rem;
+  color: var(--dark, #05241d);
+  line-height: 1.35;
+}
+
+.pass_action_row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.pass_qr_box {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qr_mock_grid {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.qr_corner_tl,
+.qr_corner_tr,
+.qr_corner_bl {
+  background: #05241d;
+  border-radius: 2px;
+}
+
+.qr_center_code {
+  background: #04d69d;
+  border-radius: 2px;
+}
+
+.pass_button_preview {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.verify_btn_label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark, #05241d);
+}
+
+.pass_button_preview small {
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
 }
 
 /* 7. Dual Audience Section */

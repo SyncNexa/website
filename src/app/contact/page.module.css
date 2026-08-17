@@ -22,7 +22,7 @@
 /* 1. Hero Section */
 .hero {
   padding: 6rem 2rem 5rem;
-  background: url(/hero_bg.svg) center/cover no-repeat;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
