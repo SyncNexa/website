@@ -90,8 +90,8 @@
 .is_visible .section_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .section_subtitle {
@@ -122,7 +122,7 @@
   position: relative;
   overflow: hidden;
   padding: 6.5rem 2rem 5.5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -159,8 +159,8 @@
 .is_visible .hero_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .hero_subtitle {
@@ -271,7 +271,7 @@
 
 .logo_card:hover {
   opacity: 1;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .logo_icon {
@@ -450,7 +450,7 @@
 .sis_metric_row {
   display: flex;
   justify-content: space-between;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .sis_alert_box {
@@ -507,7 +507,7 @@
 .tech_problem_card h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -583,7 +583,7 @@
 .tech_solution_card h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -662,7 +662,7 @@
   font-size: 1.35rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   letter-spacing: -0.02em;
   text-align: center;
 }
@@ -676,7 +676,7 @@
 .pipe_step_body h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.65rem;
 }
 
@@ -729,8 +729,8 @@
 .is_visible .product_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .product_description {
@@ -770,7 +770,7 @@
 
 .tech_spec_item strong {
   font-size: 1rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   display: block;
   margin-bottom: 2px;
 }
@@ -816,7 +816,7 @@
 
 .blueprint_brand strong {
   font-size: 1.15rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .blueprint_status {
@@ -852,7 +852,7 @@
 .blueprint_meta h4 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin: 0;
 }
 
@@ -889,7 +889,7 @@
 .bp_metric code {
   font-family: monospace;
   font-size: 0.775rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-weight: 600;
 }
 
@@ -954,8 +954,8 @@
 .is_visible .ent_header h2 {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .enterprise_card p {
@@ -1023,7 +1023,7 @@
 .cap_header h3 {
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.65rem;
 }
 
@@ -1147,7 +1147,7 @@
 }
 
 .lat_step_name {
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-weight: 600;
 }
 
@@ -1226,7 +1226,7 @@
 .key_chip_header strong {
   display: block;
   font-size: 0.9rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .key_chip_header small {
@@ -1256,7 +1256,7 @@
 .key_metric code {
   font-family: monospace;
   font-size: 0.775rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-weight: 600;
 }
 
@@ -1292,7 +1292,7 @@
 
 .mesh_node_box strong {
   font-size: 0.725rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .mesh_hub_badge {
@@ -1351,7 +1351,7 @@
 
 .quote_text {
   font-size: 1rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.65;
   margin-bottom: 2rem;
   flex-grow: 1;
@@ -1367,7 +1367,7 @@
 
 .quote_footer strong {
   font-size: 0.95rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .quote_footer span {
@@ -1378,7 +1378,7 @@
 /* 10. Call to Action Launchpad */
 .cta_section {
   padding: 7rem 2rem;
-  background: var(--dark, #05241d);
+  background: var(--surface-inverse, #05241d);
   text-align: center;
 }
 
@@ -1605,5 +1605,62 @@
 
   .cta_title {
     font-size: 2.25rem;
+  }
+}
+
+/* ─── Dark Mode Overrides ───────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  /* Logo trust bar — disable multiply blend so logos show on dark bg */
+  .logo_card {
+    color: #c0c0c0;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+  .logo_card:hover {
+    color: #f0f0f0;
+    opacity: 0.9;
+  }
+
+  /* Wireframe diagram elements — doc lines, avatars, SIS, funnel */
+  .doc_header_line { background: #2e2e2e; }
+  .doc_avatar      { background: #2a2a2a; }
+  .doc_line_1,
+  .doc_line_2      { background: #2e2e2e; }
+
+  .doc_warning_tag {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.3);
+    color: #ef4444;
+  }
+
+  .sis_alert_box {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.25);
+    color: #ef4444;
+  }
+
+  .funnel_bar_drop {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.25);
+    color: #ef4444;
+  }
+
+  .funnel_bar_start,
+  .funnel_bar_end {
+    color: #888888;
+  }
+
+  /* ZK & latency diagram elements */
+  .zk_doc_pill {
+    color: #888888;
+  }
+
+  .lat_progress_track {
+    background: #2a2a2a;
+  }
+
+  /* SIS metric row */
+  .sis_metric_row {
+    color: var(--text-main);
   }
 }

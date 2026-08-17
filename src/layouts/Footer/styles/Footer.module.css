@@ -1,8 +1,8 @@
 .footer {
-  background: var(--dark, #05241d);
+  background: var(--surface-inverse, #05241d);
   color: #ffffff;
   padding-top: 5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .container {

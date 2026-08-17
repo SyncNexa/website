@@ -29,6 +29,10 @@
   --text-muted: #6b7280;
   --text-subtle: #9ca3af;
 
+  /* Semantic surface tokens */
+  --surface-inverse: #05241d;   /* dark footer/CTA bg — adapts independently */
+  --heading-color: #05241d;     /* heading text colour — inverts in dark mode */
+
   /* topbar / glass surfaces */
   --nav-bg: rgba(255, 255, 255, 0.88);
   --glass-bg: rgba(255, 255, 255, 0.75);
@@ -46,66 +50,75 @@
   :root {
     color-scheme: dark;
 
-    /* Site tokens */
+    /* Brand primaries — unchanged */
     --primary: #04d69d;
     --primary-hover: #03be8b;
-    --primary-dark: #2affc0;
-    --primary-light: rgba(4, 214, 157, 0.12);
-    --primary-border: rgba(4, 214, 157, 0.25);
+    --primary-dark: #04d69d;
+    --primary-light: rgba(4, 214, 157, 0.1);
+    --primary-border: rgba(4, 214, 157, 0.2);
 
-    --dark: #e2f5f0;
-    --dark-surface: #c8ede3;
-    --dark-hover: #d4f0e8;
+    /* --dark stays BRAND DARK GREEN so footer/CTA backgrounds stay dark */
+    --dark: #05241d;
+    --dark-surface: #07302a;
+    --dark-hover: #082a22;
 
     --accent: #ffaa01;
-    --accent-light: rgba(255, 170, 1, 0.12);
+    --accent-light: rgba(255, 170, 1, 0.1);
 
-    --bg-main: #0a1a15;
-    --bg-alt: #0d2019;
-    --bg-card: #0f2318;
-    --stroke: rgba(255, 255, 255, 0.08);
+    /* ── Page surfaces — darker, near-neutral charcoal ─── */
+    --bg-main:  #111111;
+    --bg-alt:   #171717;
+    --bg-card:  #1c1c1c;
+    --stroke:        rgba(255, 255, 255, 0.07);
     --stroke-subtle: rgba(255, 255, 255, 0.04);
 
-    --text-main: #e8f5f1;
-    --text-muted: #8bada3;
-    --text-subtle: #5e8278;
+    /* ── Text ────────────────────────────────────────────── */
+    --text-main:   #f0f0f0;
+    --text-muted:  #888888;
+    --text-subtle: #555555;
 
-    /* surface tokens */
-    --nav-bg: rgba(10, 26, 21, 0.88);
-    --glass-bg: rgba(13, 32, 25, 0.75);
-    --glass-border: rgba(255, 255, 255, 0.07);
-    --mobile-drawer-bg: #0d2019;
+    /* ── Semantic heading colour (was dark green, now near-white) ── */
+    --heading-color: #f0f0f0;
 
-    /* ── Override @syncnexa-library/ui tokens ─────────────────────────── */
-    --sn-bg: #0d2019;
-    --sn-bg-surface: #0f2318;
-    --sn-bg-secondary: #112a1f;
-    --sn-bg-secondary-hover: #163526;
-    --sn-bg-input: #0f2318;
-    --sn-bg-card: #0f2318;
+    /* ── Semantic inverse surface (footer/CTA bg in dark mode) ──── */
+    --surface-inverse: #0a0a0a;
 
-    --sn-text: #d4ede6;
-    --sn-text-dark: #e8f5f1;
-    --sn-text-light: #7aaa9e;
-    --sn-text-muted: #5e8278;
-    --sn-text-placeholder: #4a6e66;
-    --sn-text-white: #ffffff;
+    /* ── Surface / nav ───────────────────────────────────── */
+    --nav-bg:           rgba(17, 17, 17, 0.92);
+    --glass-bg:         rgba(22, 22, 22, 0.82);
+    --glass-border:     rgba(255, 255, 255, 0.06);
+    --mobile-drawer-bg: #171717;
 
-    --sn-border: rgba(255, 255, 255, 0.1);
-    --sn-border-input: rgba(255, 255, 255, 0.12);
-    --sn-stroke: rgba(255, 255, 255, 0.08);
+    /* ── Override @syncnexa-library/ui tokens ─────────────── */
+    --sn-bg:                #171717;
+    --sn-bg-surface:        #1c1c1c;
+    --sn-bg-secondary:      #212121;
+    --sn-bg-secondary-hover:#2a2a2a;
+    --sn-bg-input:          #1c1c1c;
+    --sn-bg-card:           #1c1c1c;
 
-    --sn-navy: #0a1a15;
-    --sn-navy-hover: #0d2019;
-    --sn-navy-light: #0d2019;
+    --sn-text:             #e8e8e8;
+    --sn-text-dark:        #f0f0f0;
+    --sn-text-light:       #888888;
+    --sn-text-muted:       #666666;
+    --sn-text-placeholder: #4a4a4a;
+    --sn-text-white:       #ffffff;
 
-    --sn-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --sn-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --sn-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
-    --sn-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --sn-border:       rgba(255, 255, 255, 0.08);
+    --sn-border-input: rgba(255, 255, 255, 0.1);
+    --sn-stroke:       rgba(255, 255, 255, 0.07);
+
+    --sn-navy:       #0a0a0a;
+    --sn-navy-hover: #111111;
+    --sn-navy-light: #141414;
+
+    --sn-shadow-sm: 0 1px 3px  rgba(0, 0, 0, 0.4);
+    --sn-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --sn-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --sn-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.7);
   }
 
-  /* Fix any hardcoded whites inside component library dropdowns/modals */
+  /* Fix hardcoded whites inside component library dropdowns/modals */
   .sn-phone-dropdown,
   .sn-select-dropdown-list,
   .sn-select-dropdown-portal,
@@ -123,9 +136,9 @@
     border-color: var(--sn-border) !important;
   }
 
-  /* Subtle tinted scrollbar for dark mode */
+  /* Dark scrollbar */
   * {
-    scrollbar-color: rgba(4, 214, 157, 0.2) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
   }
 }
 

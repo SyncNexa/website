@@ -69,8 +69,8 @@
 .is_visible .section_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .hero_title {
@@ -95,8 +95,8 @@
 .is_visible .hero_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .cta_title {
@@ -279,7 +279,7 @@
 .sis_metric_box strong {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-family: monospace;
 }
 
@@ -370,7 +370,7 @@
 .how_body_card h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.65rem;
 }
 
@@ -420,7 +420,7 @@
 .security_card h3 {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.35;
   margin: 0;
 }
@@ -464,7 +464,7 @@
 .benefit_card h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -510,7 +510,7 @@
 .spec_label {
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .spec_value {
@@ -554,7 +554,7 @@
 .faq_header h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin: 0;
 }
 

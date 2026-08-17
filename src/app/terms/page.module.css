@@ -64,8 +64,8 @@
 .is_visible .hero_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .effective_date {
@@ -125,7 +125,7 @@
 .section_block h2 {
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -135,7 +135,7 @@
 .section_block h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin: 1.5rem 0 0.75rem;
 }
 

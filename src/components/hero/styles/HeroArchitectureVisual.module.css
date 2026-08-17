@@ -38,7 +38,7 @@
 
 .tech_title {
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   letter-spacing: 0.05em;
 }
 
@@ -60,7 +60,7 @@
 
 .metric_val {
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .metric_val_green {

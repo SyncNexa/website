@@ -69,8 +69,8 @@
 .is_visible .section_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .hero_title {
@@ -95,8 +95,8 @@
 .is_visible .hero_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .cta_title {
@@ -282,7 +282,7 @@
 .console_metric_box strong {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-family: monospace;
 }
 
@@ -336,7 +336,7 @@
 .benefit_card h3 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -422,7 +422,7 @@
 .how_body_card h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.65rem;
 }
 
@@ -473,7 +473,7 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 0.95rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-weight: 600;
 }
 
@@ -581,7 +581,7 @@
 .pricing_card h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.5rem;
 }
 
@@ -595,7 +595,7 @@
 .price_amount {
   font-size: 2.25rem;
   font-weight: 900;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-family: monospace;
 }
 
@@ -624,7 +624,7 @@
   align-items: flex-start;
   gap: 0.65rem;
   font-size: 0.875rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .feature_check {
@@ -665,7 +665,7 @@
 .use_case_card h3 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -711,7 +711,7 @@
 .faq_header h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin: 0;
 }
 

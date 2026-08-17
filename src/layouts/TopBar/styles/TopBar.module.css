@@ -35,7 +35,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .desktop_nav {
@@ -77,7 +77,7 @@
 }
 
 .nav_link:hover {
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   background: transparent !important;
   background-color: transparent !important;
   border-radius: 0 !important;
@@ -91,7 +91,7 @@
   padding: 0 !important;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
@@ -187,14 +187,14 @@
 }
 
 .mobile_nav_link:hover {
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   border-bottom-color: var(--primary, #04d69d) !important;
 }
 
 .mobile_active_link {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   display: block;
   padding: 0.75rem 0;
   background: transparent !important;

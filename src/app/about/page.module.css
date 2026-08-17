@@ -69,8 +69,8 @@
 .is_visible .section_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .hero_title {
@@ -95,8 +95,8 @@
 .is_visible .hero_title {
   opacity: 1;
   transform: translateY(0);
-  -webkit-text-fill-color: var(--dark, #05241d);
-  color: var(--dark, #05241d);
+  -webkit-text-fill-color: var(--heading-color, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .cta_title {
@@ -229,7 +229,7 @@
 .story_lead {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
@@ -254,7 +254,7 @@
 .story_quote_card p {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.5;
   margin: 0;
 }
@@ -357,14 +357,14 @@
 .mv_card h2 {
   font-size: 1.85rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 1rem;
 }
 
 .mv_statement {
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.55;
   margin-bottom: 1.25rem;
 }
@@ -390,7 +390,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.925rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
 }
 
 .bullet_check {
@@ -450,7 +450,7 @@
 .value_card h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -522,7 +522,7 @@
 .leader_card h3 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.35rem;
   line-height: 1.3;
 }
@@ -641,7 +641,7 @@
 .timeline_body_card h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 0.75rem;
 }
 
@@ -672,7 +672,7 @@
 .matters_text_col h2 {
   font-size: 2.25rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   margin-bottom: 1.5rem;
   line-height: 1.25;
 }
@@ -691,7 +691,7 @@
   border-radius: 0 10px 10px 0;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   line-height: 1.55;
   margin-top: 1rem;
 }
@@ -724,7 +724,7 @@
 
 .metric_label strong {
   font-size: 0.95rem;
-  color: var(--dark, #05241d);
+  color: var(--heading-color, #05241d);
   font-weight: 700;
 }
 
