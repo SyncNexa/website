@@ -208,7 +208,7 @@
   letter-spacing: -0.01em;
 }
 
-/* 3. The Problem Section (Transparent Cards) */
+/* 3. The Problem Section (Transparent Cards, Equal Heights) */
 .problem_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -218,6 +218,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: stretch;
 }
 
 .tech_problem_card {
@@ -227,6 +228,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .card_meta_header {
@@ -259,10 +261,12 @@
   border-radius: 10px;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
-  min-height: 120px;
+  min-height: 140px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 /* Document wireframe mockup */
@@ -418,9 +422,11 @@
   font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
+  flex-grow: 1;
+  margin: 0;
 }
 
-/* 4. The Solution Section (Transparent Cards) */
+/* 4. The Solution Section (Transparent Cards, Equal Heights, No Shadow on Codeblocks) */
 .solution_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -435,6 +441,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .card_tag_success {
@@ -447,50 +454,19 @@
   border-radius: 4px;
 }
 
-.solution_diagram_box {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 10px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-}
-
-.sol_code_block {
+.code_wrap_disabled {
+  pointer-events: none;
+  user-select: none;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-family: monospace;
-  font-size: 0.775rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
-.sol_code_line {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.code_key {
-  color: var(--text-muted, #6b7280);
-}
-
-.code_val {
-  color: var(--dark, #05241d);
-}
-
-.code_val_green {
-  color: var(--primary-dark, #006d50);
-  font-weight: 700;
-}
-
-.code_kw {
-  color: #b45309;
-}
-
-.code_fn {
-  color: var(--primary-dark, #006d50);
+.code_wrap_disabled :global(.sn-codeblock),
+.code_wrap_disabled :global(.codeblock),
+.code_wrap_disabled :global(*) {
+  box-shadow: none !important;
+  margin-top: 0 !important;
 }
 
 .tech_solution_card h3 {
@@ -504,9 +480,11 @@
   font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
+  flex-grow: 1;
+  margin: 0;
 }
 
-/* 5. How It Works Pipeline (Transparent Cards) */
+/* 5. How It Works Pipeline (Transparent Cards, Equal Heights) */
 .how_it_works_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -516,6 +494,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  align-items: stretch;
 }
 
 .pipeline_card {
@@ -525,6 +504,7 @@
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .pipe_step_header {
@@ -568,11 +548,12 @@
   color: var(--text-muted, #6b7280);
   line-height: 1.65;
   flex-grow: 1;
+  margin: 0;
 }
 
 .pipe_card_footer {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--stroke, #e5e7eb);
   font-family: monospace;
   font-size: 0.725rem;
@@ -783,7 +764,7 @@
   color: var(--primary-dark, #006d50);
 }
 
-/* 7. Dual Audience Enterprise Cards (Transparent) */
+/* 7. Dual Audience Enterprise Cards (Transparent, Equal Heights) */
 .dual_audience_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -793,6 +774,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
+  align-items: stretch;
 }
 
 .enterprise_card {
@@ -802,6 +784,7 @@
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .ent_header {
@@ -822,38 +805,11 @@
   margin-bottom: 1.75rem;
 }
 
-.ent_code_snippet {
-  background: transparent;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin-bottom: 2rem;
-  overflow-x: auto;
-}
-
-.snippet_header {
-  font-family: monospace;
-  font-size: 0.725rem;
-  font-weight: 700;
-  color: var(--text-muted, #6b7280);
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
-  padding-bottom: 0.65rem;
-  margin-bottom: 0.85rem;
-}
-
-.ent_code_snippet pre {
-  margin: 0;
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: var(--dark, #05241d);
-  line-height: 1.6;
-}
-
 .card_cta {
   margin-top: auto;
 }
 
-/* 8. Why SyncNexa Bento Grid (Transparent) */
+/* 8. Why SyncNexa Bento Grid (Transparent, Equal Heights) */
 .why_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -865,6 +821,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.75rem;
+  align-items: stretch;
 }
 
 .bento_card {
@@ -874,6 +831,7 @@
   padding: 2.25rem 1.75rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .bento_num {
@@ -896,10 +854,11 @@
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
   flex-grow: 1;
+  margin: 0;
 }
 
 .bento_tag {
-  margin-top: 1.5rem;
+  margin-top: auto;
   font-family: monospace;
   font-size: 0.7rem;
   font-weight: 700;
@@ -910,7 +869,7 @@
   align-self: flex-start;
 }
 
-/* 9. Testimonials Quote Cards (Transparent) */
+/* 9. Testimonials Quote Cards (Transparent, Equal Heights) */
 .testimonial_section {
   padding: 6.5rem 0;
   background: transparent;
@@ -924,6 +883,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .quote_text {
@@ -931,6 +891,7 @@
   color: var(--dark, #05241d);
   line-height: 1.65;
   margin-bottom: 2rem;
+  flex-grow: 1;
 }
 
 .quote_footer {
@@ -938,6 +899,7 @@
   flex-direction: column;
   border-top: 1px solid var(--stroke, #e5e7eb);
   padding-top: 1.25rem;
+  margin-top: auto;
 }
 
 .quote_footer strong {

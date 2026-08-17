@@ -58,6 +58,12 @@ html {
   font-size: 80%;
 }
 
+.sn-codeblock,
+.codeblock,
+[class*="sn-codeblock"] {
+  box-shadow: none !important;
+}
+
 button,
 input,
 optgroup,

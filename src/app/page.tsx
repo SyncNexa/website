@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { SnButton } from "@syncnexa-library/ui";
+import { SnButton, SnCodeBlock } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import HeroArchitectureVisual from "@/components/hero/HeroArchitectureVisual";
 import styles from "./page.module.css";
@@ -337,25 +337,17 @@ export default function Home() {
                     ZERO DOC STORAGE
                   </span>
                 </div>
-                <div className={styles.solution_diagram_box}>
-                  <div className={styles.sol_code_block}>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>keypair:</span>
-                      <span className={styles.code_val}>
-                        &quot;Ed25519_Enclave&quot;
-                      </span>
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>pairwiseId:</span>
-                      <span className={styles.code_val}>
-                        &quot;pw_9f81a7b4&quot;
-                      </span>
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>sharedDocs:</span>
-                      <span className={styles.code_val_green}>0 (None)</span>
-                    </div>
-                  </div>
+                <div className={styles.code_wrap_disabled}>
+                  <SnCodeBlock
+                    language="json"
+                    filename="identity-enclave.json"
+                    copyable={false}
+                    code={`{
+  "keypair": "Ed25519_Enclave",
+  "pairwiseId": "pw_9f81a7b4",
+  "sharedDocs": []
+}`}
+                  />
                 </div>
                 <h3>Decentralized SyncID</h3>
                 <p>
@@ -375,27 +367,15 @@ export default function Home() {
                     mTLS 1.3 TUNNEL
                   </span>
                 </div>
-                <div className={styles.solution_diagram_box}>
-                  <div className={styles.sol_code_block}>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>connection:</span>
-                      <span className={styles.code_val}>
-                        &quot;Behind Firewall&quot;
-                      </span>
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>dataEgress:</span>
-                      <span className={styles.code_val_green}>
-                        &quot;0 bytes (attest-only)&quot;
-                      </span>
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>compliance:</span>
-                      <span className={styles.code_val_green}>
-                        &quot;100% FERPA/NDPR&quot;
-                      </span>
-                    </div>
-                  </div>
+                <div className={styles.code_wrap_disabled}>
+                  <SnCodeBlock
+                    language="yaml"
+                    filename="campus-tunnel.yaml"
+                    copyable={false}
+                    code={`connection: "Behind_Firewall"
+dataEgress: "0_bytes_attest_only"
+compliance: "100%_FERPA_NDPR"`}
+                  />
                 </div>
                 <h3>Native SIS Connectors</h3>
                 <p>
@@ -415,21 +395,14 @@ export default function Home() {
                     &lt; 20MS LATENCY
                   </span>
                 </div>
-                <div className={styles.solution_diagram_box}>
-                  <div className={styles.sol_code_block}>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_kw}>const</span> res ={" "}
-                      <span className={styles.code_fn}>verify</span>(proof);
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>status:</span>
-                      <span className={styles.code_val_green}>200 OK</span>
-                    </div>
-                    <div className={styles.sol_code_line}>
-                      <span className={styles.code_key}>verified:</span>
-                      <span className={styles.code_val_green}>true</span>
-                    </div>
-                  </div>
+                <div className={styles.code_wrap_disabled}>
+                  <SnCodeBlock
+                    language="typescript"
+                    filename="verify-proof.ts"
+                    copyable={false}
+                    code={`const res = await syncnexa.verify(proof);
+// { status: 200, verified: true, latency: "18ms" }`}
+                  />
                 </div>
                 <h3>Instant Verification SDK</h3>
                 <p>
@@ -641,17 +614,17 @@ export default function Home() {
                   Ellucian Banner, or custom) in minutes.
                 </p>
 
-                <div className={styles.ent_code_snippet}>
-                  <div className={styles.snippet_header}>
-                    syncnexa-adapter.yaml
-                  </div>
-                  <pre>
-                    <code>{`adapter:
+                <div className={styles.code_wrap_disabled}>
+                  <SnCodeBlock
+                    language="yaml"
+                    filename="syncnexa-adapter.yaml"
+                    copyable={false}
+                    code={`adapter:
   sis_engine: "ellucian_banner"
   auth_mode: "mTLS_v1.3"
   storage_policy: "ZERO_PERSISTENCE"
-  attestation_mode: "ZKP_BOOLEAN"`}</code>
-                  </pre>
+  attestation_mode: "ZKP_BOOLEAN"`}
+                  />
                 </div>
 
                 <div className={styles.card_cta}>
@@ -677,15 +650,17 @@ export default function Home() {
                   student eligibility in real-time.
                 </p>
 
-                <div className={styles.ent_code_snippet}>
-                  <div className={styles.snippet_header}>verify-student.ts</div>
-                  <pre>
-                    <code>{`import { SyncNexaClient } from "@syncnexa/sdk";
+                <div className={styles.code_wrap_disabled}>
+                  <SnCodeBlock
+                    language="typescript"
+                    filename="verify-student.ts"
+                    copyable={false}
+                    code={`import { SyncNexaClient } from "@syncnexa/sdk";
 
 const client = new SyncNexaClient({ apiKey: ENV.KEY });
 const result = await client.verify(pairwiseToken);
-// { valid: true, institution: "FUTO", latency: "18ms" }`}</code>
-                  </pre>
+// { valid: true, institution: "FUTO", latency: "18ms" }`}
+                  />
                 </div>
 
                 <div className={styles.card_cta}>
