@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
+import HeroGeometry from "@/components/hero/HeroGeometry";
+import HeroSimulator from "@/components/hero/HeroSimulator";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -103,8 +105,9 @@ export default function Home() {
       <TopBar />
 
       <main>
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section with Geometry & Center Live Simulator */}
         <section className={styles.hero}>
+          <HeroGeometry />
           <div className={styles.hero_container}>
             <h1 className={styles.hero_title}>
               Your Identity, <span className={styles.gradient_text}>Simplified.</span>
@@ -126,6 +129,9 @@ export default function Home() {
                 </SnButton>
               </Link>
             </div>
+
+            {/* Continuous Identity Verification Simulator */}
+            <HeroSimulator />
           </div>
         </section>
 
