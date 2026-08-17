@@ -15,15 +15,148 @@
 .section_header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3.5rem;
 }
 
+/* ==========================================================================
+   BADGES (Pill-less Monospace Gradient Text)
+   ========================================================================== */
+.section_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.is_visible .section_badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MAIN TITLES (One-time Gradient-to-Solid Transition)
+   ========================================================================== */
 .section_title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.2;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.is_visible .section_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.hero_title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 45%, #ffaa01 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+.is_visible .hero_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: var(--dark, #05241d);
+  color: var(--dark, #05241d);
+}
+
+.cta_title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, #04d69d 0%, #ffaa01 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.is_visible .cta_title {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SUBTITLES (Smooth Translation & Fade-In)
+   ========================================================================== */
+.section_subtitle,
+.hero_subtitle,
+.cta_body {
+  font-size: 1.15rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.65;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.hero_subtitle {
+  font-size: 1.25rem;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta_body {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.is_visible .section_subtitle,
+.is_visible .hero_subtitle,
+.is_visible .cta_body {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gradient_text {
@@ -33,102 +166,192 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* 1. Hero Section */
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
 .hero {
-  padding: 7rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 2rem 5.5rem;
   background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.12) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .hero_content {
-  max-width: 860px;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero_title {
-  font-size: 3.75rem;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--dark, #05241d);
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+.hero_cta_group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
-.hero_subtitle {
-  color: var(--text-muted, #6b7280);
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.6;
-  max-width: 680px;
+.is_visible .hero_cta_group {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* 2. Our Story Section */
+/* ==========================================================================
+   2. OUR STORY SECTION (Split Narrative + Geometric Architecture)
+   ========================================================================== */
 .story_section {
-  padding: 6rem 0;
-  background: #ffffff;
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.story_box {
-  max-width: 860px;
-  margin: 0 auto;
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 24px;
-  padding: 4rem 3.5rem;
+.story_split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
 }
 
-.story_content {
+.story_text_side {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  font-size: 1.15rem;
-  color: var(--text-muted, #4b5563);
-  line-height: 1.75;
 }
 
-.story_tagline {
+.story_lead {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--dark, #05241d);
   line-height: 1.5;
-  margin-top: 1rem;
+  margin-bottom: 1.25rem;
 }
 
-/* 3. Mission & Vision Section */
-.mission_vision_section {
-  padding: 6rem 0;
+.story_paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  font-size: 1.05rem;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.7;
+}
+
+.story_quote_card {
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0 1rem;
+  border-left: 3px solid var(--primary, #04d69d);
   background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 0 12px 12px 0;
+}
+
+.story_quote_card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.story_visual_card {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.visual_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.visual_tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+}
+
+.visual_status {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #04d69d;
+}
+
+.story_svg {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   3. MISSION & VISION SECTION (2-Column Glass Cards)
+   ========================================================================== */
+.mission_vision_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.mission_vision_grid {
+.mv_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
+  align-items: stretch;
 }
 
 .mv_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 20px;
-  padding: 3.5rem 3rem;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mv_header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .mv_icon_wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   background: var(--primary-light, #e6faf4);
   color: var(--primary-dark, #006d50);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mv_icon_wrap_accent {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #fff8eb;
+  color: #d97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mv_tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--primary-dark, #006d50);
 }
 
 .mv_card h2 {
@@ -138,45 +361,94 @@
   margin-bottom: 1rem;
 }
 
-.mv_card p {
-  font-size: 1.1rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.65;
+.mv_statement {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
 }
 
-/* 4. Values Section */
+.mv_subtext {
+  font-size: 0.975rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.mv_bullet_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: auto;
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  padding-top: 1.5rem;
+}
+
+.mv_bullet_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+  color: var(--dark, #05241d);
+}
+
+.bullet_check {
+  color: var(--primary, #04d69d);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   4. VALUES SECTION (4-Column Glass Cards)
+   ========================================================================== */
 .values_section {
-  padding: 6rem 0;
-  background: #ffffff;
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
 .values_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: stretch;
 }
 
 .value_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
   padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.value_meta_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.value_code {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-dark, #006d50);
 }
 
 .value_icon_wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background: var(--primary-light, #e6faf4);
   color: var(--primary-dark, #006d50);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
 }
 
 .value_card h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--dark, #05241d);
   margin-bottom: 0.75rem;
@@ -186,166 +458,288 @@
   font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
   line-height: 1.6;
+  margin: 0;
 }
 
-/* 5. Leadership / Team Section */
-.team_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+/* ==========================================================================
+   5. LEADERSHIP SECTION (3-Column Team Cards)
+   ========================================================================== */
+.leadership_section {
+  padding: 6.5rem 0;
+  background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.team_grid {
+.leadership_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.25rem;
+  align-items: stretch;
 }
 
-.team_card {
-  background: #ffffff;
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 18px;
-  padding: 2.5rem 2rem;
+.leader_card {
+  padding: 2.75rem 2.25rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.member_avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #04d69d 0%, #006d50 100%);
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 700;
+.leader_avatar_wrap {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.team_card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-bottom: 0.25rem;
-}
-
-.member_role {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--primary-dark, #006d50);
-  margin-bottom: 1rem;
-}
-
-.member_bio {
-  font-size: 0.95rem;
-  color: var(--text-muted, #6b7280);
-  line-height: 1.6;
-}
-
-/* 6. Timeline Section */
-.timeline_section {
-  padding: 6rem 0;
-  background: #ffffff;
-}
-
-.timeline_list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
-}
-
-.timeline_list::before {
-  content: "";
-  position: absolute;
-  left: 24px;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: var(--stroke, #e5e7eb);
-}
-
-.timeline_item {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  position: relative;
-}
-
-.timeline_marker {
-  width: 50px;
-  height: 50px;
+.avatar_circle {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: var(--primary-light, #e6faf4);
-  border: 2px solid var(--primary, #04d69d);
-  color: var(--primary-dark, #006d50);
+  background: linear-gradient(135deg, #006d50 0%, #04d69d 100%);
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(4, 214, 157, 0.2);
+}
+
+.leader_ident {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.leader_tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-dark, #006d50);
+}
+
+.leader_card h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.leader_role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-dark, #006d50);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.leader_bio {
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. ROADMAP & TIMELINE SECTION (Continuous Connecting Line)
+   ========================================================================== */
+.journey_section {
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.timeline_wrap {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.timeline_vertical_line {
+  position: absolute;
+  left: 27px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #006d50 0%,
+    #04d69d 40%,
+    #ffaa01 80%,
+    #04d69d 100%
+  );
   z-index: 1;
 }
 
-.timeline_content {
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
+.timeline_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline_card {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.timeline_step_circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #006d50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 3;
+}
+
+.timeline_step_num {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #006d50;
+}
+
+.timeline_body_card {
   flex-grow: 1;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.timeline_content h3 {
-  font-size: 1.25rem;
+.timeline_body_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.timeline_year_tag {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary-dark, #006d50);
+  background: var(--primary-light, #e6faf4);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.timeline_status_badge {
+  font-family: monospace;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--dark, #05241d);
-  margin-bottom: 0.5rem;
-}
-
-.timeline_content p {
-  font-size: 0.95rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.6;
 }
 
-/* 7. Purpose Section */
-.purpose_section {
-  padding: 6rem 0;
-  background: var(--bg-alt, #f9fbfb);
-  border-top: 1px solid var(--stroke, #e5e7eb);
+.timeline_body_card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 0.75rem;
 }
 
-.purpose_box {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
+.timeline_body_card p {
+  font-size: 1rem;
+  color: var(--text-muted, #6b7280);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. WHY THIS MATTERS SECTION
+   ========================================================================== */
+.matters_section {
+  padding: 6.5rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+}
+
+.matters_card {
+  padding: 3.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.matters_text_col h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--dark, #05241d);
+  margin-bottom: 1.5rem;
+  line-height: 1.25;
+}
+
+.matters_text_col p {
+  font-size: 1.05rem;
+  color: var(--text-muted, #4b5563);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.matters_highlight_bar {
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #ffaa01;
+  background: #fffbf0;
+  border-radius: 0 10px 10px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark, #05241d);
+  line-height: 1.55;
+  margin-top: 1rem;
+}
+
+.matters_metrics_col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.metric_box {
   background: #ffffff;
   border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 24px;
-  padding: 4rem 3rem;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.purpose_lead {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--dark, #05241d);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.metric_label {
+  display: flex;
+  flex-direction: column;
 }
 
-.purpose_body {
-  font-size: 1.1rem;
+.metric_label span {
+  font-size: 0.825rem;
   color: var(--text-muted, #6b7280);
-  line-height: 1.7;
 }
 
-/* 8. Call to Action Section */
+.metric_label strong {
+  font-size: 0.95rem;
+  color: var(--dark, #05241d);
+  font-weight: 700;
+}
+
+.metric_val {
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-dark, #006d50);
+}
+
+/* ==========================================================================
+   8. CALL TO ACTION LAUNCHPAD
+   ========================================================================== */
 .cta_section {
-  padding: 6rem 2rem;
+  padding: 7rem 2rem;
   background: var(--dark, #05241d);
   text-align: center;
 }
@@ -358,19 +752,28 @@
   align-items: center;
 }
 
-.cta_title {
-  font-size: 3rem;
+.cta_badge {
+  font-family: monospace;
+  font-size: 0.8rem;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
   margin-bottom: 1.25rem;
+  display: inline-block;
+  background: linear-gradient(87deg, #ffaa01 0.16%, #04d69d 99.84%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
-.cta_body {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+.is_visible .cta_badge {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cta_buttons {
@@ -379,23 +782,99 @@
   gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
-/* Responsive Media Queries */
+.is_visible .cta_buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   CARDS OPACITY-ALONE FADE-IN SYSTEM (Zero Translation)
+   ========================================================================== */
+.mv_grid > *,
+.values_grid > *,
+.leadership_grid > *,
+.story_visual_card,
+.matters_card,
+.timeline_body_card,
+.story_text_side {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+/* Staggered Card Appearance */
+.mv_grid > *:nth-child(1),
+.values_grid > *:nth-child(1),
+.leadership_grid > *:nth-child(1),
+.timeline_list > *:nth-child(1) .timeline_body_card {
+  transition-delay: 0.2s;
+}
+
+.mv_grid > *:nth-child(2),
+.values_grid > *:nth-child(2),
+.leadership_grid > *:nth-child(2),
+.timeline_list > *:nth-child(2) .timeline_body_card {
+  transition-delay: 0.38s;
+}
+
+.values_grid > *:nth-child(3),
+.leadership_grid > *:nth-child(3),
+.timeline_list > *:nth-child(3) .timeline_body_card {
+  transition-delay: 0.54s;
+}
+
+.values_grid > *:nth-child(4),
+.timeline_list > *:nth-child(4) .timeline_body_card {
+  transition-delay: 0.7s;
+}
+
+.is_visible .mv_grid > *,
+.is_visible .values_grid > *,
+.is_visible .leadership_grid > *,
+.is_visible .story_visual_card,
+.is_visible .matters_card,
+.is_visible .timeline_body_card,
+.is_visible .story_text_side {
+  opacity: 1;
+}
+
+.timeline_vertical_line {
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+
+.is_visible .timeline_vertical_line {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero_title {
     font-size: 3.25rem;
+  }
+
+  .story_split,
+  .matters_card {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .values_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .team_grid {
+  .leadership_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .mission_vision_grid {
+  .mv_grid {
     grid-template-columns: 1fr;
   }
 }
@@ -414,17 +893,32 @@
   }
 
   .values_grid,
-  .team_grid {
+  .leadership_grid {
     grid-template-columns: 1fr;
   }
 
-  .story_box,
-  .purpose_box {
-    padding: 2.5rem 1.5rem;
+  .matters_card,
+  .mv_card,
+  .leader_card,
+  .story_visual_card {
+    padding: 2.25rem 1.5rem;
   }
 
-  .timeline_item {
-    gap: 1rem;
+  .timeline_card {
+    gap: 1.25rem;
+  }
+
+  .timeline_step_circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline_step_num {
+    font-size: 0.95rem;
+  }
+
+  .timeline_vertical_line {
+    left: 21px;
   }
 
   .cta_title {
