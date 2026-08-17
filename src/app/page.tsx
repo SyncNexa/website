@@ -347,17 +347,131 @@ export default function Home() {
                     ZERO DOC STORAGE
                   </span>
                 </div>
-                <div className={styles.code_wrap_disabled}>
-                  <SnCodeBlock
-                    language="json"
-                    filename="identity-enclave.json"
-                    copyable={false}
-                    code={`{
-  "keypair": "Ed25519_Enclave",
-  "pairwiseId": "pw_9f81a7b4",
-  "sharedDocs": []
-}`}
-                  />
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left Device Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <rect
+                        x="8"
+                        y="12"
+                        width="20"
+                        height="12"
+                        rx="3"
+                        fill="#e6faf4"
+                        stroke="#04d69d"
+                        strokeWidth="1"
+                      />
+                      <circle cx="48" cy="18" r="4" fill="#04d69d" />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        DEVICE
+                      </text>
+                    </g>
+
+                    {/* Connecting geometric dashed lines */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+
+                    {/* Center Hardware Enclave Diamond / Shield */}
+                    <g transform="translate(140, 50)">
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="28"
+                        fill="#e6faf4"
+                        fillOpacity="0.6"
+                        stroke="#04d69d"
+                        strokeWidth="1"
+                      />
+                      <polygon
+                        points="0,-18 16,-7 16,11 0,18 -16,11 -16,-7"
+                        stroke="#006d50"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <circle cx="0" cy="-2" r="3" fill="#04d69d" />
+                      <path
+                        d="M-1.5 0 L1.5 0 L2.5 7 L-2.5 7 Z"
+                        fill="#04d69d"
+                      />
+                    </g>
+
+                    {/* Right Geometric Output Node */}
+                    <line
+                      x1="166"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <text
+                        x="32"
+                        y="22"
+                        textAnchor="middle"
+                        fontSize="9"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        0-DOCS
+                      </text>
+                      <text
+                        x="32"
+                        y="37"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        ENCLAVE
+                      </text>
+                    </g>
+                  </svg>
                 </div>
                 <h3>Decentralized SyncID</h3>
                 <p>
@@ -381,15 +495,154 @@ export default function Home() {
                     mTLS 1.3 TUNNEL
                   </span>
                 </div>
-                <div className={styles.code_wrap_disabled}>
-                  <SnCodeBlock
-                    language="yaml"
-                    filename="campus-tunnel.yaml"
-                    copyable={false}
-                    code={`connection: "Behind_Firewall"
-dataEgress: "0_bytes_attest_only"
-compliance: "100%_FERPA_NDPR"`}
-                  />
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left Campus DB Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <rect
+                        x="8"
+                        y="10"
+                        width="48"
+                        height="6"
+                        rx="3"
+                        fill="#fef3c7"
+                        stroke="#ffaa01"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="8"
+                        y="21"
+                        width="48"
+                        height="6"
+                        rx="3"
+                        fill="#fef3c7"
+                        stroke="#ffaa01"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="8"
+                        y="32"
+                        width="48"
+                        height="6"
+                        rx="3"
+                        fill="#fef3c7"
+                        stroke="#ffaa01"
+                        strokeWidth="1"
+                      />
+                    </g>
+
+                    {/* Firewall Barrier Vector */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#ffaa01"
+                      strokeWidth="1.5"
+                    />
+
+                    {/* Center Firewall Gate / mTLS Shield */}
+                    <g transform="translate(140, 50)">
+                      <line
+                        x1="0"
+                        y1="-30"
+                        x2="0"
+                        y2="30"
+                        stroke="#ffaa01"
+                        strokeWidth="1.5"
+                        strokeDasharray="3 3"
+                        opacity="0.5"
+                      />
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="24"
+                        fill="#fffbeb"
+                        stroke="#ffaa01"
+                        strokeWidth="1.5"
+                      />
+                      <rect
+                        x="-8"
+                        y="-2"
+                        width="16"
+                        height="13"
+                        rx="2.5"
+                        fill="#ffaa01"
+                      />
+                      <path
+                        d="M-5 -2 V-7 A5 5 0 0 1 5 -7 V-2"
+                        stroke="#ffaa01"
+                        strokeWidth="1.5"
+                        fill="none"
+                      />
+                    </g>
+
+                    {/* Right Attestation Node */}
+                    <line
+                      x1="164"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <circle
+                        cx="32"
+                        cy="18"
+                        r="7"
+                        fill="#e6faf4"
+                        stroke="#04d69d"
+                        strokeWidth="1.2"
+                      />
+                      <path
+                        d="M29 18 L31 20 L36 15"
+                        stroke="#006d50"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="8"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#006d50"
+                      >
+                        mTLS 1.3
+                      </text>
+                    </g>
+                  </svg>
                 </div>
                 <h3>Native SIS Connectors</h3>
                 <p>
@@ -413,14 +666,131 @@ compliance: "100%_FERPA_NDPR"`}
                     &lt; 20MS LATENCY
                   </span>
                 </div>
-                <div className={styles.code_wrap_disabled}>
-                  <SnCodeBlock
-                    language="typescript"
-                    filename="verify-proof.ts"
-                    copyable={false}
-                    code={`const res = await syncnexa.verify(proof);
-// { status: 200, verified: true, latency: "18ms" }`}
-                  />
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left API Request Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <text
+                        x="32"
+                        y="21"
+                        textAnchor="middle"
+                        fontSize="8"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        POST /req
+                      </text>
+                      <rect
+                        x="12"
+                        y="28"
+                        width="40"
+                        height="5"
+                        rx="2"
+                        fill="#e2e8f0"
+                      />
+                    </g>
+
+                    {/* Lightning Vector / Fast Track */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="2 2"
+                    />
+
+                    {/* Center Circuit Processor Node */}
+                    <g transform="translate(140, 50)">
+                      <polygon
+                        points="0,-24 22,-12 22,12 0,24 -22,12 -22,-12"
+                        fill="#e6faf4"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                      />
+                      <circle cx="0" cy="0" r="10" fill="#006d50" />
+                      <path
+                        d="M-4 0 L-1 3 L4 -3"
+                        stroke="#ffffff"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+
+                    {/* Speed Telemetry Vector */}
+                    <line
+                      x1="162"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                    />
+
+                    {/* Right Verified Response Node */}
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                        fill="#ffffff"
+                      />
+                      <text
+                        x="32"
+                        y="21"
+                        textAnchor="middle"
+                        fontSize="10"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        18ms
+                      </text>
+                      <rect
+                        x="12"
+                        y="27"
+                        width="40"
+                        height="12"
+                        rx="3"
+                        fill="#e6faf4"
+                      />
+                      <text
+                        x="32"
+                        y="36"
+                        textAnchor="middle"
+                        fontSize="7"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#006d50"
+                      >
+                        VERIFIED
+                      </text>
+                    </g>
+                  </svg>
                 </div>
                 <h3>Instant Verification SDK</h3>
                 <p>
