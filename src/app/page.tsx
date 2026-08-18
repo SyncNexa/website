@@ -161,7 +161,10 @@ export default function Home() {
 
       <main>
         {/* 1. Hero Section */}
-        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.hero}
+          activeClassName={styles.is_visible}
+        >
           <HeroGeometry />
           <div className={styles.hero_container}>
             <h1 className={styles.hero_title}>
@@ -194,7 +197,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 2. Trust Bar (Infinite Auto-scrolling Logos) */}
-        <FadeInSection className={styles.trust_bar} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.trust_bar}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <p className={styles.trust_heading}>
               Trusted by forward-thinking institutions and organizations.
@@ -222,7 +228,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 3. The Problem Section (Vercel / GitHub-grade Engineering Breakdown) */}
-        <FadeInSection className={styles.problem_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.problem_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge_danger}>
@@ -335,7 +344,11 @@ export default function Home() {
         </FadeInSection>
 
         {/* 4. The Solution Section (Vercel / GitHub-grade Cryptographic Trust) */}
-        <FadeInSection className={styles.solution_section} id="solution" activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.solution_section}
+          id="solution"
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>THE TRUST PROTOCOL</span>
@@ -383,7 +396,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <rect
                         x="8"
@@ -391,7 +404,7 @@ export default function Home() {
                         width="20"
                         height="12"
                         rx="3"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#04d69d"
                         strokeWidth="1"
                       />
@@ -426,8 +439,8 @@ export default function Home() {
                         cx="0"
                         cy="0"
                         r="28"
-                        fill="#e6faf4"
-                        fillOpacity="0.6"
+                        // fill="#e6faf4"
+                        fillOpacity="0.3"
                         stroke="#04d69d"
                         strokeWidth="1"
                       />
@@ -435,7 +448,7 @@ export default function Home() {
                         points="0,-18 16,-7 16,11 0,18 -16,11 -16,-7"
                         stroke="#006d50"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <circle cx="0" cy="-2" r="3" fill="#04d69d" />
                       <path
@@ -463,7 +476,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <text
                         x="32"
@@ -531,7 +544,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <rect
                         x="8"
@@ -540,6 +553,7 @@ export default function Home() {
                         height="6"
                         rx="3"
                         fill="#fef3c7"
+                        fillOpacity="0.2"
                         stroke="#ffaa01"
                         strokeWidth="1"
                       />
@@ -550,6 +564,7 @@ export default function Home() {
                         height="6"
                         rx="3"
                         fill="#fef3c7"
+                        fillOpacity="0.2"
                         stroke="#ffaa01"
                         strokeWidth="1"
                       />
@@ -560,6 +575,7 @@ export default function Home() {
                         height="6"
                         rx="3"
                         fill="#fef3c7"
+                        fillOpacity="0.2"
                         stroke="#ffaa01"
                         strokeWidth="1"
                       />
@@ -591,7 +607,8 @@ export default function Home() {
                         cx="0"
                         cy="0"
                         r="24"
-                        fill="#fffbeb"
+                        // fill="#fffbeb"
+                        // fillOpacity="0.5"
                         stroke="#ffaa01"
                         strokeWidth="1.5"
                       />
@@ -630,13 +647,14 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <circle
                         cx="32"
                         cy="18"
                         r="7"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
+                        // fillOpacity="0.3"
                         stroke="#04d69d"
                         strokeWidth="1.2"
                       />
@@ -702,7 +720,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <text
                         x="32"
@@ -722,6 +740,7 @@ export default function Home() {
                         height="5"
                         rx="2"
                         fill="#e2e8f0"
+                        fillOpacity="0.2"
                       />
                     </g>
 
@@ -740,7 +759,7 @@ export default function Home() {
                     <g transform="translate(140, 50)">
                       <polygon
                         points="0,-24 22,-12 22,12 0,24 -22,12 -22,-12"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#04d69d"
                         strokeWidth="1.5"
                       />
@@ -774,7 +793,7 @@ export default function Home() {
                         rx="8"
                         stroke="#04d69d"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <text
                         x="32"
@@ -821,7 +840,11 @@ export default function Home() {
         </FadeInSection>
 
         {/* 5. How It Works Section (Connected Workflow Architecture) */}
-        <FadeInSection className={styles.how_it_works_section} id="how-it-works" activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.how_it_works_section}
+          id="how-it-works"
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>PROTOCOL PIPELINE</span>
@@ -897,7 +920,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 6. Product Highlight Section (SyncID Blueprint) */}
-        <FadeInSection className={styles.product_highlight_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.product_highlight_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.product_split}>
               <div className={styles.product_text_side}>
@@ -1009,7 +1035,14 @@ export default function Home() {
 
                   <div className={styles.blueprint_bottom}>
                     <span className={styles.bp_guarantee}>
-                      <Lock size={13} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} />
+                      <Lock
+                        size={13}
+                        style={{
+                          display: "inline",
+                          verticalAlign: "middle",
+                          marginRight: 4,
+                        }}
+                      />
                       Cryptographically signed by root institution
                     </span>
                     <span className={styles.bp_latency}>18ms verify</span>
@@ -1021,7 +1054,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 7. For Schools and Organizations (Enterprise Architecture Cards) */}
-        <FadeInSection className={styles.dual_audience_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.dual_audience_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.dual_grid}>
               {/* Schools Card */}
@@ -1061,7 +1097,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <rect
                         x="8"
@@ -1069,7 +1105,7 @@ export default function Home() {
                         width="60"
                         height="7"
                         rx="3.5"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#006d50"
                         strokeWidth="1"
                       />
@@ -1079,7 +1115,7 @@ export default function Home() {
                         width="60"
                         height="7"
                         rx="3.5"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#006d50"
                         strokeWidth="1"
                       />
@@ -1089,7 +1125,7 @@ export default function Home() {
                         width="60"
                         height="7"
                         rx="3.5"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#006d50"
                         strokeWidth="1"
                       />
@@ -1112,7 +1148,7 @@ export default function Home() {
                         cx="0"
                         cy="0"
                         r="26"
-                        fill="#e6faf4"
+                        // fill="#e6faf4"
                         stroke="#006d50"
                         strokeWidth="1.5"
                       />
@@ -1146,7 +1182,7 @@ export default function Home() {
                         rx="8"
                         stroke="#04d69d"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <text
                         x="38"
@@ -1228,7 +1264,7 @@ export default function Home() {
                         rx="8"
                         stroke="var(--stroke, #e5e7eb)"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <rect
                         x="10"
@@ -1277,7 +1313,7 @@ export default function Home() {
                     <g transform="translate(160, 50)">
                       <polygon
                         points="0,-26 24,-13 24,13 0,26 -24,13 -24,-13"
-                        fill="#fffbeb"
+                        // fill="#fffbeb"
                         stroke="#ffaa01"
                         strokeWidth="1.5"
                       />
@@ -1311,7 +1347,7 @@ export default function Home() {
                         rx="8"
                         stroke="#04d69d"
                         strokeWidth="1.5"
-                        fill="#ffffff"
+                        // fill="#ffffff"
                       />
                       <text
                         x="38"
@@ -1360,7 +1396,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 8. Why SyncNexa (High-Tech Capabilities Matrix) */}
-        <FadeInSection className={styles.why_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.why_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>CAPABILITIES</span>
@@ -1599,7 +1638,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 9. Testimonials Section (Clean Quote Cards) */}
-        <FadeInSection className={styles.testimonial_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.testimonial_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>NETWORK VOICES</span>
@@ -1609,10 +1651,7 @@ export default function Home() {
             </div>
 
             <div className={styles.cards_grid_3}>
-              <GlassBlobCard
-                className={styles.quote_card}
-                blobColor="#04d69d"
-              >
+              <GlassBlobCard className={styles.quote_card} blobColor="#04d69d">
                 <p className={styles.quote_text}>
                   &ldquo;SyncID completely eliminated document uploads for my
                   software discounts. I verify once with my school credentials,
@@ -1624,10 +1663,7 @@ export default function Home() {
                 </div>
               </GlassBlobCard>
 
-              <GlassBlobCard
-                className={styles.quote_card}
-                blobColor="#ffaa01"
-              >
+              <GlassBlobCard className={styles.quote_card} blobColor="#ffaa01">
                 <p className={styles.quote_text}>
                   &ldquo;Our student discount checkout conversion surged by 38%
                   after replacing manual document review with the SyncNexa
@@ -1639,10 +1675,7 @@ export default function Home() {
                 </div>
               </GlassBlobCard>
 
-              <GlassBlobCard
-                className={styles.quote_card}
-                blobColor="#006d50"
-              >
+              <GlassBlobCard className={styles.quote_card} blobColor="#006d50">
                 <p className={styles.quote_text}>
                   &ldquo;SyncNexa solved our biggest compliance concern. We can
                   attest to student enrollment for discounts without sending our
@@ -1658,7 +1691,10 @@ export default function Home() {
         </FadeInSection>
 
         {/* 10. Call to Action Section (Vercel-style Technical Launchpad) */}
-        <FadeInSection className={styles.cta_section} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.cta_section}
+          activeClassName={styles.is_visible}
+        >
           <div className={styles.cta_container}>
             <span className={styles.cta_badge}>READY TO GET STARTED?</span>
             <h2 className={styles.cta_title}>Build on the Trust Mesh.</h2>

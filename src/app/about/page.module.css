@@ -36,8 +36,9 @@
   border-radius: 0;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .is_visible .section_badge {
@@ -60,10 +61,11 @@
   color: transparent;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
-              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+    color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
 }
 
 .is_visible .section_title {
@@ -86,10 +88,11 @@
   color: transparent;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
-              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+    color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
 }
 
 .is_visible .hero_title {
@@ -111,10 +114,11 @@
   color: transparent;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
-              color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-text-fill-color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+    color 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
 }
 
 .is_visible .cta_title {
@@ -136,8 +140,9 @@
   margin-top: 1rem;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
 }
 
 .hero_subtitle {
@@ -173,7 +178,13 @@
   position: relative;
   overflow: hidden;
   padding: 7rem 2rem 5.5rem;
-  background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(4, 214, 157, 0.08) 0%,
+      transparent 65%
+    ),
+    var(--bg-main, #ffffff);
   text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -196,8 +207,9 @@
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
 .is_visible .hero_cta_group {
@@ -669,6 +681,11 @@
   align-items: center;
 }
 
+.matters_card.container_dynamic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .matters_text_col h2 {
   font-size: 2.25rem;
   font-weight: 800;
@@ -740,7 +757,7 @@
    ========================================================================== */
 .cta_section {
   padding: 7rem 2rem;
-  background: var(--dark, #05241d);
+  background: var(--surface-inverse, #05241d);
   text-align: center;
 }
 
@@ -767,8 +784,9 @@
   border-radius: 0;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .is_visible .cta_badge {
@@ -784,8 +802,9 @@
   justify-content: center;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s,
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
 }
 
 .is_visible .cta_buttons {

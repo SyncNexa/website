@@ -176,7 +176,10 @@ export default function AboutPage() {
 
       <main>
         {/* 1. Hero Section */}
-        <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
+        <FadeInSection
+          className={styles.hero}
+          activeClassName={styles.is_visible}
+        >
           <HeroGeometry />
           <div className={styles.hero_content}>
             <span className={styles.section_badge}>ABOUT SYNCNEXA</span>
@@ -223,8 +226,8 @@ export default function AboutPage() {
                     education.
                   </p>
                   <p>
-                    Students were being asked to prove their academic status over
-                    and over again. Upload your student ID. Upload your
+                    Students were being asked to prove their academic status
+                    over and over again. Upload your student ID. Upload your
                     admission letter. Wait 3–5 days for manual approval. Repeat
                     for every single software tool, transit pass, and platform.
                   </p>
@@ -237,9 +240,10 @@ export default function AboutPage() {
 
                   <div className={styles.story_quote_card}>
                     <p>
-                      &ldquo;We realized identity verification wasn&apos;t broken
-                      because people lacked records—it was broken because we were
-                      still treating digital identities like paper documents.&rdquo;
+                      &ldquo;We realized identity verification wasn&apos;t
+                      broken because people lacked records—it was broken because
+                      we were still treating digital identities like paper
+                      documents.&rdquo;
                     </p>
                   </div>
 
@@ -264,9 +268,7 @@ export default function AboutPage() {
                     <span className={styles.visual_tag}>
                       PARADIGM // SHIFT ARCHITECTURE
                     </span>
-                    <span className={styles.visual_status}>
-                      ZERO-DOC TRUST
-                    </span>
+                    <span className={styles.visual_status}>ZERO-DOC TRUST</span>
                   </div>
 
                   <svg
@@ -632,15 +634,21 @@ export default function AboutPage() {
                 <div className={styles.mv_bullet_list}>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>Zero documents stored or retained on central servers</span>
+                    <span>
+                      Zero documents stored or retained on central servers
+                    </span>
                   </div>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>Sub-20ms edge verification for global applications</span>
+                    <span>
+                      Sub-20ms edge verification for global applications
+                    </span>
                   </div>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>Complete sovereign cryptographic custody for users</span>
+                    <span>
+                      Complete sovereign cryptographic custody for users
+                    </span>
                   </div>
                 </div>
               </GlassBlobCard>
@@ -681,15 +689,22 @@ export default function AboutPage() {
                 <div className={styles.mv_bullet_list}>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>Universal federation across global universities and SIS</span>
+                    <span>
+                      Universal federation across global universities and SIS
+                    </span>
                   </div>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>Pairwise pseudonymity preventing cross-site correlation</span>
+                    <span>
+                      Pairwise pseudonymity preventing cross-site correlation
+                    </span>
                   </div>
                   <div className={styles.mv_bullet_item}>
                     <Check size={16} className={styles.bullet_check} />
-                    <span>One-tap instantaneous proof of academic and professional status</span>
+                    <span>
+                      One-tap instantaneous proof of academic and professional
+                      status
+                    </span>
                   </div>
                 </div>
               </GlassBlobCard>
@@ -739,7 +754,9 @@ export default function AboutPage() {
           <div className={styles.container}>
             <div className={styles.section_header}>
               <span className={styles.section_badge}>CORE TEAM</span>
-              <h2 className={styles.section_title}>Who&apos;s Building SyncNexa</h2>
+              <h2 className={styles.section_title}>
+                Who&apos;s Building SyncNexa
+              </h2>
               <p className={styles.section_subtitle}>
                 Engineers, growth strategists, and operations leaders dedicated
                 to building decentralized trust infrastructure.
@@ -831,7 +848,9 @@ export default function AboutPage() {
         >
           <div className={styles.container}>
             <GlassBlobCard
-              className={styles.matters_card}
+              className={[styles.matters_card, styles.container_dynamic].join(
+                " ",
+              )}
               blobColor="#006d50"
               secondaryBlobColor="#04d69d"
             >
@@ -839,16 +858,17 @@ export default function AboutPage() {
                 <span className={styles.section_badge}>OUR CONVICTION</span>
                 <h2>Why This Work Matters</h2>
                 <p>
-                  Every single day, millions of students, employees, and citizens
-                  are required to prove their credentials. The existing system
-                  relies on unencrypted document uploads, insecure database
-                  exports, and slow manual approval queues.
+                  Every single day, millions of students, employees, and
+                  citizens are required to prove their credentials. The existing
+                  system relies on unencrypted document uploads, insecure
+                  database exports, and slow manual approval queues.
                 </p>
                 <p>
                   SyncNexa replaces this fragile status quo with verifiable,
-                  tamper-proof mathematics. We are starting with students because
-                  they face the steepest friction—but we are architecting trust
-                  infrastructure for the entire digital economy.
+                  tamper-proof mathematics. We are starting with students
+                  because they face the steepest friction—but we are
+                  architecting trust infrastructure for the entire digital
+                  economy.
                 </p>
                 <div className={styles.matters_highlight_bar}>
                   Because identity is the foundational prerequisite of digital
