@@ -5,6 +5,7 @@ import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
 import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
+import SisTrustAdapterVisual from "@/components/hero/SisTrustAdapterVisual";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
 import { Zap, ShieldCheck, Globe, Smartphone, Shield } from "lucide-react";
@@ -108,27 +109,33 @@ export default function ForSchoolsPage() {
   const itSpecs = [
     {
       label: "Deployment Formats",
-      value: "Docker container, Kubernetes Helm chart, or lightweight standalone Linux binary",
+      desc: "Docker container, Kubernetes Helm chart, or lightweight standalone Linux binary with zero external runtime dependencies.",
+      spec: "Docker / K8s / Linux Binary",
     },
     {
       label: "Supported SIS Platforms",
-      value: "Oracle Campus, Ellucian Banner, PowerSchool, Canvas LMS, custom PostgreSQL/MySQL/MSSQL, and REST APIs",
+      desc: "Native connectors for Oracle Campus, Ellucian Banner, PowerSchool, Canvas LMS, PostgreSQL, MySQL, MSSQL, and REST APIs.",
+      spec: "Native Read-Only",
     },
     {
       label: "Network Egress Requirements",
-      value: "Outbound HTTPS (Port 443) only. No inbound public ports or NAT reconfiguration required",
+      desc: "Outbound HTTPS (Port 443) only. Zero inbound public ports, reverse proxies, or campus NAT reconfiguration required.",
+      spec: "Outbound Port 443 Only",
     },
     {
       label: "Compute Footprint",
-      value: "< 512MB RAM, < 0.5 vCPU for typical institutional campus loads (100k+ students)",
+      desc: "< 512MB RAM and < 0.5 vCPU allocated footprint for typical high-volume campus loads (100,000+ active students).",
+      spec: "< 512MB RAM SLA",
     },
     {
       label: "Database Access Scope",
-      value: "Strict read-only query access to enrollment status boolean fields only",
+      desc: "Strict read-only query access to enrollment status boolean fields only. Transcripts, PII, and financial records remain isolated.",
+      spec: "Privilege-Isolated",
     },
     {
       label: "Regulatory Compliance",
-      value: "Guaranteed compliance with NDPR (Nigeria Data Protection Regulation), GDPR, and US FERPA",
+      desc: "Guaranteed mathematical compliance with NDPR (Nigeria Data Protection Regulation), GDPR, and US FERPA privacy frameworks.",
+      spec: "FERPA · NDPR · GDPR",
     },
   ];
 
@@ -163,84 +170,39 @@ export default function ForSchoolsPage() {
         {/* 1. Hero Section */}
         <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
           <HeroGeometry />
-          <div className={styles.container}>
-            <div className={styles.hero_split}>
-              <div className={styles.hero_content}>
-                <span className={styles.section_badge}>
-                  INSTITUTIONAL GATEWAY
-                </span>
-                <h1 className={styles.hero_title}>
-                  Protect student data. <br />
-                  <span className={styles.gradient_text}>
-                    Empower your campus.
-                  </span>
-                </h1>
+          <div className={styles.hero_container}>
+            <span className={styles.section_badge}>
+              INSTITUTIONAL GATEWAY
+            </span>
+            <h1 className={styles.hero_title}>
+              Protect student data. <br />
+              <span className={styles.gradient_text}>
+                Empower your campus.
+              </span>
+            </h1>
 
-                <p className={styles.hero_subtitle}>
-                  SyncNexa connects directly to your institutional SIS via an
-                  encrypted zero-persistence adapter. Verify active student
-                  status without exporting records, uploading CSVs, or risking
-                  data breaches.
-                </p>
+            <p className={styles.hero_subtitle}>
+              SyncNexa connects directly to your institutional SIS via an
+              encrypted zero-persistence adapter. Verify active student
+              status without exporting records, uploading CSVs, or risking
+              data breaches.
+            </p>
 
-                <div className={styles.hero_cta_group}>
-                  <Link href="/contact">
-                    <SnButton variant="primary" size="lg">
-                      Schedule Campus Demo
-                    </SnButton>
-                  </Link>
-                  <Link href="#how-it-works">
-                    <SnButton variant="stroke" size="lg">
-                      Integration Architecture
-                    </SnButton>
-                  </Link>
-                </div>
-              </div>
-
-              {/* SIS Integration Preview Card */}
-              <div className={styles.hero_ui_side}>
-                <GlassBlobCard
-                  className={styles.sis_preview_card}
-                  blobColor="#006d50"
-                  secondaryBlobColor="#04d69d"
-                >
-                  <div className={styles.sis_card_top}>
-                    <div className={styles.sis_status_indicator}>
-                      <span className={styles.pulse_dot}></span>
-                      <span>SIS TRUST ADAPTER LIVE</span>
-                    </div>
-                    <span className={styles.sis_latency_tag}>
-                      mTLS 1.3 ENCRYPTED
-                    </span>
-                  </div>
-
-                  <div className={styles.sis_metrics_grid}>
-                    <div className={styles.sis_metric_box}>
-                      <span>ACTIVE CAMPUS QUERIES</span>
-                      <strong>1,420 / min</strong>
-                    </div>
-                    <div className={styles.sis_metric_box}>
-                      <span>PII EGRESS RATE</span>
-                      <strong>0 Bytes (ZKP)</strong>
-                    </div>
-                    <div className={styles.sis_metric_box}>
-                      <span>AVG QUERY RESPONSE</span>
-                      <strong>~14.2ms</strong>
-                    </div>
-                    <div className={styles.sis_metric_box}>
-                      <span>COMPLIANCE STATUS</span>
-                      <strong>100% FERPA/NDPR</strong>
-                    </div>
-                  </div>
-
-                  <div className={styles.sis_log_box}>
-                    <span>[mTLS] Query student_id=0x7f... status=ACTIVE</span>
-                    <span>[Adapter] Proof generated (zero docs egressed)</span>
-                    <span>[Relay] Attestation signed by FUTO Root Key</span>
-                  </div>
-                </GlassBlobCard>
-              </div>
+            <div className={styles.hero_cta_group}>
+              <Link href="/contact">
+                <SnButton variant="primary" size="lg">
+                  Schedule Campus Demo
+                </SnButton>
+              </Link>
+              <Link href="#how-it-works">
+                <SnButton variant="stroke" size="lg">
+                  Integration Architecture
+                </SnButton>
+              </Link>
             </div>
+
+            {/* Animated SIS Trust Adapter Architecture Visual */}
+            <SisTrustAdapterVisual />
           </div>
         </FadeInSection>
 
@@ -369,20 +331,30 @@ export default function ForSchoolsPage() {
               </p>
             </div>
 
-            <GlassBlobCard
-              className={styles.specs_card}
-              blobColor="#006d50"
-              secondaryBlobColor="#04d69d"
-            >
-              <div className={styles.specs_table}>
+            {/* Plain Divider Specifications Table (Pricing-Style, Flat, No Cards) */}
+            <div className={styles.specs_table_container}>
+              <div className={styles.specs_table_header}>
+                <div className={styles.th_feature}>PARAMETER</div>
+                <div className={styles.th_desc}>TECHNICAL DETAILS</div>
+                <div className={styles.th_standard}>STANDARD / REQUIREMENT</div>
+              </div>
+
+              <div className={styles.specs_table_body}>
                 {itSpecs.map((spec, idx) => (
-                  <div key={idx} className={styles.spec_row}>
-                    <div className={styles.spec_label}>{spec.label}</div>
-                    <div className={styles.spec_value}>{spec.value}</div>
+                  <div key={idx} className={styles.specs_table_row}>
+                    <div className={styles.td_feature}>
+                      <span className={styles.feature_name}>{spec.label}</span>
+                    </div>
+                    <div className={styles.td_desc}>
+                      <p>{spec.desc}</p>
+                    </div>
+                    <div className={styles.td_standard}>
+                      <span className={styles.standard_text}>{spec.spec}</span>
+                    </div>
                   </div>
                 ))}
               </div>
-            </GlassBlobCard>
+            </div>
           </div>
         </FadeInSection>
 

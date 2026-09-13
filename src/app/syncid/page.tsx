@@ -7,7 +7,6 @@ import { SnButton } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
-import SyncIdHeroDevice from "@/components/illustrations/SyncIdHeroDevice";
 import {
   Music,
   Code2,
@@ -18,7 +17,6 @@ import {
   Zap,
   ShieldCheck,
   Tag,
-  X,
 } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -233,98 +231,465 @@ export default function SyncIdPage() {
         {/* 1. Hero Section */}
         <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
           <HeroGeometry />
-          <div className={styles.container}>
-            <div className={styles.hero_split}>
-              <div className={styles.hero_content}>
-                <span className={styles.section_badge}>FLAGSHIP APP</span>
-                <h1 className={styles.hero_title}>
-                  Your student identity. <br />
-                  <span className={styles.gradient_text}>One tap away.</span>
-                </h1>
+          <div className={styles.hero_container}>
+            <span className={styles.section_badge}>FLAGSHIP APP</span>
+            <h1 className={styles.hero_title}>
+              Your student identity. <br />
+              <span className={styles.gradient_text}>One tap away.</span>
+            </h1>
 
-                <p className={styles.hero_subtitle}>
-                  SyncID is the private digital student passport that proves your
-                  enrollment status instantly—without ever uploading documents or
-                  exposing sensitive records.
-                </p>
+            <p className={styles.hero_subtitle}>
+              SyncID is the private digital student passport that proves your
+              enrollment status instantly—without ever uploading documents or
+              exposing sensitive records.
+            </p>
 
-                <div className={styles.hero_cta_group}>
-                  <Link href="/for-organizations">
-                    <SnButton variant="primary" size="lg">
-                      Get SyncID Free
-                    </SnButton>
-                  </Link>
-                  <Link href="#how-it-works">
-                    <SnButton variant="stroke" size="lg">
-                      See How It Works
-                    </SnButton>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Mobile Phone Mockup */}
-              <div className={styles.hero_ui_side}>
-                <SyncIdHeroDevice className={styles.hero_device_wrapper} />
-              </div>
+            <div className={styles.hero_cta_group}>
+              <Link href="/for-organizations">
+                <SnButton variant="primary" size="lg">
+                  Get SyncID Free
+                </SnButton>
+              </Link>
+              <Link href="#how-it-works">
+                <SnButton variant="stroke" size="lg">
+                  See How It Works
+                </SnButton>
+              </Link>
             </div>
           </div>
         </FadeInSection>
 
-        {/* 2. What Is SyncID Section */}
+        {/* 2. What Is SyncID Section (The Paradigm Shift) */}
         <FadeInSection
           className={styles.what_section}
+          id="paradigm-shift"
           activeClassName={styles.is_visible}
         >
           <div className={styles.container}>
-            <GlassBlobCard
-              className={styles.what_glass_card}
-              blobColor="#006d50"
-              secondaryBlobColor="#04d69d"
-            >
-              <div className={styles.what_text_col}>
-                <span className={styles.section_badge}>THE PARADIGM SHIFT</span>
-                <h2>What is SyncID?</h2>
+            <div className={styles.section_header}>
+              <span className={styles.section_badge}>THE PARADIGM SHIFT</span>
+              <h2 className={styles.section_title}>What is SyncID?</h2>
+              <p className={styles.section_subtitle}>
+                SyncID is a sovereign mobile digital identity that replaces
+                document uploads, manual review queues, and invasive tracking
+                with instant zero-knowledge cryptographic proof.
+              </p>
+            </div>
+
+            <div className={styles.cards_grid_3}>
+              {/* Pillar 1: Zero Document Storage */}
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="#04d69d"
+                secondaryBlobColor="#006d50"
+              >
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>
+                    CLIENT // SECURE ENCLAVE
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    0 DOCS STORED
+                  </span>
+                </div>
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left Device Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <rect
+                        x="8"
+                        y="12"
+                        width="20"
+                        height="12"
+                        rx="3"
+                        stroke="#04d69d"
+                        strokeWidth="1"
+                      />
+                      <circle cx="48" cy="18" r="4" fill="#04d69d" />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        DEVICE
+                      </text>
+                    </g>
+
+                    {/* Connecting dashed lines */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+
+                    {/* Center Hardware Enclave Shield */}
+                    <g transform="translate(140, 50)">
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="28"
+                        fillOpacity="0.3"
+                        stroke="#04d69d"
+                        strokeWidth="1"
+                      />
+                      <polygon
+                        points="0,-18 16,-7 16,11 0,18 -16,11 -16,-7"
+                        stroke="#006d50"
+                        strokeWidth="1.5"
+                      />
+                      <circle cx="0" cy="-2" r="3" fill="#04d69d" />
+                      <path
+                        d="M-1.5 0 L1.5 0 L2.5 7 L-2.5 7 Z"
+                        fill="#04d69d"
+                      />
+                    </g>
+
+                    {/* Right 0-Docs Node */}
+                    <line
+                      x1="166"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <text
+                        x="32"
+                        y="22"
+                        textAnchor="middle"
+                        fontSize="9"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        0-DOCS
+                      </text>
+                      <text
+                        x="32"
+                        y="37"
+                        textAnchor="middle"
+                        fontSize="7.5"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        ENCLAVE
+                      </text>
+                    </g>
+                  </svg>
+                </div>
+                <h3>Zero Document Storage</h3>
                 <p>
-                  SyncID is a free mobile digital identity that cryptographically
-                  attests to your active university enrollment once, empowering
-                  you to claim benefits across the internet in milliseconds.
+                  Never upload photos of physical IDs, transcripts, or sensitive files. Your cryptographic student credentials live strictly inside your device&apos;s Secure Enclave.
                 </p>
+              </GlassBlobCard>
 
-                <div className={styles.what_bullets_stack}>
-                  <div className={styles.what_bullet_row}>
-                    <X size={16} className={styles.cross_icon} />
-                    <span>No more uploading photos of your physical student ID card</span>
-                  </div>
-                  <div className={styles.what_bullet_row}>
-                    <X size={16} className={styles.cross_icon} />
-                    <span>No more waiting 3–5 days in manual email verification queues</span>
-                  </div>
-                  <div className={styles.what_bullet_row}>
-                    <X size={16} className={styles.cross_icon} />
-                    <span>No more leaving sensitive academic documents on 3rd-party servers</span>
-                  </div>
+              {/* Pillar 2: Instant 1-Tap Verification */}
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="#ffaa01"
+                secondaryBlobColor="#04d69d"
+              >
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>
+                    PROTOCOL // REAL-TIME
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    &lt; 18MS PASS
+                  </span>
                 </div>
-              </div>
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left Tap Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <circle
+                        cx="32"
+                        cy="18"
+                        r="8"
+                        stroke="#ffaa01"
+                        strokeWidth="1.2"
+                      />
+                      <circle cx="32" cy="18" r="3" fill="#ffaa01" />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="7"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#6b7280"
+                      >
+                        1-TAP CONSENT
+                      </text>
+                    </g>
 
-              <div className={styles.what_graphic_box}>
-                <div className={styles.graphic_item}>
-                  <strong>Verification Speed</strong>
-                  <span>&lt; 18ms Real-Time</span>
+                    {/* Connecting vector */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#ffaa01"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+
+                    {/* Center ZK Proof Pulse */}
+                    <g transform="translate(140, 50)">
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="24"
+                        stroke="#ffaa01"
+                        strokeWidth="1.5"
+                      />
+                      <polygon
+                        points="0,-12 12,0 0,12 -12,0"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                        fill="none"
+                      />
+                      <circle cx="0" cy="0" r="2.5" fill="#ffaa01" />
+                    </g>
+
+                    {/* Right Sub-20ms Verified Node */}
+                    <line
+                      x1="164"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <circle
+                        cx="32"
+                        cy="18"
+                        r="7"
+                        stroke="#04d69d"
+                        strokeWidth="1.2"
+                      />
+                      <path
+                        d="M29 18 L31 20 L36 15"
+                        stroke="#006d50"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="8"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#006d50"
+                      >
+                        &lt; 18ms PASS
+                      </text>
+                    </g>
+                  </svg>
                 </div>
-                <div className={styles.graphic_item}>
-                  <strong>PII Retention</strong>
-                  <span>0 Bytes Stored</span>
+                <h3>Instant 1-Tap Verification</h3>
+                <p>
+                  No more 3–5 day manual review backlogs, spammy confirmation emails, or tedious form inputs. Present a mathematical attestation in sub-20ms.
+                </p>
+              </GlassBlobCard>
+
+              {/* Pillar 3: Pairwise Privacy & No Tracking */}
+              <GlassBlobCard
+                className={styles.tech_solution_card}
+                blobColor="#006d50"
+                secondaryBlobColor="#04d69d"
+              >
+                <div className={styles.card_meta_header}>
+                  <span className={styles.card_code_label}>
+                    PRIVACY // PAIRWISE
+                  </span>
+                  <span className={styles.card_tag_success}>
+                    ZERO TRACKING
+                  </span>
                 </div>
-                <div className={styles.graphic_item}>
-                  <strong>Cryptographic Root</strong>
-                  <span>Hardware Keypair</span>
+                <div className={styles.solution_visual_box}>
+                  <svg
+                    width="100%"
+                    height="100"
+                    viewBox="0 0 280 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={styles.geo_svg}
+                  >
+                    {/* Left SyncID Node */}
+                    <g transform="translate(16, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <text
+                        x="32"
+                        y="21"
+                        textAnchor="middle"
+                        fontSize="8"
+                        fontFamily="monospace"
+                        fontWeight="800"
+                        fill="#006d50"
+                      >
+                        PAIRWISE
+                      </text>
+                      <text
+                        x="32"
+                        y="36"
+                        textAnchor="middle"
+                        fontSize="7"
+                        fontFamily="monospace"
+                        fontWeight="600"
+                        fill="#6b7280"
+                      >
+                        ISOLATION
+                      </text>
+                    </g>
+
+                    {/* Connecting line */}
+                    <line
+                      x1="80"
+                      y1="50"
+                      x2="114"
+                      y2="50"
+                      stroke="#006d50"
+                      strokeWidth="1.5"
+                    />
+
+                    {/* Center Zero Knowledge Gate */}
+                    <g transform="translate(140, 50)">
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r="24"
+                        stroke="#006d50"
+                        strokeWidth="1.5"
+                      />
+                      <path
+                        d="M-8 -6 L8 6 M-8 6 L8 -6"
+                        stroke="#04d69d"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                      <circle cx="0" cy="0" r="3" fill="#006d50" />
+                    </g>
+
+                    {/* Right App Isolated Output */}
+                    <line
+                      x1="166"
+                      y1="50"
+                      x2="200"
+                      y2="50"
+                      stroke="#04d69d"
+                      strokeWidth="1.5"
+                      strokeDasharray="3 3"
+                    />
+                    <g transform="translate(200, 26)">
+                      <rect
+                        x="0"
+                        y="0"
+                        width="64"
+                        height="48"
+                        rx="8"
+                        stroke="var(--stroke, #e5e7eb)"
+                        strokeWidth="1.5"
+                      />
+                      <circle
+                        cx="32"
+                        cy="18"
+                        r="8"
+                        stroke="#04d69d"
+                        strokeWidth="1"
+                      />
+                      <circle cx="32" cy="18" r="3" fill="#04d69d" />
+                      <text
+                        x="32"
+                        y="38"
+                        textAnchor="middle"
+                        fontSize="7"
+                        fontFamily="monospace"
+                        fontWeight="700"
+                        fill="#04d69d"
+                      >
+                        0-CORRELATION
+                      </text>
+                    </g>
+                  </svg>
                 </div>
-                <div className={styles.graphic_item}>
-                  <strong>Student Price</strong>
-                  <span>100% Free Forever</span>
-                </div>
-              </div>
-            </GlassBlobCard>
+                <h3>Pairwise Privacy &amp; No Tracking</h3>
+                <p>
+                  Each merchant and platform receives a unique pseudonymous proof. Third-party data brokers cannot link your activity or monetize your student identity.
+                </p>
+              </GlassBlobCard>
+            </div>
           </div>
         </FadeInSection>
 

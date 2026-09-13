@@ -124,7 +124,7 @@
 .bar {
   width: 2rem;
   height: 0.25rem;
-  background: var(--dark, #05241d);
+  background: var(--heading-color, #05241d);
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;
@@ -134,7 +134,7 @@
 .bar_open_1 {
   width: 2rem;
   height: 0.25rem;
-  background: var(--dark, #05241d);
+  background: var(--heading-color, #05241d);
   border-radius: 10px;
   transform: rotate(45deg);
   transition: all 0.3s linear;
@@ -148,7 +148,7 @@
 .bar_open_3 {
   width: 2rem;
   height: 0.25rem;
-  background: var(--dark, #05241d);
+  background: var(--heading-color, #05241d);
   border-radius: 10px;
   transform: rotate(-45deg);
   transition: all 0.3s linear;

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { TopBar, Footer } from "@/layouts";
-import { SnButton } from "@syncnexa-library/ui";
+import { SnButton, SnCodeBlock } from "@syncnexa-library/ui";
 import HeroGeometry from "@/components/hero/HeroGeometry";
 import GlassBlobCard from "@/components/cards/GlassBlobCard";
 import FadeInSection from "@/components/animation/FadeInSection";
@@ -20,9 +20,74 @@ import styles from "./page.module.css";
 
 export default function ForOrganizationsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeDevTab, setActiveDevTab] = useState<"ts" | "curl" | "python">("curl");
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const devSnippets = {
+    ts: {
+      filename: "verify-student.ts",
+      language: "typescript",
+      code: `import { SyncNexaClient } from '@syncnexa/sdk';
+
+// 1. Initialize client with organization API key
+const client = new SyncNexaClient({
+  apiKey: process.env.SYNCNEXA_API_KEY,
+});
+
+// 2. Verify student attestation in sub-20ms
+const verification = await client.verify({
+  proof: "zkp_ed25519_8f92j10b4c73",
+  pairwiseId: "pw_org_futo_9812",
+  requiredStatus: "ACTIVE_ENROLLED",
+});
+
+if (verification.isEnrolled) {
+  // 3. Apply verified 50% student discount
+  await applyStudentDiscount({
+    userId: user.id,
+    institution: verification.institution,
+    expiresAt: verification.validUntil,
+  });
+}`,
+    },
+    curl: {
+      filename: "verify.sh",
+      language: "bash",
+      code: `curl -X POST https://api.syncnexa.co/v1/organizations/verify \\
+  -H "Authorization: Bearer sn_live_9a8f21c4e7b01d58" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "proof": "zkp_ed25519_8f92j10b4c73",
+    "pairwise_id": "pw_org_futo_9812",
+    "required_status": "ACTIVE_ENROLLED"
+  }'`,
+    },
+    python: {
+      filename: "verify_student.py",
+      language: "python",
+      code: `import os
+from syncnexa import SyncNexaClient
+
+# 1. Initialize client with organization API key
+client = SyncNexaClient(api_key=os.environ["SYNCNEXA_API_KEY"])
+
+# 2. Verify student attestation in sub-20ms
+verification = client.verify(
+    proof="zkp_ed25519_8f92j10b4c73",
+    pairwise_id="pw_org_futo_9812",
+    required_status="ACTIVE_ENROLLED"
+)
+
+if verification.is_enrolled:
+    # 3. Apply verified 50% student discount
+    apply_student_discount(
+        user_id=user.id, 
+        institution=verification.institution
+    )`,
+    },
   };
 
   const benefits = [
@@ -290,6 +355,36 @@ export default function ForOrganizationsPage() {
     },
   ];
 
+  const sampleApiRequest = `// 1. Submit Single-Use ZK Proof & Pairwise Identifier
+const res = await fetch("https://api.syncnexa.co/v1/organizations/verify", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer sn_live_9a8f21c4e7b01d58",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    proof: "zkp_ed25519_8f92j10b4c73",
+    pairwise_id: "pw_org_futo_9812",
+    required_status: "ACTIVE_ENROLLED"
+  })
+});
+
+const verification = await res.json();`;
+
+  const sampleApiResponse = `{
+  "status": "ACTIVE_ENROLLED",
+  "verified": true,
+  "institution": "Federal University of Technology Owerri",
+  "attestation": {
+    "protocol": "ZKP_ED25519",
+    "valid_until": "2026-12-31T23:59:59Z",
+    "pairwise_id": "pw_org_futo_9812",
+    "enclave_signed": true
+  },
+  "pii_retained_bytes": 0,
+  "latency_ms": 17.8
+}`;
+
   return (
     <div className={styles.page_wrapper}>
       <TopBar />
@@ -298,83 +393,103 @@ export default function ForOrganizationsPage() {
         {/* 1. Hero Section */}
         <FadeInSection className={styles.hero} activeClassName={styles.is_visible}>
           <HeroGeometry />
-          <div className={styles.container}>
-            <div className={styles.hero_split}>
-              <div className={styles.hero_content}>
-                <span className={styles.section_badge}>
-                  DEVELOPER & BUSINESS API
-                </span>
-                <h1 className={styles.hero_title}>
-                  Stop losing revenue to <br />
-                  <span className={styles.gradient_text}>
-                    slow verification.
+          <div className={styles.hero_container}>
+            <span className={styles.section_badge}>
+              DEVELOPER & BUSINESS API
+            </span>
+            <h1 className={styles.hero_title}>
+              Stop losing revenue to <br />
+              <span className={styles.gradient_text}>
+                slow verification.
+              </span>
+            </h1>
+
+            <p className={styles.hero_subtitle}>
+              Verify students in &lt;18ms with a single API call. Boost
+              checkout conversion by 38% while eliminating document storage
+              and regulatory compliance headaches.
+            </p>
+
+            <div className={styles.hero_cta_group}>
+              <a
+                href="https://business.syncnexa.co/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SnButton variant="primary" size="lg">
+                  Get Started Free
+                </SnButton>
+              </a>
+              <Link href="#developer-api">
+                <SnButton variant="stroke" size="lg">
+                  View API Specs
+                </SnButton>
+              </Link>
+            </div>
+
+            {/* Full-Spanning API Code Visual (Vercel-style Architecture Blueprint Layout) */}
+            <div className={styles.hero_code_wrapper}>
+              <div className={styles.code_tech_header}>
+                <div className={styles.code_tag_group}>
+                  <span className={styles.status_dot}></span>
+                  <span className={styles.tech_title}>
+                    SYNCNEXA ZERO-KNOWLEDGE API // v1
                   </span>
-                </h1>
-
-                <p className={styles.hero_subtitle}>
-                  Verify students in &lt;18ms with a single API call. Boost
-                  checkout conversion by 38% while eliminating document storage
-                  and regulatory compliance headaches.
-                </p>
-
-                <div className={styles.hero_cta_group}>
-                  <a
-                    href="https://business.syncnexa.co/signup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SnButton variant="primary" size="lg">
-                      Get Started Free
-                    </SnButton>
-                  </a>
-                  <Link href="#developer-api">
-                    <SnButton variant="stroke" size="lg">
-                      View API Specs
-                    </SnButton>
-                  </Link>
+                </div>
+                <div className={styles.code_tech_metrics}>
+                  <span className={styles.metric_item}>
+                    <span className={styles.metric_label}>ENDPOINT:</span>
+                    <span className={styles.metric_val}>POST /v1/organizations/verify</span>
+                  </span>
+                  <span className={styles.metric_item}>
+                    <span className={styles.metric_label}>STATUS:</span>
+                    <span className={styles.metric_val_green}>200 OK</span>
+                  </span>
+                  <span className={styles.metric_item}>
+                    <span className={styles.metric_label}>LATENCY:</span>
+                    <span className={styles.metric_val}>17.8ms</span>
+                  </span>
+                  <span className={styles.metric_item}>
+                    <span className={styles.metric_label}>PII RETAINED:</span>
+                    <span className={styles.metric_val_green}>0 BYTES</span>
+                  </span>
                 </div>
               </div>
 
-              {/* API Live Console Preview */}
-              <div className={styles.hero_ui_side}>
-                <GlassBlobCard
-                  className={styles.api_console_card}
-                  blobColor="#04d69d"
-                  secondaryBlobColor="#ffaa01"
-                >
-                  <div className={styles.console_card_top}>
-                    <div className={styles.console_status}>
-                      <span className={styles.pulse_dot}></span>
-                      <span>SYNCNEXA EDGE RELAY LIVE</span>
-                    </div>
-                    <span className={styles.console_latency}>18.2ms AVG</span>
+              <div className={styles.code_canvas_grid}>
+                <div className={styles.code_column}>
+                  <div className={styles.code_col_label}>
+                    <span className={styles.method_badge}>POST</span>
+                    <span className={styles.code_col_title}>
+                      /v1/organizations/verify
+                    </span>
                   </div>
+                  <SnCodeBlock
+                    language="typescript"
+                    code={sampleApiRequest}
+                    showLineNumbers={true}
+                    copyable={true}
+                    className={styles.sn_code_instance}
+                  />
+                </div>
 
-                  <div className={styles.console_metrics_grid}>
-                    <div className={styles.console_metric_box}>
-                      <span>BENCHMARK LATENCY</span>
-                      <strong>18.2ms</strong>
-                    </div>
-                    <div className={styles.console_metric_box}>
-                      <span>CONVERSION SURGE</span>
-                      <strong>+38.4%</strong>
-                    </div>
-                    <div className={styles.console_metric_box}>
-                      <span>PII STORED</span>
-                      <strong>0 Bytes</strong>
-                    </div>
-                    <div className={styles.console_metric_box}>
-                      <span>UPTIME SLA</span>
-                      <strong>99.99%</strong>
-                    </div>
-                  </div>
+                <div className={styles.code_divider} aria-hidden="true" />
 
-                  <div className={styles.console_terminal_box}>
-                    <span>POST /v1/verify HTTP/1.1</span>
-                    <span>Host: api.syncnexa.co &bull; Status: 200 OK</span>
-                    <span>{`{ "status": "ACTIVE_ENROLLED", "latency_ms": 17.8 }`}</span>
+                <div className={styles.code_column}>
+                  <div className={styles.code_col_label}>
+                    <span className={styles.status_badge}>200 OK</span>
+                    <span className={styles.code_col_title}>
+                      application/json
+                    </span>
                   </div>
-                </GlassBlobCard>
+                  <SnCodeBlock
+                    language="json"
+                    code={sampleApiResponse}
+                    showLineNumbers={true}
+                    copyable={true}
+                    className={styles.sn_code_instance}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -491,40 +606,52 @@ export default function ForOrganizationsPage() {
                 </div>
 
                 <div>
-                  <Link href="/contact">
+                  <a
+                    href="https://docs.syncnexa.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <SnButton variant="primary" size="md">
-                      Request Full API Reference
+                      View API Documentation
                     </SnButton>
-                  </Link>
+                  </a>
                 </div>
               </div>
 
-              {/* Code Snippet Terminal */}
-              <div className={styles.dev_code_terminal}>
-                <div className={styles.terminal_header}>
-                  <span className={styles.term_dot_red}></span>
-                  <span className={styles.term_dot_yellow}></span>
-                  <span className={styles.term_dot_green}></span>
-                  <span className={styles.term_title}>verify-student.ts</span>
+              {/* Code Snippet Terminal with SnCodeBlock */}
+              <div className={styles.dev_code_wrapper}>
+                <div className={styles.dev_code_tabs}>
+                  <button
+                    type="button"
+                    className={`${styles.dev_tab_btn} ${activeDevTab === "curl" ? styles.dev_tab_active : ""}`}
+                    onClick={() => setActiveDevTab("curl")}
+                  >
+                    cURL (REST)
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.dev_tab_btn} ${activeDevTab === "ts" ? styles.dev_tab_active : ""}`}
+                    onClick={() => setActiveDevTab("ts")}
+                  >
+                    TypeScript (SDK)
+                  </button>
+                  <button
+                    type="button"
+                    className={`${styles.dev_tab_btn} ${activeDevTab === "python" ? styles.dev_tab_active : ""}`}
+                    onClick={() => setActiveDevTab("python")}
+                  >
+                    Python (SDK)
+                  </button>
                 </div>
-                <pre className={styles.code_snippet}>
-                  <code>{`// Verify a student in 3 lines of code
-import { SyncNexaClient } from '@syncnexa/sdk';
 
-const client = new SyncNexaClient({
-  apiKey: process.env.SYNCNEXA_API_KEY,
-});
-
-const verification = await client.verify({
-  pairwiseId: 'pw_user_8f92j1',
-  requiredStatus: 'ACTIVE_ENROLLED',
-});
-
-if (verification.isEnrolled) {
-  // Apply student discount instantly!
-  applyDiscount(verification.pairwiseId);
-}`}</code>
-                </pre>
+                <SnCodeBlock
+                  language={devSnippets[activeDevTab].language}
+                  code={devSnippets[activeDevTab].code}
+                  filename={devSnippets[activeDevTab].filename}
+                  showLineNumbers={true}
+                  copyable={true}
+                  className={styles.dev_sn_codeblock}
+                />
               </div>
             </div>
           </div>

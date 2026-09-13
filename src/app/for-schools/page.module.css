@@ -142,8 +142,9 @@
 
 .hero_subtitle {
   font-size: 1.25rem;
-  max-width: 560px;
-  margin-bottom: 2.5rem;
+  max-width: 720px;
+  margin: 0 auto 1.85rem;
+  text-align: center;
 }
 
 .cta_body {
@@ -167,34 +168,32 @@
 }
 
 /* ==========================================================================
-   1. HERO SECTION (Split + SIS Integration Preview)
+   1. HERO SECTION (Centered + SIS Integration Preview)
    ========================================================================== */
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 6.5rem 0 5.5rem;
+  padding: 4.75rem 2rem 3.75rem;
   background: radial-gradient(circle at 50% -20%, rgba(4, 214, 157, 0.08) 0%, transparent 65%), var(--bg-main, #ffffff);
+  text-align: center;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.hero_split {
+.hero_container {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4.5rem;
-  align-items: center;
-}
-
-.hero_content {
+  max-width: 1080px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .hero_cta_group {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
   opacity: 0;
@@ -208,98 +207,11 @@
   transform: translateY(0);
 }
 
-.hero_ui_side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* SIS Gateway Card Preview */
-.sis_preview_card {
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
-}
-
-.sis_card_top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--stroke, #e5e7eb);
-  padding-bottom: 1rem;
-}
-
-.sis_status_indicator {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--primary-dark, #006d50);
-}
-
-.pulse_dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--primary, #04d69d);
-}
-
-.sis_latency_tag {
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-muted, #6b7280);
-}
-
-.sis_metrics_grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.sis_metric_box {
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
-  border-radius: 10px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.sis_metric_box span {
-  font-size: 0.75rem;
-  color: var(--text-muted, #6b7280);
-}
-
-.sis_metric_box strong {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--heading-color, #05241d);
-  font-family: monospace;
-}
-
-.sis_log_box {
-  background: #05241d;
-  color: #04d69d;
-  font-family: monospace;
-  font-size: 0.75rem;
-  border-radius: 8px;
-  padding: 0.85rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 /* ==========================================================================
    2. HOW IT WORKS SECTION (Continuous Connecting Line)
    ========================================================================== */
 .how_section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -385,7 +297,7 @@
    3. SECURITY & COMPLIANCE (8-Card Grid)
    ========================================================================== */
 .security_section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -436,7 +348,7 @@
    4. STUDENT BENEFITS FOR SCHOOLS (4-Card Grid)
    ========================================================================== */
 .benefits_section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
@@ -476,49 +388,106 @@
 }
 
 /* ==========================================================================
-   5. IT & INTEGRATION SPECS TABLE
+   5. IT & INTEGRATION SPECS TABLE (Flat Pricing-Style Divider Table)
    ========================================================================== */
 .specs_section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   background: transparent;
   border-bottom: 1px solid var(--stroke, #e5e7eb);
 }
 
-.specs_card {
-  padding: 3rem 2.5rem;
-  display: flex;
-  flex-direction: column;
+.specs_table_container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--stroke, #e5e7eb);
+  border-radius: 0;
 }
 
-.specs_table {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.spec_row {
+.specs_table_header {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 280px 1fr 220px;
   gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+  font-family: monospace;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+  letter-spacing: 0.06em;
+  background: transparent;
+  border-radius: 0;
+}
+
+.th_feature,
+.th_desc {
+  display: flex;
   align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-radius: 10px;
-  background: var(--bg-alt, #f9fbfb);
-  border: 1px solid var(--stroke, #e5e7eb);
 }
 
-.spec_label {
-  font-size: 0.95rem;
-  font-weight: 800;
+.th_standard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.specs_table_body {
+  display: flex;
+  flex-direction: column;
+}
+
+.specs_table_row {
+  display: grid;
+  grid-template-columns: 280px 1fr 220px;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--stroke, #e5e7eb);
+  background: transparent;
+  border-radius: 0;
+  transition: background 0.15s ease;
+}
+
+.td_feature {
+  display: flex;
+  align-items: center;
+}
+
+.feature_name {
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--heading-color, #05241d);
+  line-height: 1.4;
 }
 
-.spec_value {
+.td_desc {
+  display: flex;
+  align-items: center;
+}
+
+.td_desc p {
   font-size: 0.95rem;
   color: var(--text-muted, #4b5563);
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0;
 }
 
+.td_standard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.standard_text {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-dark, #006d50);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
 /* ==========================================================================
    6. FAQ ACCORDION SECTION
    ========================================================================== */
@@ -579,7 +548,7 @@
    ========================================================================== */
 .cta_section {
   padding: 7rem 2rem;
-  background: var(--dark, #05241d);
+  background: var(--surface-inverse, #05241d);
   text-align: center;
 }
 
@@ -638,8 +607,7 @@
 .security_grid > *,
 .benefits_grid > *,
 .faq_container > *,
-.sis_preview_card,
-.specs_card,
+.specs_table_container,
 .how_body_card,
 .hero_content {
   opacity: 0;
@@ -677,8 +645,7 @@
 .is_visible .security_grid > *,
 .is_visible .benefits_grid > *,
 .is_visible .faq_container > *,
-.is_visible .sis_preview_card,
-.is_visible .specs_card,
+.is_visible .specs_table_container,
 .is_visible .how_body_card,
 .is_visible .hero_content {
   opacity: 1;
@@ -701,19 +668,20 @@
     font-size: 3.25rem;
   }
 
-  .hero_split {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
   .security_grid,
   .benefits_grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .spec_row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .specs_table_header {
+    grid-template-columns: 220px 1fr 180px;
+    gap: 1.5rem;
+  }
+
+  .specs_table_row {
+    grid-template-columns: 220px 1fr 180px;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
   }
 }
 
@@ -735,11 +703,24 @@
     grid-template-columns: 1fr;
   }
 
-  .sis_preview_card,
-  .specs_card,
   .benefit_card,
   .security_card {
     padding: 2.25rem 1.5rem;
+  }
+
+  .specs_table_header {
+    display: none;
+  }
+
+  .specs_table_row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.25rem 0;
+    align-items: flex-start;
+  }
+
+  .td_standard {
+    justify-content: flex-start;
   }
 
   .how_step_item {

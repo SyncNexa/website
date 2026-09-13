@@ -1384,11 +1384,15 @@ export default function Home() {
                 </div>
 
                 <div className={styles.card_cta}>
-                  <Link href="/for-organizations">
+                  <a
+                    href="https://docs.syncnexa.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <SnButton variant="primary" size="md">
-                      Developer Docs & API
+                      Developer Docs &amp; API
                     </SnButton>
-                  </Link>
+                  </a>
                 </div>
               </GlassBlobCard>
             </div>

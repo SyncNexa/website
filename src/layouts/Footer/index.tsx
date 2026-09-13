@@ -38,6 +38,15 @@ function Footer() {
                 <Link href="/for-organizations">For Organizations</Link>
               </li>
               <li>
+                <a
+                  href="https://docs.syncnexa.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Documentation
+                </a>
+              </li>
+              <li>
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
